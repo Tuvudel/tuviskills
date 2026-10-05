@@ -1,0 +1,65 @@
+# Personal agent skills
+
+Shared personal skills for Codex and Cursor on Windows. This repository contains 79 unique local skills: 65 personal skills and 14 skills from the existing local Superpowers installation.
+
+See [the full inventory](INVENTORY.md) for names and purposes. Skill contents and supporting files are preserved from the existing installations. Fourteen identical Cursor copies are consolidated into the same repository copies.
+
+## Install on another Windows PC
+
+Install Git and GitHub CLI, then authenticate with the GitHub account that can access this private repository:
+
+```powershell
+gh auth login
+gh repo clone Tuvudel/agent-skills D:\Projects\agent-skills
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\install.ps1 -WhatIf
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\install.ps1
+```
+
+The script connects `%USERPROFILE%\.agents\skills` to the repository's `skills` directory using a Windows directory junction. Codex and Cursor both discover skills in that shared location. Existing matching skill folders are moved into a dated backup under `%USERPROFILE%\.agents\skill-backups` before the junction is created. Backups remain on the same drive as the original folders and outside skill discovery paths. Conflicting skills stop installation so you can merge them first. System skills and plugin caches remain managed by their applications.
+
+Start a new Codex chat and reload Cursor after installation. Installation can be run again safely. Use `-UserProfilePath` and `-BackupRoot` to choose alternate locations when testing.
+
+The installer also links `~/.codex/skills/playwright/scripts` to the shared Playwright scripts because the imported instructions reference that location. This compatibility folder has no `SKILL.md` and does not add a duplicate skill.
+
+## Sync changes
+
+Before working on either PC:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\sync.ps1
+```
+
+After changing or adding a skill, commit and push it from the repository:
+
+```powershell
+git -C D:\Projects\agent-skills add skills
+git -C D:\Projects\agent-skills commit -m "Update personal skills"
+git -C D:\Projects\agent-skills push
+```
+
+Run the sync command on the other PC. The local shared folder points directly into this checkout, so no copying or reinstalling is needed for skill updates. Sync stops when there are local uncommitted edits or when a fast-forward pull is impossible. It does not automatically commit, push, merge, or resolve conflicts.
+
+New skills do not need an `inventory.json` entry for agent discovery, but add one before migrating an existing matching skill folder on another PC. `inventory.json` records the original import hashes and locations. Installation compares existing local files against the current repository files to detect conflicts. Git preserves imported file bytes across PCs.
+
+## Restore original folders
+
+The installer prints the dated backup path and saves `restore-state.json` there. To undo installation:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\restore.ps1 -BackupPath "$env:USERPROFILE\.agents\skill-backups\YOUR-BACKUP"
+```
+
+The restore script removes only the shared junction and moves the backed-up original folders to their original locations. Repository files remain intact. It stops rather than overwriting newly created folders. Repository edits made after installation stay in the repository; restoring originals returns the old skill versions.
+
+## Scope and compatibility
+
+- Plugin-managed and Codex system skills are not copied. Install their plugins separately on each PC.
+- MCP connections, credentials, application settings, and runtime dependencies are not synchronized.
+- Some imported skills reference machine-specific paths. Review those paths before using them on another PC.
+- `ui-ux-pro-max` lacks YAML frontmatter in the original copy. It is preserved as found; discovery can differ between agents.
+- The original broken `find-skills` shortcut remains untouched and is recorded in the inventory.
+- The local Superpowers snapshot overlaps with the installed Superpowers plugin. This preserves the existing installation; it does not select one version for you.
+- Cursor Cloud Agents have a separate sync feature for `~/.cursor/skills`. This shared local setup covers local Codex and Cursor sessions on the PCs.
+- This repository contains third-party and personal material. Preserve included license files and check upstream licenses before redistributing.
+
+Verified discovery locations: [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills) and [Cursor skill documentation](https://cursor.com/help/customization/skills).

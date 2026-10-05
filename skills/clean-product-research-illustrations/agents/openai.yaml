@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clean Product Research Illustrations"
+  short_description: "Create rich product-research visuals."
+  default_prompt: "Create clean elaborate product-research illustrations for this page."

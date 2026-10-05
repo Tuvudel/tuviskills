@@ -1,0 +1,1156 @@
+{
+  "skills": [
+    {
+      "name": "algorithm-design",
+      "path": "skills/algorithm-design",
+      "description": "Design algorithms with LaTeX pseudocode and UML diagrams. Generate algorithmic environments, Mermaid class/sequence diagrams, and ensure consistency between pseudocode and implementation. Use when formalizing methods for a paper.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\algorithm-design"
+      ],
+      "files": {
+        "SKILL.md": "1d6eac440e29d7b86dbe50abf09e75c7837702da64279c82f17c001dd2f25471",
+        "references/algorithm-templates.md": "43f56093f7aaa0275af067e1736c59c5217b878cce7f023c3290037e6251d26f"
+      }
+    },
+    {
+      "name": "ask-questions-if-underspecified",
+      "path": "skills/ask-questions-if-underspecified",
+      "description": "Clarify requirements before implementing. Do not use automatically, only when invoked explicitly.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\ask-questions-if-underspecified"
+      ],
+      "files": {
+        ".skill-meta.json": "fdc38bd3b3d9b462fd6f860740b1613e88427ae1ca84a0de443d23edd97c8c7d",
+        "SKILL.md": "caca2c6caf97e88c06a41cd97b2c7c5aab9f02c64d9ed7e45e95f904c1ee4b55"
+      }
+    },
+    {
+      "name": "backend-development",
+      "path": "skills/backend-development",
+      "description": "Backend API design, database architecture, microservices patterns, and test-driven development. Use for designing APIs, database schemas, or backend system architecture.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\backend-development"
+      ],
+      "files": {
+        ".skill-meta.json": "3c8a2fadb95b18ab1f4359cfbd8882f12f50b57cd626fdadcd1a242673160bf4",
+        "SKILL.md": "50b54016979dffcadf922165e4e7e347a224b1cde79dc8e25bdac588f29cecdd"
+      }
+    },
+    {
+      "name": "better-accessibility",
+      "path": "skills/better-accessibility",
+      "description": "Helps your project comply with accessibility standards and best practices.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\better-accessibility",
+        "C:\\Users\\tuval\\.cursor\\skills\\better-accessibility"
+      ],
+      "files": {
+        "SKILL.md": "59a0d8ad310be843566a18bfd839a38f46335110aa31673c4468c9e0172c5350",
+        "focus-and-keyboard.md": "9ba63027fa8f1b53e4947ee3341e0580347121f3ccb7698f2936d33563ffa4ba",
+        "forms.md": "b08451ee17861cae49553ba71a122be80c21197087efcc43137862a1db2c5c34",
+        "hit-areas.md": "8c0982229cc01aee419e9c80a4085d5c59a0e7b2b16a4f616a12e9fa0fa094f5",
+        "motion-and-zoom.md": "3efc88394bc958a6e88ecbc8c8e37999df7de0e19730e5784d0e9e5efda696ee",
+        "screen-readers.md": "a35b69db4568e74351a28606328505773f9a1e9ec370e92fbfb2117543c3637a",
+        "semantics-and-aria.md": "e663b6708ac7f4d4d88e884c604cc3e99c1b424ae78209cf4e2430f4966d39b6",
+        "agents/openai.yaml": "98699206d4fb00b72bcaf69bb446f541644cc0cc3d23967e266731e100a55563"
+      }
+    },
+    {
+      "name": "better-colors",
+      "path": "skills/better-colors",
+      "description": "Helps you build a color system and answer anything about color in your project. You can generate palettes, use semantic tokens, convert between formats, check contrast and more.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\better-colors",
+        "C:\\Users\\tuval\\.cursor\\skills\\better-colors"
+      ],
+      "files": {
+        "SKILL.md": "cde9dd40cb183b383514e1a2c76bf74c9d914f5f6722ee6079d3f9cd121862c1",
+        "color-formats.md": "e68fffec8f7b8e1036c295fce8d65785764f33aead5d292389c47451e79d7129",
+        "color-usage.md": "dbaa4a4cb10b8118165fca4531b3c35b409c79185f15a2812a34f118293dba9f",
+        "contrast.md": "f9a2f8ca2fd7966ea0002a9dd58b9d392fbb14fc6f4365534c488046337e5971",
+        "palette-generation.md": "f3e3f9fc84fd834cfffd9e0c951f28c3f24c3c4a4492d86b697d3258f500fb85",
+        "palette-structure.md": "82b22d74ead2a551a2a505347273025020d84dcde4a0170ea2fd14290dc10387",
+        "token-naming.md": "198ca90a643d52f446fe423464908e900d31923ee7d13d6454c8b791326d6b2a",
+        "agents/openai.yaml": "9568572146c8d7d1dc2e12536c2b8ea63480f83f2f2ebfcf2f9a500a56830d4a"
+      }
+    },
+    {
+      "name": "better-interface",
+      "path": "skills/better-interface",
+      "description": "Combines all of the `better-*` skills into a single review across accessibility, layout, writing, typography, color and UI polish.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\better-interface",
+        "C:\\Users\\tuval\\.cursor\\skills\\better-interface"
+      ],
+      "files": {
+        "SKILL.md": "57412a685bd1a654f81def820099481b7df6ddf8f4bc06989a1b875b1d01c036",
+        "review-format.md": "99bf274b4a382d89fc281482c688127d1d82e3a5a5c84d2662ebfc9946dc8108",
+        "agents/openai.yaml": "541c5d823f474543d4f3a314a9292215f8c90c152249e72411ff3e3632cf55bc"
+      }
+    },
+    {
+      "name": "better-layout",
+      "path": "skills/better-layout",
+      "description": "Helps with grouping, alignment, reading order, progressive disclosure and other details that make a good layout.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\better-layout",
+        "C:\\Users\\tuval\\.cursor\\skills\\better-layout"
+      ],
+      "files": {
+        "SKILL.md": "f04c8d870fca110c8003aa8c0c82a7e121642a18443dfb114ee3d774d466c141",
+        "grouping-and-alignment.md": "027edd034ab641e8affc2ec02ca97ee0824d86756b14e11de908d62f5d086fb1",
+        "spacing-and-adaptivity.md": "bf46b0857efa5022e6918eda026827e9de2747f3f349b5a6787a2322179abe77",
+        "agents/openai.yaml": "d51a2ca663c9331f8f23b7a550e5f848f83e81361e21f2280cc384e99cc0ae15"
+      }
+    },
+    {
+      "name": "better-typography",
+      "path": "skills/better-typography",
+      "description": "Focuses on type scale, spacing, sizing, variable fonts, OpenType features, wrapping, truncation and other details that make typography feel great across your product.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\better-typography",
+        "C:\\Users\\tuval\\.cursor\\skills\\better-typography"
+      ],
+      "files": {
+        "SKILL.md": "717f615910470bd2b7c662cce2af2ebd11cd887379a6ea93455c45f3c5ba378d",
+        "choosing-fonts.md": "d139ec5d68cd123bc305d920295f7bc95a1e1123674de96d19103c1ebffc85c9",
+        "css-cheat-sheet.md": "45c77f0d1954e12e76c3903361f52703cb4f4287d54c651710f60926247165fb",
+        "details-and-accessibility.md": "d74e2719ee793fbf7408883e0e5eb396b67514ce07e02412f33d5408ecb4a02e",
+        "spacing-and-sizing.md": "e28e7899a73a8b17f38418dfd8c1afda116db81a3b68d53dd51eab019b20ab82",
+        "variable-fonts-and-opentype.md": "2bf1317ea5c0af6e36c57d15aacea512e450acbe4b00a8664c4619a959dea0b0",
+        "wrapping-and-punctuation.md": "7cfa3463b68cf21f08ab01a184b12c8bf2fe9340c2c7691a8cc99e4569389efe",
+        "agents/openai.yaml": "01d8b8f835112e97ba0e4d97a07775e919407ebb5aab0cce9b4fa280e66b19b8"
+      }
+    },
+    {
+      "name": "better-ui",
+      "path": "skills/better-ui",
+      "description": "Polishes and improves the UI in your project. Covers concentric border radius, optical alignment, surface depth, contextual icons, hit areas and more.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\better-ui",
+        "C:\\Users\\tuval\\.cursor\\skills\\better-ui"
+      ],
+      "files": {
+        "SKILL.md": "2482b7b89d851a3128d36edf5367f3223e113a4ef421b7358c7e6de3f2c83faf",
+        "animations.md": "5d2d9e4cefab494b6dd0683e7d2d9bc90788df9c536449c0828c241de965e846",
+        "enter-exit.md": "8db1b33d6c80a097218a530cb9749dff4b0a2b992236047a2e88661af5e930ea",
+        "icon-transitions.md": "60098242d33133a35a675719c447129b8931aecfbf05d58a6e2aa01e7894694e",
+        "icons.md": "74cc78322874df4e2286bb0f5835d68114f74be1c94f993c94f6af692f44733b",
+        "performance.md": "e4bc3c90d6e0281d295e2e7e39d545fb9abd8a67667b0c10e589eda8115e5b1e",
+        "surfaces.md": "5508a7caf07ae8de616e7d83e282d4a08c026dd7a2d3cf54979609e4e0301048",
+        "agents/openai.yaml": "799e0b58bded32edf5c217f97e08c364660ec24234978b2e3f7dee1868bea871"
+      }
+    },
+    {
+      "name": "better-writing",
+      "path": "skills/better-writing",
+      "description": "Focuses on improving product copy in your project.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\better-writing",
+        "C:\\Users\\tuval\\.cursor\\skills\\better-writing"
+      ],
+      "files": {
+        "SKILL.md": "d53163382a058f06e00ac0b36312189108b006aa0b05869c71a70f5c213c44ae",
+        "agents/openai.yaml": "a5aec7e0cbc87930962f139eff4341dcf87e83fd19b9447e3f614db2bc71de67"
+      }
+    },
+    {
+      "name": "brainstorming",
+      "path": "skills/superpowers/brainstorming",
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\brainstorming"
+      ],
+      "files": {
+        "SKILL.md": "e14914605f640e0841758e45d0ab2a53243b59b921f929e47921c99668f2e61d",
+        "spec-document-reviewer-prompt.md": "95a0a195de9d984be2fffa95bab16fc8c563bc296a9cfc5e9c29cb3ece0d7457",
+        "visual-companion.md": "3321a044c777d03d7177df41c77bb83155ff2a6d0c16b8a3d752426d29f14ea8",
+        "scripts/frame-template.html": "7b9418e9939dded0cf8e6a5549a18162b7c7e5495deeefa83a12f3394b81395d",
+        "scripts/helper.js": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3",
+        "scripts/server.cjs": "ee89af11506ac4933324c89a2cfb36b391fe611f82efb9eeb3b814e40825145f",
+        "scripts/start-server.sh": "a4e5ae84275bcaacd2f84345afeabe59cf7b00ba080e123da7cc1fb226f12847",
+        "scripts/stop-server.sh": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf"
+      }
+    },
+    {
+      "name": "break",
+      "path": "skills/break",
+      "description": "Renders a component you choose in every state and scenario on a temporary page and stress tests it.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\break",
+        "C:\\Users\\tuval\\.cursor\\skills\\break"
+      ],
+      "files": {
+        "SKILL.md": "4b8a1d6b60c2d522432765ab90e9b794fa36dc54f08d1a734c5cb2a1baa69ff1",
+        "scenarios.md": "5aacf085d5eca87b7b5e4f1b0a7412bfd532c8eaa574f455a5b1ffb00cdf86e9",
+        "agents/openai.yaml": "e3e6b1a83f90763fa8cb166b4ec483ebc78fc84311fb0594d29f03d8ef76eddc"
+      }
+    },
+    {
+      "name": "check-compiler-errors",
+      "path": "skills/check-compiler-errors",
+      "description": "Run compile and type-check commands and report failures",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\check-compiler-errors"
+      ],
+      "files": {
+        "SKILL.md": "1ad76beccd581fc285199334709e0a37cdc2f76e5d0d33c90e1dc21905518004"
+      }
+    },
+    {
+      "name": "circles-agent-bridge",
+      "path": "skills/circles-agent-bridge",
+      "description": "Use when Tuval's Codex reads, writes, verifies, or discusses agent-to-agent handoffs with Guy's Codex through the Circles Slack agent bridge.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\circles-agent-bridge"
+      ],
+      "files": {
+        "SKILL.md": "616ee94b459fa18b533d516e0b693d1c14a9c455a4c98057b29c7bdd8ab9bff1"
+      }
+    },
+    {
+      "name": "circles-hebrew-content",
+      "path": "skills/circles-hebrew-content",
+      "description": "How to write and present information in the Circles project \u2014 Hebrew copy quality, language mixing rules, and structuring dense content for readability. Use when writing Hebrew-facing text (docs, mockups, dashboards, reports, in-app copy) or when presenting structured information like inventories, gap analyses, or status overviews.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\circles-hebrew-content"
+      ],
+      "files": {
+        "SKILL.md": "9330e97e72eb335c54d9ebc6c6546cccc4073923af8a49365c1bdbebd0ba1f33"
+      }
+    },
+    {
+      "name": "clean-product-research-illustrations",
+      "path": "skills/clean-product-research-illustrations",
+      "description": "Use when creating, reviewing, or revising image prompts for polished product-research article illustrations, UX research visuals, report graphics, or research-facing conceptual scenes",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\clean-product-research-illustrations"
+      ],
+      "files": {
+        "SKILL.md": "3033f4545665c898e963c38c2c7860c7454de023fb877c7aeded5c7d34a0c333",
+        "agents/openai.yaml": "ecc3d867a7729b4b99de8d828f2481608905f3e399711f31477f3cc088050384"
+      }
+    },
+    {
+      "name": "code-documentation",
+      "path": "skills/code-documentation",
+      "description": "Writing effective code documentation - API docs, README files, inline comments, and technical guides. Use for documenting codebases, APIs, or writing developer guides.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\code-documentation"
+      ],
+      "files": {
+        ".skill-meta.json": "26f2797a0db13c527314c4b600ead59c35db09bec2afe3676d0eb1ba817a2c39",
+        "SKILL.md": "ad96e20d38645570a508507209580936683d4c58b2cfe765f78b6a7f93404d58"
+      }
+    },
+    {
+      "name": "code-refactoring",
+      "path": "skills/code-refactoring",
+      "description": "Code refactoring patterns and techniques for improving code quality without changing behavior. Use for cleaning up legacy code, reducing complexity, or improving maintainability.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\code-refactoring"
+      ],
+      "files": {
+        ".skill-meta.json": "d47f18aa9c839850d3c1a9172a52a5dd4e071daa8db48ffcbce1aa7e23cbeb76",
+        "SKILL.md": "db4d95074849a184e2db81edb57f7621f2ab21746a956716d78c6cb52fba3060"
+      }
+    },
+    {
+      "name": "control-cli",
+      "path": "skills/control-cli",
+      "description": "Build or adapt a local harness to drive, inspect, and profile an interactive CLI or TUI without external services. Use for CLI UX checks, startup regressions, memory leaks, hangs, prompt flows, or terminal demos.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\control-cli"
+      ],
+      "files": {
+        "SKILL.md": "13ac93e595bbda2000849bdb815d5f2ca03f7c2ca63788c8335f9212b9b422a2"
+      }
+    },
+    {
+      "name": "control-ui",
+      "path": "skills/control-ui",
+      "description": "Build or adapt a local browser/CDP harness to drive and inspect a web, IDE, or Electron UI. Use for local UI verification, screenshots, accessibility snapshots, perf profiles, visual diffs, or reproducing UI bugs.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\control-ui"
+      ],
+      "files": {
+        "SKILL.md": "410cae25bdb1e5d2323b126abc5047b0213be7fdb0195710213fa8de8a751871"
+      }
+    },
+    {
+      "name": "deslop",
+      "path": "skills/deslop",
+      "description": "Remove AI-generated code slop and clean up code style",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\deslop"
+      ],
+      "files": {
+        "SKILL.md": "2f7b7def74af7ed11f5b44b4d32f0f91fca8c5d1f92bf2171e8d12fd33a0f810"
+      }
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "path": "skills/superpowers/dispatching-parallel-agents",
+      "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\dispatching-parallel-agents"
+      ],
+      "files": {
+        "SKILL.md": "f0df13f584049059cc5619f90061405b89dcc6e28ab3f2a8517d27d99c7a46a6"
+      }
+    },
+    {
+      "name": "executing-plans",
+      "path": "skills/superpowers/executing-plans",
+      "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\executing-plans"
+      ],
+      "files": {
+        "SKILL.md": "bbd8d28bb655a52817cc129ce49f9e46fa7c6303f72ed5de95bfe914ef8e0ce8"
+      }
+    },
+    {
+      "name": "explain-interface",
+      "path": "skills/explain-interface",
+      "description": "Helps you figure out how something was built on the web.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\explain-interface",
+        "C:\\Users\\tuval\\.cursor\\skills\\explain-interface"
+      ],
+      "files": {
+        "SKILL.md": "cff58fca5a8f29cefc05bf9f97c1f88f3cf9345ee520a2da4db803c50848c5fb",
+        "find-the-effect.md": "7e26085eb0c8c68c33d322fbecb16586cc799b0e032d53c912eb16a0c253ceaf",
+        "from-an-image.md": "b6073080f9fedf9ac34ff035c36aa235c42e6549bcd619d460484fd262add18b",
+        "no-browser.md": "c46533a02e16a3ed09cb3d74df7898547200a21b27053ee029da8b7c4a4f5c8c",
+        "read-the-system.md": "d10d72357af0733ad1db251bc9fd2ec6e8218cdac4bc095a87cf714a269d1688",
+        "agents/openai.yaml": "3858853344ece1dd145523bd9d61c8905c4b2cb6c7307f023cc8666b8f4dc0bc"
+      }
+    },
+    {
+      "name": "file-organizer",
+      "path": "skills/file-organizer",
+      "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\file-organizer"
+      ],
+      "files": {
+        ".skill-meta.json": "0b6227d48627cd0e15c2d5e6c5ee33de67a7b1f42b066b55f44135d42b7a5f11",
+        "SKILL.md": "a8b91952bab7f73511db68149c4a54672b40699903a8e35ed5044c3e3039ded5"
+      }
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "path": "skills/superpowers/finishing-a-development-branch",
+      "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\finishing-a-development-branch"
+      ],
+      "files": {
+        "SKILL.md": "e6d4a812de900d33c6eacfb40747f99427f25c304a7b7099120f9373b115a47f"
+      }
+    },
+    {
+      "name": "fix-ci",
+      "path": "skills/fix-ci",
+      "description": "Find failing PR checks, inspect logs or external check links, and apply focused fixes",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\fix-ci"
+      ],
+      "files": {
+        "SKILL.md": "925f8c3e11de8bcc0cd015ec907f4d00b12cde6714246554ed3a52e096536522"
+      }
+    },
+    {
+      "name": "fix-merge-conflicts",
+      "path": "skills/fix-merge-conflicts",
+      "description": "Resolve merge conflicts non-interactively, validate build and tests, and finalize conflict resolution",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\fix-merge-conflicts"
+      ],
+      "files": {
+        "SKILL.md": "738b251281b30fd33e3892d0679cf94249e9c9e29e1bed40bcdde4a6aca98a76"
+      }
+    },
+    {
+      "name": "format-first",
+      "path": "skills/format-first",
+      "description": "Pre-feature formatting workflow to prevent mixed logic/formatting commits and keep git blame clean",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\format-first"
+      ],
+      "files": {
+        "SKILL.md": "0c781e568dbe4cff903e9d8a012c10d7c79cf8d8a1dba83d8129817ad4a9e280"
+      }
+    },
+    {
+      "name": "frontend-design",
+      "path": "skills/frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\frontend-design"
+      ],
+      "files": {
+        "LICENSE.txt": "eb3d7b5485466acbd81f2b496f595ab637d2792e268206b27d99e793bdb67549",
+        "SKILL.md": "70044bbc8e4c21d23b8c8b864956aa1515c1c6cb2f9df14148dbb8c4af6187e5"
+      }
+    },
+    {
+      "name": "get-pr-comments",
+      "path": "skills/get-pr-comments",
+      "description": "Fetch and summarize review comments from the active pull request",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\get-pr-comments"
+      ],
+      "files": {
+        "SKILL.md": "8bf292736cab922276feb4d8377edc2fc4102a7beb62bcd1f3f5cf72a79b16cc"
+      }
+    },
+    {
+      "name": "git-diff-hygiene",
+      "path": "skills/git-diff-hygiene",
+      "description": "Detect and prevent accidental mass formatting/lint commits that pollute git blame. Classify diffs (logic vs formatting vs mixed), recommend splitting commits, and manage .git-blame-ignore-revs safely.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\git-diff-hygiene"
+      ],
+      "files": {
+        "SKILL.md": "ce0381c2c8771e7ee901f9168698a6324f93789be0c335d89a07b31ed27cbe38"
+      }
+    },
+    {
+      "name": "google-developer-style",
+      "path": "skills/google-developer-style",
+      "description": "Apply Google developer documentation style by default to all user-facing prose, including chat replies, explanations, plans, reports, guides, READMEs, specifications, UI copy, release notes, emails, and documents. Use whenever Codex writes, rewrites, reviews, or edits content for the user, especially technical content. Preserve the user's requested language, tone, format, and project terminology; direct user instructions and project-specific style take precedence.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\google-developer-style"
+      ],
+      "files": {
+        "SKILL.md": "06a14207fa89ab418835bb58809093699f11f632ada21741f7e5d70413d7d7b8",
+        "agents/openai.yaml": "3f08aa51a124cc82ac28052067eed4bb87726e18608992650a46131bdf02d3ff",
+        "references/principles-and-language.md": "7ba6eb2a9c7e9ed42b3e2bb58aff6e5c08bde8246f8107427507615023f5de7f",
+        "references/source-map.md": "786dd5a2cf14fa93e9011f4982e32c978adf2ce376e62d1466656478985dbbbd",
+        "references/structure-and-formatting.md": "7db860094efdb13c5e30cf7a874e5eaf5f00b91bc99e7b739e1657338afe1254",
+        "references/technical-documentation.md": "3c3c7d6a96ae1a77728b2784b99ddf9a86480e60ed96e8108f1f3a841c18c037"
+      }
+    },
+    {
+      "name": "hatch-pet",
+      "path": "skills/hatch-pet",
+      "description": "Create, repair, validate, visually QA, and package Codex-compatible v2 animated pets from character art, generated images, company or prospect brand cues, or visual references. Use for any new Codex pet, custom mascot, non-pixel pet style, brand-inspired pet, existing-pet repair, or 8x11 spritesheet workflow requiring all 9 standard animation rows, 16 look directions, deterministic assembly, QA artifacts, and spriteVersionNumber 2 packaging.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\hatch-pet"
+      ],
+      "files": {
+        "LICENSE.txt": "44e03f7e263eb3ad256440c1eeab5e49168baff5a78ecef9a5447261cf3a91bc",
+        "SKILL.md": "ac22ec3cbabc95ba03ee3d7cf43a1209fcd139d56c69d35b10c57b9b5f794da0",
+        "agents/openai.yaml": "41f3d1a37a3c83e8080b5200a800a2ca64f02011a7775b09fe5481962b77fa84",
+        "references/animation-rows.md": "62643046b18de139c9147bebe79a0912c9cb1b629c535ed4189a07c41b10a3e3",
+        "references/codex-pet-contract.md": "8c6d1557900c44f267003b9097ad1cfb4e4d29e574ae325c0dd0943b71510d72",
+        "references/qa-rubric.md": "cb39ff8b55583977c33feef09a2a4cfe887fd17e398c8f439d40f59b6964c0af",
+        "scripts/assemble_extended_atlas.py": "c05db88c26ad2c2b502008e7fd74ef119f17ed67249b21c8d31e178416e6af29",
+        "scripts/combine_direction_blind_verdicts.py": "345356373cd31d753dfce10ae768c5e72fff3c053f00938a5d876569900e7e3f",
+        "scripts/compose_atlas.py": "464c198c63e3bc267144056573c8cab3de1f99a4fc5bd47f9e52dffe3f1c88ad",
+        "scripts/compose_cardinal_anchor_strip.py": "da08687a15a6d4c7a4b35dba215c79c9041c83817260bb407306be427ed28931",
+        "scripts/derive_running_left_from_running_right.py": "6bcfdee72cade0f9f585440ce6c5904e88fbbb3133f0171d91fef95d2b743ae7",
+        "scripts/despill_chroma_edges.py": "dffe62a25a793273df1f548e58e53d4d85d574f5f49e47d0c1e3f9856f4e5bb7",
+        "scripts/extract_cardinal_anchors.py": "a0f10a4b6091d1f6487fae10bddd3c9e3e908da8325a8c1126c95116f26c00d3",
+        "scripts/extract_strip_frames.py": "2b9d2ccc997c3b7a084476fdd589fe180b9f1fe663b9147e42159fd1dc8ea818",
+        "scripts/inspect_frames.py": "a7521cf9509627313d662eb0cd56cd6655c27a3c9cedf54ed78faf52305bfe4b",
+        "scripts/make_contact_sheet.py": "76c277a77f9cacb4d11c12d6d81bacaba5603ae90775bfa36f214d5dbf84ba5e",
+        "scripts/make_direction_blind_qa_sheet.py": "7e7ae9a21940c76d50ef51b9b631eeb9210077cd7c9224fc2a9e3d5cee2ab2fe",
+        "scripts/make_direction_qa_sheet.py": "a1c2b56c57bff6f42fcea407a0586f7121fbb099fbe72409d0226e208987d8b3",
+        "scripts/measure_direction_continuity.py": "2c03ac46e1972b42f9eeb7fa7c491e2054ff58fd783c38dca93d022e5ff6ebd3",
+        "scripts/prepare_pet_run.py": "e715302f7c23c1c768a78bbd1803b601fabcd21292702396fd0100b09b282f45",
+        "scripts/render_animation_previews.py": "d085a2b63b50876337600815a7ed9e9e7091b71114ce281e113d6971080b5dd0",
+        "scripts/validate_atlas.py": "523528e77f58cbc4b71500249988092ba750d54657f37fe21c0a0a00a248f50a",
+        "scripts/validate_direction_blind_verdicts.py": "945de893cdc62120fabb81541add210a4a94a4d822715392a7451a533e3456c0",
+        "tests/test_assemble_extended_atlas.py": "aa5d10a1209e97ddb04d13e575cf24345bb2217fb33513ba3fa576ee0165041c",
+        "tests/test_chroma_matte_decontamination.py": "3433009318ceb22201ff8f9cf80ab87a1acfd6f0b572802a121d225ff259c2f5",
+        "tests/test_direction_acceptance_policy.py": "66dcfd261208618b2a6c1a859f7c92e623b6df41111cf88d6122a565cb744ead",
+        "tests/test_direction_blind_consensus.py": "cc70633a859f76c4e9d30f34d4f06c54523727287776597e0f960442213db2b4",
+        "tests/test_look_row_safe_box_prompt.py": "2d321817d32039c10aaf536a688013cdedfe99c5ce5aa4698bab25b50730d63b",
+        "tests/test_single_final_chroma_pass.py": "784db16a6490ce5e91161c24dcf09bbf8fa0bb7580f1cf333132cad274202780"
+      }
+    },
+    {
+      "name": "ian-xiaohei-illustrations",
+      "path": "skills/ian-xiaohei-illustrations",
+      "description": "Generate Ian-style Xiaohei article illustrations. Use for articles, posts, blogs, Notion docs, workflow docs, methods, processes, structures, states, metaphors, viewpoints, shot lists, image generation, or image edits that call for strange minimalist hand-drawn body illustrations. Default output language is English: clean white background, black hand drawing, sparse red/orange/blue handwritten English annotations, and the Xiaohei IP as the active conceptual actor.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\ian-xiaohei-illustrations"
+      ],
+      "files": {
+        "SKILL.md": "42401998a6b865f5b0a6981951d31ebecebbd83b2c247c3338ba843af1bd1917",
+        "agents/openai.yaml": "89d4c29e5e8853766fa2f4ead0aef1180fcc8665231e4828c531aff09b8e751b",
+        "assets/examples/01-two-breakpoints.png": "cce4bd8d555796063305642714c67bab0f37cd3ff9cee0da9d18bd6187cf4397",
+        "assets/examples/02-minimum-loop.png": "586bc88af928ca57fcd43c17f4e4566ee891967fb9a4ff5ed0e2455078618029",
+        "assets/examples/03-sort-by-purpose.png": "e23e7974b03d9540662728cc343d57aec8339c37db8ca0eae922e4f0cfdd8980",
+        "assets/examples/04-one-fish-many-uses.png": "ffb6abeb4e5361ffec6a3cecd40fff122c5f99008e9b2b45e2b83f5c04206ac1",
+        "assets/examples/05-handoff-path.png": "2c4ed6f85c1381b0c9723d21ae3dca4059135c00d3a09b0ed8502a81134ca39e",
+        "assets/examples/06-three-sources.png": "70a13265b34685ad418676611b68a3ef2fd16b10aaaf8b1152b7ad347eded674",
+        "assets/examples/07-three-content-jobs.png": "429b319c459220def8777e0481e52ac2d8b0026dda3066436c7843b2f178d5cb",
+        "assets/examples/08-handoff-copy-toolbox.png": "c92342daed9af66c7bdbd82da3483b835f21ba19c64d8864b4793ef5ae8ee573",
+        "assets/examples/09-common-pits-no-title.png": "b14ca58c823e54fa08b4db310cdac19f133d86ae006708527f4b19417391e7f1",
+        "assets/examples/10-information-well.png": "d36df9a941fe071814ad1e08cdb6131d6e8d840ee655ac04732735dcf8721ccf",
+        "assets/examples/11-idea-press.png": "cded74b04e9225141c394ae9386caff4c3f7f533a51a41c9842999cab83a18ee",
+        "assets/examples/12-content-fermentation.png": "929d4f2fde6938abdab4a5b20a010578389bd59bf0d6fa32daf6611a898b4c32",
+        "assets/examples/13-system-bearing.png": "bcd26b1f34e5c8d220e2180618ffed448455faebfe32ff9e0904ad33a1ab8603",
+        "assets/examples/14-trust-bridge.png": "381194efc7d3fd6a9c7db9d6d3cf361ae3508aa6614727e0b0615d9f83afe522",
+        "references/composition-patterns.md": "237c23e5772353356c8288bde45f1a24ebb56d4a05411c712a74013a979d230e",
+        "references/prompt-template.md": "e202aee36a4bfcfe01fb5f4de95e6731aaf150fd786c3f8f95a2af0ab9c0c6c3",
+        "references/qa-checklist.md": "a98e2b9a4f28f98dc9eae4bd4e5fcc42ba0b7733640a37da3a0df637f8a4f6e1",
+        "references/style-dna.md": "9db3ff10cf89ec6423f105174da870dccf715864dcc130d2db9fe0c97b9847da",
+        "references/xiaohei-ip.md": "04435209d06c2e76092541d10998a7120ede2cfd035c4cf8d607f1b9f08f272b"
+      }
+    },
+    {
+      "name": "interface-design",
+      "path": "skills/interface-design",
+      "description": "This skill is for interface design \u2014 dashboards, admin panels, apps, tools, and interactive products. NOT for marketing design (landing pages, marketing sites, campaigns).",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\interface-design"
+      ],
+      "files": {
+        "SKILL.md": "9dc9803723d342f36c4bf5d8a995d147fc524833def9c0ccd194fc44252efc4f",
+        "references/critique.md": "f4c7a92fd2d0a4044f7fd86dfb6b9e7e84fc25ece207ab507f6599dd0b9b8b0c",
+        "references/example.md": "52baa14db90c506c24f107b5160a4b126e83a36020299334c2e393170a260589",
+        "references/principles.md": "501cdbba9d073beb141aec08e0759e33fb4ed5e34a3bb76cc1c12cd45731a201",
+        "references/validation.md": "3955703cc99b9c4e96d25af86f6ca1870986ecfc9a64e18b0b6dbf79105c81c2"
+      }
+    },
+    {
+      "name": "interface-review",
+      "path": "skills/interface-review",
+      "description": "Reviews your work across multiple categories like UI, typography, layout, color, writing and accessibility and gives you a detailed analysis of the findings.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\interface-review",
+        "C:\\Users\\tuval\\.cursor\\skills\\interface-review"
+      ],
+      "files": {
+        "SKILL.md": "65783ac261ee1a33da11bbbbdb6e71ab6162fc24a2450f91781457b41b9a6d13",
+        "removed-signals.md": "9e2d2d0c555dce408e241a9179c04f743c76459b6bd9add0904d03163ff61af0",
+        "scope-resolution.md": "c3ca6c8c605d8f321995c935fc5bcc5173d7d3a46541de0b580f7394d6e121b7",
+        "agents/openai.yaml": "c8bb068bbd40629f03d7d4c0284924f8df1dfdf7f1a7b0fabb88b265202fa23f"
+      }
+    },
+    {
+      "name": "israel-gov-api",
+      "path": "skills/israel-gov-api",
+      "description": "Discover, query, and analyze Israeli government open data from data.gov.il (CKAN API). Use when user asks about Israeli government data, \"data.gov.il\", government datasets, CBS statistics, or needs data about Israeli transportation, education, health, geography, economy, or environment. Supports dataset search, tabular data queries, and analysis guidance. Enhances existing datagov-mcp and data-gov-il-mcp servers with workflow best practices. Do NOT use for classified government data or data requiring security clearance.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\israel-gov-api"
+      ],
+      "files": {
+        "SKILL.md": "0f2cbc375135ee490530c2e372f30f5cae1d5c8fa1cf256557b311e121abf1f6",
+        "SKILL_HE.md": "ab90a156aeec68ab56003a336fdcf314a16bca13feb8f2ee56b29ba581910853",
+        "references/ckan-api-reference.md": "0cd96475779ee4d41a630fecc62242025a9e7d6c0e229e0872eaddc60bb31780",
+        "scripts/query_datagov.py": "0c63c6c739398f79097c00eaff7e228daf9cf3846c8985775167da2a0057f1be"
+      }
+    },
+    {
+      "name": "javascript-typescript",
+      "path": "skills/javascript-typescript",
+      "description": "JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks. Use for frontend, backend, or full-stack JavaScript/TypeScript projects.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\javascript-typescript"
+      ],
+      "files": {
+        ".skill-meta.json": "0abc01ec5cc19856b8076fcc410cca6f2fab15e88cf4995bc9a326b7c36fa1f4",
+        "SKILL.md": "c400e686769482084158877137fa2e891246c67ab3fa7870d3eb9fcbad3dd720"
+      }
+    },
+    {
+      "name": "loop-on-ci",
+      "path": "skills/loop-on-ci",
+      "description": "Monitor PR checks and fix failures until green. Uses gh pr checks as the source of truth for PR-attached checks.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\loop-on-ci"
+      ],
+      "files": {
+        "SKILL.md": "66b85dbd2bc3700386283539292a55438652bbe227271fd90b73b74525b9b9de"
+      }
+    },
+    {
+      "name": "make-pr-easy-to-review",
+      "path": "skills/make-pr-easy-to-review",
+      "description": "Prepare PRs for review by cleaning noisy history, improving PR descriptions, and adding reviewer guidance without changing code behavior. Use for \"make this easy to review\", \"tidy this PR\", \"clean up commits\", or \"annotate the diff\".",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\make-pr-easy-to-review"
+      ],
+      "files": {
+        "SKILL.md": "e8da0d4a85b7c04823698f539251617389f827fd9137100ef7eaea5dcc992fe7"
+      }
+    },
+    {
+      "name": "matching-flow-lab",
+      "path": "skills/matching-flow-lab",
+      "description": "Use when designing or changing matching logic, selection policies, or participant/admin/host user flows that require fairness, explainability, and operational edge-case checks before implementation.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\matching-flow-lab"
+      ],
+      "files": {
+        "SKILL.md": "358ca097b29ef05daec3983451f68ff55ab011f78f1f874156402c39629f8ba3"
+      }
+    },
+    {
+      "name": "new-branch-and-pr",
+      "path": "skills/new-branch-and-pr",
+      "description": "Create a fresh branch, complete work, and open a pull request",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\new-branch-and-pr"
+      ],
+      "files": {
+        "SKILL.md": "4e8f502fcf48553949387a9a7f58b21349e0ff87c24bf8ff5c0013e9da6819fd"
+      }
+    },
+    {
+      "name": "penpot-uiux-design",
+      "path": "skills/penpot-uiux-design",
+      "description": "Comprehensive guide for creating professional UI/UX designs in Penpot using MCP tools. Use this skill when: (1) Creating new UI/UX designs for web, mobile, or desktop applications, (2) Building design systems with components and tokens, (3) Designing dashboards, forms, navigation, or landing pages, (4) Applying accessibility standards and best practices, (5) Following platform guidelines (iOS, Android, Material Design), (6) Reviewing or improving existing Penpot designs for usability. Triggers: \"design a UI\", \"create interface\", \"build layout\", \"design dashboard\", \"create form\", \"design landing page\", \"make it accessible\", \"design system\", \"component library\".",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\penpot-uiux-design"
+      ],
+      "files": {
+        "SKILL.md": "d15c5f2607fc96c272738343f58d054357bf54042be36f7d68a1f473fc78bdfe",
+        "references/accessibility.md": "04f5a97f6edeb22c5b79e1aad304cb8d597a4a9612b6ce3770116c5e383c6f33",
+        "references/component-patterns.md": "03c7bcc8e68bb27cd314ce5177774ba3f99898e73678677c39976fd9a95f289a",
+        "references/platform-guidelines.md": "e2fc62d9ad2aa89ff60a46e8dc741c360d902371bbbc36b0cb0decf4fc5bc7a1",
+        "references/setup-troubleshooting.md": "5eceba271320c73a4ed22db14b4c02331b5768f98121eab74cd3e6440bb4f521"
+      }
+    },
+    {
+      "name": "perspective-ensemble",
+      "path": "skills/perspective-ensemble",
+      "description": "Surfaces multiple substantive viewpoints to counter generic \u201cmean\u201d answers. Runs two distinct passes: a multi-lens council for real tradeoffs, and an adversarial red cell to stress-test assumptions and attack the plan. Use when the user asks for breadth, creativity, critique, stakeholder views, pre-mortems, red-team checks, challenge, falsification, architecture or product tradeoffs, ambiguous requirements, or explicitly mentions multiple perspectives, \u201cwho would help,\u201d devil\u2019s advocates, or moving away from a consensus/default answer.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\perspective-ensemble",
+        "C:\\Users\\tuval\\.cursor\\skills\\perspective-ensemble"
+      ],
+      "files": {
+        "SKILL.md": "63c7d06e186d53e61ec8fa96c777c74bf341bec997f3e369ca98734d0317e798"
+      }
+    },
+    {
+      "name": "playground",
+      "path": "skills/playground",
+      "description": "Creates interactive HTML playgrounds \u2014 self-contained single-file explorers that let users configure something visually through controls, see a live preview, and copy out a prompt. Use when the user asks to make a playground, explorer, or interactive tool for a topic.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\playground"
+      ],
+      "files": {
+        "SKILL.md": "28a20850338318564a5eee2ec57123710f753d70e0cabe4a567ce4df19278fed",
+        "templates/code-map.md": "be968f883f6c05b8e8eb0f407d6fd7e691105626c45a6d2960033123c9f3a4e3",
+        "templates/concept-map.md": "5e7dcec97f3bb758d3e1d428a530fb4fe9444b425dc459fcd0c7e75c38272663",
+        "templates/data-explorer.md": "a53caa674afb9ce221933e0d5a5ad0508bd67553e672505bb0be7c121d54be9d",
+        "templates/design-playground.md": "50e483e1a8a4ec6f591bb07c284c4f55dda0682252166cfc1399fe9569ed9a84",
+        "templates/diff-review.md": "de0b2059bdd17365992b5cacbfb8e2aadf00dee55b9e45b1413b7fffecf5eff5",
+        "templates/document-critique.md": "adb065891dbdde891c4cd13a6015465e5f5e5e3ffa5ba3d477b2968a82cc65d7"
+      }
+    },
+    {
+      "name": "playwright",
+      "path": "skills/playwright",
+      "description": "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\playwright"
+      ],
+      "files": {
+        "LICENSE.txt": "9a7110fc2d2f964038e5dc49128f908f29f47a574c961cba16085914e879cbda",
+        "NOTICE.txt": "a43ad22fc7381a9901c88798479a0617b8397581c67847401d1971f8738d3e03",
+        "SKILL.md": "c52cc95125b720cdc3c9829b0294c2752d4ae9b85a5282aa153da8bba929af87",
+        "agents/openai.yaml": "dfc22e6c764f025e5e520fe2e1781e119f6262f406feddafe84ff8aaf9a4ff21",
+        "assets/playwright-small.svg": "5ecfaf38d817a6abbc453114191cc9afb3f0799a557dae1c2c1a1445c8a7b386",
+        "assets/playwright.png": "521669f088c838196c6c852ccc9abdd7234d8f37fc9a8a7a9af7db2d50193381",
+        "references/cli.md": "da94ffe5a7c368e233eac1cdfa2d5207cb85a2a0571607af0e43402c6e12cd45",
+        "references/workflows.md": "621d2b8542a91d1d5cd65a5a7774ea250683e4c217e00e9c90d301eb6367d86e",
+        "scripts/playwright_cli.sh": "3fce0ea2b9875179f701d9f4c03425545c441b2769cd6c6df964cc7d1d1dbfa8"
+      }
+    },
+    {
+      "name": "pr-review-canvas",
+      "path": "skills/pr-review-canvas",
+      "description": "Generate an interactive PR review walkthrough as an HTML page. Fetches PR data via gh API, categorizes files into core vs mechanical changes, adds reviewer annotations, and renders diffs with moved-code detection. Use when the user pastes a GitHub PR URL and asks for a review, walkthrough, or summary, or says \"review this PR\".",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\pr-review-canvas"
+      ],
+      "files": {
+        "SKILL.md": "88a07a2459197acba3c5e06b7d695e35ad618a998442b72d05cdba4efc117ac6",
+        "renderer.js": "d78d36a46b0aeae755e2edd9b712970fd181183bb1c320d10caa8d9f776695c6",
+        "styles.css": "3c3ff002dd3bfe7f4fdbda521fce05e336c4a7922f4bd4d848f6566a961ceb19",
+        "template.html": "cb56bc764384856da4733d1c999521c3e1b20d65ed80605630b74da448abe756"
+      }
+    },
+    {
+      "name": "product-alignment-gate",
+      "path": "skills/product-alignment-gate",
+      "description": "Use when proposing or changing app features, user flows, or copy and alignment must be checked against questionnaire intent, product docs, route guards, and role constraints before implementation.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\product-alignment-gate"
+      ],
+      "files": {
+        "SKILL.md": "2c0e5f10649ad784b00fefa96ba416f830cae6e5b5e5c63682f55f861d9b2565"
+      }
+    },
+    {
+      "name": "product-requirements",
+      "path": "skills/product-requirements",
+      "description": "Interactive Product Owner skill for requirements gathering, analysis, and PRD generation. Triggers when users request product requirements, feature specification, PRD creation, or need help understanding and documenting project requirements. Uses quality scoring and iterative dialogue to ensure comprehensive requirements before generating professional PRD documents.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\product-requirements"
+      ],
+      "files": {
+        "SKILL.md": "59472f355b01205908517c8169cdde88e620ffb546add3154434a1b1f7e3a5f2"
+      }
+    },
+    {
+      "name": "python-development",
+      "path": "skills/python-development",
+      "description": "Modern Python development with Python 3.12+, Django, FastAPI, async patterns, and production best practices. Use for Python projects, APIs, data processing, or automation scripts.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\python-development"
+      ],
+      "files": {
+        ".skill-meta.json": "6fd4d7c226ca178a861f808e2ada61151ee1929d43e3196c65e11f6d6c3767a3",
+        "SKILL.md": "273b984fe6946bb52a3da9a847b5dec03c40dc9fa3fc43849b2a201af0883c1e"
+      }
+    },
+    {
+      "name": "receiving-code-review",
+      "path": "skills/superpowers/receiving-code-review",
+      "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\receiving-code-review"
+      ],
+      "files": {
+        "SKILL.md": "647036bbdab7bf2317e14e079595e984c9030f64295e2b4c0fb57dbeb48f25dd"
+      }
+    },
+    {
+      "name": "remotion-best-practices",
+      "path": "skills/remotion-best-practices",
+      "description": "Best practices for Remotion - Video creation in React",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\remotion-best-practices"
+      ],
+      "files": {
+        "SKILL.md": "8f6fe398343f7b0bbdbe6c33d0edf725b71d0b4a11e7e5a43326336005f90854",
+        "rules/3d.md": "4860ef5877ecd65ca9d928dcd874513eddd319f72750122670d07ea631720604",
+        "rules/animations.md": "22dcca277772813f5f1748cb9b6a34969753bfb8328baaa38d86802bebf28535",
+        "rules/assets.md": "f550e98872e2e73bc32673d19b610df4894e00557369b3d9e1e7d3d0374c0fdd",
+        "rules/audio.md": "ed43ce3192eaf2bd4835ca69825e7f2aa1d00731274522aa3b9c45fa68207b50",
+        "rules/calculate-metadata.md": "bbc532f14a73d7e2e6e33d4178d65775e96870a761d422875fec3aa40ca3f098",
+        "rules/can-decode.md": "1962e0af0499bc580d30b46a0f8dc5550895298b7a98a070e8d0698a6fdb8059",
+        "rules/charts.md": "39c8638f05a5453a7ae07d586869a8a6432bf2de331b518e012d4c6de5add275",
+        "rules/compositions.md": "6a07e7176cdaf9047a9ac03d201fe61066750de7df18ced38a637b30f0b4c2f3",
+        "rules/display-captions.md": "86904fe76dc3bcd706fb64ca1a981aaadd00db12636a37749ffd165e22e96788",
+        "rules/extract-frames.md": "37d49d55187a3fd700033e50eeb8219de3fc90a0d683908e632cfe7235b250b5",
+        "rules/fonts.md": "2668899018239ef31e278f947ecc37dd936a3da5eb52f8558c68cf1372881e8a",
+        "rules/get-audio-duration.md": "2103cf5ce440f58b871e2762242b103f3dc6e21a6847e54fb1641379e7e565b1",
+        "rules/get-video-dimensions.md": "7321faaebbf5893f236ef9b36e2362ea056ce91ebc3e5f19ddba6ee5c2b75091",
+        "rules/get-video-duration.md": "01a6ceb30ddc5391621e3f8d787bbeeb6965d7809fe83d046687460502d4a472",
+        "rules/gifs.md": "418aa4e422d00832eee67b896d19cc0c5f24d7c9a64d57d10de568ca934188d2",
+        "rules/images.md": "53a71c16780ce093dc317a30357560a3481a58958f4fc8d4a3f2f2e631a58d3c",
+        "rules/import-srt-captions.md": "5fce8f9b445eec7108b4207add5b1d20036adaded1312121216e270da1006b57",
+        "rules/lottie.md": "d43c61c65dd77c30d560cf25bd488bb340b79068823037f7cd2a9379fe6142c7",
+        "rules/maps.md": "7c84beaaf5b8a19f20c985fda8f6228be08bd1a0a01b9838ae789e17e53177b4",
+        "rules/measuring-dom-nodes.md": "9836d5dc7fbedf424ddb48526e427a55e61fb80ccff64d7d94c2249c1eb54aea",
+        "rules/measuring-text.md": "c4abbf40340560a73e1e49c24a762c61c07448b46703dd1e6f1eb8b06b1dcdfc",
+        "rules/parameters.md": "8b16908f23ebd8cf447d36c320f77ad4436785aa1f1c5e5823818e33e94913d4",
+        "rules/sequencing.md": "84616d28ae730742a57e26d76a34c10283df00b685c276204403c13cfa4b1143",
+        "rules/tailwind.md": "d2e07c5173bee5ef3f5d3ff066699d182df482bad64ce3f8298f4d3890efbeb8",
+        "rules/text-animations.md": "06c71f3928e0cde4d047d4ee10f99a8d0cb9b10160924a89c866ebbd9436667e",
+        "rules/timing.md": "30efe0b3c17a334bf01c48fdbc334f122effeb65602bea3cf4c07545ce0ea5f8",
+        "rules/transcribe-captions.md": "9487f6d0c4053846f17094b740e2051098752d15ef39b1f95f2707d028d9b7bc",
+        "rules/transitions.md": "bd5fe090e631a1a44c24ab70ef88f55cfffa622157ad83fe6e3fe7fe5ee89c20",
+        "rules/trimming.md": "fbfa4d55404e12e962942850c1e5bbdcff0cb824a8ecf8394bd5b5398262a9b4",
+        "rules/videos.md": "b7d50319e1bac1046cc4dcb66a77b594bc2f92d4266556e6b16cca3ae6a222be",
+        "rules/assets/charts-bar-chart.tsx": "17cd31ff098e6ac784c06480d6d3a126f6f72365654f76fa6e9b2526daab88f0",
+        "rules/assets/text-animations-typewriter.tsx": "fc710c71560df2837463dc0816cd0bd6459add1178ec7f031950a57eed9b94f1",
+        "rules/assets/text-animations-word-highlight.tsx": "906b17e423b959961cbc9a27f2dc2a86fcecd525410c40e5b8819fcdfdba0ae5"
+      }
+    },
+    {
+      "name": "requesting-code-review",
+      "path": "skills/superpowers/requesting-code-review",
+      "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\requesting-code-review"
+      ],
+      "files": {
+        "SKILL.md": "1017ccdd5bc61fab67c654cf118cbdb520464b313073a0a6b9a6b9aa647a3ad6",
+        "code-reviewer.md": "b2f2ec7596925fe52dac158fdfbca19b3a7d779d619c481e6706a6c0001662d3"
+      }
+    },
+    {
+      "name": "review-and-ship",
+      "path": "skills/review-and-ship",
+      "description": "Review the current branch for bugs, intent fit, and test coverage; run or write tests; commit focused work; open or update a PR.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\review-and-ship"
+      ],
+      "files": {
+        "SKILL.md": "5c8e88c91e726e024c824d2b02be6bfc7ad81ac5e67c104ef2b66840715373c1"
+      }
+    },
+    {
+      "name": "run-smoke-tests",
+      "path": "skills/run-smoke-tests",
+      "description": "Run Playwright smoke tests, debug failures, and verify fixes",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\run-smoke-tests"
+      ],
+      "files": {
+        "SKILL.md": "848c9f34af50f8a0edecbdc239707b694f5f9ac497c61b5907f2bf0caa1372fb"
+      }
+    },
+    {
+      "name": "session-handoff",
+      "path": "skills/session-handoff",
+      "description": "Creates comprehensive handoff documents for seamless AI agent session transfers. Triggered when: (1) user requests handoff/memory/context save, (2) context window approaches capacity, (3) major task milestone completed, (4) work session ending, (5) user says 'save state', 'create handoff', 'I need to pause', 'context is getting full', (6) resuming work with 'load handoff', 'resume from', 'continue where we left off'. Proactively suggests handoffs after substantial work (multiple file edits, complex debugging, architecture decisions). Solves long-running agent context exhaustion by enabling fresh agents to continue with zero ambiguity.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\session-handoff"
+      ],
+      "files": {
+        "SKILL.md": "0b2a4ddfa14b41e63a3985d77342d4c9ce5d78b25998b9113388d4fdd0248361",
+        ".claude/handoffs/2026-03-10-215859-utciviewer-multi-project-ness-tziona.md": "0d9c70b254c4d0ce0e00d922f4558dd343ac2a48367361a8c98c2183b6b58890",
+        "evals/model-expectations.md": "dd4f4e21790377b1cf1082598aadbe9fc94f28bb91b1d557fd04b2ba391f5c93",
+        "evals/results-opus-baseline.md": "56dfda9649814c1ef88d3d63eb0cb2fece66c19755bd057f44b11d09ace1a1db",
+        "evals/setup_test_env.py": "ce139b9bf3ab857610173c1fd86536c66161311937c391a8800bafd2072163af",
+        "evals/test-scenarios.md": "5b5ba97ef7433fd2325f27beedddc9705950100894cc51188ee6f1ec57089588",
+        "references/handoff-template.md": "af673ab58415f27915574055b407d0774a954389d360355d687b7bb5bb799816",
+        "references/resume-checklist.md": "d195c3d9ff04a1161decb9805fa60a3d4a901d8767b8420476dd96361b412b68",
+        "scripts/check_staleness.py": "d6b4e825c771381360a86c81663b28ac62edda5f44055783705c0e44ec930d74",
+        "scripts/create_handoff.py": "4244ee9405f2e293fd7a3b11a40c1a064339322ccb2374490988265c437648c8",
+        "scripts/list_handoffs.py": "281a6c5934e6332ff43698abd08c9effb44d3408dcd273b9ff59ba261fb3f384",
+        "scripts/validate_handoff.py": "450fd52e2239da6fef5bb839b6c55853efdf64fe5f2b5bcd4a7a14581f34d32b"
+      }
+    },
+    {
+      "name": "skill-creator",
+      "path": "skills/skill-creator",
+      "description": "Guide for creating effective skills. Use when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\skill-creator"
+      ],
+      "files": {
+        ".skill-meta.json": "22cdd89ff922c333e855b6a2509d9e4c21864a6b88819598b7295bed7a4d0143",
+        "SKILL.md": "cb92b798fbb128429b289f4e7a3adc08ddd8615713f1c2194bad56da85693c54"
+      }
+    },
+    {
+      "name": "sleek-design-mobile-apps",
+      "path": "skills/sleek-design-mobile-apps",
+      "description": "Use when the user wants to design a mobile app, create screens, build UI, or interact with their Sleek projects. Covers high-level requests (\"design an app that does X\") and specific ones (\"list my projects\", \"create a new project\", \"screenshot that screen\").",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\sleek-design-mobile-apps"
+      ],
+      "files": {
+        "SKILL.md": "709dedb1180fd6617d1e77c2dd33c2ede6d2ab4dbf3992af20f8eac86f5bae22"
+      }
+    },
+    {
+      "name": "subagent-driven-development",
+      "path": "skills/superpowers/subagent-driven-development",
+      "description": "Use when executing implementation plans with independent tasks in the current session",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\subagent-driven-development"
+      ],
+      "files": {
+        "SKILL.md": "41ab239a6ad1c487cd839fdac972a8c9cf0f5e90efa59a63f963767864f0df4c",
+        "implementer-prompt.md": "49018b28dc11bc9f3d13a28959bb10ae1a96eabc5d8f19f4079d901f9ff2bf64",
+        "task-reviewer-prompt.md": "2eb9d54373420de25bc0bd00635d3a3123a6c0eb30c881168e6f3348e2387331",
+        "scripts/review-package": "40b64f89b7c82884fb65af4e40a2faa49a7b033c65c41a5a1b52b5426771b37f",
+        "scripts/sdd-workspace": "6b26b27688e5af2c6025b3d47c393c63555dd92104799a94e8115c06dba272f3",
+        "scripts/task-brief": "471fef87f426551ea0380e6b5c728a7d85dd2c8d3b5d6d936c97210f17e68418"
+      }
+    },
+    {
+      "name": "svelte-code-writer",
+      "path": "skills/svelte-code-writer",
+      "description": "CLI tools for Svelte 5 documentation lookup and code analysis. MUST be used whenever creating, editing or analyzing any Svelte component (.svelte) or Svelte module (.svelte.ts/.svelte.js). If possible, this skill should be executed within the svelte-file-editor agent for optimal results.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\svelte-code-writer"
+      ],
+      "files": {
+        "SKILL.md": "cc8fa3ac4a382aeb1cda3e6e9244abe785ab0e3364105bf45ea8bbb94f4301bf"
+      }
+    },
+    {
+      "name": "systematic-debugging",
+      "path": "skills/superpowers/systematic-debugging",
+      "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\systematic-debugging"
+      ],
+      "files": {
+        "CREATION-LOG.md": "c24733a5b1821bd6bed1fc950261f0b9f4e90097e0bbb96459d8179713730789",
+        "SKILL.md": "3b20719eca4f0461cb51a195221320d775dcf03b6859271066a03a5132a6ce7a",
+        "condition-based-waiting-example.ts": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
+        "condition-based-waiting.md": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26",
+        "defense-in-depth.md": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7",
+        "find-polluter.sh": "6462747eae9b175ac145b78bcfaeab755654a75e32637f08eb633f065a9e1d7c",
+        "root-cause-tracing.md": "6b0622269e098ca1399e123e553fd385f0b6412d88ef0e9c4f5a8ea9cf1cec7b",
+        "test-academic.md": "fe2ba480d78ac0d686dc025f41c2a32a43d642bf533f91b0c6053a04d35d6486",
+        "test-pressure-1.md": "0b6a915db0054577819834c79be9eb614e97bddba10d73768e1fbe91cfed048a",
+        "test-pressure-2.md": "b2030aeffba07050e8ad573ddf87486457c4a016a786bb326235bebd856f2016",
+        "test-pressure-3.md": "96b50a52e2c7989c9cf20fb752c47c1e9a3a70dc362f8f7989f8f5b64dac7708"
+      }
+    },
+    {
+      "name": "test-driven-development",
+      "path": "skills/superpowers/test-driven-development",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\test-driven-development"
+      ],
+      "files": {
+        "SKILL.md": "b5b4717b8b761cce15a6cfe9022e33fd959e0894c0c39d72c9cb49c23486c10e",
+        "testing-anti-patterns.md": "bde453bc258f06543987477c837939afaa774ea2acbd9f308d702fc452bc4283"
+      }
+    },
+    {
+      "name": "thermo-nuclear-code-quality-review",
+      "path": "skills/thermo-nuclear-code-quality-review",
+      "description": "Run an extremely strict maintainability review for abstraction quality, giant files, and spaghetti-condition growth. Use for a thermo-nuclear code quality review, thermonuclear review, deep code quality audit, or especially harsh maintainability review.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\thermo-nuclear-code-quality-review"
+      ],
+      "files": {
+        "SKILL.md": "7faca08b51b643b2ddd0836f92af15574444024685dcc1e677dbbb39ae8c9e8f"
+      }
+    },
+    {
+      "name": "threejs-fundamentals",
+      "path": "skills/threejs-fundamentals",
+      "description": "Three.js scene setup, cameras, renderer, Object3D hierarchy, coordinate systems. Use when setting up 3D scenes, creating cameras, configuring renderers, managing object hierarchies, or working with transforms.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\threejs-fundamentals"
+      ],
+      "files": {
+        "SKILL.md": "c89027e35cf56629dcf1e9e51aa16ead5107f6551efecd9bdbbf90dfb749653a"
+      }
+    },
+    {
+      "name": "tufte-viz",
+      "path": "skills/tuft-viz",
+      "description": "Ideate and critique data visualizations using Edward Tufte's principles from \"The Visual Display of Quantitative Information.\" Use this skill when: (1) Designing new data visualizations or charts (2) Critiquing or improving existing visualizations (3) Reviewing dashboards or reports for graphical integrity (4) Deciding between visualization approaches (5) Reducing chartjunk or improving data-ink ratio (6) Planning small multiples or high-density displays Applies principles: data-ink ratio, chartjunk elimination, graphical integrity, lie factor, small multiples, and data density.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\tuft-viz",
+        "C:\\Users\\tuval\\.cursor\\skills\\tuft-viz"
+      ],
+      "files": {
+        "SKILL.md": "ca110889666b965d8faf989807e982f79bb36ecfe02e7f61252be1d767bc6bcf",
+        "demo__giss-temperature.html": "47790088f338c5893607a51ff1117bc5d3f78328b0652fa37d933cae8e6b0404",
+        "references__analytical-design.md": "539f9fcce2f8a5c2fa8ada1ee058665461c0d5f74f03ad65df6ef7f528c224db",
+        "references__tufte-principles.md": "e45dbf7a01e6c4422717fdb161c01c4bad6aa56d698e60c53e9d29c7af0ba7b8"
+      }
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "path": "skills/ui-ux-pro-max",
+      "description": "Comprehensive design guide for web and mobile applications. Contains 67 styles, 96 color palettes, 57 font pairings, 99 UX guidelines, and 25 chart types across 13 technology stacks. Searchable database with priority-based recommendations.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\ui-ux-pro-max",
+        "C:\\Users\\tuval\\.cursor\\skills\\ui-ux-pro-max"
+      ],
+      "files": {
+        "SKILL.md": "6cec1c00e1d890a41a2a600814bc765b6e264d9800742a1e3dff0441da9016c8",
+        "data/charts.csv": "b754c0efffcf54cb889114a9314be1d5af6ceebe65c4c436d713b52018e752c9",
+        "data/colors.csv": "4cc0df2785f340b8bd0ace50bd4068dc13a7c4c6fa4d9d2723271244ce904614",
+        "data/icons.csv": "351fe61ba45b8146c66de6ea7d67297654639d79a94f537b4d0bad570058c28f",
+        "data/landing.csv": "010e1e46db271b94e0af6f18973bea86ddba62feeccd62aeeaa6ed40e2ae2db1",
+        "data/products.csv": "5359e3037dcb84e99c792ea13dd44f5b78ab6a53557afb309cf19140512aaf5b",
+        "data/react-performance.csv": "904c8afcda229629545912dde0e8ac37503757131f0169f80b016f1f58c4fd3f",
+        "data/styles.csv": "ad3c3236134d833bda01a2faf31ddeaaa1dbd5005fa430dec571fa91b26e5fea",
+        "data/typography.csv": "64695e05ac335ba534aff396c4ba9241c642f80ea53b424251d2669b71c4772b",
+        "data/ui-reasoning.csv": "58fc52fff69f62709f8c7dd460de6f6693699ea820f24287f3301a427c2b554e",
+        "data/ux-guidelines.csv": "1870ee048f2a2bdd60709f8f7adf7f3b6dcad560bc005c8b2915a8ac8639820d",
+        "data/web-interface.csv": "10bfc24e09a6a15db8309e6ef9b6881e1d4af97dffb7c99418aefb8e30df7d54",
+        "data/stacks/astro.csv": "ad18dae3ab6d148d37d144592df80dc1825b6c9e86d9d2d68fdda77434206a37",
+        "data/stacks/flutter.csv": "e470e6bc2bcd8562667cc764d1e1afb0be0a30ca4dc9ec12fa18b19d46f156bd",
+        "data/stacks/html-tailwind.csv": "1f004891dd189f6bc2a7717401e3100244326e7e2f3963a79bf7b2349d85e091",
+        "data/stacks/jetpack-compose.csv": "6c8fd4b0391c342c12b0af15610cd5becbeccaef0bbe8dcfc01d928c3195d93e",
+        "data/stacks/nextjs.csv": "06a8e8c13bd44696c6ebb4cb6c4d8dea440e3de8cce77616512529ed29258f0c",
+        "data/stacks/nuxt-ui.csv": "05d6e74501b2b6a636faed32450622759f49a5bcafad971f5f4e7eba0eb7be71",
+        "data/stacks/nuxtjs.csv": "f7a3f2d9542856d00199f85c6c023b7c284cc698e2e6e12d61afce2edacb24d6",
+        "data/stacks/react-native.csv": "a08ca77fcf6b6d9531982dce465366296013bfcf12d2938ac72ad57cf0c4f085",
+        "data/stacks/react.csv": "b6e3eb0e4c9c01bd00ffb951d5ca224a19d488b4544c75436f48cf92ff12bf45",
+        "data/stacks/shadcn.csv": "395c2e415ef6f48a474acccdc8eb2c7258a6ed751a5037ba171a2d8823e02ded",
+        "data/stacks/svelte.csv": "bc8d158994a8bdf412830a9dd5e5a5534edd2f367a6e50e0ebd4d76f592dfa3f",
+        "data/stacks/swiftui.csv": "e87cb9eee208bb753bdab96d4a261c7f830c4317ee90ec098316b248fc32be85",
+        "data/stacks/vue.csv": "9b793c3f4eec85f77a758c09322f2b62f3b3ca549bb713ccf0849ef885934395",
+        "scripts/core.py": "5459d1f04eea03dfb913742d0c03edc5065ac67f6227e4807fa87699662588cb",
+        "scripts/design_system.py": "4da1d341f3c7749df51b51db4a543a48a427c3c746eb0e9882a1ab86acf3bb54",
+        "scripts/search.py": "a449e57060ef5134e98e62fd11f6e240153afd68c27dab89cbb72a3ce55f1498"
+      }
+    },
+    {
+      "name": "user-flows-and-guided-paths",
+      "path": "skills/user-flows-and-guided-paths",
+      "description": "Related features and tasks \u2014 such as purchase flows, onboarding, or multi-step configuration \u2014 should be designed as natural, guided paths that feel coherent and fit the product hierarchy. Use wizards for complex sequential tasks. Use when designing flows, onboarding, checkout, setup sequences, or any multi-step user journey.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\user-flows-and-guided-paths"
+      ],
+      "files": {
+        "SKILL.md": "31daef17010805e56f0bfcaa1a656269ed3d4e977bfbd16216463e52c65560cc"
+      }
+    },
+    {
+      "name": "using-git-worktrees",
+      "path": "skills/superpowers/using-git-worktrees",
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\using-git-worktrees"
+      ],
+      "files": {
+        "SKILL.md": "e2c3ec142e52868a51af246c620cd76ab648dcf27d6900d47e6ffd07159a9794"
+      }
+    },
+    {
+      "name": "using-superpowers",
+      "path": "skills/superpowers/using-superpowers",
+      "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before ANY response including clarifying questions",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\using-superpowers"
+      ],
+      "files": {
+        "SKILL.md": "55379fe7c1c473a02c61961c822996bff30e1320d6921d9062509bc508482c05",
+        "references/antigravity-tools.md": "d0bcfa94dd0fa399fb9606a0f7c9562b43040cad02be167a2b999c3913a1d5e9",
+        "references/codex-tools.md": "9310bb2315eed2c1cebea02cd1c9e8fe121cb788fc6b41e8b8f8b5ff46f85f37",
+        "references/pi-tools.md": "703dbc83d23ecab9c6f388460c38abc482e9dee2fe6772a8c7a255152ad3a4d5"
+      }
+    },
+    {
+      "name": "variant",
+      "path": "skills/variant",
+      "description": "Builds multiple variants of a component you're working on and helps you iterate and pick one.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\variant",
+        "C:\\Users\\tuval\\.cursor\\skills\\variant"
+      ],
+      "files": {
+        "SKILL.md": "0cb89389c0423ff46e8a5a07bda894b43619366210fa3bc98beb39908cbc1635",
+        "picker.md": "62f357b4e3123fcb95862c7bd7d1294e023dc7d2094482a43c25c412b58cf537",
+        "agents/openai.yaml": "24e006ea99aed264541692cfd778aa758ff111fa242ec81126fd51fdf1b29ff0"
+      }
+    },
+    {
+      "name": "verification-before-completion",
+      "path": "skills/superpowers/verification-before-completion",
+      "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\verification-before-completion"
+      ],
+      "files": {
+        "SKILL.md": "ea52d15aabaf72bc6b558efe2c126f161b53961090ddcd712000273bfe8c7b6c"
+      }
+    },
+    {
+      "name": "verify-this",
+      "path": "skills/verify-this",
+      "description": "Verify a claim with fresh local evidence: restate it falsifiably, capture baseline and treatment, compare artifacts, and return VERIFIED, NOT VERIFIED, or INCONCLUSIVE.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\verify-this"
+      ],
+      "files": {
+        "SKILL.md": "ef27f2704b27017a3944d24675d114e3045f5fe346e2bc40bff72f67376d5ab0"
+      }
+    },
+    {
+      "name": "webgpu",
+      "path": "skills/webgpu",
+      "description": "WebGPU/WGSL guidance for initialization, render/compute pipelines, shader authoring, debugging, and performance; use when building or troubleshooting WebGPU apps, GPU compute workloads, or WGSL shaders.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\webgpu"
+      ],
+      "files": {
+        "README.md": "9853de56f9940fc3c7ae81bb1413c8436a74c74e9a6cee0b45d10ee189eb1e4b",
+        "REFERENCE.md": "02e4a1bfb53195c3ef27dfa22f447060dc92f56a96f16cd2a53f2dd9803dbe30",
+        "SKILL.md": "5eb4a4d8d0a4cd835ccde784573e195c39516f74bd4c4bf20a3baa0f11383c43",
+        "examples/basic-setup.ts": "f9bd42c73da802ec89de51631b5b9d2ed466a26ee56b16c8c29a928eb1081971",
+        "examples/compute-particles.ts": "289fd8eabab55de835659cd22115477feadc47c2de71f67ecb8a74296d6a6561",
+        "examples/ping-pong-trails.ts": "41d9deb0acee54e054db924785cfe2220001a4d05283d3aca61be6d78c1f2b9f",
+        "references/compute-shaders.md": "fa187c220a90631c726ce9fdb32891b00911acd8b7f03387f4f4a9d5480915c7",
+        "references/core-concepts.md": "b03e089647572a54184c42ffcf73ebb5cf011eed78dd951ee3439e51acec321e",
+        "references/debugging-performance.md": "b21a442c405586654acd47c15bbba9caa3e3e1e1aee5076135efdb001f2a7775",
+        "references/rendering.md": "cc4131c8517ac5dd1e77a1629f490b4b97ce53d5c98e9fe27c5d9e26c94517df",
+        "references/runtime-fallback.md": "039ce82aafa0b973e9462916c1341518552a800640ac1c936c756939171c9797",
+        "references/simulation-patterns.md": "cd6e4c348ead4d661c921469111ef6d3620380b18154dc6120dfecfc124e9181",
+        "references/use-cases.md": "c243791d7bb398d0f2d4ae504e61856c733ad5938392ce0bc28b3a102e2b5384",
+        "templates/compute.wgsl": "bc58744ac3ae79302afe3b42aa37e3d7c4a581d3a798ea7ca1a0aeeb6a022397",
+        "templates/webgpu-project.md": "6b471304c0f309135150fc2bdda673dcbb4f976d7effc833ea0d0cd0be7eec8b"
+      }
+    },
+    {
+      "name": "weekly-review",
+      "path": "skills/weekly-review",
+      "description": "Produce a weekly synthesis of authored commits with highlights by bugfix, tech debt, and net-new work",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\weekly-review"
+      ],
+      "files": {
+        "SKILL.md": "b56a2c283916b4551aeb322398ab99a19b4b5d7678ffd7f9c9f3df9fa05f4712"
+      }
+    },
+    {
+      "name": "what-did-i-get-done",
+      "path": "skills/what-did-i-get-done",
+      "description": "Summarize authored commits over a user-specified time period into a concise update",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\what-did-i-get-done"
+      ],
+      "files": {
+        "SKILL.md": "479813c9abaacb5b6b0531f1de7dc5eb2f3bd9673707a992d1073335836e82f8"
+      }
+    },
+    {
+      "name": "workflow-from-chats",
+      "path": "skills/workflow-from-chats",
+      "description": "Extract durable working preferences from recent Cursor chats and convert them into skills, rules, or workflow docs. Use when asked to learn preferences, mine feedback, personalize workflows, or generate team/person-specific agent guidance.",
+      "original_locations": [
+        "C:\\Users\\tuval\\.codex\\skills\\workflow-from-chats"
+      ],
+      "files": {
+        "SKILL.md": "b568176390165921c5e351cc73b553e3e997f92c9f85dfb1c5a220c943fbaa16"
+      }
+    },
+    {
+      "name": "writing-plans",
+      "path": "skills/superpowers/writing-plans",
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\writing-plans"
+      ],
+      "files": {
+        "SKILL.md": "272e1af349f5062c28dc282b3e21b220d58d683a7314a10c455b7432ec91d845",
+        "plan-document-reviewer-prompt.md": "aa728b96aad603c8be28875a4305637f6c984aa81ffcadcb13e743202fa2a0c7"
+      }
+    },
+    {
+      "name": "writing-skills",
+      "path": "skills/superpowers/writing-skills",
+      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+      "original_locations": [
+        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\writing-skills"
+      ],
+      "files": {
+        "SKILL.md": "6b8d08fe863318be8480ae8428e169640309fa9208df84bb0510012764454146",
+        "anthropic-best-practices.md": "217629b356c09c9bd11017c9788e8fc654ca1b32c92d4a51cd490e16dd65e59a",
+        "graphviz-conventions.dot": "b18a02773875f6c7b92f2a260e88550c92a62549b0009df9d680f7e9541d0ecc",
+        "persuasion-principles.md": "a51bc9bf75189ea73a27b3fb504a2fdfdb966fb1f7f1cdf03203230a216ccc03",
+        "render-graphs.js": "ccda971a87bb185f8febf81c56b556a20d026fa980c17b35fa3e8824fbb37852",
+        "testing-skills-with-subagents.md": "c711346852c911b24a84aa161e0cff06a4cd7f4e2fa9e9c0a266cead5afcbade",
+        "examples/CLAUDE_MD_TESTING.md": "0b379a3415e185d3c434b3ad283d8aa132f3022c2a4f210f168865b5986bcef0"
+      }
+    }
+  ],
+  "broken_shortcuts": [
+    "C:\\Users\\tuval\\.codex\\skills\\find-skills"
+  ],
+  "excluded": [
+    "Codex system skills",
+    "Plugin-managed skills",
+    "ZIP archives",
+    "Cache/build files"
+  ]
+}
