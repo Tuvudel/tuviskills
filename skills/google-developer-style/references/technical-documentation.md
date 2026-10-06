@@ -16,6 +16,14 @@ Read this reference for procedures, UI instructions, code samples, commands, pla
 - Reference an existing procedure instead of repeating it.
 - Put prerequisites and irreversible-action warnings before the relevant steps.
 
+## READMEs
+
+- Explain what the project does and who it is for before describing implementation details.
+- Provide the prerequisites and a usable starting example for the intended audience. Explain placeholders and the expected result.
+- Make required setup, optional configuration, and relevant limitations explicit.
+- Organize around the reader's likely tasks. Adapt to the project; do not add empty sections or impose a universal README template.
+- Preserve established terminology and supported behavior. Do not turn an editorial rewrite into new product claims.
+
 ## UI instructions
 
 - Describe the goal rather than the widget or gesture when the exact UI detail isn't necessary.

@@ -47,9 +47,11 @@ Do not push if the tree changed unintentionally.
 
 When code behavior should stay untouched, prefer PR description and review notes:
 
-- Add a TL;DR that matches the actual diff.
+- Explain why the change was needed, what changed, and the resulting behavior. Use a before-and-after example when useful, and follow `google-developer-style` when available.
 - Separate core files from generated or mechanical files.
-- Call out risky behavior changes, migration order, rollout plan, and test coverage.
+- Call out meaningful behavior changes, migration order, and rollout requirements when they affect review.
+- For owner-maintained repositories, omit routine testing, validation, and verification sections. Include testing details only when requested or explicitly required by contribution rules; disclose known failures or unverified behavior that materially limit the change as a relevant limitation.
+- Describe the final diff for a reader who has not seen the chat. Omit session history and abandoned approaches unless they explain a meaningful tradeoff.
 - Link issue trackers, dashboards, or design docs when they explain intent.
 
 ## Guardrails

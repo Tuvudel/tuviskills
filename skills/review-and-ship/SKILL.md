@@ -16,7 +16,7 @@ Reviewing changes before shipping. Close key issues, verify behavior, and open o
 3. Review for correctness, regressions, security, and intent fit. Use parallel subagents for larger diffs.
 4. Fix critical issues before finalizing and re-run affected tests.
 5. Commit selective files with a concise message.
-6. Push branch and open or update a PR.
+6. Push branch and open or update a PR. Explain why the change was needed, what changed, and the resulting behavior for a reader who has not seen the chat; follow `google-developer-style` when available.
 
 ## Suggested Checks
 
@@ -33,6 +33,7 @@ gh pr checks --json name,bucket,state,workflow,link
 - Keep commits focused and avoid unrelated file changes.
 - If pre-commit checks fail, fix the issues rather than bypassing hooks.
 - Use `gh pr checks` instead of GitHub Actions-only commands when judging PR readiness.
+- For owner-maintained repositories, omit routine testing, validation, and verification sections from PR descriptions. Include testing details only when requested or explicitly required by contribution rules; state known failures or unverified behavior that materially limit the change as a relevant limitation. Continue to perform appropriate checks and report requested outcomes in chat.
 
 ## Output
 

@@ -7,6 +7,8 @@ description: Apply Google developer documentation style by default to all user-f
 
 Write clear, consistent, accessible prose in the spirit of the Google developer documentation style guide. Adapt the guide to the artifact instead of making every chat reply sound like formal documentation.
 
+This personal skill combines Google developer style with flexible ASD-STE100-inspired clarity and the owner's preference for literal prose. Treat these additions as local guidance, not as official Google rules or formal ASD-STE100 compliance.
+
 ## Apply the precedence order
 
 1. Follow direct user instructions and required output formats.
@@ -46,6 +48,14 @@ Write clear, consistent, accessible prose in the spirit of the Google developer 
 - Don't call a task _easy_, _simple_, _quick_, or _obvious_. Describe the work or time required.
 - Omit filler such as _please note_, _at this time_, _basically_, and _simply_.
 - Use consistent terminology. Don't alternate synonyms when they refer to the same thing.
+
+## Write for understanding
+
+- Make the actor, action, condition, and consequence explicit when they matter. Explain cause and effect when the explanation is supported by the source or observed behavior.
+- Prefer literal wording when it expresses the meaning directly. Replace decorative metaphors and elaborate phrases with the actual claim: _a parameter worth varying_, not _a dial worth turning_; _this point still matters_, not _this point earns its keep_.
+- Apply ASD-STE100 principles flexibly to explanations, docs, and READMEs. Use necessary technical terms and define them for the audience; preserve qualifications, uncertainty, and distinctions.
+- Shorten sentences when this improves understanding. Keep connections between ideas and natural flow rather than enforcing word counts or a restricted vocabulary.
+- Use a diagram or other visual when it makes a relationship or process clearer. Match the format to the reader's task; ordinary writing does not require an interactive artifact or video.
 
 ## Express requirements and possibility
 
@@ -106,6 +116,15 @@ Write clear, consistent, accessible prose in the spirit of the Google developer 
 - Keep caveats near the claim or instruction they qualify.
 - Introduce lists, tables, code samples, and procedures when their purpose isn't already clear.
 
+### Pull request descriptions
+
+- Tell the change's story: why it was needed, what changed, and the resulting behavior. Write for a reader who has not seen the chat.
+- Use a concrete before-and-after example when it helps. For documentation or internal changes, explain the actual effect without inventing user-visible behavior.
+- Describe the final diff, not the work session. Omit abandoned approaches unless they explain a meaningful tradeoff.
+- For owner-maintained repositories, omit routine Testing, Validation, and Verification sections, command lists, and check recaps. This changes the description, not the checks performed before shipping.
+- Include testing details when the user requests them or contribution requirements explicitly require them. State known failures or unverified behavior that materially limit the change as a relevant limitation.
+- Keep the description proportional to the change. One or two connected paragraphs often suffice; use headings or lists when they improve understanding.
+
 ### Reviews and rewrites
 
 - Preserve meaning, facts, voice, and required terminology.
@@ -122,4 +141,5 @@ Before sending or saving prose, confirm that it:
 - uses concise, direct, consistent language;
 - has proportionate structure and accessible formatting;
 - follows the requested language and artifact format;
+- preserves technical meaning and makes relevant conditions and consequences explicit;
 - contains no unnecessary preamble, repetition, vague modality, hype, or exclusionary language.
