@@ -20,6 +20,18 @@ Read this reference for substantial prose, rewrites, and editorial reviews.
 - Avoid double negatives and exceptions to exceptions.
 - Vary sentence openings enough to avoid a mechanical series of _You can_ or _To..._ statements.
 
+## Literal wording and explicit meaning
+
+Use these examples as local writing guidance, inspired by ASD-STE100 clarity principles. They do not demonstrate formal compliance.
+
+- **Decorative metaphor:** Replace _This setting is a dial worth turning_ with _Try changing this setting_. If known, explain which behavior the setting controls.
+- **Mannered evaluation:** Replace _This point earns its keep_ with _This point still matters_, then state why when the context supports it.
+- **Unclear action:** Replace _A service restart is required after a configuration change_ with _If you change the configuration, restart the service_.
+- **Hidden actor:** Replace _Your request will be processed_ with _The server processes your request_ only if the server is the known actor. Preserve uncertainty when the source does not identify the actor.
+- **Connected explanation:** Prefer _The service reads its settings at startup. If you change the configuration, restart the service to apply the new settings_ when that behavior is established. Do not invent the startup behavior merely to improve the explanation.
+
+Retain an analogy when it explains an unfamiliar concept more accurately or efficiently than literal wording alone. State the actual mechanism and relevant limits. Preserve an explicitly requested creative voice.
+
 ## Reader and user terminology
 
 - Use _you_ for the reader.
