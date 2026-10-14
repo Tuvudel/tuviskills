@@ -1,8 +1,16 @@
 # Personal agent skills
 
-Shared personal skills for Codex and Cursor on Windows. This repository contains 79 unique local skills: 65 personal skills and 14 skills from the existing local Superpowers installation.
+Shared personal skills for Codex and Cursor on Windows. The original consolidation contains 79 unique local skills: 65 personal skills and 14 skills from the existing local Superpowers installation. Additional skills are listed in the inventory as they are adopted.
 
 See [the full inventory](INVENTORY.md) for names and purposes. Skill contents and supporting files are preserved from the existing installations. Fourteen identical Cursor copies are consolidated into the same repository copies.
+
+## Engineering companion trial
+
+Use `$engineering-companion` in Codex or `/engineering-companion` in Cursor to try selected pstack methods alongside the installed Superpowers plugin. The [companion skill](skills/engineering-companion/SKILL.md) is explicit-only and task-scoped. It prefers the active managed plugin over the older shared snapshot and reads the plugin's current instructions instead of copying or pinning them.
+
+The companion contains selectively loaded references for investigation, interface design, adversarial review, blast-radius analysis, project verification, and runtime evidence. Project rules and existing writing, UI, language, and data skills retain their responsibilities. It does not add automatic shipping, mandatory delegation, or a persistent mode. Negev/OTEF pointers lead back to each project's current documents and acceptance records.
+
+This trial does not remove or change the shared Superpowers snapshot or managed plugins. Resolving duplicate skills globally is a separate migration. Recheck representative tasks after a plugin update before changing the integration. Attribution and the upstream MIT license are included in the skill directory.
 
 ## Install on another Windows PC
 
