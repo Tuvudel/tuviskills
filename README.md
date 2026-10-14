@@ -6,9 +6,21 @@ See [the full inventory](INVENTORY.md) for names and purposes. Skill contents an
 
 ## Engineering companion trial
 
-Use `$engineering-companion` in Codex or `/engineering-companion` in Cursor to try selected pstack methods alongside the installed Superpowers plugin. The [companion skill](skills/engineering-companion/SKILL.md) is explicit-only and task-scoped. It prefers the active managed plugin over the older shared snapshot and reads the plugin's current instructions instead of copying or pinning them.
+The [companion skill](skills/engineering-companion/SKILL.md) is a personal default for substantive engineering work alongside the installed Superpowers plugin. It prefers the active managed plugin over the older shared snapshot and reads the plugin's current instructions instead of copying or pinning them. `$engineering-companion` in Codex and `/engineering-companion` in Cursor remain available for explicit invocation.
 
 The companion contains selectively loaded references for investigation, interface design, adversarial review, blast-radius analysis, project verification, and runtime evidence. Project rules and existing writing, UI, language, and data skills retain their responsibilities. It does not add automatic shipping, mandatory delegation, or a persistent mode. Negev/OTEF pointers lead back to each project's current documents and acceptance records.
+
+Install its personal Codex entry point once per PC, after connecting the shared skills folder:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\install-personal-engineering.ps1
+```
+
+The installer preserves existing global guidance, updates one marked block in the active global `AGENTS.md` or `AGENTS.override.md`, and saves the original under `.local/personal-engineering-backups/`. It honors `CODEX_HOME` by default and supports `-CodexHomePath`, `-WhatIf`, and `-Remove`. An explicit `-UserProfilePath` isolates installation to that profile unless `-CodexHomePath` is also supplied. Run it again after changing the personal rule or on another PC. It does not alter the existing skill installer or project files.
+
+For Cursor, paste [the same personal rule](rules/personal-engineering.md) once into **Customize → Rules → User Rules**, its documented global settings surface. Do not copy it into project rules or assume `~/.cursor/rules` is a global loader. Cursor settings installation is separate from shared skill-file discovery.
+
+The personal rule directs rediscovery on task start/resume, compaction, and phase changes, and carries relevant reference pointers into delegated work. This is durable guidance, not a demonstrated runtime guarantee. Local installer tests run with `python tests/test_personal_engineering.py` against disposable profiles.
 
 This trial does not remove or change the shared Superpowers snapshot or managed plugins. Resolving duplicate skills globally is a separate migration. Recheck representative tasks after a plugin update before changing the integration. Attribution and the upstream MIT license are included in the skill directory.
 

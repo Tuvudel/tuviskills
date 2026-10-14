@@ -4,7 +4,13 @@
 
 Use the available skill catalog and provider information in this session. When both `superpowers:<name>` from the managed plugin and an unprefixed shared copy expose the same workflow, select the plugin entry and read its current instructions. A prefix alone is not proof of provenance: use the catalog's provider or source path too. Do not scan cache versions and guess which one the runtime activated.
 
-If only a shared snapshot is available, identify that fallback and its source. If no required owner skill is available, identify the missing dependency; complete independent read-only work without claiming the Superpowers workflow ran. Do not install or alter configuration to resolve discovery automatically. Source preference applies inside this explicitly invoked task; it does not disable duplicate discovery elsewhere in the runtime.
+If only a shared snapshot is available, identify that fallback and its source. If no required owner skill is available, identify the missing dependency; complete independent read-only work without claiming the Superpowers workflow ran. Do not install or alter configuration to resolve discovery automatically. Source preference applies inside this companion workflow; it does not disable duplicate discovery elsewhere in the runtime.
+
+## Personal entry and resumption
+
+The maintained personal rule lives in `rules/personal-engineering.md` in the shared skills repository. Codex loads it through a managed block in its global `AGENTS.md` (or active `AGENTS.override.md`); Cursor uses its global User Rules. No project rule or plugin edit is required. This is an instruction-level entry point, not a tool-call interception hook.
+
+After context loss, recover the routing table and current task phase from available artifacts before choosing a supplement. A phase transition can require a different supplement even when the companion was read earlier. Preserve completed approvals and applicable evidence. Pass only relevant reference pointers to children instead of assuming they inherit the full conversation. A handoff identifies the companion, phase, approved artifacts, applicable references, and remaining gates.
 
 An updating plugin can change its prerequisites. Match the actual approved artifact and completed evidence to the current requirement. Recognize prior approvals that satisfy it. An idea approval does not approve an unwritten spec, and an implementation approval does not authorize deployment. If the new instructions require an unresolved checkpoint, identify that specific gap; do not reopen already completed stages.
 

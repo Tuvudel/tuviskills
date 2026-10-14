@@ -27,7 +27,7 @@ These are installed files. Visibility and automatic selection depend on the agen
 | [control-cli](skills/control-cli/SKILL.md) | Build or adapt a local harness to drive, inspect, and profile an interactive CLI or TUI without external services. Use for CLI UX checks, startup regressions, memory leaks, hangs, prompt flows, or terminal demos. |
 | [control-ui](skills/control-ui/SKILL.md) | Build or adapt a local browser/CDP harness to drive and inspect a web, IDE, or Electron UI. Use for local UI verification, screenshots, accessibility snapshots, perf profiles, visual diffs, or reproducing UI bugs. |
 | [deslop](skills/deslop/SKILL.md) | Remove AI-generated code slop and clean up code style |
-| [engineering-companion](skills/engineering-companion/SKILL.md) | Explicit-only pstack companion for the current Superpowers plugin, with investigation, design, review, and project-verification references. |
+| [engineering-companion](skills/engineering-companion/SKILL.md) | Personal pstack companion for the current Superpowers plugin, with investigation, design, review, and project-verification references. |
 | [dispatching-parallel-agents](skills/superpowers/dispatching-parallel-agents/SKILL.md) | Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies |
 | [executing-plans](skills/superpowers/executing-plans/SKILL.md) | Use when you have a written implementation plan to execute in a separate session with review checkpoints |
 | [explain-interface](skills/explain-interface/SKILL.md) | Helps you figure out how something was built on the web. |

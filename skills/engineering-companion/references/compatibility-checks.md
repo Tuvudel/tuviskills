@@ -4,6 +4,7 @@ Use these cases when an observed plugin change could affect the integration. The
 
 | Task context | Decision to inspect |
 | --- | --- |
+| Only the personal global rule is supplied to a fresh-context resumed engineering task | Companion and applicable supplement recovered without a manual skill invocation; completed approvals retained |
 | Managed and shared providers expose the same lifecycle skill; a spec and plan are already approved | Managed provider selected; completed stages retained; next actual requirement addressed |
 | Managed entry is unprefixed and shared entry is prefixed after an update | Runtime provenance wins over name/prefix; no cache-version guessing |
 | Current owner requires a plan, but only the specification is approved | Missing plan handled without repeating spec approval or skipping the new requirement |
