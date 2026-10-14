@@ -3,4 +3,4 @@ interface:
   short_description: "Pstack methods alongside the installed Superpowers"
   default_prompt: "Use $engineering-companion for this task, keeping the installed Superpowers workflow and project rules authoritative."
 policy:
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true
