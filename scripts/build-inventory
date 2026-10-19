@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+"""Regenerate inventory.json and INVENTORY.md from skills/. Keeps original_locations, broken_shortcuts, excluded."""
+import hashlib, json, re
+from pathlib import Path
+root = Path(__file__).resolve().parents[1]
+old = json.loads((root / 'inventory.json').read_text(encoding='utf-8'))
+prev = {s['name']: s for s in old.get('skills', [])}
+pstack_list = root / 'scripts' / 'pstack-skills.txt'
+pstack = set(pstack_list.read_text().split()) if pstack_list.exists() else set()
+def fm(text):
+    m = re.match(r'---\r?\n(.*?)\r?\n---', text, re.S); d = {}; k = None
+    for line in m.group(1).splitlines():
+        km = re.match(r'^([A-Za-z0-9_-]+):\s*(.*)$', line)
+        if km:
+            k = km.group(1); v = km.group(2).strip(); d[k] = '' if v in ('>-', '>', '|') else v.strip('"\'')
+        elif k and line.startswith(' '):
+            d[k] = (d[k] + ' ' + line.strip()).strip()
+    return d
+skills = []
+for folder in sorted(p for p in (root / 'skills').iterdir() if p.is_dir()):
+    meta = fm((folder / 'SKILL.md').read_text(encoding='utf-8'))
+    name = meta['name']
+    files = {str(f.relative_to(folder)).replace('\\', '/'): hashlib.sha256(f.read_bytes()).hexdigest()
+             for f in sorted(folder.rglob('*')) if f.is_file()}
+    entry = {'name': name, 'path': 'skills/' + folder.name, 'description': meta.get('description', ''),
+             'original_locations': prev.get(name, {}).get('original_locations', []), 'files': files}
+    if name in pstack:
+        entry['upstream'] = 'https://github.com/cursor/plugins/tree/main/pstack @ d457567'
+    skills.append(entry)
+old['skills'] = skills
+(root / 'inventory.json').write_text(json.dumps(old, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+rows = '\n'.join('| [%s](%s/SKILL.md) | %s |' % (s['name'], s['path'], s['description'].replace('|', '\\|')) for s in skills)
+head = """# Skill inventory
+
+%d personal skills, generated from `skills/` by `scripts/build-inventory`. Do not edit by hand. Archived skills are in `archive/` and are not installed.
+
+Start from the entry skills: [using-skills](skills/using-skills/SKILL.md), [coding-workflow](skills/coding-workflow/SKILL.md), [design-ui](skills/design-ui/SKILL.md), [illustrate](skills/illustrate/SKILL.md), [docs-writing](skills/docs-writing/SKILL.md). Upstream sources and licenses are listed in [UPSTREAM.md](UPSTREAM.md).
+
+| Skill | Purpose |
+| --- | --- |
+""" % len(skills)
+(root / 'INVENTORY.md').write_text(head + rows + '\n', encoding='utf-8')
+print('%d skills written' % len(skills))

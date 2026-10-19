@@ -1,200 +1,391 @@
 {
   "skills": [
     {
-      "name": "algorithm-design",
-      "path": "skills/algorithm-design",
-      "description": "Design algorithms with LaTeX pseudocode and UML diagrams. Generate algorithmic environments, Mermaid class/sequence diagrams, and ensure consistency between pseudocode and implementation. Use when formalizing methods for a paper.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\algorithm-design"
-      ],
+      "name": "anatomy",
+      "path": "skills/anatomy",
+      "description": "Build crafted, highly detailed, interactive isometric SVG figures that explain a technical idea as a real physical object (a test rig, a dial gauge, a cabinet of drawers, a plotter, a lock), with many small precise solid parts, four-tone shading, correct painter's order, a framed card with title, hint and live readout, and calm eased motion. Use this whenever someone wants an isometric illustration, an explanatory diagram or figure for docs, a blog post, a landing page or an article, a \"Linear-style\" or \"premium\" technical drawing, an interactive explainer, or an SVG that shows how a system, algorithm or component works, even if they never say \"isometric\". Works framework-free (TypeScript/JS that writes SVG and HTML) and in React/Next.js, and can add realistic WebGL shaders (fire, exhaust, water, caustics, lamp light) that live inside the drawing in the same isometric perspective. Also publishes a finished figure to the Anatomy community gallery when asked.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "1d6eac440e29d7b86dbe50abf09e75c7837702da64279c82f17c001dd2f25471",
-        "references/algorithm-templates.md": "43f56093f7aaa0275af067e1736c59c5217b878cce7f023c3290037e6251d26f"
+        ".gitattributes": "cdd266359c792670902c16da138e75d6b10bba6251b1842191ab46939ae2c7aa",
+        ".gitignore": "7340a4546689ca1bc113c156e8264c7c673ed44c52bb9d2a8dd1c663bba7390a",
+        "CHANGELOG.md": "25e5aaa27b84f6e4812be4e1777a31caac4ceac2157fcfceb6d6fa6abb449db5",
+        "CODE_OF_CONDUCT.md": "dd94a5c1483143876992d096247d6b5531fd7a1041728bee339b007fe15764e5",
+        "CONTRIBUTING.md": "42d9e4ef76d5bb78ff3d80182dc23426ef8a4cf62de7f9a8f438d6e5b0aed1cf",
+        "LICENSE": "87c078ab9d90a3044f359e6b563d4e6afea7aa060897cf4f21618687b3856796",
+        "README.md": "83db9621afb53ae94bf08040de04e7f59030b6d132c35e76d96b8122205d9159",
+        "SECURITY.md": "c9bd6a03b51053be6321f88110f9589e73c1cb00aa81d9d1c2881e94073e9629",
+        "SKILL.md": "907965c1727a588901383ca6819b88bd665a9e5a9ea9ca61707408d3a419577b",
+        "UPSTREAM.md": "f96bf912ff054b2554f557798796bc551b7d2c735aecf6f5a937cfa6a5280a76",
+        "agents/openai.yaml": "254b17510460bc5151295b1e1e40b6a1aceeff60a0dda4e9594adcfa36819526",
+        "evals/evals.json": "b79afa9daa10084c71bb18c3baafef403a929c1d707b2be4c636952ae1896dd4",
+        "examples/arcade-cabinet/arcade-cabinet-light.html": "03f832383879a031119de40dfaaff7b800baa975065992079ff6377267d8cb5e",
+        "examples/arcade-cabinet/arcade-cabinet.css": "a0ea7bce89a665ddd13f72daf31849c07d8b517b66a3d555543aa506b8933629",
+        "examples/arcade-cabinet/arcade-cabinet.html": "6d95f892c35d888ac635870244ec904bf6e79e10927f1f5a345bb844bc606bff",
+        "examples/arcade-cabinet/build.mjs": "a5e92188b54fb18fe7fbce3dbc86a8e55abf32f2560be667ac0866d089ba7b84",
+        "examples/arcade-cabinet/live.js": "d9f02ea9193f3109501333bdfb4ab297a71457aaba431f05f5df667ea8c40c8f",
+        "examples/arcade-cabinet/parts.mjs": "3ba74b8c55e72933b1e119e3d24c939f654b2c43d41ff26cf855f064cbc7d2a3",
+        "examples/arcade-cabinet/screen.mjs": "8fbb8aebb1d657508979ec9b58a29281c71403396df1fcdc6f8f834fe9097be9",
+        "examples/desk-computer/build.mjs": "d378f9814acf75bc915921d4f2d83ed1eb4991a8b4298eb0de0e10383b2ff66d",
+        "examples/desk-computer/desk-computer-light.html": "ce63c5bed81b76491a82f5e94d22e5f64744c87bc448fdad8726ae0c6ecd0b59",
+        "examples/desk-computer/desk-computer.html": "94f04084c1ce997a88e60fc0b4d9c5b6dbe859b95ee0dd7a10603e648fced2bc",
+        "examples/dial-indicator/build.mjs": "e4eaa2324af7f2630650ca72e52a78d56159213a786e14fba8321344789f990d",
+        "examples/dial-indicator/dial-indicator-light.html": "bc1810e340d916a25cc1749589b44096b7e41970f22fa7fce569bbefc0613093",
+        "examples/dial-indicator/dial-indicator.html": "2ba95d49a5432a5aa764fca89af91ab91043531669609ed57b92bd50b51e5519",
+        "examples/raptor-engine/build.mjs": "26064df05bb650845ec485195f972f5a0fed3c21ee152f0b8db8194fdc26d916",
+        "examples/raptor-engine/live.js": "03d801ef2b75e17a38ebc3d5cb9178747226ea8c2e0c527caafb9c72844d88d8",
+        "examples/raptor-engine/raptor-engine-light.html": "f49110757e6e55ebfbee090e40676e3fce814ce664de0f8905a20233a1432265",
+        "examples/raptor-engine/raptor-engine.html": "2d0f782b459dcd5bc3aa8c4ce922a1f523f63f2799d120f9c0de2dc732cc92e1",
+        "examples/raptor-engine/raptor.css": "f850575feeeacac8ef5d9d9c49359f4deaef848666c68a4dafa9727fe926cd6e",
+        "examples/ripple-tank/build.mjs": "5a5b846bcd146630be3eafb73ebd04cfdd2101d05def15a877fff7188822b493",
+        "examples/ripple-tank/live.js": "d2427eada1948662c680b9ca42e8d6e81979f9206c0572524ac404f204f07b5e",
+        "examples/ripple-tank/model.mjs": "f6315aa53e80c0c69bf3c52baf0a1340ca4daacfae80245def02f357c2d33882",
+        "examples/ripple-tank/ripple-tank-light.html": "922ca1692b76a72bbc9330708af56a5073c41f6936d87da507f5fc1247a9c94f",
+        "examples/ripple-tank/ripple-tank.html": "6ae0099f420c96b0241a74361aea700ef83e554d5f17d5fbcdfd9c130335c27e",
+        "examples/ripple-tank/ripple.css": "1bf7a778f0b50928adcd54e67c44aa2b12a6877b45f15a0b697d87ab7be0dd5c",
+        "examples/spot-plate/art.tsx": "aecef8d6ee247e99d52717371a319283af8b1bbba2adfcdd4d012553d2963b38",
+        "examples/spot-plate/drops.ts": "9bec874c5e324d69a25cc9085ecf2c5d9c3c2e3bd1a8c667c45e048301b899d4",
+        "examples/spot-plate/fan.ts": "648c1d946e9512afcae60e077d2436926ca1ea94b02c944df8624419812077b1",
+        "examples/spot-plate/figure.tsx": "b9db1ef99bfac58d55d0506f05e0c178e5c9566c61cbf26826ea25cfaa57805f",
+        "examples/spot-plate/geometry.ts": "faf7d6bf1b475daacd4751687d409d7a5c03a6c2bb216ae81beadce5a3cea99a",
+        "examples/spot-plate/live.tsx": "e96fd47aa4ab250a6b2c6fe3c6c3c96d4bcf737dff7f084d4912f5d1ef195116",
+        "examples/spot-plate/rig.ts": "b19fc1637a1f4c411c23f34c7a48361f308402b15b11efc44fb6555e8f67ceea",
+        "examples/spot-plate/spot-plate.css": "b31e4c8e02f4de0b77fe0a71718f59d7df2e3abc3d9772f802e00fc3d8a582bd",
+        "examples/test-rig/art.tsx": "a6b8c1094a9402380d9835ecedbcc677254686b7391027a20da10fc8bf24dae5",
+        "examples/test-rig/figure.tsx": "2dbaef167b9a6a96de74357fc57ae2a650159007852d3d4e8c471b8837e463a9",
+        "examples/test-rig/geometry.ts": "b8c275eb58b093a85c312f90dc5d79fd9d9a93ae266e42a8a6fa7f6f9aaeb571",
+        "examples/test-rig/live.tsx": "46a4c338a2805fc0078a20d6f4e12d9de20fc4145ec051ffce3964b164c5a7da",
+        "examples/test-rig/pose.ts": "380e1d07afcaa3a4e2cd1b13556500f2b336e354fa1c369918b3173f0c9d0866",
+        "examples/test-rig/rig.ts": "9672431d6982acaa7b6f28e88e1371443bd6a10fb906ff52fc7bdb0f5fd88b05",
+        "examples/test-rig/stretch.css": "dd15f4582b5fb9b228dc7e32ef57dbcba0129dad38b36e5707247eeb7a2abe8b",
+        "examples/test-rig/view.ts": "5465a3e122c2074f8de755b874c7bdb783b365e4140e3e741fc91a32cd69500c",
+        "examples/turning-dial/build.mjs": "dcb1b2a1fec2c98c2cea401c6a5b1c7e6545da3b5ea08433cfd72a7f27a49248",
+        "examples/turning-dial/dial.css": "769fc9596dcd2bbc46823d6e2816a3e584b52e0a6db359d93bedce16f354bedd",
+        "examples/turning-dial/live.js": "e872f0d930ba583ce7c4c252a3767aa6b9f6cd1f97fe6dddb212653a0579b41f",
+        "examples/turning-dial/stress.mjs": "6d3aec19d8ce6daadffe15113da9415c2fe084c6407d1bb7fb4b5fec86330314",
+        "examples/turning-dial/turning-dial-light.html": "7873a4873e4f1a204ca59691765915f155f44095c2c290730aa2b915b4c88c9e",
+        "examples/turning-dial/turning-dial-verify-light.html": "7516d25e04c8a2c7d3abc7bf19e78985cfca2a2f37e1de72740808a977346366",
+        "examples/turning-dial/turning-dial.html": "e477d45029568c45966bf2e4ae2353265e065b90663877e8c21de5b6741e4e90",
+        "examples/turning-dial/turning-stress-light.html": "e175e82f1bba087bb6031e375fb5da386f4f779e89e91a7864f7fc298b8b14e3",
+        "kit/audit.mjs": "90c5bb4a86f108e8a1d3211dbea326bed16acd887c3438810ea29200a2cde28d",
+        "kit/canvas-painter.mjs": "1918db10279c9d9df87d7df52c7ed8c2de8acd0bbce214c8f2115a39e7f955ac",
+        "kit/gl-shared.mjs": "8c3773cf3e15844df332db3ba55af940186edb2227201e5839347ecc390c039c",
+        "kit/gl.mjs": "17a477411e0b9fcb8e84e718094eaefa6be2c0b7d6ce15ee03fe8e252944130a",
+        "kit/iso-kit.mjs": "6d3ecc725d30c3b0346da309cf61dfa5a65017c23620bbd4093009d4fb104018",
+        "kit/iso-kit.ts": "e9fc988c61a11bfac1f097e62419915ea86b2130ab091f1b50c0e019c907e253",
+        "kit/iso.css": "ef19bac5a42ba9be42b56b2c1cf7fc7e21d332a8060765e9ca1d987b8ab23924",
+        "kit/lathe.mjs": "a4e7e974b1a37e603ad2b76363b6f9815cc101dfff0ad277a5d4e8f1dc56fccb",
+        "kit/react/draw.tsx": "d5389bd78aa3d5424a37b1ce6f635bd102eb86faf27d064b10957716278a631c",
+        "kit/react/live.tsx": "85024d4906d984c3c513564fee22d81a13a9c933b82c410196fb7b1cd9abc1a2",
+        "kit/tube.mjs": "bcb3cc360f6d83e6a5753f4c464b4587ab7965028b05a5d58e285abce58667c9",
+        "kit/turn-audit.mjs": "e118b838c00621eb5d86409552b75b50d02c303eaedefc008146a7c62c2eaefd",
+        "kit/turn-build.mjs": "b95d76f9181703508b5bb758973bf004eb92d298a01e0e5ff5457f830c183888",
+        "kit/turn-fixed.mjs": "7429b46eb7673aefb6ed90adeaf130c1dafe8e32af038cbde24a04e693d13fc7",
+        "kit/turn.mjs": "cb4b530b5e1750ba0e4fd2367d5f25e00195c0136672aa2ecd665c0622ffd1a2",
+        "references/3d.md": "de58da5415b4c9fe7712b5b71e0868c4d36363d54e4e32d98a6b016363554536",
+        "references/craft.md": "38761fa9b81d66b30e50b05488501d4815830d3627f153d60f76ca783f598936",
+        "references/kit.md": "684672e069fdb52735efabc3f4310dedd840d0c8066a8dc7784be2b7e656be71",
+        "references/motion.md": "dda401ca1b4661a5f0b7c1e33dac6e7e4b8c13d51ca5d9312123a5c02dab320b",
+        "references/publish.md": "57790e740662bc8f2044ba5f0385598bad955d6a38dd2a47d56d644f21d8deb8",
+        "references/react.md": "76b5cee6e0a7513e3c77a832e3f58b1343806597d469774e1749f141525801fd",
+        "references/verify.md": "fb81437fc5d75094a34432eb6f545644aa228e15173a27d08b3cace912033561",
+        "references/walkthrough.md": "4d157e0169080a6ed44d5b06de0a5de2931baf3d0fac30283d2644dd66506dfa",
+        "references/webgl.md": "fb4e2421c6a705d4ad849c8e516731ebc958bc5ff0855548ff58232b0aa01923",
+        "scripts/audit-affine-bounds.test.mjs": "038e0a879363c4b0d2c7146a62065b09f2973210114928d5005e9082219654d2",
+        "scripts/audit-cache.test.mjs": "00b49601c068897e94bf8309d652bb55595e541283c510bba34957c457edd57e",
+        "scripts/audit-clearance-envelope.test.mjs": "ffa8321d25996ac165dd1fdb6473a903c1c6f03b86996b2fef6978203b8f2bd8",
+        "scripts/audit-empty-clipping.test.mjs": "a28384ccbf303acc32f7788753459a7338c94bc74ee5efe70762daa75a62c8cb",
+        "scripts/audit-order-convergence.test.mjs": "9ad7b9a645d9e90a788e561484013b0fdefb1a8abd38fcb160f5d1a6464be278",
+        "scripts/audit-path-origin.test.mjs": "1e5917a4a3bc337aa4497e5717de47b198db8fc9538d5f10d40a788f5f821d37",
+        "scripts/audit-profile.test.mjs": "80179ae38afa6e58ed254a597daeee27240e85f87d1bbd0421def4e347ec37c0",
+        "scripts/audit-projection.test.mjs": "0cd790e0dfc64633019db3233b87fec823c6148037d9335e1c2b16ea1c722db6",
+        "scripts/audit-slide-clearance.test.mjs": "007f68aa5262eae40aceef00eec91e4d5be0164bd5fb9377680996164ff9ac19",
+        "scripts/audit-svg-attributes.test.mjs": "2d2a949639f90d6328eeea401f6b7f3a3dc1fcc17f1d46cbe2de208afc3c6533",
+        "scripts/audit-taper.test.mjs": "ea4415ef743efc4ba1393457c571cdfc2b91bfd5ea931ae32829926c80aed487",
+        "scripts/capture-selector.test.mjs": "046ce21a686e99c1a5a760f529b999cdca5b7f504961784bc087395b0b586eff",
+        "scripts/capture.mjs": "565d3a1094bd6e1146bd58a29708d43eefeaf571f0a45819e2457b19432ad7ba",
+        "scripts/capture.test.mjs": "319aed308ded5eb4137c8d633720a9254d8c5f35a8adcc1e883066e6c983ed62",
+        "scripts/chrome-port.mjs": "6775d3d389d26f37a52be8358aa88d1dc0aded63cb24ae20a936505a192e5d9d",
+        "scripts/chrome-startup.test.mjs": "bd3c0eb4b699ebfbfd4efa5920acf386f31876ed490aaee839886dd8ed4cf797",
+        "scripts/drive-actions.test.mjs": "ef415f9860e656dcf0d1c95b48aedf974cf311aa31e547403f7684c59d676aa3",
+        "scripts/drive.mjs": "512cb24a9622ffdb63fc5bc6798df1831032caa96bc7a2c202ccd1b67350407f",
+        "scripts/drive.test.mjs": "9d0d19d82dbdc22c712e24c5de241ef7b67ae3c7ea356621033c77780f3337f5",
+        "scripts/enter-key.test.mjs": "2592318f2b41735e4ff8ed2edcbc3abee46d81f9184b02dd99c121d8900d3838",
+        "scripts/fidelity-cut.test.mjs": "7f3518eba374167ada79cc73970cc9557ef48faa3e8b390326589c67ab989787",
+        "scripts/fidelity-tube-coverage.test.mjs": "eef7300ea786d82268811cc4e4153c1de913bae17cec58bd4a28f64ea875c525",
+        "scripts/fingerprint.mjs": "1582728c6f70b340f8fdda28f287e6f8d45e291ab739ef9ff527a5374f7b1654",
+        "scripts/inline-kit.mjs": "01e08df7c2556ce52a7e8ed9009a332036b209ab7e42389874af2a65fda6e9db",
+        "scripts/line-ends.mjs": "e8a121473dfe62245eab2116e8fb6b4d8ed86e3fe29ea50a90e86ffed335b1cd",
+        "scripts/lines-arcs.test.mjs": "ae915157d4bbdfe8e4af031c0e2e5f5f566c938ba7bb88884ae377489aff540e",
+        "scripts/lines-bezier.test.mjs": "7a95169325fed35eecb0c7aefcb806a48bfd09eaba3df5461dc2e30c5d0695f4",
+        "scripts/lines-round.test.mjs": "7a012c3eb010b7f8082ee49ce939d6f35f384d188d897e3fd3708682c5d3a657",
+        "scripts/lines-rounded-rect.test.mjs": "88d0a27b047895a00f5654f59d93c775fb8312a5c28be3b47b5e673d80efe5b6",
+        "scripts/lines.mjs": "b0ca73ab3a0d1cd4a28fda933496cbd7384ef315d821b5d2fffae1c704ce79cc",
+        "scripts/lines.test.mjs": "82931231d33d977bcc44c54b05bdb7b78c4ddebc422848ab59539018dd43583a",
+        "scripts/navigation.test.mjs": "b9bd9d7360735e178b24e086e5c875e1703e3e0593e7ddff5f10fe0b4f0f7587",
+        "scripts/orbit-sampling.test.mjs": "ed6ce6b0dd32f6c7ab51a5a50ea2dd4b920858ff35d725bea22bee79e323b97a",
+        "scripts/publish.mjs": "3d6d1c5a9dd8ca2915d2331246c0a80ede1070aa35a34da1f4edfa3844c162b7",
+        "scripts/publish.test.mjs": "ebd0be09a3ef7a6adbf023b573bf4db82f88dc1ca32e37d38d11578183ad51d9",
+        "scripts/react-dots-opacity.test.mjs": "e7d2b5386f397efe4197b4607f2131170bf88dc52ccc3cfcfea2677f28d41aec",
+        "scripts/react-readout-first-write.test.mjs": "088a2d29d67e9638f7e43e9b5204c027566934d38302c0ee5e406752f2a4780a",
+        "scripts/react-solid-seamless.test.mjs": "f45927c14dd6023eec7109da5db10cddd46cd46b21f58675a6d4dc6ca12122b0",
+        "scripts/react-visibility-target.test.mjs": "78c630aa974d2fbd04cb096a95b528d64d3027e2a9666b85e9d7a50965160925",
+        "scripts/session.mjs": "8896ea1587a5a612a20db7a7a9310a53387d6eef640277834f7bac7e69109302",
+        "scripts/session.test.mjs": "200fe708d40646b5ee24451e561744ac281e1cf0bf2c75c233d340eeed304f79",
+        "scripts/turn-bench.mjs": "d86cd53e3702fa92e22b4052ee9bf47da10fd0a71401fe477bd8da2fe30b1631",
+        "scripts/turn-check.mjs": "393cbcb95caf8f572415b644c227b13e647200fb0d995850a05940353e50cb27",
+        "scripts/turn-fidelity.mjs": "4b8e7ad29d0a255d2dd5e7f396bce11f13e5baa5eb682adc68025d4ee16a1fb7",
+        "scripts/turn-group-reference.test.mjs": "bfac2f910c80c7fcfba9e4861391552000a0f25414ae86576a9ef9ef46291412",
+        "scripts/turn-split-owner.test.mjs": "829febf610ba09cdca651fbd86340f13932f241b4e3525a3d8566ac70d75a69d",
+        "tests/fixtures/react-dots-dark.png": "f2e7655868e8564d81d274464c618cb330a603459a5fe63bf0bd22992e9c396d",
+        "tests/fixtures/react-dots-light.png": "df72b8d04fd82bf1a1f63b29ea1676ead0570f9b36d55057d8b886087d869543",
+        "tests/fixtures/react-solid-dark.png": "529b58a497268540c2d74b590691f65605ba5d1882566d0462ff984e7a9248e1",
+        "tests/fixtures/react-solid-light.png": "5b344ec9017d06267531b8d01ad3b88062fb8003cd77ad90ecff37319c8dd085"
       }
     },
     {
-      "name": "ask-questions-if-underspecified",
-      "path": "skills/ask-questions-if-underspecified",
-      "description": "Clarify requirements before implementing. Do not use automatically, only when invoked explicitly.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\ask-questions-if-underspecified"
-      ],
+      "name": "apca-contrast",
+      "path": "skills/apca-contrast",
+      "description": "Calculate APCA Lc contrast scores (APCA-W3 v0.1.9) and look up exact pass/fail per font size and weight using the official fontLookupAPCA table. Audits Tailwind v4 globals.css automatically (extracts :root and .dark blocks side-by-side), supports every CSS color notation (hex, rgb/rgba, hsl/hsla, oklch, oklab, color() with display-p3 / rec2020 / srgb / srgb-linear, and 148 named colors incl. rebeccapurple), handles alpha compositing, and offers Reverse APCA (find a color that hits target Lc on a given background). Use this skill whenever the user asks to measure, audit, or check contrast — design system tokens, light/dark mode color audits, accessibility reviews, shadcn/Tailwind oklch tokens, \"is this readable?\" questions. Trigger even when the user only says \"contrast\", \"Lc\", \"readability\", \"a11y review\", \"대비\", \"가독성\", or pastes color values without explicitly naming APCA — APCA is the modern WCAG 2.x successor used in WCAG 3 draft and gives more accurate perceptual results.",
+      "original_locations": [],
       "files": {
-        ".skill-meta.json": "fdc38bd3b3d9b462fd6f860740b1613e88427ae1ca84a0de443d23edd97c8c7d",
-        "SKILL.md": "caca2c6caf97e88c06a41cd97b2c7c5aab9f02c64d9ed7e45e95f904c1ee4b55"
+        "CHANGELOG.md": "8717cfd829bfa63f45c5df4c04d9670fb8db20ebf7c32a4a57496651f8637d47",
+        "LICENSE": "7af4245a3fcb9ca80a49857cd199f691f4c02ab1f78df35d45f32e13afab8acc",
+        "NOTICE": "be24a6d0af614c70a9167e0028905ac9867742caa7cc06d06e68969c3a5a8603",
+        "README.md": "1926d59709d186f2cf14d435f6e6ecb243bf3e1238631f12f5fbb57f62c208dc",
+        "SKILL.md": "40e16a268213a7cf020e70f0ef6237f548d66fe1d513c6f301b6f7137cb9e22c",
+        "UPSTREAM.md": "6269160e6f5f0c8b78d569fe45d0efba1ab63da48a54b611872cededbd02b541",
+        "examples/sample-audit-report.md": "d1774df0fcf2ed8c0f3f854ab267ac8d76d6eebe4caf8b5bfc418e483fb64414",
+        "examples/sample-batch.json": "d0c6bc79d682fb983b8388ff9e7cea80b130770a6274818e6e598bd38f310be7",
+        "examples/sample-globals.css": "23e2fa737a699605910fdc748e4ede71846ec083fc684f05215ec7be3f99e5db",
+        "references/APCA-ALGORITHM.md": "cea9b0a587036eabda477f391a5487a1480fa8893f9d07accb2fad68bac8b1cd",
+        "references/FONT-LOOKUP-TABLE.md": "870062b90c0089b6641756d50d0d1f334d5580e522c761af1242244943949e30",
+        "scripts/__pycache__/_tables.cpython-313.pyc": "aaf721e353d743d2039b592e83cfc6f5df8452fb6b2063233eab5d726cbe819e",
+        "scripts/_tables.py": "dcbb9ce700d35fa967e762d1ad39e8760d10c1d38e5eca013b50c161d5cf7f93",
+        "scripts/apca.py": "49765c52358bb696757ac3bcb8c53ac9e733d311537469c90c9a2b1e19ce99f9"
       }
     },
     {
-      "name": "backend-development",
-      "path": "skills/backend-development",
-      "description": "Backend API design, database architecture, microservices patterns, and test-driven development. Use for designing APIs, database schemas, or backend system architecture.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\backend-development"
-      ],
+      "name": "architect",
+      "path": "skills/architect",
+      "description": "Sketch types, signatures, and module structure before code, then stay in the loop while implementation fills in. Use for /architect, 'architect this', 'design this', or non-trivial work where jumping to code would lock in the wrong shape.",
+      "original_locations": [],
       "files": {
-        ".skill-meta.json": "3c8a2fadb95b18ab1f4359cfbd8882f12f50b57cd626fdadcd1a242673160bf4",
-        "SKILL.md": "50b54016979dffcadf922165e4e7e347a224b1cde79dc8e25bdac588f29cecdd"
-      }
+        "SKILL.md": "31f8e97a52bfa5432edd61f68ade2a8632ef0bacbc2d2a6802d7a0e6821944ac",
+        "references/design-red-flags.md": "d0e639e4cc588ec865f930d3a4111faad60987ae36925917e319d7ceca7c69ce",
+        "references/rationale-template.md": "0cedfccdc7b47fc881febd5a8293eecbc542c20f8df825639904a8102d2eb5d3",
+        "references/runner-prompt.md": "21dd5314aab778c5007228027a4591d97693fbec6ab86524037772b63f40948e"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "arena",
+      "path": "skills/arena",
+      "description": "Use when one attempt at a non-trivial artifact could lock in the wrong shape: spawn N parallel candidates, pick a base, graft the best parts of the others. Use for /arena.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "419a81819737a634c25cf1ebd10f624d694e840efdc88d9da09778a536b3761a"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "automate-me",
+      "path": "skills/automate-me",
+      "description": "Use for \\\"automate me\\\", \\\"create/update/refresh my -mode skill\\\", \\\"turn/capture my preferences or working style into a skill\\\", or wanting agents to follow how the user works. Drafts or revises a personal -mode skill via create-skill + unslop, optionally pulling fresh evidence from recent transcripts.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "30b35f3628c4fd8c11af0ada06d14cdc3b28901810caca2480f627d4d21acfbe"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "benchmark-checklist",
+      "path": "skills/benchmark-checklist",
+      "description": "Vet a perf measurement (limiter, tuning, limits, errors, repeatability, relevance, and whether the work happened) before you report or act on it. Use when you run a benchmark or report a speedup or regression you measured.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "ba109e96c8f6c1c391baccf19e5d11e14370df7b3f2605e1572cd565a6c0fca0"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "better-accessibility",
       "path": "skills/better-accessibility",
-      "description": "Helps your project comply with accessibility standards and best practices.",
+      "description": "Use when checking or fixing accessibility: contrast, focus order and rings, ARIA, keyboard support, reduced motion, screen readers. Use apca-contrast for contrast numbers.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\better-accessibility",
         "C:\\Users\\tuval\\.cursor\\skills\\better-accessibility"
       ],
       "files": {
-        "SKILL.md": "59a0d8ad310be843566a18bfd839a38f46335110aa31673c4468c9e0172c5350",
+        "SKILL.md": "41c827b982a6f72dcb675f15b9e0a7086d98eec8e052588f56527d95b7c511ed",
+        "agents/openai.yaml": "98699206d4fb00b72bcaf69bb446f541644cc0cc3d23967e266731e100a55563",
         "focus-and-keyboard.md": "9ba63027fa8f1b53e4947ee3341e0580347121f3ccb7698f2936d33563ffa4ba",
         "forms.md": "b08451ee17861cae49553ba71a122be80c21197087efcc43137862a1db2c5c34",
         "hit-areas.md": "8c0982229cc01aee419e9c80a4085d5c59a0e7b2b16a4f616a12e9fa0fa094f5",
         "motion-and-zoom.md": "3efc88394bc958a6e88ecbc8c8e37999df7de0e19730e5784d0e9e5efda696ee",
         "screen-readers.md": "a35b69db4568e74351a28606328505773f9a1e9ec370e92fbfb2117543c3637a",
-        "semantics-and-aria.md": "e663b6708ac7f4d4d88e884c604cc3e99c1b424ae78209cf4e2430f4966d39b6",
-        "agents/openai.yaml": "98699206d4fb00b72bcaf69bb446f541644cc0cc3d23967e266731e100a55563"
+        "semantics-and-aria.md": "e663b6708ac7f4d4d88e884c604cc3e99c1b424ae78209cf4e2430f4966d39b6"
       }
     },
     {
       "name": "better-colors",
       "path": "skills/better-colors",
-      "description": "Helps you build a color system and answer anything about color in your project. You can generate palettes, use semantic tokens, convert between formats, check contrast and more.",
+      "description": "Use when building or changing a color system: palettes, semantic tokens, dark mode, format conversion. Hand contrast numbers to apca-contrast.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\better-colors",
         "C:\\Users\\tuval\\.cursor\\skills\\better-colors"
       ],
       "files": {
-        "SKILL.md": "cde9dd40cb183b383514e1a2c76bf74c9d914f5f6722ee6079d3f9cd121862c1",
+        "SKILL.md": "0535efb400080d5152c39e57cc881280a7884f4bb94d21e944a2b09b4aa8fbb5",
+        "agents/openai.yaml": "9568572146c8d7d1dc2e12536c2b8ea63480f83f2f2ebfcf2f9a500a56830d4a",
         "color-formats.md": "e68fffec8f7b8e1036c295fce8d65785764f33aead5d292389c47451e79d7129",
         "color-usage.md": "dbaa4a4cb10b8118165fca4531b3c35b409c79185f15a2812a34f118293dba9f",
         "contrast.md": "f9a2f8ca2fd7966ea0002a9dd58b9d392fbb14fc6f4365534c488046337e5971",
         "palette-generation.md": "f3e3f9fc84fd834cfffd9e0c951f28c3f24c3c4a4492d86b697d3258f500fb85",
         "palette-structure.md": "82b22d74ead2a551a2a505347273025020d84dcde4a0170ea2fd14290dc10387",
-        "token-naming.md": "198ca90a643d52f446fe423464908e900d31923ee7d13d6454c8b791326d6b2a",
-        "agents/openai.yaml": "9568572146c8d7d1dc2e12536c2b8ea63480f83f2f2ebfcf2f9a500a56830d4a"
+        "token-naming.md": "198ca90a643d52f446fe423464908e900d31923ee7d13d6454c8b791326d6b2a"
       }
     },
     {
       "name": "better-interface",
       "path": "skills/better-interface",
-      "description": "Combines all of the `better-*` skills into a single review across accessibility, layout, writing, typography, color and UI polish.",
+      "description": "Use for an overall UI review or 'make this UI better': runs every better-* skill (accessibility, layout, writing, typography, color, polish) in one pass.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\better-interface",
         "C:\\Users\\tuval\\.cursor\\skills\\better-interface"
       ],
       "files": {
-        "SKILL.md": "57412a685bd1a654f81def820099481b7df6ddf8f4bc06989a1b875b1d01c036",
-        "review-format.md": "99bf274b4a382d89fc281482c688127d1d82e3a5a5c84d2662ebfc9946dc8108",
-        "agents/openai.yaml": "541c5d823f474543d4f3a314a9292215f8c90c152249e72411ff3e3632cf55bc"
+        "SKILL.md": "219e99585cab3e523bfc232280a4e932f85a8b1d1ba6cd31d76e019bf5c191bd",
+        "agents/openai.yaml": "541c5d823f474543d4f3a314a9292215f8c90c152249e72411ff3e3632cf55bc",
+        "review-format.md": "99bf274b4a382d89fc281482c688127d1d82e3a5a5c84d2662ebfc9946dc8108"
       }
     },
     {
       "name": "better-layout",
       "path": "skills/better-layout",
-      "description": "Helps with grouping, alignment, reading order, progressive disclosure and other details that make a good layout.",
+      "description": "Use when fixing spacing, grouping, alignment, hierarchy, reading order, or progressive disclosure in a UI.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\better-layout",
         "C:\\Users\\tuval\\.cursor\\skills\\better-layout"
       ],
       "files": {
-        "SKILL.md": "f04c8d870fca110c8003aa8c0c82a7e121642a18443dfb114ee3d774d466c141",
+        "SKILL.md": "206f44c5df17ed9756314e17659c6c5c2ff0bdc505e3a5a6b3517d051dc8cc6a",
+        "agents/openai.yaml": "d51a2ca663c9331f8f23b7a550e5f848f83e81361e21f2280cc384e99cc0ae15",
         "grouping-and-alignment.md": "027edd034ab641e8affc2ec02ca97ee0824d86756b14e11de908d62f5d086fb1",
-        "spacing-and-adaptivity.md": "bf46b0857efa5022e6918eda026827e9de2747f3f349b5a6787a2322179abe77",
-        "agents/openai.yaml": "d51a2ca663c9331f8f23b7a550e5f848f83e81361e21f2280cc384e99cc0ae15"
+        "spacing-and-adaptivity.md": "bf46b0857efa5022e6918eda026827e9de2747f3f349b5a6787a2322179abe77"
       }
     },
     {
       "name": "better-typography",
       "path": "skills/better-typography",
-      "description": "Focuses on type scale, spacing, sizing, variable fonts, OpenType features, wrapping, truncation and other details that make typography feel great across your product.",
+      "description": "Use when choosing or fixing type scale, line height, sizing, variable fonts, OpenType features, wrapping, or truncation in a UI.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\better-typography",
         "C:\\Users\\tuval\\.cursor\\skills\\better-typography"
       ],
       "files": {
-        "SKILL.md": "717f615910470bd2b7c662cce2af2ebd11cd887379a6ea93455c45f3c5ba378d",
+        "SKILL.md": "e3ebd38b425b265d27779d1525af97e6b6c17451ed44a8dc33c94dd02356ac23",
+        "agents/openai.yaml": "01d8b8f835112e97ba0e4d97a07775e919407ebb5aab0cce9b4fa280e66b19b8",
         "choosing-fonts.md": "d139ec5d68cd123bc305d920295f7bc95a1e1123674de96d19103c1ebffc85c9",
         "css-cheat-sheet.md": "45c77f0d1954e12e76c3903361f52703cb4f4287d54c651710f60926247165fb",
         "details-and-accessibility.md": "d74e2719ee793fbf7408883e0e5eb396b67514ce07e02412f33d5408ecb4a02e",
         "spacing-and-sizing.md": "e28e7899a73a8b17f38418dfd8c1afda116db81a3b68d53dd51eab019b20ab82",
         "variable-fonts-and-opentype.md": "2bf1317ea5c0af6e36c57d15aacea512e450acbe4b00a8664c4619a959dea0b0",
-        "wrapping-and-punctuation.md": "7cfa3463b68cf21f08ab01a184b12c8bf2fe9340c2c7691a8cc99e4569389efe",
-        "agents/openai.yaml": "01d8b8f835112e97ba0e4d97a07775e919407ebb5aab0cce9b4fa280e66b19b8"
+        "wrapping-and-punctuation.md": "7cfa3463b68cf21f08ab01a184b12c8bf2fe9340c2c7691a8cc99e4569389efe"
       }
     },
     {
       "name": "better-ui",
       "path": "skills/better-ui",
-      "description": "Polishes and improves the UI in your project. Covers concentric border radius, optical alignment, surface depth, contextual icons, hit areas and more.",
+      "description": "Use when polishing UI details: concentric border radius, optical alignment, surface depth, contextual icons, hit areas, enter/exit motion.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\better-ui",
         "C:\\Users\\tuval\\.cursor\\skills\\better-ui"
       ],
       "files": {
-        "SKILL.md": "2482b7b89d851a3128d36edf5367f3223e113a4ef421b7358c7e6de3f2c83faf",
+        "SKILL.md": "509b5bd36be4dfdf3919a0d9059b084f00a08d55177d2380625d99b499a987c6",
+        "agents/openai.yaml": "799e0b58bded32edf5c217f97e08c364660ec24234978b2e3f7dee1868bea871",
         "animations.md": "5d2d9e4cefab494b6dd0683e7d2d9bc90788df9c536449c0828c241de965e846",
         "enter-exit.md": "8db1b33d6c80a097218a530cb9749dff4b0a2b992236047a2e88661af5e930ea",
         "icon-transitions.md": "60098242d33133a35a675719c447129b8931aecfbf05d58a6e2aa01e7894694e",
         "icons.md": "74cc78322874df4e2286bb0f5835d68114f74be1c94f993c94f6af692f44733b",
         "performance.md": "e4bc3c90d6e0281d295e2e7e39d545fb9abd8a67667b0c10e589eda8115e5b1e",
-        "surfaces.md": "5508a7caf07ae8de616e7d83e282d4a08c026dd7a2d3cf54979609e4e0301048",
-        "agents/openai.yaml": "799e0b58bded32edf5c217f97e08c364660ec24234978b2e3f7dee1868bea871"
+        "surfaces.md": "5508a7caf07ae8de616e7d83e282d4a08c026dd7a2d3cf54979609e4e0301048"
       }
     },
     {
       "name": "better-writing",
       "path": "skills/better-writing",
-      "description": "Focuses on improving product copy in your project.",
+      "description": "Use when writing or reviewing in-product UI copy: labels, buttons, errors, empty states, onboarding, microcopy. Not for docs or long prose (docs-writing).",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\better-writing",
         "C:\\Users\\tuval\\.cursor\\skills\\better-writing"
       ],
       "files": {
-        "SKILL.md": "d53163382a058f06e00ac0b36312189108b006aa0b05869c71a70f5c213c44ae",
+        "SKILL.md": "762e3433d2653fd739717920d1a55acf0153c2c9113bce583051674f3e56e7d3",
         "agents/openai.yaml": "a5aec7e0cbc87930962f139eff4341dcf87e83fd19b9447e3f614db2bc71de67"
       }
     },
     {
+      "name": "blast-radius",
+      "path": "skills/blast-radius",
+      "description": "Find what a change could break somewhere else before it ships, beyond the diff, and prove the one fact it's safe because of by running real code instead of writing it up. Use for 'blast radius of X', 'what could this break', or reviewing a small diff you don't trust.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "2e10745b97f5862323dcda3b29ca60d56b5c3c98e37020085d26b48efbe0a436"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
       "name": "brainstorming",
-      "path": "skills/superpowers/brainstorming",
-      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
+      "path": "skills/brainstorming",
+      "description": "Use when shaping a new feature or design that still has open questions, before writing a spec. Run sharpen first; skip for small, clear changes.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\brainstorming"
       ],
       "files": {
-        "SKILL.md": "e14914605f640e0841758e45d0ab2a53243b59b921f929e47921c99668f2e61d",
-        "spec-document-reviewer-prompt.md": "95a0a195de9d984be2fffa95bab16fc8c563bc296a9cfc5e9c29cb3ece0d7457",
-        "visual-companion.md": "3321a044c777d03d7177df41c77bb83155ff2a6d0c16b8a3d752426d29f14ea8",
+        "SKILL.md": "a709f92ad6b54bb32c21869033ec466153611ca5c16670013113b5cdf6d6d7be",
         "scripts/frame-template.html": "7b9418e9939dded0cf8e6a5549a18162b7c7e5495deeefa83a12f3394b81395d",
         "scripts/helper.js": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3",
         "scripts/server.cjs": "ee89af11506ac4933324c89a2cfb36b391fe611f82efb9eeb3b814e40825145f",
         "scripts/start-server.sh": "a4e5ae84275bcaacd2f84345afeabe59cf7b00ba080e123da7cc1fb226f12847",
-        "scripts/stop-server.sh": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf"
+        "scripts/stop-server.sh": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf",
+        "spec-document-reviewer-prompt.md": "95a0a195de9d984be2fffa95bab16fc8c563bc296a9cfc5e9c29cb3ece0d7457",
+        "visual-companion.md": "3321a044c777d03d7177df41c77bb83155ff2a6d0c16b8a3d752426d29f14ea8"
       }
     },
     {
       "name": "break",
       "path": "skills/break",
-      "description": "Renders a component you choose in every state and scenario on a temporary page and stress tests it.",
+      "description": "Use when the user wants a component rendered in every state and edge case (long text, empty, error, loading, RTL) on a temporary page to stress-test it.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\break",
         "C:\\Users\\tuval\\.cursor\\skills\\break"
       ],
       "files": {
-        "SKILL.md": "4b8a1d6b60c2d522432765ab90e9b794fa36dc54f08d1a734c5cb2a1baa69ff1",
-        "scenarios.md": "5aacf085d5eca87b7b5e4f1b0a7412bfd532c8eaa574f455a5b1ffb00cdf86e9",
-        "agents/openai.yaml": "e3e6b1a83f90763fa8cb166b4ec483ebc78fc84311fb0594d29f03d8ef76eddc"
+        "SKILL.md": "9cf63c528e1c549bf006726a0419232a8f8c6286795336b55a9da76c236914e9",
+        "agents/openai.yaml": "e3e6b1a83f90763fa8cb166b4ec483ebc78fc84311fb0594d29f03d8ef76eddc",
+        "scenarios.md": "5aacf085d5eca87b7b5e4f1b0a7412bfd532c8eaa574f455a5b1ffb00cdf86e9"
       }
+    },
+    {
+      "name": "bro",
+      "path": "skills/bro",
+      "description": "Restate the last message in plain human language, with no jargon.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "aa329d0ceeeecb6822a7174ad76bb07a7826a3c52ceb6a588dec4138815084bb"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "check-compiler-errors",
       "path": "skills/check-compiler-errors",
-      "description": "Run compile and type-check commands and report failures",
+      "description": "Use after code changes, or when a build or editor shows errors, to run the project's compile and type-check commands and report failures.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\check-compiler-errors"
       ],
       "files": {
-        "SKILL.md": "1ad76beccd581fc285199334709e0a37cdc2f76e5d0d33c90e1dc21905518004"
+        "SKILL.md": "0091981ff5548524403e8e8b540bd8255e027ae874e80b41af75d64be6f47f61"
       }
     },
     {
@@ -211,12 +402,12 @@
     {
       "name": "circles-hebrew-content",
       "path": "skills/circles-hebrew-content",
-      "description": "How to write and present information in the Circles project \u2014 Hebrew copy quality, language mixing rules, and structuring dense content for readability. Use when writing Hebrew-facing text (docs, mockups, dashboards, reports, in-app copy) or when presenting structured information like inventories, gap analyses, or status overviews.",
+      "description": "Use when writing Hebrew-facing Circles text (docs, mockups, dashboards, reports, in-app copy) or presenting dense structured information such as inventories, gap analyses, or status overviews.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\circles-hebrew-content"
       ],
       "files": {
-        "SKILL.md": "9330e97e72eb335c54d9ebc6c6546cccc4073923af8a49365c1bdbebd0ba1f33"
+        "SKILL.md": "16da13d6bdf06ca533e39843e702e667d1b3c5ac561d602796a5f94c2138ca7d"
       }
     },
     {
@@ -232,27 +423,12 @@
       }
     },
     {
-      "name": "code-documentation",
-      "path": "skills/code-documentation",
-      "description": "Writing effective code documentation - API docs, README files, inline comments, and technical guides. Use for documenting codebases, APIs, or writing developer guides.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\code-documentation"
-      ],
+      "name": "coding-workflow",
+      "path": "skills/coding-workflow",
+      "description": "Use at the start of, or when switching phase in, any non-trivial engineering task (feature, bug, refactor, review, CI, ship) to pick the specialist skill for that phase. Skip for one-line edits.",
+      "original_locations": [],
       "files": {
-        ".skill-meta.json": "26f2797a0db13c527314c4b600ead59c35db09bec2afe3676d0eb1ba817a2c39",
-        "SKILL.md": "ad96e20d38645570a508507209580936683d4c58b2cfe765f78b6a7f93404d58"
-      }
-    },
-    {
-      "name": "code-refactoring",
-      "path": "skills/code-refactoring",
-      "description": "Code refactoring patterns and techniques for improving code quality without changing behavior. Use for cleaning up legacy code, reducing complexity, or improving maintainability.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\code-refactoring"
-      ],
-      "files": {
-        ".skill-meta.json": "d47f18aa9c839850d3c1a9172a52a5dd4e071daa8db48ffcbce1aa7e23cbeb76",
-        "SKILL.md": "db4d95074849a184e2db81edb57f7621f2ab21746a956716d78c6cb52fba3060"
+        "SKILL.md": "c64e28e6c6b2bd3869123ea7654a3f25a26cc482151fc9b8ce44a3438f30bcf4"
       }
     },
     {
@@ -278,70 +454,125 @@
       }
     },
     {
-      "name": "deslop",
-      "path": "skills/deslop",
-      "description": "Remove AI-generated code slop and clean up code style",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\deslop"
-      ],
+      "name": "correct",
+      "path": "skills/correct",
+      "description": "Find the mistakes agents keep repeating in this repo and make each one impossible. Try architecture first, then types, then a lint whose error names the fix, then a test, and write docs last. Prove each check fails on a real past mistake. Repeat this each time the operator corrects you. Use for /correct.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "2f7b7def74af7ed11f5b44b4d32f0f91fca8c5d1f92bf2171e8d12fd33a0f810"
+        "SKILL.md": "e347045d00c967a0b831ef883cc6ac79d21329aa10b5968637df95de7febf0ba"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "create-formal-verification-skill",
+      "path": "skills/create-formal-verification-skill",
+      "description": "Generate a project-local skill that formally verifies the code where a bug costs the most and tests reach the least, in any language, with whichever verification tool fits. Use for /create-formal-verification-skill, \\\"model-check this race\\\", \\\"prove this invariant\\\", or when concurrency, retries, state machines, parsers, or unsafe code need more than tests.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "6c934cd15a9583533ff9b7a9cad62775d7e80402d26d3ba7f74f79ea21a1d8eb"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "create-verification-skill",
+      "path": "skills/create-verification-skill",
+      "description": "Generate a project-local verification skill that drives your app the way a user does — any language, framework, or platform. Use for /create-verification-skill, \\\"make a control skill for this repo\\\", or when a project has no scripted way to prove UI/CLI/service behavior.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "d353973547bf8ad8977eca645f4cd4feaed0d32f4b43d1448f906b0a76c4d694",
+        "references/feature-map-example/README.md": "cb7bd782cf89968a4ba3d58a5151db837430db92d19a6f52a906973b77b516ba",
+        "references/feature-map-example/create-note.md": "644a44c74f35d38c2feb7cd05a0121fdebbb623e8dc376c185b565a581d1ccf7",
+        "references/feature-map-example/search.md": "6e87b9e7f2791a7776ba1bb83f371cd285c306c67f19d245cc4dd6ca3015c823"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "design-a-grok-bot",
+      "path": "skills/design-a-grok-bot",
+      "description": "Use when designing or creating a new Grok Bot: ask preference questions, write a tight persona, create the agent, then verify against the live profile.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "aca7ef4b4147e2e8b67d121f13401e9f73105de4e2ed02f69041d95bb4b2cc8e"
       }
     },
     {
-      "name": "dispatching-parallel-agents",
-      "path": "skills/superpowers/dispatching-parallel-agents",
-      "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\dispatching-parallel-agents"
-      ],
+      "name": "design-ui",
+      "path": "skills/design-ui",
+      "description": "Use when building, polishing, or reviewing any UI (component, page, layout, color, type, UI copy, accessibility) to pick the taste, checking, or browser-review skill. Not for figures or diagrams (illustrate) or docs prose (docs-writing).",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "f0df13f584049059cc5619f90061405b89dcc6e28ab3f2a8517d27d99c7a46a6"
+        "SKILL.md": "77793d0fd5acb26f5ef1e3df26dfea100bcc90f2ddacbe176547c412a53a093e"
       }
     },
     {
-      "name": "executing-plans",
-      "path": "skills/superpowers/executing-plans",
-      "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\executing-plans"
-      ],
+      "name": "docs-propose-first",
+      "path": "skills/docs-propose-first",
+      "description": "Use when a propose-first docs bot drafts a docs patch from a merge wake or standing sweep: verify UX against the live UI, never ban what the code ships, keep superpowers gitignored, honor WIP quiet.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "bbd8d28bb655a52817cc129ce49f9e46fa7c6303f72ed5de95bfe914ef8e0ce8"
+        "SKILL.md": "ccf4c589967c43e3254a76d289d301134506c18005f3e564b0bb1130e87e2f84"
+      }
+    },
+    {
+      "name": "docs-writing",
+      "path": "skills/docs-writing",
+      "description": "Use when writing or editing prose (docs, READMEs, specs, PRDs, PR descriptions, release notes, long chat replies, Hebrew content) to pick the style guide or pass. Not for in-app UI copy (better-writing via design-ui).",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "c3f2210c5f1decd1bb9004df571f7d64b49e969178706c9c9666c8b83f6ab288"
+      }
+    },
+    {
+      "name": "engineering-companion",
+      "path": "skills/engineering-companion",
+      "description": "Use alongside coding-workflow when substantive engineering work needs a deeper pstack method (how/why, architect, blast radius, interrogate, project verification, runtime evidence), or for Negev/OTEF project pointers. Skip trivial edits.",
+      "original_locations": [],
+      "files": {
+        "LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+        "NOTICE.md": "7039ee660caf666b00652689bbd8076635fcdf9133277df4f0971e8fccd36d2c",
+        "SKILL.md": "b9bacedb0746f040d555679e7689036c0e1620b3b23b1de9f7cd66a42e0ffe27",
+        "agents/openai.yaml": "e8113f07336d87a674d3a6ba8cf065b0591cab8f21bab3be4a173443e62be161",
+        "references/architect.md": "b3e982381e7773a83a91a2e60efc510a019c9959c5d27954193be26a93b2c03e",
+        "references/blast-radius.md": "316ed2483cd681c38d7b295356a3380b9a589eee99768e4722a18252c03272d5",
+        "references/compatibility-checks.md": "3203521f3ba14645fb95a7ce9213ea191751ea78c98403859690dccc7cd700ed",
+        "references/how-and-why.md": "6ef66ee23f9728ccc9d5e4c2778517ec20ee2c9de386329ba5bc4d9ca771723c",
+        "references/integration.md": "ce476bff65aef1306a8db98b7ebb67d18a91fc3655e70be54d7ca646d8ecad98",
+        "references/interrogate.md": "151bea64214599019a9cd3c9f284250319a673b7965ed5c18410823d219f3caf",
+        "references/project-integration.md": "9d628e974fb843fa61f187ee0c731717abff00102f6cc725da649926faad5cd5",
+        "references/project-verification.md": "dc84263c34f353373aa937b5aff94e599262fd5d741a4b2dfd1d0d1e563f9b62",
+        "references/runtime-evidence.md": "43d22e31c18932326ef6c7c3582675fac996aac1f348388af49ba49d2b110cdc"
       }
     },
     {
       "name": "explain-interface",
       "path": "skills/explain-interface",
-      "description": "Helps you figure out how something was built on the web.",
+      "description": "Use when the user points at a website or UI and asks how an effect, layout, animation, or interaction was implemented.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\explain-interface",
         "C:\\Users\\tuval\\.cursor\\skills\\explain-interface"
       ],
       "files": {
-        "SKILL.md": "cff58fca5a8f29cefc05bf9f97c1f88f3cf9345ee520a2da4db803c50848c5fb",
+        "SKILL.md": "c1bd764d33057afb7a89b067c7358076f4d0cc5d1c0274bb86c152c2c7eace2d",
+        "agents/openai.yaml": "3858853344ece1dd145523bd9d61c8905c4b2cb6c7307f023cc8666b8f4dc0bc",
         "find-the-effect.md": "7e26085eb0c8c68c33d322fbecb16586cc799b0e032d53c912eb16a0c253ceaf",
         "from-an-image.md": "b6073080f9fedf9ac34ff035c36aa235c42e6549bcd619d460484fd262add18b",
         "no-browser.md": "c46533a02e16a3ed09cb3d74df7898547200a21b27053ee029da8b7c4a4f5c8c",
-        "read-the-system.md": "d10d72357af0733ad1db251bc9fd2ec6e8218cdac4bc095a87cf714a269d1688",
-        "agents/openai.yaml": "3858853344ece1dd145523bd9d61c8905c4b2cb6c7307f023cc8666b8f4dc0bc"
+        "read-the-system.md": "d10d72357af0733ad1db251bc9fd2ec6e8218cdac4bc095a87cf714a269d1688"
       }
     },
     {
-      "name": "file-organizer",
-      "path": "skills/file-organizer",
-      "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\file-organizer"
-      ],
+      "name": "figure-it-out",
+      "path": "skills/figure-it-out",
+      "description": "Design an auditable playbook when no narrower one fits: a large migration, an ambitious multi-part change, or work a human reviews after stepping away. Scales rigor to the task, runs a hypothesis loop, and logs decisions. Use for /figure-it-out or 'figure it out'.",
+      "original_locations": [],
       "files": {
-        ".skill-meta.json": "0b6227d48627cd0e15c2d5e6c5ee33de67a7b1f42b066b55f44135d42b7a5f11",
-        "SKILL.md": "a8b91952bab7f73511db68149c4a54672b40699903a8e35ed5044c3e3039ded5"
-      }
+        "SKILL.md": "bdb23cdbd82a1e6af094b495691c832a6f7f3ab9706ba9edbeb664ef51a726e1"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "finishing-a-development-branch",
-      "path": "skills/superpowers/finishing-a-development-branch",
+      "path": "skills/finishing-a-development-branch",
       "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\finishing-a-development-branch"
@@ -353,68 +584,45 @@
     {
       "name": "fix-ci",
       "path": "skills/fix-ci",
-      "description": "Find failing PR checks, inspect logs or external check links, and apply focused fixes",
+      "description": "Use when a PR's CI checks are failing: find the failing checks, read their logs or linked pages, and apply focused fixes.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\fix-ci"
       ],
       "files": {
-        "SKILL.md": "925f8c3e11de8bcc0cd015ec907f4d00b12cde6714246554ed3a52e096536522"
+        "SKILL.md": "78ee4ea56cf00bedb84455c43b644178f5de44d9b1461f0cbef8e3948e38bf29"
       }
     },
     {
       "name": "fix-merge-conflicts",
       "path": "skills/fix-merge-conflicts",
-      "description": "Resolve merge conflicts non-interactively, validate build and tests, and finalize conflict resolution",
+      "description": "Use when a merge or rebase stops on conflicts: resolve them non-interactively, then validate build and tests and finish the merge.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\fix-merge-conflicts"
       ],
       "files": {
-        "SKILL.md": "738b251281b30fd33e3892d0679cf94249e9c9e29e1bed40bcdde4a6aca98a76"
-      }
-    },
-    {
-      "name": "format-first",
-      "path": "skills/format-first",
-      "description": "Pre-feature formatting workflow to prevent mixed logic/formatting commits and keep git blame clean",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\format-first"
-      ],
-      "files": {
-        "SKILL.md": "0c781e568dbe4cff903e9d8a012c10d7c79cf8d8a1dba83d8129817ad4a9e280"
-      }
-    },
-    {
-      "name": "frontend-design",
-      "path": "skills/frontend-design",
-      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\frontend-design"
-      ],
-      "files": {
-        "LICENSE.txt": "eb3d7b5485466acbd81f2b496f595ab637d2792e268206b27d99e793bdb67549",
-        "SKILL.md": "70044bbc8e4c21d23b8c8b864956aa1515c1c6cb2f9df14148dbb8c4af6187e5"
+        "SKILL.md": "c891166a9fdb17822e5bb8230451472448fe3be935aaf3488fc646655ca057dc"
       }
     },
     {
       "name": "get-pr-comments",
       "path": "skills/get-pr-comments",
-      "description": "Fetch and summarize review comments from the active pull request",
+      "description": "Use when the user asks what reviewers said, or before addressing review feedback, to fetch and summarize the active pull request's review comments.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\get-pr-comments"
       ],
       "files": {
-        "SKILL.md": "8bf292736cab922276feb4d8377edc2fc4102a7beb62bcd1f3f5cf72a79b16cc"
+        "SKILL.md": "197a1f7e51b3bea02d36f773820f6e03e879602c1c0ba8878fbd06f409cc2851"
       }
     },
     {
       "name": "git-diff-hygiene",
       "path": "skills/git-diff-hygiene",
-      "description": "Detect and prevent accidental mass formatting/lint commits that pollute git blame. Classify diffs (logic vs formatting vs mixed), recommend splitting commits, and manage .git-blame-ignore-revs safely.",
+      "description": "Use before committing or reviewing a diff that may contain mass formatting or lint changes: classify logic vs formatting, split commits, and manage .git-blame-ignore-revs.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\git-diff-hygiene"
       ],
       "files": {
-        "SKILL.md": "ce0381c2c8771e7ee901f9168698a6324f93789be0c335d89a07b31ed27cbe38"
+        "SKILL.md": "2dd1e55acdec1d65b19d7b40cef5001fc8c201b739c49a77d41c3e471653cc76"
       }
     },
     {
@@ -425,12 +633,12 @@
         "C:\\Users\\tuval\\.agents\\skills\\google-developer-style"
       ],
       "files": {
-        "SKILL.md": "06a14207fa89ab418835bb58809093699f11f632ada21741f7e5d70413d7d7b8",
+        "SKILL.md": "e7c6aa5780a899a67fc96185814e40ed31343f3177aa5ecb4d0d4cb4832bd33e",
         "agents/openai.yaml": "3f08aa51a124cc82ac28052067eed4bb87726e18608992650a46131bdf02d3ff",
-        "references/principles-and-language.md": "7ba6eb2a9c7e9ed42b3e2bb58aff6e5c08bde8246f8107427507615023f5de7f",
+        "references/principles-and-language.md": "91b0c5dd9cb2141aba6a392d3f268c70e36011a74cc28792a9e6c2d09be4bacc",
         "references/source-map.md": "786dd5a2cf14fa93e9011f4982e32c978adf2ce376e62d1466656478985dbbbd",
         "references/structure-and-formatting.md": "7db860094efdb13c5e30cf7a874e5eaf5f00b91bc99e7b739e1657338afe1254",
-        "references/technical-documentation.md": "3c3c7d6a96ae1a77728b2784b99ddf9a86480e60ed96e8108f1f3a841c18c037"
+        "references/technical-documentation.md": "b1941c6eafb7fef391962078747dd2e0aa148b3a5b2261d3c8b096993a2dfa64"
       }
     },
     {
@@ -473,6 +681,18 @@
       }
     },
     {
+      "name": "how",
+      "path": "skills/how",
+      "description": "Use for \\\"how does X work\\\", code walkthroughs before changing something, and placement / ownership / layering questions (\\\"where should this live\\\", \\\"which package owns this\\\", \\\"is this the right layer\\\"). Explains subsystem architecture, runtime flow, onboarding mental models. Use why for motivation.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "08a00079bb15b4258874ac3ff62d4ca7e94350ffedb521d0fd296dc9dd21904e",
+        "references/explainer-prompt.md": "ddb89cebefc24e2b54517a331aedfe045b6971e101f45c71b8cef4cccff45bff",
+        "references/explorer-prompt.md": "6300128385ee940fd42ecb84b0e623435440a2dc283eae54ee4a52ba56947ba1"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
       "name": "ian-xiaohei-illustrations",
       "path": "skills/ian-xiaohei-illustrations",
       "description": "Generate Ian-style Xiaohei article illustrations. Use for articles, posts, blogs, Notion docs, workflow docs, methods, processes, structures, states, metaphors, viewpoints, shot lists, image generation, or image edits that call for strange minimalist hand-drawn body illustrations. Default output language is English: clean white background, black hand drawing, sparse red/orange/blue handwritten English annotations, and the Xiaohei IP as the active conceptual actor.",
@@ -504,70 +724,100 @@
       }
     },
     {
-      "name": "interface-design",
-      "path": "skills/interface-design",
-      "description": "This skill is for interface design \u2014 dashboards, admin panels, apps, tools, and interactive products. NOT for marketing design (landing pages, marketing sites, campaigns).",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\interface-design"
-      ],
+      "name": "illustrate",
+      "path": "skills/illustrate",
+      "description": "Use when making a figure, diagram, illustration, chart, or visual explainer to pick the right skill. Not for app UI (design-ui).",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "9dc9803723d342f36c4bf5d8a995d147fc524833def9c0ccd194fc44252efc4f",
-        "references/critique.md": "f4c7a92fd2d0a4044f7fd86dfb6b9e7e84fc25ece207ab507f6599dd0b9b8b0c",
-        "references/example.md": "52baa14db90c506c24f107b5160a4b126e83a36020299334c2e393170a260589",
-        "references/principles.md": "501cdbba9d073beb141aec08e0759e33fb4ed5e34a3bb76cc1c12cd45731a201",
-        "references/validation.md": "3955703cc99b9c4e96d25af86f6ca1870986ecfc9a64e18b0b6dbf79105c81c2"
+        "SKILL.md": "80b9b169d1768aa26ca149ca00af8953cd9940b7a0219f00dc05eec9949e9645"
       }
     },
     {
-      "name": "interface-review",
-      "path": "skills/interface-review",
-      "description": "Reviews your work across multiple categories like UI, typography, layout, color, writing and accessibility and gives you a detailed analysis of the findings.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\interface-review",
-        "C:\\Users\\tuval\\.cursor\\skills\\interface-review"
-      ],
+      "name": "in-your-own-words",
+      "path": "skills/in-your-own-words",
+      "description": "Restate in your own words what you think the user's goals are and what problem they're trying to solve. Use for /in-your-own-words.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "65783ac261ee1a33da11bbbbdb6e71ab6162fc24a2450f91781457b41b9a6d13",
-        "removed-signals.md": "9e2d2d0c555dce408e241a9179c04f743c76459b6bd9add0904d03163ff61af0",
-        "scope-resolution.md": "c3ca6c8c605d8f321995c935fc5bcc5173d7d3a46541de0b580f7394d6e121b7",
-        "agents/openai.yaml": "c8bb068bbd40629f03d7d4c0284924f8df1dfdf7f1a7b0fabb88b265202fa23f"
-      }
+        "SKILL.md": "fa8ba74e27d7be371dc270ec78bbf816411477d0dfab185356c861ac8dd413ad"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "interrogate",
+      "path": "skills/interrogate",
+      "description": "Use for \\\"interrogate\\\", \\\"adversarial review\\\", \\\"multi-model review\\\", \\\"challenge this\\\", \\\"stress test this code\\\", \\\"find blind spots\\\", or \\\"tear this apart\\\". Multiple LLM reviewers challenge changes from independent angles.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "a16dfe179005abc22a4651b82f25b0c8ab953284276efe4e6dc341958fb63647",
+        "references/code-quality-review.md": "79162fda183eafd40d51661fbb5e151c7ba250f89e506ba17f5bd135dcbd50a8",
+        "references/lead-judgment.md": "355f5195a76bc75a655125292369f2a8231a2b61fabe5188d8f1386060922b87",
+        "references/reviewer-prompt.md": "f6005cc2b535006fca97a96c5bfda49df57312eedf1ffd8d1aaaf3eb33817c25",
+        "references/rubric.md": "0f9c6bdb0b96e26dbde5f6407f417e0c02f54080e7a1268d8994f3c3ec6c5ac0"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "israel-gov-api",
       "path": "skills/israel-gov-api",
-      "description": "Discover, query, and analyze Israeli government open data from data.gov.il (CKAN API). Use when user asks about Israeli government data, \"data.gov.il\", government datasets, CBS statistics, or needs data about Israeli transportation, education, health, geography, economy, or environment. Supports dataset search, tabular data queries, and analysis guidance. Enhances existing datagov-mcp and data-gov-il-mcp servers with workflow best practices. Do NOT use for classified government data or data requiring security clearance.",
+      "description": "Use when the user asks for Israeli government open data (data.gov.il, CBS statistics, transport, and other government datasets): discover, query, and analyze it through the CKAN API.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\israel-gov-api"
       ],
       "files": {
-        "SKILL.md": "0f2cbc375135ee490530c2e372f30f5cae1d5c8fa1cf256557b311e121abf1f6",
+        "SKILL.md": "41c2d0d9a690c5186bd503555ba275c32b9f534ab73bd44185c4aa87cc30bfe7",
         "SKILL_HE.md": "ab90a156aeec68ab56003a336fdcf314a16bca13feb8f2ee56b29ba581910853",
         "references/ckan-api-reference.md": "0cd96475779ee4d41a630fecc62242025a9e7d6c0e229e0872eaddc60bb31780",
         "scripts/query_datagov.py": "0c63c6c739398f79097c00eaff7e228daf9cf3846c8985775167da2a0057f1be"
       }
     },
     {
-      "name": "javascript-typescript",
-      "path": "skills/javascript-typescript",
-      "description": "JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks. Use for frontend, backend, or full-stack JavaScript/TypeScript projects.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\javascript-typescript"
-      ],
+      "name": "ketchup",
+      "path": "skills/ketchup",
+      "description": "Catch the user up on what changed in this chat since their last message, in plain words and small visuals. List every item waiting on them with what they need to decide it from the reply alone. Use for /ketchup.",
+      "original_locations": [],
       "files": {
-        ".skill-meta.json": "0abc01ec5cc19856b8076fcc410cca6f2fab15e88cf4995bc9a326b7c36fa1f4",
-        "SKILL.md": "c400e686769482084158877137fa2e891246c67ab3fa7870d3eb9fcbad3dd720"
-      }
+        "SKILL.md": "f2923ffd14f6fc778f75a47aaed1f317fb5fd00b5701ca769d6446c74106dead"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "loop-on-ci",
       "path": "skills/loop-on-ci",
-      "description": "Monitor PR checks and fix failures until green. Uses gh pr checks as the source of truth for PR-attached checks.",
+      "description": "Use when the user wants a PR babysat until green: watch gh pr checks and fix failures repeatedly until every check passes.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\loop-on-ci"
       ],
       "files": {
-        "SKILL.md": "66b85dbd2bc3700386283539292a55438652bbe227271fd90b73b74525b9b9de"
+        "SKILL.md": "4ed93c36a95716b72e48c77e60eff761f8913d108d09f26b3b11020af92c7039"
+      }
+    },
+    {
+      "name": "maintain-formal-verification-skill",
+      "path": "skills/maintain-formal-verification-skill",
+      "description": "Bring a project's formal verification back in line with the code after the code changes: find the commits that touched verified code, update the model, harness, or properties to describe the code as it is now, rerun, and say whether each failure is drift in the verification or a bug in the code. Use for /maintain-formal-verification-skill, \\\"is the model still true to the code\\\", or after merges and refactors that touched verified code without rechecking it.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "0c96f54293542d3818b68754562b338073958781a9684454611dca37592e2d2c"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "maintain-verification-skill",
+      "path": "skills/maintain-verification-skill",
+      "description": "Periodic pass that keeps a project's verification skill and feature map honest: parallel source readers per feature, one live session driving every feature, at most one PR of proven corrections. Use for /maintain-verification-skill or \\\"audit the verify skill\\\".",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "515c0eaa054b3f6be1b1fb06f2c2f173c80fddb58bbcac57576f89c479bc68e8"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "make-bot-ui",
+      "path": "skills/make-bot-ui",
+      "description": "Use when building a custom UI (page, dashboard, buttons) that should wake a Grok Bot over a webhook, when the user must provide a webhook sender key, or when exposing that UI on Tailscale.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "a3cb148a554c9104bdb9d3972cfb9d4a048fe9d264685debb3c81bda728758f1"
       }
     },
     {
@@ -578,7 +828,7 @@
         "C:\\Users\\tuval\\.codex\\skills\\make-pr-easy-to-review"
       ],
       "files": {
-        "SKILL.md": "e8da0d4a85b7c04823698f539251617389f827fd9137100ef7eaea5dcc992fe7"
+        "SKILL.md": "779f3e3d6ce0bec423cf09d0712342ea1ed265c7bc24087c1b16c76fbc245552"
       }
     },
     {
@@ -595,45 +845,40 @@
     {
       "name": "new-branch-and-pr",
       "path": "skills/new-branch-and-pr",
-      "description": "Create a fresh branch, complete work, and open a pull request",
+      "description": "Use when starting a change that should land as its own PR: create a fresh branch, do the work, and open the pull request.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\new-branch-and-pr"
       ],
       "files": {
-        "SKILL.md": "4e8f502fcf48553949387a9a7f58b21349e0ff87c24bf8ff5c0013e9da6819fd"
+        "SKILL.md": "68c99829977343de56b69bf17c6d26f8f87ea810a3cd4c8cd9161e0d214105b5"
       }
     },
     {
-      "name": "penpot-uiux-design",
-      "path": "skills/penpot-uiux-design",
-      "description": "Comprehensive guide for creating professional UI/UX designs in Penpot using MCP tools. Use this skill when: (1) Creating new UI/UX designs for web, mobile, or desktop applications, (2) Building design systems with components and tokens, (3) Designing dashboards, forms, navigation, or landing pages, (4) Applying accessibility standards and best practices, (5) Following platform guidelines (iOS, Android, Material Design), (6) Reviewing or improving existing Penpot designs for usability. Triggers: \"design a UI\", \"create interface\", \"build layout\", \"design dashboard\", \"create form\", \"design landing page\", \"make it accessible\", \"design system\", \"component library\".",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\penpot-uiux-design"
-      ],
+      "name": "no-comments",
+      "path": "skills/no-comments",
+      "description": "Spawn Comment Sicko, fix accepted findings, and offer encodings for claimed constraints.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "d15c5f2607fc96c272738343f58d054357bf54042be36f7d68a1f473fc78bdfe",
-        "references/accessibility.md": "04f5a97f6edeb22c5b79e1aad304cb8d597a4a9612b6ce3770116c5e383c6f33",
-        "references/component-patterns.md": "03c7bcc8e68bb27cd314ce5177774ba3f99898e73678677c39976fd9a95f289a",
-        "references/platform-guidelines.md": "e2fc62d9ad2aa89ff60a46e8dc741c360d902371bbbc36b0cb0decf4fc5bc7a1",
-        "references/setup-troubleshooting.md": "5eceba271320c73a4ed22db14b4c02331b5768f98121eab74cd3e6440bb4f521"
-      }
+        "SKILL.md": "078ecfe224eafbb017f6476870612838bf6dbe38c0b697e12f0c887d0313f17e"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "perspective-ensemble",
       "path": "skills/perspective-ensemble",
-      "description": "Surfaces multiple substantive viewpoints to counter generic \u201cmean\u201d answers. Runs two distinct passes: a multi-lens council for real tradeoffs, and an adversarial red cell to stress-test assumptions and attack the plan. Use when the user asks for breadth, creativity, critique, stakeholder views, pre-mortems, red-team checks, challenge, falsification, architecture or product tradeoffs, ambiguous requirements, or explicitly mentions multiple perspectives, \u201cwho would help,\u201d devil\u2019s advocates, or moving away from a consensus/default answer.",
+      "description": "Use when a decision or plan needs real tradeoffs or stress-testing: runs a multi-lens council and then an adversarial red cell instead of one averaged answer.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\perspective-ensemble",
         "C:\\Users\\tuval\\.cursor\\skills\\perspective-ensemble"
       ],
       "files": {
-        "SKILL.md": "63c7d06e186d53e61ec8fa96c777c74bf341bec997f3e369ca98734d0317e798"
+        "SKILL.md": "5b59a1c3fa55ed7a9bd841dd7b22cd0684fae51d35c84069fae0eefef434dc6f"
       }
     },
     {
       "name": "playground",
       "path": "skills/playground",
-      "description": "Creates interactive HTML playgrounds \u2014 self-contained single-file explorers that let users configure something visually through controls, see a live preview, and copy out a prompt. Use when the user asks to make a playground, explorer, or interactive tool for a topic.",
+      "description": "Creates interactive HTML playgrounds — self-contained single-file explorers that let users configure something visually through controls, see a live preview, and copy out a prompt. Use when the user asks to make a playground, explorer, or interactive tool for a topic.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\playground"
       ],
@@ -667,6 +912,73 @@
       }
     },
     {
+      "name": "poteto-help",
+      "path": "skills/poteto-help",
+      "description": "Guides users through pstack setup, /poteto-mode, and picking the skill, playbook, or principle for a task. Type /poteto-help with a question.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "8b4ee6eaa3fc0bcd69385ac3c7a86482e5293f3f2e4ff894bacd6ca1368e2f96",
+        "references/prompting.md": "463f450c44a60afd001a2f69fdf8a5dea174351f339369b12ec3c41515e564d3",
+        "references/recipes.md": "a69696c4496bed3e852e7c4527071989e2e6d99937ba7f984ed188eb8dd8aff0"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "poteto-mode",
+      "path": "skills/poteto-mode",
+      "description": "poteto's agent style for concise, detailed responses, deliberate subagents, unslopped prose, simple code, and verified work. Use for poteto, /poteto-mode, or requests to work in this style.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "2755f102e7a6d0496b429d1031a22fb353e1f3d523543367caeaae5c4ed6f544",
+        "playbooks/authoring-a-skill.md": "f6a13a445c360b48d6cd72780ac01955f45b82826476efe0e67c7559329407aa",
+        "playbooks/autonomous-run.md": "6ac974fd2b09748add56493e89f578a35a6a9289e1026515878d81ef3cf129d1",
+        "playbooks/autopilot-full.md": "acf4f4a58c11045f9d3e8807d907a877e61ca6432b079f1087d7d30fc931566f",
+        "playbooks/autopilot-stack.md": "c6bcb18b2ce605e77a2a2225854590a4b9a687911f79331746d91a4fe9a52e60",
+        "playbooks/babysit.md": "e261c1ff5581e0f8fc6c686f34de4b535f87473e77beabea7dd8323021214610",
+        "playbooks/bug-fix.md": "66e26542dad131cfd7df80ac0cdf81ed4d85e7b5e3f0eb65b933888760c4831f",
+        "playbooks/eval.md": "a93d449a908236afa6645179651844094b1547dbab4e484cffcdda630e4b90bf",
+        "playbooks/feature.md": "af8ce700b99953741cb547e34308fde0cf6b98ce67e1652c800d0deedf53aba1",
+        "playbooks/hillclimb.md": "942c1565b75ad02a2cb6230dd7c1ebd87e19f59a00319ebac2b6616007bf018f",
+        "playbooks/investigation.md": "dc66bcf6af3a074fc7f67aa5e12b93ef571a4fb4d8e17f2f1af5ae5359f42e46",
+        "playbooks/multi-phase-plan.md": "5f239457bfdec3345c92caa06c59bf0257c662b89353f25a1c02ea942dcd00b1",
+        "playbooks/opening-a-pr.md": "a5aef646de8b651306c2d10974623650e4a013a245aec1c00525bbe0e31bfa76",
+        "playbooks/orchestrate.md": "08dce6c9e7be1d13bc6944ab9b51665f935c531437f5e088bc53d2a62099ef05",
+        "playbooks/pause-safely.md": "77968cfe5f4a71a8cd33e0ae8ffcdbd88dd693a212c240457773e6c40c96c21d",
+        "playbooks/perf-issue.md": "c12aa2f82de7651a11676a3d5fea168f539b7f0faaa3a501d279255dd2a469c8",
+        "playbooks/prototype.md": "7aa1f52c691c3d46d5afc527b23f90977fce869ce33573c73c81a4c7f0cde962",
+        "playbooks/refactoring.md": "0f5dd38113379ea8cf61e2182eca0a7478eea9a869eb40c2dddab3335aeca197",
+        "playbooks/runtime-forensics.md": "3463372b578c28f27c236f2627f09b5c5b1e85e86db7399fb984f3892fb450f5",
+        "playbooks/session-pickup.md": "d194f2a7ef392c1598ef3f0e3b561370ca25c2c7a78308007af4aa46ada8ee12",
+        "playbooks/shipping.md": "bf56339bdf7e0223bcff5abf4e8599e3f5b547b3fcc3b4ce9475e6e7dda14a9f",
+        "playbooks/trace-forensics.md": "ef0bbf79856a4ae1a8993d54c1a1da159cb97623941b652c0069cf75a017e0f5",
+        "playbooks/visual-parity.md": "950ca51999a6454c98eee6bcbc3d1bbe501a4e3a5d5439b6f6ddc378991b256c",
+        "playbooks/worktree-cleanup.md": "be04ae0afe19d4a4da5bcc4e94455f68dbebd1cda6eb0f456ca0d358ecf76c00",
+        "references/bugbot-triage.md": "b2d146c770d8d3593e1ef3d77b668039b8e1f78093ea1a86f1d45d7f99614309",
+        "scripts/bootstrap.ts": "ccd2ed08fd9da9d0d942e5f2491cfc74bb92d8a08fa51755e0da1ac8de287361",
+        "scripts/bun.lock": "667d9cf7222e9aae3fa42a4be383e657784216e9df115da02227fbc5ac7bbe46",
+        "scripts/check-plan.mjs": "e58c3d871b09d477be00628d69dd23ffa6c2e3a1728f5b867a841baa8e90278b",
+        "scripts/check-plan.test.ts": "c80f3ea043b81f219b92c4c8a3af6bdd4f8d32ea596ec15b5b9e0252645f2ae8",
+        "scripts/orch/orch.test.ts": "5e80b416bdcd68e4067690ce857345852fd2e0db3dcf3e25607999cd55b963d2",
+        "scripts/orch/orch.ts": "47c92c57e8276616d8de94665a126bd832e748036afa8d0ffdbacb7946decb5c",
+        "scripts/orch/store.ts": "558cfda533e1ebe7c8d7842604f07e0be7618759cf129b4c2397a8e29516ecea",
+        "scripts/package.json": "fd511a0c01f522e0c781ddd8eccea0e91697a0856c6e6a3261de78a6a0287c72",
+        "scripts/watch-pr/cli.test.ts": "a35592b4c6da96caf8d47987e9cd503fab6c7774ab87d11a43f24b4b5df2a9d1",
+        "scripts/watch-pr/cli.ts": "89c08863089181a232be782c4b2ed90a1552f44aeecb0dcb7aac2c623620e680",
+        "scripts/watch-pr/fakes.test-helper.ts": "cf0c5ee61b4a73444c1b775cfb6c81a40d312e055dd21a1f5eae6276e54de13f",
+        "scripts/watch-pr/github.test.ts": "70c9f03d8738228763846f2abdd8c7de7be68dba3035041482386a69cbf5639b",
+        "scripts/watch-pr/github.ts": "a605b8531468dbe4c07b93663c0993a9c11dc7e9179adde970f5c740396451d9",
+        "scripts/watch-pr/policy.test.ts": "146acabcfee9b6fa3342358eb0a9504aa65fd081bbc15b10adf9c1c5485067d2",
+        "scripts/watch-pr/policy.ts": "f2a3e31223d05edc05e5473cc3f8f3cb9bd20c202c30c6abe7f21f0f7aee8fbb",
+        "scripts/watch-pr/render.ts": "2b709e86628d5b8fdb61f860e60ababc342b0626c67576305442cf548283a604",
+        "scripts/watch-pr/tsconfig.json": "1ecccc72320b086c63ce3f73c959896fd747363e63553b3b1136296ea4069e45",
+        "scripts/watch-pr/types.compile.ts": "621af4c9a664fbf699a9737efccdc248abb416df8819c9dc5f824beae2b9b1d6",
+        "scripts/watch-pr/types.ts": "0cac435294dc85ce1ba755e8e67f6c5ab163dfa252f2722d6e3a2d68c58fec59",
+        "scripts/watch-pr/watch-pr": "d955603be6cc0e8b8ffcec722f635192b2261410b1f2929abea94480e47eb5d4",
+        "scripts/worktree-audit.sh": "e0a94e5e5b1ff60638916e440600e15851f7b79bc1a1d1f602fde05d465e2ec0"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
       "name": "pr-review-canvas",
       "path": "skills/pr-review-canvas",
       "description": "Generate an interactive PR review walkthrough as an HTML page. Fetches PR data via gh API, categorizes files into core vs mechanical changes, adds reviewer annotations, and renders diffs with moved-code detection. Use when the user pastes a GitHub PR URL and asks for a review, walkthrough, or summary, or says \"review this PR\".",
@@ -679,6 +991,246 @@
         "styles.css": "3c3ff002dd3bfe7f4fdbda521fce05e336c4a7922f4bd4d848f6566a961ceb19",
         "template.html": "cb56bc764384856da4733d1c999521c3e1b20d65ed80605630b74da448abe756"
       }
+    },
+    {
+      "name": "principle-attack-the-premise",
+      "path": "skills/principle-attack-the-premise",
+      "description": "Apply when two or more fixes that share one premise have failed the same gate. Write the premise down and test it directly before you write another fix that assumes it.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "6a932884daad4aa189e9b5d1665226bbc75621d4d2a398fd4003bebd382f4599"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-boundary-discipline",
+      "path": "skills/principle-boundary-discipline",
+      "description": "Apply when wiring validation, error handling, or framework adapters. Concentrate guards at system boundaries (CLI, config, network, external APIs); trust internal types and keep business logic in pure functions.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "62ac2862c2caa22dd14531f51c9c6bb445ceb198ca98a687e25b4d47c1f10a28"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-build-the-lever",
+      "path": "skills/principle-build-the-lever",
+      "description": "Apply to any non-trivial work, not just bulk work: edits, migrations, analyses, checks. Build the tool that does it or proves it (codemod, script, generator, or a skill your subagents follow) instead of working by hand. The tool is the artifact a reviewer can rerun.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "3434b0ad0c640c6f1d7960be7a8986c3bcdc14e26060360dec29903df60074ff"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-encode-lessons-in-structure",
+      "path": "skills/principle-encode-lessons-in-structure",
+      "description": "Apply when you catch yourself writing the same instruction a second time, or notice a recurring correction. Encode the rule as a lint, metadata flag, runtime check, or script instead of more text.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "228963799189f481827d6f28065f278bc2008ffa37030b1234cbd5814d36b9e9"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-exhaust-the-design-space",
+      "path": "skills/principle-exhaust-the-design-space",
+      "description": "Apply when facing a novel UI interaction or architectural decision with no precedent in the codebase. Build 2-3 competing prototypes and compare side by side before committing.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "2de83d99f93f60ec6313455b0bc9aa9f0bfb93dd59f414f403691322db00d4db"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-experience-first",
+      "path": "skills/principle-experience-first",
+      "description": "Apply when product, UX, or feature-scope tradeoffs come up. Choose user delight over implementation convenience; ship fewer polished features over more rough ones.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-explain-the-number",
+      "path": "skills/principle-explain-the-number",
+      "description": "Apply before you trust, report, or act on a number you measured: a speedup, a regression, a throughput, a latency, or an eval result. Find what limits it, and rule out that it measured something other than the work you think.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "cd5a25f9e7cf023627ccb470dc5faa97542f29b4319496a32b839a8e1e988047"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-fix-root-causes",
+      "path": "skills/principle-fix-root-causes",
+      "description": "Apply when debugging. Trace each symptom back to the first place the system went wrong and fix it there. A guard is a fix only when the state it handles is legitimate.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "8df3c8c3fe57eb0055a5c8efab8ab144557fdf301da70b1cdc77a3a3ef3f3052"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-foundational-thinking",
+      "path": "skills/principle-foundational-thinking",
+      "description": "Apply before writing logic: choosing core types and data structures, sequencing scaffold-vs-feature work, asking what concurrent actors share. Get the data structures right so downstream code becomes obvious.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "864b827e8199d946ce58beca0f89c4ed4099ed6e426fb698a3aaa45de2a9eea2"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-guard-the-context-window",
+      "path": "skills/principle-guard-the-context-window",
+      "description": "Apply when context is filling up: large outputs, long files, repeated reads, fan-out planning. Route bulk to subagents; keep summaries in the main thread, not raw payloads.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "af0b9dd70b43628ce4a59a4d332e9d9ad055084e460f430e7a757495c627e81a"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-laziness-protocol",
+      "path": "skills/principle-laziness-protocol",
+      "description": "Apply when refactoring, evaluating diff size, or tempted to add abstractions, layers, or signal threading. Bias toward deletion and the smallest change that solves the problem.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "1be6e7a435f26a75a76eb848b9c3d611b9977d0f5822361753244da25ca3ca45"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-make-operations-idempotent",
+      "path": "skills/principle-make-operations-idempotent",
+      "description": "Apply when designing commands, lifecycle steps, or processing loops that run amid crashes, restarts, and retries. Converge to the same end state regardless of partial prior runs.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "7aa9327cf1f1aa057e95d47a0a78bd88a8f9d556b608866fee939d455a53a019"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-migrate-callers-then-delete-legacy-apis",
+      "path": "skills/principle-migrate-callers-then-delete-legacy-apis",
+      "description": "Apply when introducing a new internal API while old callers still exist. Migrate callers and delete the old API in the same wave instead of preserving compatibility layers.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "580ad9bb1a0994ecb924321ba49efc38a2f85c64e22c76fb133f57a78272a2e6"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-minimize-reader-load",
+      "path": "skills/principle-minimize-reader-load",
+      "description": "Apply when reviewing or shaping code that's hard to trace. Count layers between question and answer, and hidden state in the reader's head; collapse one-caller wrappers and shrink mutable scope.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "1ea2b7fef2391cae5844c4efdbd59031f775e8a52d06b7495d707229a200dcca"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-model-the-domain",
+      "path": "skills/principle-model-the-domain",
+      "description": "Apply when writing stateful logic, or when code branches a lot or repeats a shape assumption across files.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "52c0d85e0c3827c41c18299b642657d7b47eaf77b7b31609e42e0df42b84c75f"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-never-block-on-the-human",
+      "path": "skills/principle-never-block-on-the-human",
+      "description": "Apply when tempted to ask 'should I do X?' on reversible work.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "05030a7a083c337676f793881b4e93cd218e8f1dd676529f56e6ac1d3efb8d1f"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-outcome-oriented-execution",
+      "path": "skills/principle-outcome-oriented-execution",
+      "description": "Apply during planned rewrites and migrations with explicit phase boundaries. Converge on the target architecture; don't preserve smooth intermediate states with throwaway compatibility code.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "10eb91633aa570355ba4bb37088fcade2b22e498df7a58edc749e65bc5a78e2d"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-prove-it-works",
+      "path": "skills/principle-prove-it-works",
+      "description": "Apply after completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-redesign-from-first-principles",
+      "path": "skills/principle-redesign-from-first-principles",
+      "description": "Apply when integrating a new requirement into an existing design.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "170e0a658783e43fee8ec5a8c2422a4abb8f69cef621dd1819a95910b8207034"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-separate-before-serializing-shared-state",
+      "path": "skills/principle-separate-before-serializing-shared-state",
+      "description": "Apply when concurrent actors might write to the same file, branch, key, or state object. Eliminate the sharing first; serialize structurally only when one shared writer is a real invariant.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "05294b40448e927c5da1c7b6f5c6b9fed3744637e3833d2d948b9154a9dd00bb"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-sequence-verifiable-units",
+      "path": "skills/principle-sequence-verifiable-units",
+      "description": "Apply to multi-step work (sweeps, migrations, runs of similar edits) and to how you stack commits and PRs. Break work into small units that each end in a verifiable state, check each before the next, and order delivery so the sequence proves itself to a reviewer.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "2ccbbacc56ace5afdfb8670cef19d7bd009fb2a0033b9a741cbdf2b6baf72187"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-subtract-before-you-add",
+      "path": "skills/principle-subtract-before-you-add",
+      "description": "Apply when sequencing an addition, refactor, or rewrite. Remove dead code, redundant validators, and stub references first, then build on the simpler base.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "8c93bb9d1a7f38e2ef37655d93f0e790fa59903105af3d500cc8a663ebe45f3f"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-test-behavior-not-implementation",
+      "path": "skills/principle-test-behavior-not-implementation",
+      "description": "Apply when you write, change, or keep a test. Assert what the code's users can observe, so that the test fails when that behavior breaks and keeps passing when only the internals change.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "f7223698623b6a26fea49c751e466b38e6691b1f32ce841d3983e7ffbe2b74a6"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "principle-type-system-discipline",
+      "path": "skills/principle-type-system-discipline",
+      "description": "Apply when designing types, reviewing a function signature, or writing code in any statically-typed language. Make illegal states unrepresentable, brand semantic primitives, parse external data at boundaries, exhaust variants, derive from authoritative schemas.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "5cdaf79785e3c12b2592b9469ee8c272143eb86ab7a18d8382197cea5fd30106"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "product-alignment-gate",
@@ -694,29 +1246,27 @@
     {
       "name": "product-requirements",
       "path": "skills/product-requirements",
-      "description": "Interactive Product Owner skill for requirements gathering, analysis, and PRD generation. Triggers when users request product requirements, feature specification, PRD creation, or need help understanding and documenting project requirements. Uses quality scoring and iterative dialogue to ensure comprehensive requirements before generating professional PRD documents.",
+      "description": "Use when the user asks for a PRD, feature specification, or requirements gathering: interviews like a product owner and writes the PRD.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\product-requirements"
       ],
       "files": {
-        "SKILL.md": "59472f355b01205908517c8169cdde88e620ffb546add3154434a1b1f7e3a5f2"
+        "SKILL.md": "a33be379ad184ae653b7d07ecd52c9ec491e7f91a61cc2183a90d1ae4743b964"
       }
     },
     {
-      "name": "python-development",
-      "path": "skills/python-development",
-      "description": "Modern Python development with Python 3.12+, Django, FastAPI, async patterns, and production best practices. Use for Python projects, APIs, data processing, or automation scripts.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\python-development"
-      ],
+      "name": "recall",
+      "path": "skills/recall",
+      "description": "Reconstruct your recent working context from your own chat history, live state, and the shared record (user reports, prior fixes, incidents), then hand back a tight current-state brief. Use for 'recall my work on X', 'catch me up', 'what have I been working on', 'where did I leave off', before starting or resuming work.",
+      "original_locations": [],
       "files": {
-        ".skill-meta.json": "6fd4d7c226ca178a861f808e2ada61151ee1929d43e3196c65e11f6d6c3767a3",
-        "SKILL.md": "273b984fe6946bb52a3da9a847b5dec03c40dc9fa3fc43849b2a201af0883c1e"
-      }
+        "SKILL.md": "b0ceb996259c3404532f61e4b010df4e3d80d7ddbed85b3c302895723eb62a89"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "receiving-code-review",
-      "path": "skills/superpowers/receiving-code-review",
+      "path": "skills/receiving-code-review",
       "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\receiving-code-review"
@@ -726,93 +1276,63 @@
       }
     },
     {
-      "name": "remotion-best-practices",
-      "path": "skills/remotion-best-practices",
-      "description": "Best practices for Remotion - Video creation in React",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\remotion-best-practices"
-      ],
+      "name": "reflect",
+      "path": "skills/reflect",
+      "description": "Spawn three parallel review subagents over the active transcript, surface learnings, and route each to a concrete edit on an existing skill. Use when the user says reflect.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "8f6fe398343f7b0bbdbe6c33d0edf725b71d0b4a11e7e5a43326336005f90854",
-        "rules/3d.md": "4860ef5877ecd65ca9d928dcd874513eddd319f72750122670d07ea631720604",
-        "rules/animations.md": "22dcca277772813f5f1748cb9b6a34969753bfb8328baaa38d86802bebf28535",
-        "rules/assets.md": "f550e98872e2e73bc32673d19b610df4894e00557369b3d9e1e7d3d0374c0fdd",
-        "rules/audio.md": "ed43ce3192eaf2bd4835ca69825e7f2aa1d00731274522aa3b9c45fa68207b50",
-        "rules/calculate-metadata.md": "bbc532f14a73d7e2e6e33d4178d65775e96870a761d422875fec3aa40ca3f098",
-        "rules/can-decode.md": "1962e0af0499bc580d30b46a0f8dc5550895298b7a98a070e8d0698a6fdb8059",
-        "rules/charts.md": "39c8638f05a5453a7ae07d586869a8a6432bf2de331b518e012d4c6de5add275",
-        "rules/compositions.md": "6a07e7176cdaf9047a9ac03d201fe61066750de7df18ced38a637b30f0b4c2f3",
-        "rules/display-captions.md": "86904fe76dc3bcd706fb64ca1a981aaadd00db12636a37749ffd165e22e96788",
-        "rules/extract-frames.md": "37d49d55187a3fd700033e50eeb8219de3fc90a0d683908e632cfe7235b250b5",
-        "rules/fonts.md": "2668899018239ef31e278f947ecc37dd936a3da5eb52f8558c68cf1372881e8a",
-        "rules/get-audio-duration.md": "2103cf5ce440f58b871e2762242b103f3dc6e21a6847e54fb1641379e7e565b1",
-        "rules/get-video-dimensions.md": "7321faaebbf5893f236ef9b36e2362ea056ce91ebc3e5f19ddba6ee5c2b75091",
-        "rules/get-video-duration.md": "01a6ceb30ddc5391621e3f8d787bbeeb6965d7809fe83d046687460502d4a472",
-        "rules/gifs.md": "418aa4e422d00832eee67b896d19cc0c5f24d7c9a64d57d10de568ca934188d2",
-        "rules/images.md": "53a71c16780ce093dc317a30357560a3481a58958f4fc8d4a3f2f2e631a58d3c",
-        "rules/import-srt-captions.md": "5fce8f9b445eec7108b4207add5b1d20036adaded1312121216e270da1006b57",
-        "rules/lottie.md": "d43c61c65dd77c30d560cf25bd488bb340b79068823037f7cd2a9379fe6142c7",
-        "rules/maps.md": "7c84beaaf5b8a19f20c985fda8f6228be08bd1a0a01b9838ae789e17e53177b4",
-        "rules/measuring-dom-nodes.md": "9836d5dc7fbedf424ddb48526e427a55e61fb80ccff64d7d94c2249c1eb54aea",
-        "rules/measuring-text.md": "c4abbf40340560a73e1e49c24a762c61c07448b46703dd1e6f1eb8b06b1dcdfc",
-        "rules/parameters.md": "8b16908f23ebd8cf447d36c320f77ad4436785aa1f1c5e5823818e33e94913d4",
-        "rules/sequencing.md": "84616d28ae730742a57e26d76a34c10283df00b685c276204403c13cfa4b1143",
-        "rules/tailwind.md": "d2e07c5173bee5ef3f5d3ff066699d182df482bad64ce3f8298f4d3890efbeb8",
-        "rules/text-animations.md": "06c71f3928e0cde4d047d4ee10f99a8d0cb9b10160924a89c866ebbd9436667e",
-        "rules/timing.md": "30efe0b3c17a334bf01c48fdbc334f122effeb65602bea3cf4c07545ce0ea5f8",
-        "rules/transcribe-captions.md": "9487f6d0c4053846f17094b740e2051098752d15ef39b1f95f2707d028d9b7bc",
-        "rules/transitions.md": "bd5fe090e631a1a44c24ab70ef88f55cfffa622157ad83fe6e3fe7fe5ee89c20",
-        "rules/trimming.md": "fbfa4d55404e12e962942850c1e5bbdcff0cb824a8ecf8394bd5b5398262a9b4",
-        "rules/videos.md": "b7d50319e1bac1046cc4dcb66a77b594bc2f92d4266556e6b16cca3ae6a222be",
-        "rules/assets/charts-bar-chart.tsx": "17cd31ff098e6ac784c06480d6d3a126f6f72365654f76fa6e9b2526daab88f0",
-        "rules/assets/text-animations-typewriter.tsx": "fc710c71560df2837463dc0816cd0bd6459add1178ec7f031950a57eed9b94f1",
-        "rules/assets/text-animations-word-highlight.tsx": "906b17e423b959961cbc9a27f2dc2a86fcecd525410c40e5b8819fcdfdba0ae5"
-      }
+        "SKILL.md": "1f5a8c246cdee8251f8667d85bd5d97f6c2801f505843c26ddbd6c621632519b",
+        "references/divergent-reviewer.md": "f6030d88e20e906ef5e2d9ba44cb013ce610c49c2fe2ef74c377d32e0dc9e939",
+        "references/judgment-reviewer.md": "38f917619fbf346062d643e0ad6b12fc952d58678dfcbbf42ffcf6d8b9c08307",
+        "references/synthesizer.md": "6af816963de74d1a1aef4070273c1ff533d2072732e488e159ddc0b299fec3cd",
+        "references/tooling-reviewer.md": "f81b8697e7366fbbc18feba52c6e3253a101f751091364ebc4396a1d9b5753b4"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "requesting-code-review",
-      "path": "skills/superpowers/requesting-code-review",
-      "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+      "path": "skills/requesting-code-review",
+      "description": "Use after finishing a task or major feature, or before merging, to get an independent code review against the requirements.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\requesting-code-review"
       ],
       "files": {
-        "SKILL.md": "1017ccdd5bc61fab67c654cf118cbdb520464b313073a0a6b9a6b9aa647a3ad6",
+        "SKILL.md": "65c0e89322bc62677928344ebb5079a7d2779abf0304401dfc5123bd7b405e11",
         "code-reviewer.md": "b2f2ec7596925fe52dac158fdfbca19b3a7d779d619c481e6706a6c0001662d3"
       }
     },
     {
       "name": "review-and-ship",
       "path": "skills/review-and-ship",
-      "description": "Review the current branch for bugs, intent fit, and test coverage; run or write tests; commit focused work; open or update a PR.",
+      "description": "Use when a branch is ready to ship: review it for bugs, intent fit, and test coverage, run or add tests, commit focused work, and open or update the PR.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\review-and-ship"
       ],
       "files": {
-        "SKILL.md": "5c8e88c91e726e024c824d2b02be6bfc7ad81ac5e67c104ef2b66840715373c1"
+        "SKILL.md": "efa85300c1e71dd48d638f7677d653d313198ea3409672fedaf5ac1ac55f9d53"
       }
     },
     {
       "name": "run-smoke-tests",
       "path": "skills/run-smoke-tests",
-      "description": "Run Playwright smoke tests, debug failures, and verify fixes",
+      "description": "Use when asked to run Playwright smoke tests, or after UI changes that need an end-to-end check: run them, debug failures, verify fixes.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\run-smoke-tests"
       ],
       "files": {
-        "SKILL.md": "848c9f34af50f8a0edecbdc239707b694f5f9ac497c61b5907f2bf0caa1372fb"
+        "SKILL.md": "76c7c9d43bd6c2a65bd5f1916530dfc646e5ebd21614e7293e0cfa4c84620c83"
       }
     },
     {
       "name": "session-handoff",
       "path": "skills/session-handoff",
-      "description": "Creates comprehensive handoff documents for seamless AI agent session transfers. Triggered when: (1) user requests handoff/memory/context save, (2) context window approaches capacity, (3) major task milestone completed, (4) work session ending, (5) user says 'save state', 'create handoff', 'I need to pause', 'context is getting full', (6) resuming work with 'load handoff', 'resume from', 'continue where we left off'. Proactively suggests handoffs after substantial work (multiple file edits, complex debugging, architecture decisions). Solves long-running agent context exhaustion by enabling fresh agents to continue with zero ambiguity.",
+      "description": "Use when the user asks to save context or hand off, the context window is nearly full, or a milestone is done: writes a handoff document another session can resume from.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\session-handoff"
       ],
       "files": {
-        "SKILL.md": "0b2a4ddfa14b41e63a3985d77342d4c9ce5d78b25998b9113388d4fdd0248361",
         ".claude/handoffs/2026-03-10-215859-utciviewer-multi-project-ness-tziona.md": "0d9c70b254c4d0ce0e00d922f4558dd343ac2a48367361a8c98c2183b6b58890",
+        "SKILL.md": "1707544368e389c83794df1f36025575758a15de292639306c05c52f6a37c8de",
         "evals/model-expectations.md": "dd4f4e21790377b1cf1082598aadbe9fc94f28bb91b1d557fd04b2ba391f5c93",
         "evals/results-opus-baseline.md": "56dfda9649814c1ef88d3d63eb0cb2fece66c19755bd057f44b11d09ace1a1db",
         "evals/setup_test_env.py": "ce139b9bf3ab857610173c1fd86536c66161311937c391a8800bafd2072163af",
@@ -826,65 +1346,73 @@
       }
     },
     {
-      "name": "skill-creator",
-      "path": "skills/skill-creator",
-      "description": "Guide for creating effective skills. Use when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\skill-creator"
-      ],
+      "name": "setup-pstack",
+      "path": "skills/setup-pstack",
+      "description": "Configure which models pstack uses per role and at what reasoning budget. Detects your available models and writes an always-applied rule that overrides the skill defaults. Use for /setup-pstack, \"configure pstack models\", \"pstack budget\", or changing pstack's model choices.",
+      "original_locations": [],
       "files": {
-        ".skill-meta.json": "22cdd89ff922c333e855b6a2509d9e4c21864a6b88819598b7295bed7a4d0143",
-        "SKILL.md": "cb92b798fbb128429b289f4e7a3adc08ddd8615713f1c2194bad56da85693c54"
-      }
+        "SKILL.md": "b45512f6ca5e96e81681984683b7472bfe892581da3a89a73cca4159438f29ed"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
-      "name": "sleek-design-mobile-apps",
-      "path": "skills/sleek-design-mobile-apps",
-      "description": "Use when the user wants to design a mobile app, create screens, build UI, or interact with their Sleek projects. Covers high-level requests (\"design an app that does X\") and specific ones (\"list my projects\", \"create a new project\", \"screenshot that screen\").",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\sleek-design-mobile-apps"
-      ],
+      "name": "sharpen",
+      "path": "skills/sharpen",
+      "description": "Default first step for a non-trivial task: sharpen it before starting (the expert approach, what the user is really after, the right level of specification), then do the work. Use for /sharpen or when a request is vague or over-constrained.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "709dedb1180fd6617d1e77c2dd33c2ede6d2ab4dbf3992af20f8eac86f5bae22"
-      }
+        "SKILL.md": "6be908d1817192b2a8cfb5cce63757fc85a18fe3940d151256ef59a57a4636df"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "show-me-your-work",
+      "path": "skills/show-me-your-work",
+      "description": "Keep a reviewable decision trail for long-running or unattended work: a TSV log with one row per decision (what, why, evidence, result). Local by default; commit it when a reviewer needs the trail to trust the result. Use for /show-me-your-work, autonomous or multi-phase runs, or work a human reviews after stepping away.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "920a8217cbb62f92a2222fb81fc9eab17ecd554a0277e444a95a927195139bd1",
+        "references/decision-log-template.tsv": "6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76",
+        "scripts/log.sh": "a65a4bc5fb7cdeadbdb7b7ff1ca4682f4d9c42420942b2977cd17b46c4ac338e"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "subagent-driven-development",
-      "path": "skills/superpowers/subagent-driven-development",
-      "description": "Use when executing implementation plans with independent tasks in the current session",
+      "path": "skills/subagent-driven-development",
+      "description": "Use when executing a written implementation plan (from writing-plans), with a fresh subagent per task and reviews between tasks; also covers inline execution when subagents are unavailable. For unrelated parallel work use swarm; for competing attempts use arena.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\subagent-driven-development"
       ],
       "files": {
-        "SKILL.md": "41ab239a6ad1c487cd839fdac972a8c9cf0f5e90efa59a63f963767864f0df4c",
+        "SKILL.md": "882f1ae8f740fc46b00ec9fc30813ce60225c9b66580d146104124ea22d4dd6f",
         "implementer-prompt.md": "49018b28dc11bc9f3d13a28959bb10ae1a96eabc5d8f19f4079d901f9ff2bf64",
-        "task-reviewer-prompt.md": "2eb9d54373420de25bc0bd00635d3a3123a6c0eb30c881168e6f3348e2387331",
         "scripts/review-package": "40b64f89b7c82884fb65af4e40a2faa49a7b033c65c41a5a1b52b5426771b37f",
         "scripts/sdd-workspace": "6b26b27688e5af2c6025b3d47c393c63555dd92104799a94e8115c06dba272f3",
-        "scripts/task-brief": "471fef87f426551ea0380e6b5c728a7d85dd2c8d3b5d6d936c97210f17e68418"
+        "scripts/task-brief": "471fef87f426551ea0380e6b5c728a7d85dd2c8d3b5d6d936c97210f17e68418",
+        "task-reviewer-prompt.md": "2eb9d54373420de25bc0bd00635d3a3123a6c0eb30c881168e6f3348e2387331"
       }
     },
     {
-      "name": "svelte-code-writer",
-      "path": "skills/svelte-code-writer",
-      "description": "CLI tools for Svelte 5 documentation lookup and code analysis. MUST be used whenever creating, editing or analyzing any Svelte component (.svelte) or Svelte module (.svelte.ts/.svelte.js). If possible, this skill should be executed within the svelte-file-editor agent for optimal results.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\svelte-code-writer"
-      ],
+      "name": "swarm",
+      "path": "skills/swarm",
+      "description": "Use when work splits into independent parallel slices, or needs races, gauntlets, or broad exploration: fan out N workers, drain them, and return one report. Use for /swarm.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "cc8fa3ac4a382aeb1cda3e6e9244abe785ab0e3364105bf45ea8bbb94f4301bf"
-      }
+        "SKILL.md": "781a90af201f0fb0830a65ee25960769675ce6fdbd8e1129fbb7882db4331af2"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "systematic-debugging",
-      "path": "skills/superpowers/systematic-debugging",
+      "path": "skills/systematic-debugging",
       "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\systematic-debugging"
       ],
       "files": {
-        "CREATION-LOG.md": "c24733a5b1821bd6bed1fc950261f0b9f4e90097e0bbb96459d8179713730789",
-        "SKILL.md": "3b20719eca4f0461cb51a195221320d775dcf03b6859271066a03a5132a6ce7a",
+        "CREATION-LOG.md": "8b689d2b3631837e2c911e87d5ed639f878c598bf0e64699377b10ee3564de8f",
+        "SKILL.md": "e34199e15358b9ce4fadab55e68c80c103ce2151843abfa2f20e2dd7e46c88ce",
         "condition-based-waiting-example.ts": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
         "condition-based-waiting.md": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26",
         "defense-in-depth.md": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7",
@@ -897,16 +1425,36 @@
       }
     },
     {
-      "name": "test-driven-development",
-      "path": "skills/superpowers/test-driven-development",
-      "description": "Use when implementing any feature or bugfix, before writing implementation code",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\test-driven-development"
-      ],
+      "name": "tdd",
+      "path": "skills/tdd",
+      "description": "Use only when the user explicitly asks for TDD, a failing test, or a regression test, OR when the bug has an obvious cheap local test target. Skip when the test path is unclear, expensive, integration-heavy, or not requested.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "b5b4717b8b761cce15a6cfe9022e33fd959e0894c0c39d72c9cb49c23486c10e",
-        "testing-anti-patterns.md": "bde453bc258f06543987477c837939afaa774ea2acbd9f308d702fc452bc4283"
-      }
+        "SKILL.md": "dd2806a0a4b61895eb22cc86e7e3974191fbd45be1c13dd44e0dbae76d0c5bbd",
+        "references/red-green-refactor.md": "bd67f51e0a4b9f540552461e17ad479558a7d3abdac20a21bcb5b742fe33b5d8",
+        "references/testing-anti-patterns.md": "bde453bc258f06543987477c837939afaa774ea2acbd9f308d702fc452bc4283"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "teach",
+      "path": "skills/teach",
+      "description": "Explain a body of work plainly so a person actually understands it. Runs the `how` and `why` skills and weaves what they find into one clear explanation. Use for 'teach me this', 'help me really understand X', 'explain this change or subsystem to me'.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "bd286e5a6290673be2cd28aef7af2ec7f1fb138e6bce156ea657368c7e7fc8a4"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "technical-writing",
+      "path": "skills/technical-writing",
+      "description": "Layered technical-writing standard: Diátaxis structure, Google developer style sentences, STE instruction rules, Global English syntax. Use for /technical-writing or when writing or reviewing docs, RFCs, readmes, PR descriptions, or commit messages.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "61fe9c424a798ebf36ad94941f87be049cb8827bdf86d21474a0dde37b513c43"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "thermo-nuclear-code-quality-review",
@@ -920,74 +1468,45 @@
       }
     },
     {
-      "name": "threejs-fundamentals",
-      "path": "skills/threejs-fundamentals",
-      "description": "Three.js scene setup, cameras, renderer, Object3D hierarchy, coordinate systems. Use when setting up 3D scenes, creating cameras, configuring renderers, managing object hierarchies, or working with transforms.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\threejs-fundamentals"
-      ],
-      "files": {
-        "SKILL.md": "c89027e35cf56629dcf1e9e51aa16ead5107f6551efecd9bdbbf90dfb749653a"
-      }
-    },
-    {
       "name": "tufte-viz",
-      "path": "skills/tuft-viz",
-      "description": "Ideate and critique data visualizations using Edward Tufte's principles from \"The Visual Display of Quantitative Information.\" Use this skill when: (1) Designing new data visualizations or charts (2) Critiquing or improving existing visualizations (3) Reviewing dashboards or reports for graphical integrity (4) Deciding between visualization approaches (5) Reducing chartjunk or improving data-ink ratio (6) Planning small multiples or high-density displays Applies principles: data-ink ratio, chartjunk elimination, graphical integrity, lie factor, small multiples, and data density.",
+      "path": "skills/tufte-viz",
+      "description": "Use when designing or critiquing a data chart, graph, or dashboard for graphical integrity, data-ink, and honest scales (Tufte). Not for illustrations (illustrate) or app UI (design-ui).",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\tuft-viz",
         "C:\\Users\\tuval\\.cursor\\skills\\tuft-viz"
       ],
       "files": {
-        "SKILL.md": "ca110889666b965d8faf989807e982f79bb36ecfe02e7f61252be1d767bc6bcf",
+        "SKILL.md": "2d7fd3a681ffee1f2d1ec0d8ff60ac9b953f3fed125e02b95514be8956dd17b2",
         "demo__giss-temperature.html": "47790088f338c5893607a51ff1117bc5d3f78328b0652fa37d933cae8e6b0404",
         "references__analytical-design.md": "539f9fcce2f8a5c2fa8ada1ee058665461c0d5f74f03ad65df6ef7f528c224db",
         "references__tufte-principles.md": "e45dbf7a01e6c4422717fdb161c01c4bad6aa56d698e60c53e9d29c7af0ba7b8"
       }
     },
     {
-      "name": "ui-ux-pro-max",
-      "path": "skills/ui-ux-pro-max",
-      "description": "Comprehensive design guide for web and mobile applications. Contains 67 styles, 96 color palettes, 57 font pairings, 99 UX guidelines, and 25 chart types across 13 technology stacks. Searchable database with priority-based recommendations.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\ui-ux-pro-max",
-        "C:\\Users\\tuval\\.cursor\\skills\\ui-ux-pro-max"
-      ],
+      "name": "typescript-best-practices",
+      "path": "skills/typescript-best-practices",
+      "description": "Use when reading or editing any .ts or .tsx file.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "6cec1c00e1d890a41a2a600814bc765b6e264d9800742a1e3dff0441da9016c8",
-        "data/charts.csv": "b754c0efffcf54cb889114a9314be1d5af6ceebe65c4c436d713b52018e752c9",
-        "data/colors.csv": "4cc0df2785f340b8bd0ace50bd4068dc13a7c4c6fa4d9d2723271244ce904614",
-        "data/icons.csv": "351fe61ba45b8146c66de6ea7d67297654639d79a94f537b4d0bad570058c28f",
-        "data/landing.csv": "010e1e46db271b94e0af6f18973bea86ddba62feeccd62aeeaa6ed40e2ae2db1",
-        "data/products.csv": "5359e3037dcb84e99c792ea13dd44f5b78ab6a53557afb309cf19140512aaf5b",
-        "data/react-performance.csv": "904c8afcda229629545912dde0e8ac37503757131f0169f80b016f1f58c4fd3f",
-        "data/styles.csv": "ad3c3236134d833bda01a2faf31ddeaaa1dbd5005fa430dec571fa91b26e5fea",
-        "data/typography.csv": "64695e05ac335ba534aff396c4ba9241c642f80ea53b424251d2669b71c4772b",
-        "data/ui-reasoning.csv": "58fc52fff69f62709f8c7dd460de6f6693699ea820f24287f3301a427c2b554e",
-        "data/ux-guidelines.csv": "1870ee048f2a2bdd60709f8f7adf7f3b6dcad560bc005c8b2915a8ac8639820d",
-        "data/web-interface.csv": "10bfc24e09a6a15db8309e6ef9b6881e1d4af97dffb7c99418aefb8e30df7d54",
-        "data/stacks/astro.csv": "ad18dae3ab6d148d37d144592df80dc1825b6c9e86d9d2d68fdda77434206a37",
-        "data/stacks/flutter.csv": "e470e6bc2bcd8562667cc764d1e1afb0be0a30ca4dc9ec12fa18b19d46f156bd",
-        "data/stacks/html-tailwind.csv": "1f004891dd189f6bc2a7717401e3100244326e7e2f3963a79bf7b2349d85e091",
-        "data/stacks/jetpack-compose.csv": "6c8fd4b0391c342c12b0af15610cd5becbeccaef0bbe8dcfc01d928c3195d93e",
-        "data/stacks/nextjs.csv": "06a8e8c13bd44696c6ebb4cb6c4d8dea440e3de8cce77616512529ed29258f0c",
-        "data/stacks/nuxt-ui.csv": "05d6e74501b2b6a636faed32450622759f49a5bcafad971f5f4e7eba0eb7be71",
-        "data/stacks/nuxtjs.csv": "f7a3f2d9542856d00199f85c6c023b7c284cc698e2e6e12d61afce2edacb24d6",
-        "data/stacks/react-native.csv": "a08ca77fcf6b6d9531982dce465366296013bfcf12d2938ac72ad57cf0c4f085",
-        "data/stacks/react.csv": "b6e3eb0e4c9c01bd00ffb951d5ca224a19d488b4544c75436f48cf92ff12bf45",
-        "data/stacks/shadcn.csv": "395c2e415ef6f48a474acccdc8eb2c7258a6ed751a5037ba171a2d8823e02ded",
-        "data/stacks/svelte.csv": "bc8d158994a8bdf412830a9dd5e5a5534edd2f367a6e50e0ebd4d76f592dfa3f",
-        "data/stacks/swiftui.csv": "e87cb9eee208bb753bdab96d4a261c7f830c4317ee90ec098316b248fc32be85",
-        "data/stacks/vue.csv": "9b793c3f4eec85f77a758c09322f2b62f3b3ca549bb713ccf0849ef885934395",
-        "scripts/core.py": "5459d1f04eea03dfb913742d0c03edc5065ac67f6227e4807fa87699662588cb",
-        "scripts/design_system.py": "4da1d341f3c7749df51b51db4a543a48a427c3c746eb0e9882a1ab86acf3bb54",
-        "scripts/search.py": "a449e57060ef5134e98e62fd11f6e240153afd68c27dab89cbb72a3ce55f1498"
-      }
+        "SKILL.md": "add0c0fec482cb9bc96ddbe2e4d0898a121937ce1817d7c7fcbc0a568f2d2466",
+        "references/patterns.md": "12e70c9419a8b3f5d6a1ab80e272c1f00a43ac0b3bbf72d68199033570e5de77"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
+    },
+    {
+      "name": "unslop",
+      "path": "skills/unslop",
+      "description": "Use on any draft (docs, PR text, replies) to cut AI tells. A cleanup pass, not a style guide; google-developer-style stays canonical.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "c50e8b953fb3f378f41e3cb76adaf72c7b8c731ad287c6917ca6eec9d8607178"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "user-flows-and-guided-paths",
       "path": "skills/user-flows-and-guided-paths",
-      "description": "Related features and tasks \u2014 such as purchase flows, onboarding, or multi-step configuration \u2014 should be designed as natural, guided paths that feel coherent and fit the product hierarchy. Use wizards for complex sequential tasks. Use when designing flows, onboarding, checkout, setup sequences, or any multi-step user journey.",
+      "description": "Related features and tasks — such as purchase flows, onboarding, or multi-step configuration — should be designed as natural, guided paths that feel coherent and fit the product hierarchy. Use wizards for complex sequential tasks. Use when designing flows, onboarding, checkout, setup sequences, or any multi-step user journey.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\user-flows-and-guided-paths"
       ],
@@ -997,7 +1516,7 @@
     },
     {
       "name": "using-git-worktrees",
-      "path": "skills/superpowers/using-git-worktrees",
+      "path": "skills/using-git-worktrees",
       "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\using-git-worktrees"
@@ -1007,17 +1526,12 @@
       }
     },
     {
-      "name": "using-superpowers",
-      "path": "skills/superpowers/using-superpowers",
-      "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before ANY response including clarifying questions",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\using-superpowers"
-      ],
+      "name": "using-skills",
+      "path": "skills/using-skills",
+      "description": "Use at session start, or when unsure which personal skill applies, to pick the right entry skill before acting on a non-trivial task. Not needed for trivial questions or one-line edits.",
+      "original_locations": [],
       "files": {
-        "SKILL.md": "55379fe7c1c473a02c61961c822996bff30e1320d6921d9062509bc508482c05",
-        "references/antigravity-tools.md": "d0bcfa94dd0fa399fb9606a0f7c9562b43040cad02be167a2b999c3913a1d5e9",
-        "references/codex-tools.md": "9310bb2315eed2c1cebea02cd1c9e8fe121cb788fc6b41e8b8f8b5ff46f85f37",
-        "references/pi-tools.md": "703dbc83d23ecab9c6f388460c38abc482e9dee2fe6772a8c7a255152ad3a4d5"
+        "SKILL.md": "6d3738e6bf6a32990beb20a9b11494dff56ad91325f8b98fc7e42c36d5c8e340"
       }
     },
     {
@@ -1030,13 +1544,13 @@
       ],
       "files": {
         "SKILL.md": "0cb89389c0423ff46e8a5a07bda894b43619366210fa3bc98beb39908cbc1635",
-        "picker.md": "62f357b4e3123fcb95862c7bd7d1294e023dc7d2094482a43c25c412b58cf537",
-        "agents/openai.yaml": "24e006ea99aed264541692cfd778aa758ff111fa242ec81126fd51fdf1b29ff0"
+        "agents/openai.yaml": "24e006ea99aed264541692cfd778aa758ff111fa242ec81126fd51fdf1b29ff0",
+        "picker.md": "62f357b4e3123fcb95862c7bd7d1294e023dc7d2094482a43c25c412b58cf537"
       }
     },
     {
       "name": "verification-before-completion",
-      "path": "skills/superpowers/verification-before-completion",
+      "path": "skills/verification-before-completion",
       "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\verification-before-completion"
@@ -1057,90 +1571,76 @@
       }
     },
     {
-      "name": "webgpu",
-      "path": "skills/webgpu",
-      "description": "WebGPU/WGSL guidance for initialization, render/compute pipelines, shader authoring, debugging, and performance; use when building or troubleshooting WebGPU apps, GPU compute workloads, or WGSL shaders.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\webgpu"
-      ],
-      "files": {
-        "README.md": "9853de56f9940fc3c7ae81bb1413c8436a74c74e9a6cee0b45d10ee189eb1e4b",
-        "REFERENCE.md": "02e4a1bfb53195c3ef27dfa22f447060dc92f56a96f16cd2a53f2dd9803dbe30",
-        "SKILL.md": "5eb4a4d8d0a4cd835ccde784573e195c39516f74bd4c4bf20a3baa0f11383c43",
-        "examples/basic-setup.ts": "f9bd42c73da802ec89de51631b5b9d2ed466a26ee56b16c8c29a928eb1081971",
-        "examples/compute-particles.ts": "289fd8eabab55de835659cd22115477feadc47c2de71f67ecb8a74296d6a6561",
-        "examples/ping-pong-trails.ts": "41d9deb0acee54e054db924785cfe2220001a4d05283d3aca61be6d78c1f2b9f",
-        "references/compute-shaders.md": "fa187c220a90631c726ce9fdb32891b00911acd8b7f03387f4f4a9d5480915c7",
-        "references/core-concepts.md": "b03e089647572a54184c42ffcf73ebb5cf011eed78dd951ee3439e51acec321e",
-        "references/debugging-performance.md": "b21a442c405586654acd47c15bbba9caa3e3e1e1aee5076135efdb001f2a7775",
-        "references/rendering.md": "cc4131c8517ac5dd1e77a1629f490b4b97ce53d5c98e9fe27c5d9e26c94517df",
-        "references/runtime-fallback.md": "039ce82aafa0b973e9462916c1341518552a800640ac1c936c756939171c9797",
-        "references/simulation-patterns.md": "cd6e4c348ead4d661c921469111ef6d3620380b18154dc6120dfecfc124e9181",
-        "references/use-cases.md": "c243791d7bb398d0f2d4ae504e61856c733ad5938392ce0bc28b3a102e2b5384",
-        "templates/compute.wgsl": "bc58744ac3ae79302afe3b42aa37e3d7c4a581d3a798ea7ca1a0aeeb6a022397",
-        "templates/webgpu-project.md": "6b471304c0f309135150fc2bdda673dcbb4f976d7effc833ea0d0cd0be7eec8b"
-      }
-    },
-    {
-      "name": "weekly-review",
-      "path": "skills/weekly-review",
-      "description": "Produce a weekly synthesis of authored commits with highlights by bugfix, tech debt, and net-new work",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\weekly-review"
-      ],
-      "files": {
-        "SKILL.md": "b56a2c283916b4551aeb322398ab99a19b4b5d7678ffd7f9c9f3df9fa05f4712"
-      }
-    },
-    {
       "name": "what-did-i-get-done",
       "path": "skills/what-did-i-get-done",
-      "description": "Summarize authored commits over a user-specified time period into a concise update",
+      "description": "Use when the user asks what they shipped over a period (day, week, sprint): synthesizes commits and PRs into a summary.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\what-did-i-get-done"
       ],
       "files": {
-        "SKILL.md": "479813c9abaacb5b6b0531f1de7dc5eb2f3bd9673707a992d1073335836e82f8"
+        "SKILL.md": "eb76574a1047eb6c17a6f4ea3caedfcab0f6a19941b199f861b6011eadf3c5ca"
       }
+    },
+    {
+      "name": "why",
+      "path": "skills/why",
+      "description": "Use for 'why does X work this way', 'why we picked Y', design rationale, regressions, postmortems, or data-backed thresholds. Discovers available MCPs and queries each evidence category (source control, issue tracker, long-form docs, real-time chat, infrastructure observability, error tracking, product analytics warehouse) in parallel, then returns a cited read on decisions and tradeoffs. Use how for runtime behavior.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "144d42e7712723d763e607bc0a969e5f1cdf83ec7228519d87677cc534571bed",
+        "references/epistemics.md": "d54a2361b2d5973bc3fe2edf62f446d87935974d4b40d47f23b9529f956ca758",
+        "references/investigator-prompt.md": "c44afba186f899094f3694e6c9d6de5d14ff7c4ce28b787a9f50fc789c9a7fc3",
+        "references/source-playbook.md": "9ae9dcb9d09111c9facc68510331c5aba4aed9b1b057314ff1fc0e166ad3993a",
+        "references/sources/code-archaeology.md": "a4a3970e9db448054aed676f3f7feeee667b4b69f0bd57c8fd72b751be687cc7",
+        "references/sources/databricks.md": "236ede7aab6454662a992db088a5393537a5233a4c26719c93188f9e174488f6",
+        "references/sources/datadog.md": "b139faac5dc11b8f26c8255dce6033c1a6ac143b038d3dd103f2034c5dbec9cd",
+        "references/sources/incident-postmortem.md": "bf2661f1a81c37700884a45b77d6289be0c802b065febced31990e6564510839",
+        "references/sources/linear.md": "01304e7f1badfcfb78babbb0edcadeb3cc8dd3f713793420cdff24ba190f907c",
+        "references/sources/notion.md": "3bcfa695c49dfad4ac036d5d7181c12585f55ac04f1936198d16ab75a2788997",
+        "references/sources/sentry.md": "2d4f83048eac1df530b399e2aed75dd7c9c18577b7665420aaeb96d0ceb0b702",
+        "references/sources/slack.md": "3bc6309f5c7b26ace3b919dbd7f7b048861dd2020f910fe24f656cc74b3b661c",
+        "references/synthesizer-prompt.md": "11c62671aa7b7a6e3d36929ffe2b59bf95e6ca664eee4d93e6ee527dd3390ddb"
+      },
+      "upstream": "https://github.com/cursor/plugins/tree/main/pstack @ d457567"
     },
     {
       "name": "workflow-from-chats",
       "path": "skills/workflow-from-chats",
-      "description": "Extract durable working preferences from recent Cursor chats and convert them into skills, rules, or workflow docs. Use when asked to learn preferences, mine feedback, personalize workflows, or generate team/person-specific agent guidance.",
+      "description": "Use when the user wants a repeated workflow from past chats turned into a skill; hands the result to writing-skills.",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\workflow-from-chats"
       ],
       "files": {
-        "SKILL.md": "b568176390165921c5e351cc73b553e3e997f92c9f85dfb1c5a220c943fbaa16"
+        "SKILL.md": "2e99b13bded28e7a1c20d5241f220d6a2aaed092fe468ae6175b39371f9fe6f4"
       }
     },
     {
       "name": "writing-plans",
-      "path": "skills/superpowers/writing-plans",
+      "path": "skills/writing-plans",
       "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\writing-plans"
       ],
       "files": {
-        "SKILL.md": "272e1af349f5062c28dc282b3e21b220d58d683a7314a10c455b7432ec91d845",
+        "SKILL.md": "faa5b983ee4d48a7335c8fe4e4072898d83a05c35448e1eff8572df0c89d1262",
         "plan-document-reviewer-prompt.md": "aa728b96aad603c8be28875a4305637f6c984aa81ffcadcb13e743202fa2a0c7"
       }
     },
     {
       "name": "writing-skills",
-      "path": "skills/superpowers/writing-skills",
-      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+      "path": "skills/writing-skills",
+      "description": "Use when creating, editing, or testing any skill. The canonical skill-authoring guide; reflect, correct, automate-me, and workflow-from-chats hand their skill edits to it.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\writing-skills"
       ],
       "files": {
-        "SKILL.md": "6b8d08fe863318be8480ae8428e169640309fa9208df84bb0510012764454146",
+        "SKILL.md": "f2418e5d31859d527ec093490c44831cbe083d3d2c3431a4a6a682b464e2eb54",
         "anthropic-best-practices.md": "217629b356c09c9bd11017c9788e8fc654ca1b32c92d4a51cd490e16dd65e59a",
+        "examples/CLAUDE_MD_TESTING.md": "0b379a3415e185d3c434b3ad283d8aa132f3022c2a4f210f168865b5986bcef0",
         "graphviz-conventions.dot": "b18a02773875f6c7b92f2a260e88550c92a62549b0009df9d680f7e9541d0ecc",
         "persuasion-principles.md": "a51bc9bf75189ea73a27b3fb504a2fdfdb966fb1f7f1cdf03203230a216ccc03",
         "render-graphs.js": "ccda971a87bb185f8febf81c56b556a20d026fa980c17b35fa3e8824fbb37852",
-        "testing-skills-with-subagents.md": "c711346852c911b24a84aa161e0cff06a4cd7f4e2fa9e9c0a266cead5afcbade",
-        "examples/CLAUDE_MD_TESTING.md": "0b379a3415e185d3c434b3ad283d8aa132f3022c2a4f210f168865b5986bcef0"
+        "testing-skills-with-subagents.md": "f0dd4a9d1a4ab0baa77eea987c077b370321bf317f02eed4fe4d9b374422efaf"
       }
     }
   ],

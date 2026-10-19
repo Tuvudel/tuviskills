@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+"""Validate the skills library. Exit 1 on any error.
+
+Checks: every skills/<folder>/ has SKILL.md with YAML frontmatter, a `name` equal to the folder,
+and a non-empty `description`; names are unique; no nested skills; routing tables in the entry
+skills only name existing skills; rejected tools are not referenced; inventory.json matches.
+Usage: scripts/check-skills [--root PATH] [--no-inventory]
+"""
+import json, re, sys
+from pathlib import Path
+
+args = sys.argv[1:]
+root = Path(args[args.index('--root') + 1]) if '--root' in args else Path(__file__).resolve().parents[1]
+skills_dir = root / 'skills'
+ENTRY = ['using-skills', 'coding-workflow', 'design-ui', 'illustrate', 'docs-writing']
+BANNED = re.compile(r'\b(impeccable|gstack)\b', re.I)
+errors, names = [], {}
+
+def frontmatter(text):
+    m = re.match(r'---\r?\n(.*?)\r?\n---\r?\n', text, re.S)
+    if not m:
+        return None
+    fm, key = {}, None
+    for line in m.group(1).splitlines():
+        km = re.match(r'^([A-Za-z0-9_-]+):\s*(.*)$', line)
+        if km:
+            key = km.group(1); val = km.group(2).strip()
+            fm[key] = '' if val in ('>-', '>', '|', '|-') else val.strip('"\'')
+        elif key and line.startswith((' ', '\t')):
+            fm[key] = (fm[key] + ' ' + line.strip()).strip()
+    return fm
+
+for folder in sorted(p for p in skills_dir.iterdir() if p.is_dir()):
+    skill = folder / 'SKILL.md'
+    if not skill.is_file():
+        errors.append(f'{folder.name}: missing SKILL.md'); continue
+    fm = frontmatter(skill.read_text(encoding='utf-8'))
+    if fm is None:
+        errors.append(f'{folder.name}: missing YAML frontmatter'); continue
+    name = fm.get('name', '')
+    if not name:
+        errors.append(f'{folder.name}: frontmatter has no name')
+    elif name != folder.name:
+        errors.append(f'{folder.name}: name "{name}" does not match folder')
+    if len(fm.get('description', '')) < 20:
+        errors.append(f'{folder.name}: description missing or too short')
+    if name in names:
+        errors.append(f'duplicate name "{name}": {names[name]} and {folder.name}')
+    names[name or folder.name] = folder.name
+    for nested in folder.rglob('SKILL.md'):
+        if nested != skill and 'examples' not in nested.parts and 'evals' not in nested.parts:
+            errors.append(f'{folder.name}: nested skill {nested.relative_to(skills_dir)}')
+
+for f in list(skills_dir.rglob('*.md')) + list((root / 'rules').glob('*')) + list((root / 'agents').glob('*.md')):
+    if BANNED.search(f.read_text(encoding='utf-8', errors='ignore')):
+        errors.append(f'{f.relative_to(root)}: references a rejected tool (Impeccable/gstack)')
+
+for entry in ENTRY:
+    p = skills_dir / entry / 'SKILL.md'
+    if not p.is_file():
+        errors.append(f'entry skill missing: {entry}'); continue
+    for row in re.findall(r'^\|(?:[^|]*)\|([^|]*)\|\s*$', p.read_text(encoding='utf-8'), re.M):
+        for token in re.findall(r'\b[a-z][a-z0-9]*(?:-[a-z0-9]+)+\b|\b[a-z]{3,}\b', row):
+            if token in names or token in ('open', 'then', 'for', 'only', 'when', 'asked', 'the', 'and', 'bug', 'has', 'cheap', 'local', 'repro', 'includes', 'inline', 'execution', 'after', 'write', 'read', 'formal', 'plain', 'explanation', 'body', 'work', 'custom', 'harness', 'review', 'against', 'better', 'fix', 'until', 'clean', 'screenshot', 'connected', 'plugin', 'own', 'skills', 'whole', 'set', 'runs', 'deterministic', 'script', 'check', 'contrast', 'numbers', 'entry', 'skill', 'configures', 'its', 'models', 'explains', 'builds', 'on', 'to'):
+                continue
+            if '-' in token and not (skills_dir / token).is_dir() and not token.startswith('re-'):
+                errors.append(f'{entry}: routes to unknown skill "{token}"')
+
+if '--no-inventory' not in args and (root / 'inventory.json').is_file():
+    inv = {s['name'] for s in json.loads((root / 'inventory.json').read_text(encoding='utf-8'))['skills']}
+    for missing in sorted(set(names) - inv):
+        errors.append(f'inventory.json lacks {missing} (run scripts/build-inventory)')
+    for extra in sorted(inv - set(names)):
+        errors.append(f'inventory.json lists {extra}, which is not in skills/')
+
+for e in errors:
+    print('ERROR', e)
+print(f'{len(names)} skills checked, {len(errors)} error(s)')
+sys.exit(1 if errors else 0)

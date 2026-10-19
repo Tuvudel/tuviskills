@@ -4,9 +4,17 @@ Shared personal skills for Codex and Cursor on Windows. The original consolidati
 
 See [the full inventory](INVENTORY.md) for names and purposes. Skill contents and supporting files are preserved from the existing installations. Fourteen identical Cursor copies are consolidated into the same repository copies.
 
+## Entry skills and session hook
+
+Start from four routers: `coding-workflow`, `design-ui`, `illustrate`, and `docs-writing`. `using-skills` is the short bootstrap that points at them. pstack, superpowers, and cursor-team-kit are no longer needed as plugins: their skills, subagents, rules, and the superpowers SessionStart hook live in this repository.
+
+- `hooks/session-start` injects `skills/using-skills` at session start, clear, and compaction. `hooks/run-hook.cmd` is a cmd/bash polyglot that finds Git Bash on Windows. Pass `cursor`, `claude`, or `codex` to pick the output shape.
+- `install-integrations.ps1` (called by `install.ps1`) merges the hook into `~/.cursor/hooks.json`, `~/.claude/settings.json`, and `~/.codex/hooks.json`, installs `agents/*.md` as Cursor and Claude Code subagents and Codex custom agents (`~/.codex/agents/*.toml`), links `~/.claude/skills` to `skills/`, and writes the personal rule into `~/.claude/CLAUDE.md`. It keeps existing entries, backs up each changed file, and skips any agent file it did not create.
+- `scripts/check-skills` fails on missing frontmatter, folder/name mismatches, duplicate names, routers that name unknown skills, and inventory drift. Run `scripts/build-inventory` after adding or removing a skill.
+
 ## Engineering companion trial
 
-The [companion skill](skills/engineering-companion/SKILL.md) is a personal default for substantive engineering work alongside the installed Superpowers plugin. It prefers the active managed plugin over the older shared snapshot and reads the plugin's current instructions instead of copying or pinning them. `$engineering-companion` in Codex and `/engineering-companion` in Cursor remain available for explicit invocation.
+The [companion skill](skills/engineering-companion/SKILL.md) adds pstack supplements to the lifecycle skills that coding-workflow routes to. `$engineering-companion` in Codex and `/engineering-companion` in Cursor remain available for explicit invocation.
 
 The companion contains selectively loaded references for investigation, interface design, adversarial review, blast-radius analysis, project verification, and runtime evidence. Project rules and existing writing, UI, language, and data skills retain their responsibilities. It does not add automatic shipping, mandatory delegation, or a persistent mode. Negev/OTEF pointers lead back to each project's current documents and acceptance records.
 
@@ -22,7 +30,7 @@ For Cursor, paste [the same personal rule](rules/personal-engineering.md) once i
 
 The personal rule directs rediscovery on task start/resume, compaction, and phase changes, and carries relevant reference pointers into delegated work. This is durable guidance, not a demonstrated runtime guarantee. Local installer tests run with `python tests/test_personal_engineering.py` against disposable profiles.
 
-This trial does not remove or change the shared Superpowers snapshot or managed plugins. Resolving duplicate skills globally is a separate migration. Recheck representative tasks after a plugin update before changing the integration. Attribution and the upstream MIT license are included in the skill directory.
+Attribution and the upstream MIT license are included in the skill directory.
 
 ## Install on another Windows PC
 
@@ -76,9 +84,8 @@ The restore script removes only the shared junction and moves the backed-up orig
 - Plugin-managed and Codex system skills are not copied. Install their plugins separately on each PC.
 - MCP connections, credentials, application settings, and runtime dependencies are not synchronized.
 - Some imported skills reference machine-specific paths. Review those paths before using them on another PC.
-- `ui-ux-pro-max` lacks YAML frontmatter in the original copy. It is preserved as found; discovery can differ between agents.
 - The original broken `find-skills` shortcut remains untouched and is recorded in the inventory.
-- The local Superpowers snapshot overlaps with the installed Superpowers plugin. This preserves the existing installation; it does not select one version for you.
+- The superpowers, pstack, and cursor-team-kit plugins are replaced by repository copies. Uninstall those plugins so their skills do not load twice.
 - Cursor Cloud Agents have a separate sync feature for `~/.cursor/skills`. This shared local setup covers local Codex and Cursor sessions on the PCs.
 - This repository contains third-party and personal material. Preserve included license files and check upstream licenses before redistributing.
 
