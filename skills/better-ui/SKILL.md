@@ -1,6 +1,6 @@
 ---
 name: better-ui
-description: Polishes and improves the UI in your project. Covers concentric border radius, optical alignment, surface depth, contextual icons, hit areas and more.
+description: "Use when polishing UI details: concentric border radius, optical alignment, surface depth, contextual icons, hit areas, enter/exit motion."
 ---
 
 # UI polish

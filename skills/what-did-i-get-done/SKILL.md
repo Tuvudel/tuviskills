@@ -1,6 +1,6 @@
 ---
 name: what-did-i-get-done
-description: Summarize authored commits over a user-specified time period into a concise update
+description: "Use when the user asks what they shipped over a period (day, week, sprint): synthesizes commits and PRs into a summary."
 ---
 
 # What did I get done

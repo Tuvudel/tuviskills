@@ -1,6 +1,6 @@
 ---
 name: better-writing
-description: Focuses on improving product copy in your project.
+description: "Use when writing or reviewing in-product UI copy: labels, buttons, errors, empty states, onboarding, microcopy. Not for docs or long prose (docs-writing)."
 ---
 
 # Interface writing

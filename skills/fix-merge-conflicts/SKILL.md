@@ -1,6 +1,6 @@
 ---
 name: fix-merge-conflicts
-description: Resolve merge conflicts non-interactively, validate build and tests, and finalize conflict resolution
+description: "Use when a merge or rebase stops on conflicts: resolve them non-interactively, then validate build and tests and finish the merge."
 ---
 
 # Fix merge conflicts

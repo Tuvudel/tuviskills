@@ -1,14 +1,6 @@
 ---
 name: perspective-ensemble
-description: >-
-  Surfaces multiple substantive viewpoints to counter generic “mean” answers.
-  Runs two distinct passes: a multi-lens council for real tradeoffs, and an
-  adversarial red cell to stress-test assumptions and attack the plan. Use when
-  the user asks for breadth, creativity, critique, stakeholder views,
-  pre-mortems, red-team checks, challenge, falsification, architecture or product
-  tradeoffs, ambiguous requirements, or explicitly mentions multiple
-  perspectives, “who would help,” devil’s advocates, or moving away from a
-  consensus/default answer.
+description: "Use when a decision or plan needs real tradeoffs or stress-testing: runs a multi-lens council and then an adversarial red cell instead of one averaged answer."
 ---
 
 <SUBAGENT-STOP>

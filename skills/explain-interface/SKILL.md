@@ -1,6 +1,6 @@
 ---
 name: explain-interface
-description: Helps you figure out how something was built on the web.
+description: "Use when the user points at a website or UI and asks how an effect, layout, animation, or interaction was implemented."
 disable-model-invocation: true
 ---
 

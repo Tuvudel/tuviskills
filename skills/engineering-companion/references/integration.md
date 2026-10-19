@@ -1,10 +1,8 @@
-# Integration with an updating plugin
+# Integration with the lifecycle skills
 
-## Resolve from current availability
+The lifecycle skills (brainstorming, writing-plans, subagent-driven-development, systematic-debugging, tdd, code review, verification-before-completion, finishing-a-development-branch) are personal skills in the shared repository. The superpowers plugin is no longer installed; if a `superpowers:<name>` entry still appears, prefer the unprefixed repository copy. Use coding-workflow to pick the owner for the current phase.
 
-Use the available skill catalog and provider information in this session. When both `superpowers:<name>` from the managed plugin and an unprefixed shared copy expose the same workflow, select the plugin entry and read its current instructions. A prefix alone is not proof of provenance: use the catalog's provider or source path too. Do not scan cache versions and guess which one the runtime activated.
-
-If only a shared snapshot is available, identify that fallback and its source. If no required owner skill is available, identify the missing dependency; complete independent read-only work without claiming the Superpowers workflow ran. Do not install or alter configuration to resolve discovery automatically. Source preference applies inside this companion workflow; it does not disable duplicate discovery elsewhere in the runtime.
+If a required owner skill is missing, identify the missing dependency and complete independent read-only work without claiming the workflow ran. Do not install or alter configuration to resolve discovery automatically.
 
 ## Personal entry and resumption
 
@@ -12,11 +10,11 @@ The maintained personal rule lives in `rules/personal-engineering.md` in the sha
 
 After context loss, recover the routing table and current task phase from available artifacts before choosing a supplement. A phase transition can require a different supplement even when the companion was read earlier. Preserve completed approvals and applicable evidence. Pass only relevant reference pointers to children instead of assuming they inherit the full conversation. A handoff identifies the companion, phase, approved artifacts, applicable references, and remaining gates.
 
-An updating plugin can change its prerequisites. Match the actual approved artifact and completed evidence to the current requirement. Recognize prior approvals that satisfy it. An idea approval does not approve an unwritten spec, and an implementation approval does not authorize deployment. If the new instructions require an unresolved checkpoint, identify that specific gap; do not reopen already completed stages.
+An updated lifecycle skill can change its prerequisites. Match the actual approved artifact and completed evidence to the current requirement. Recognize prior approvals that satisfy it. An idea approval does not approve an unwritten spec, and an implementation approval does not authorize deployment. If the new instructions require an unresolved checkpoint, identify that specific gap; do not reopen already completed stages.
 
 ## Keep one process
 
-The active Superpowers skill owns the lifecycle, approval stages, test discipline, task ledger, and finishing process. The companion contributes findings or design constraints at the stage that needs them. An approved plan stays the execution brief. Handle a newly discovered requirement through the owner's documented change/ruling procedure when one exists. Otherwise identify the specific gap and follow the current owner's instructions and user/project precedence; do not invent a parallel approval process.
+The active lifecycle skill owns the lifecycle, approval stages, test discipline, task ledger, and finishing process. The companion contributes findings or design constraints at the stage that needs them. An approved plan stays the execution brief. Handle a newly discovered requirement through the owner's documented change/ruling procedure when one exists. Otherwise identify the specific gap and follow the current owner's instructions and user/project precedence; do not invent a parallel approval process.
 
 Project rules own document locations, cost limits, data boundaries, and external actions. Keep Google developer style as the writing authority when available. UI and language skills retain their own responsibilities. Do not add pstack's automatic PR step, comment-deletion policy, transcript mining, external writes, or sticky-mode behavior.
 
@@ -35,4 +33,4 @@ Keep shared builds, app sessions, and release checks under one owner. These meth
 
 Different roles on one model are independent contexts, not model diversity. If a requested model or delegation tool is unavailable, name the limitation and use an allowed alternative; do not silently substitute a claimed cross-model review.
 
-After a plugin update, use [compatibility checks](compatibility-checks.md) to exercise representative continuation, investigation, review, and project-verification scenarios before changing this integration. Check decisions and artifacts, not an agent's claim that it followed instructions. Update the companion for demonstrated incompatibilities. Leave the plugin and existing shared skills untouched.
+After a lifecycle skill changes, use [compatibility checks](compatibility-checks.md) to exercise representative continuation, investigation, review, and project-verification scenarios before changing this integration. Check decisions and artifacts, not an agent's claim that it followed instructions. Update the companion for demonstrated incompatibilities. Edit lifecycle skills only through writing-skills.

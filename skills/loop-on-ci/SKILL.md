@@ -1,6 +1,6 @@
 ---
 name: loop-on-ci
-description: Monitor PR checks and fix failures until green. Uses gh pr checks as the source of truth for PR-attached checks.
+description: "Use when the user wants a PR babysat until green: watch gh pr checks and fix failures repeatedly until every check passes."
 ---
 
 # Loop on CI

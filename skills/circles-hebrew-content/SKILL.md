@@ -1,11 +1,6 @@
 ---
 name: circles-hebrew-content
-description: >-
-  How to write and present information in the Circles project — Hebrew copy
-  quality, language mixing rules, and structuring dense content for
-  readability. Use when writing Hebrew-facing text (docs, mockups, dashboards,
-  reports, in-app copy) or when presenting structured information like
-  inventories, gap analyses, or status overviews.
+description: "Use when writing Hebrew-facing Circles text (docs, mockups, dashboards, reports, in-app copy) or presenting dense structured information such as inventories, gap analyses, or status overviews."
 ---
 
 # Writing & Presenting Information in Circles

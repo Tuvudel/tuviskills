@@ -1,6 +1,6 @@
 ---
 name: break
-description: Renders a component you choose in every state and scenario on a temporary page and stress tests it.
+description: "Use when the user wants a component rendered in every state and edge case (long text, empty, error, loading, RTL) on a temporary page to stress-test it."
 disable-model-invocation: true
 ---
 

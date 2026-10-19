@@ -1,6 +1,6 @@
 ---
 name: check-compiler-errors
-description: Run compile and type-check commands and report failures
+description: "Use after code changes, or when a build or editor shows errors, to run the project's compile and type-check commands and report failures."
 ---
 
 # Check compiler errors

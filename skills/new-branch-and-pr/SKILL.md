@@ -1,6 +1,6 @@
 ---
 name: new-branch-and-pr
-description: Create a fresh branch, complete work, and open a pull request
+description: "Use when starting a change that should land as its own PR: create a fresh branch, do the work, and open the pull request."
 ---
 
 # New branch and PR

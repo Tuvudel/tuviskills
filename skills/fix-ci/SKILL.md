@@ -1,6 +1,6 @@
 ---
 name: fix-ci
-description: Find failing PR checks, inspect logs or external check links, and apply focused fixes
+description: "Use when a PR's CI checks are failing: find the failing checks, read their logs or linked pages, and apply focused fixes."
 ---
 
 # Fix CI

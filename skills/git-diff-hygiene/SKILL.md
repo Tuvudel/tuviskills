@@ -2,8 +2,7 @@
 
 name: git-diff-hygiene
 
-description: Detect and prevent accidental mass formatting/lint commits that pollute git blame. Classify diffs (logic vs formatting vs mixed), recommend splitting commits, and manage .git-blame-ignore-revs safely.
-
+description: "Use before committing or reviewing a diff that may contain mass formatting or lint changes: classify logic vs formatting, split commits, and manage .git-blame-ignore-revs."
 ---
 
 # Git Diff Hygiene Guard

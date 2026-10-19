@@ -1,14 +1,6 @@
 ---
 name: israel-gov-api
-description: >-
-  Discover, query, and analyze Israeli government open data from data.gov.il
-  (CKAN API). Use when user asks about Israeli government data, "data.gov.il",
-  government datasets, CBS statistics, or needs data about Israeli
-  transportation, education, health, geography, economy, or environment.
-  Supports dataset search, tabular data queries, and analysis guidance. Enhances
-  existing datagov-mcp and data-gov-il-mcp servers with workflow best practices.
-  Do NOT use for classified government data or data requiring security
-  clearance.
+description: "Use when the user asks for Israeli government open data (data.gov.il, CBS statistics, transport, and other government datasets): discover, query, and analyze it through the CKAN API."
 license: MIT
 allowed-tools: 'Bash(python:*) WebFetch'
 compatibility: >-

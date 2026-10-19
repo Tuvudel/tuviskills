@@ -1,6 +1,6 @@
 ---
 name: better-accessibility
-description: Helps your project comply with accessibility standards and best practices.
+description: "Use when checking or fixing accessibility: contrast, focus order and rings, ARIA, keyboard support, reduced motion, screen readers. Use apca-contrast for contrast numbers."
 ---
 
 # Accessibility

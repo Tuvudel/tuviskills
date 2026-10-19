@@ -1,6 +1,6 @@
 ---
 name: review-and-ship
-description: Review the current branch for bugs, intent fit, and test coverage; run or write tests; commit focused work; open or update a PR.
+description: "Use when a branch is ready to ship: review it for bugs, intent fit, and test coverage, run or add tests, commit focused work, and open or update the PR."
 ---
 
 # Review and ship

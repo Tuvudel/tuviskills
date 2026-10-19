@@ -1,6 +1,6 @@
 ---
 name: get-pr-comments
-description: Fetch and summarize review comments from the active pull request
+description: "Use when the user asks what reviewers said, or before addressing review feedback, to fetch and summarize the active pull request's review comments."
 ---
 
 # Get PR comments
