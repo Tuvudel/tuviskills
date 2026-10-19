@@ -116,6 +116,10 @@ if (-not $SkipAgents) {
     }
 }
 
+# pstack model rule: every role inherits the chat model (Cursor reads ~/.cursor/rules).
+$pstackRule = ([IO.File]::ReadAllText((Join-Path $repo 'rules/pstack-models.mdc')) -replace "`r`n", "`n").TrimEnd() + "`n<!-- agent-skills:managed (installed from $repo\rules; edit there) -->`n"
+Install-AgentFile (Join-Path $profileRoot '.cursor/rules/pstack-models.mdc') $pstackRule
+
 if (-not $SkipClaude) {
     # Claude Code discovers personal skills in ~/.claude/skills.
     $claudeSkills = Join-Path $profileRoot '.claude/skills'
