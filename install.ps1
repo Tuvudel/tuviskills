@@ -1,7 +1,8 @@
 [CmdletBinding(SupportsShouldProcess)]
 param(
     [string]$UserProfilePath = $env:USERPROFILE,
-    [string]$BackupRoot
+    [string]$BackupRoot,
+    [switch]$SkipIntegrations
 )
 $ErrorActionPreference = 'Stop'
 if (-not $BackupRoot) { $BackupRoot = Join-Path $UserProfilePath '.agents\skill-backups' }
@@ -16,6 +17,8 @@ if (Test-Path -LiteralPath $sharedPath) {
     $sharedItem = Get-Item -LiteralPath $sharedPath -Force
     if ($sharedItem.LinkType -and ([string]$sharedItem.Target).TrimEnd('\') -eq $repoSkills.TrimEnd('\')) {
         Write-Output 'Shared skills are already connected to this repository.'
+        # Hooks, subagents and Claude Code wiring are installed or refreshed on every run.
+        if (-not $SkipIntegrations) { & (Join-Path $PSScriptRoot 'install-integrations.ps1') -UserProfilePath $UserProfilePath -WhatIf:$WhatIfPreference }
         return
     }
 }
@@ -75,6 +78,7 @@ foreach ($legacyRoot in @('.codex\skills', '.cursor\skills')) {
 }
 
 Write-Output "Connect $sharedPath to $repoSkills; preserve $($moves.Count) existing locations in a dated backup."
+if ($WhatIfPreference -and -not $SkipIntegrations) { & (Join-Path $PSScriptRoot 'install-integrations.ps1') -UserProfilePath $UserProfilePath -WhatIf }
 if (-not $PSCmdlet.ShouldProcess($sharedPath, 'Back up matching skills and create the shared directory junction')) { return }
 $backupPath = Join-Path $BackupRoot ([DateTime]::UtcNow.ToString('yyyyMMddTHHmmssZ') + '-' + [Guid]::NewGuid().ToString('N').Substring(0, 6))
 New-Item -ItemType Directory -Path $backupPath | Out-Null
@@ -96,3 +100,5 @@ New-Item -ItemType Directory -Path (Split-Path $state.compatibility_path -Parent
 New-Item -ItemType Junction -Path $state.compatibility_path -Target (Join-Path $repoSkills 'playwright\scripts') | Out-Null
 Write-Output "Installed $($inventory.skills.Count) skills. Backup: $backupPath"
 Write-Output 'Start a new Codex chat and reload Cursor to refresh skill discovery.'
+# SessionStart hook, subagents, and Claude Code wiring (idempotent, never clobbers; see install-integrations.ps1).
+if (-not $SkipIntegrations) { & (Join-Path $PSScriptRoot 'install-integrations.ps1') -UserProfilePath $UserProfilePath -WhatIf:$WhatIfPreference }

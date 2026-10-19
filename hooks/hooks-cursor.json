@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      { "command": "\"%AGENT_SKILLS%\\hooks\\run-hook.cmd\" session-start cursor" }
+    ]
+  }
+}

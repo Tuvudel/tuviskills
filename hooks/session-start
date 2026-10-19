@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+# SessionStart hook: inject the personal using-skills bootstrap.
+# Usage: session-start [cursor|claude|codex|auto]
+# Paths resolve relative to this script; no plugin environment variables needed.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SKILL_FILE="${SCRIPT_DIR}/../skills/using-skills/SKILL.md"
+format="${1:-auto}"
+
+if [ "$format" = auto ]; then
+  if [ -n "${CURSOR_VERSION:-}${CURSOR_TRACE_ID:-}${CURSOR_PLUGIN_ROOT:-}" ]; then format=cursor
+  elif [ -n "${CLAUDE_PROJECT_DIR:-}${CLAUDE_PLUGIN_ROOT:-}" ]; then format=claude
+  elif [ -n "${CODEX_HOME:-}${CODEX_THREAD_ID:-}" ]; then format=codex
+  else format=generic
+  fi
+fi
+
+if [ -r "$SKILL_FILE" ]; then
+  # Drop the YAML frontmatter; the body is the bootstrap.
+  body="$(awk 'NR==1 && /^---$/ {fm=1; next} fm && /^---$/ {fm=0; next} !fm' "$SKILL_FILE")"
+else
+  body="Personal skills: before a non-trivial task, check the entry skills coding-workflow, design-ui, illustrate, docs-writing."
+fi
+
+escape_for_json() {
+  local s="$1"
+  s="${s//\\/\\\\}"
+  s="${s//\"/\\\"}"
+  s="${s//$'\n'/\\n}"
+  s="${s//$'\r'/\\r}"
+  s="${s//$'\t'/\\t}"
+  printf '%s' "$s"
+}
+
+context="$(escape_for_json "Personal skills bootstrap (from ~/.agents/skills/using-skills/SKILL.md):
+
+${body}")"
+
+# printf instead of a heredoc: bash 5.3+ heredocs can hang in hooks (obra/superpowers#571).
+case "$format" in
+  cursor)
+    printf '{\n  "additional_context": "%s"\n}\n' "$context" ;;
+  claude|codex)
+    printf '{\n  "hookSpecificOutput": {\n    "hookEventName": "SessionStart",\n    "additionalContext": "%s"\n  }\n}\n' "$context" ;;
+  *)
+    printf '{\n  "additionalContext": "%s"\n}\n' "$context" ;;
+esac
+exit 0

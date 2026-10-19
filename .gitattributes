@@ -1,1 +1,5 @@
-* -text
+# The session hook is parsed by both cmd.exe and bash: keep LF on every platform.
+hooks/session-start text eol=lf
+hooks/*.cmd text eol=lf
+*.sh text eol=lf
+scripts/check-skills text eol=lf
