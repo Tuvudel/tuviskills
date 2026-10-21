@@ -1,6 +1,6 @@
 ---
 name: israel-gov-api
-description: "Use when the user asks for Israeli government open data (data.gov.il, CBS statistics, transport, and other government datasets): discover, query, and analyze it through the CKAN API."
+description: "Use when the user asks for any Israeli government or open data (data.gov.il, govmap layers like municipal boundaries, CBS statistics, transport, budgets, and other government datasets): pick the right source among data.gov.il, over.org.il (גרסאות לעם), odata.org.il and Hasadna, then discover, query, and download it."
 license: MIT
 allowed-tools: 'Bash(python:*) WebFetch'
 compatibility: >-
@@ -52,6 +52,23 @@ metadata:
 
 # Israel Government API
 
+## Pick the source first
+data.gov.il is only one of several sources. Check them in this order and note in the result which one you used:
+
+| Source | Best for | Access |
+|---|---|---|
+| **data.gov.il** (CKAN) | Ministry tables and files (CBS, transport, health, finance) | `https://data.gov.il/api/3/action/...`, open, no key |
+| **over.org.il** (גרסאות לעם) | govmap layers (e.g. municipal boundaries, layer 125 `53d1b1e3-e65c-4320-a1f9-19cff3067020`), PowerBI visuals, and the **version history** of data.gov.il datasets | JSON API `https://over.org.il/api/v1/...`; the web pages are JS-only |
+| **odata.org.il** (Hasadna CKAN) | Civic datasets missing from data.gov.il | Standard CKAN `https://www.odata.org.il/api/3/action/package_search?q=...` |
+| **Hasadna projects** | Budgets (next.obudget.org), public transport (open-bus-stride-api.hasadna.org.il) | Their own APIs, check the docs |
+| **govmap.gov.il** directly | Original GIS layers | API needs a registered token, so prefer the over.org.il copy |
+
+over.org.il has no server-side text search: page `GET /api/v1/datasets?limit=500&offset=N` and filter titles locally (Hebrew). Then call `/api/v1/datasets/{id}/versions/latest` and download `resources[].download_url` (gzipped GeoJSON or CSV). Snapshot dates are scrape dates, not the date the data itself changed. See `references/gov-mirrors.md` for the verified endpoints.
+
+data.gov.il has **no** municipal jurisdiction boundaries (checked 2026-10). Use govmap layer 125 via over.org.il, or the Ministry of Interior's statutory files.
+
+Use `curl -G --data-urlencode "q=..."` for Hebrew queries.
+
 ## Instructions
 
 ### Step 1: Understand the Data Need
@@ -62,7 +79,7 @@ Ask the user:
 - **What format?** (raw data, summary statistics, visualization)
 
 ### Step 2: Search for Datasets
-Use the data.gov.il CKAN API to find relevant datasets:
+For data.gov.il (and odata.org.il, which uses the same API), search like this:
 
 **Search by keyword:**
 ```
@@ -174,8 +191,8 @@ Result: Ranked comparison of education spending per student across major Israeli
 ## Troubleshooting
 
 ### Error: "Dataset not found"
-Cause: Search terms too specific or in wrong language
-Solution: Try broader Hebrew keywords. Government data is primarily in Hebrew.
+Cause: Search terms too specific or in wrong language, or the data isn't on data.gov.il at all
+Solution: Try broader Hebrew keywords. Then check over.org.il and odata.org.il (see "Pick the source first").
 
 ### Error: "Datastore not available"
 Cause: Not all resources have the datastore (queryable) API enabled
