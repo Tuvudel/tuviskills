@@ -4,33 +4,30 @@ Shared personal skills for Codex and Cursor on Windows. The original consolidati
 
 See [the full inventory](INVENTORY.md) for names and purposes. Skill contents and supporting files are preserved from the existing installations. Fourteen identical Cursor copies are consolidated into the same repository copies.
 
-## Entry skills and session hook
+## pstack is the engineering backbone
 
-Start from four routers: `coding-workflow`, `design-ui`, `illustrate`, and `docs-writing`. `using-skills` is the short bootstrap that points at them. pstack, superpowers, and cursor-team-kit are no longer needed as plugins: their skills, subagents, rules, and the superpowers SessionStart hook live in this repository.
+[pstack](https://github.com/cursor/plugins/tree/main/pstack) is vendored unmodified in [`vendor/pstack/`](vendor/pstack) (version and commit in [`vendor/pstack.lock`](vendor/pstack.lock)). Update it with `scripts/sync-pstack.sh` (see [UPSTREAM.md](UPSTREAM.md)); `scripts/sync-pstack.sh --check` and `tests/test_vendor_pstack.py` fail if anyone edits it. Personal skills in `skills/` must not reuse a pstack name.
 
-- `hooks/session-start` injects `skills/using-skills` at session start, clear, and compaction. `hooks/run-hook.cmd` is a cmd/bash polyglot that finds Git Bash on Windows. Pass `cursor`, `claude`, or `codex` to pick the output shape.
-- `install-integrations.ps1` (called by `install.ps1`) merges the hook into `~/.cursor/hooks.json`, `~/.claude/settings.json`, and `~/.codex/hooks.json`, installs `agents/*.md` as Cursor and Claude Code subagents and Codex custom agents (`~/.codex/agents/*.toml`), links `~/.claude/skills` to `skills/`, and writes the personal rule into `~/.claude/CLAUDE.md`. It keeps existing entries, backs up each changed file, and skips any agent file it did not create.
-- `scripts/check-skills` fails on missing frontmatter, folder/name mismatches, duplicate names, routers that name unknown skills, and inventory drift. Run `scripts/build-inventory` after adding or removing a skill.
+One always-on rule makes pstack automatic without slash commands: for non-trivial engineering work, read `poteto-mode`'s `SKILL.md` by absolute path and follow it. The same text ships as:
 
-## Engineering companion trial
+- [`rules/pstack-default.mdc`](rules/pstack-default.mdc) (`alwaysApply: true`), installed to `~/.cursor/rules/pstack-default.mdc`. If your Cursor build does not load `~/.cursor/rules` globally, paste [`rules/pstack-default.md`](rules/pstack-default.md) into **Customize → Rules → User Rules**; the SessionStart hook injects the same text anyway.
+- [`rules/pstack-default.codex.md`](rules/pstack-default.codex.md), installed as a managed block in `~/.codex/AGENTS.md` (or `AGENTS.override.md`). It also points Codex at the adapter [`harness/codex.md`](harness/codex.md), which maps pstack's Cursor names, subagent fields, and model roles to Codex.
+- [`rules/pstack-default.grokbot.txt`](rules/pstack-default.grokbot.txt), for Grok Bot's instructions (box path).
+- The same block in `~/.claude/CLAUDE.md`. `rules/pstack-models.mdc` keeps every pstack role on `inherit-parent`.
 
-The [companion skill](skills/engineering-companion/SKILL.md) adds pstack supplements to the lifecycle skills that coding-workflow routes to. `$engineering-companion` in Codex and `/engineering-companion` in Cursor remain available for explicit invocation.
+Other entry skills: `design-ui`, `illustrate`, `docs-writing`. Superpowers lifecycle skills, the old `using-skills` / `coding-workflow` routers, the engineering companion, and the Circles skills are in `archive/`.
 
-The companion contains selectively loaded references for investigation, interface design, adversarial review, blast-radius analysis, project verification, and runtime evidence. Project rules and existing writing, UI, language, and data skills retain their responsibilities. It does not add automatic shipping, mandatory delegation, or a persistent mode. Negev/OTEF pointers lead back to each project's current documents and acceptance records.
+- `hooks/session-start` re-injects `rules/pstack-default.md` at session start, clear, and compaction. `hooks/run-hook.cmd` is a cmd/bash polyglot that finds Git Bash on Windows. Pass `cursor`, `claude`, or `codex` to pick the output shape.
+- `install-integrations.ps1` (called by `install.ps1` and `sync.ps1`) merges the hook into `~/.cursor/hooks.json`, `~/.claude/settings.json`, and `~/.codex/hooks.json`; installs `agents/*.md` and `vendor/pstack/agents/*.md` as Cursor and Claude Code subagents and Codex custom agents (`~/.codex/agents/*.toml`); links each pstack skill into `~/.codex/skills/` (Codex, and Cursor through its compatibility folder) and each personal and pstack skill into `~/.claude/skills/` (replacing an older single junction to `skills/`); and writes the rules above. It keeps existing entries, backs up each changed file, and skips any file it did not create.
+- `scripts/check-skills` fails on missing frontmatter, folder/name mismatches, duplicate names, names that shadow pstack, routers that name unknown skills, and inventory drift. Run `scripts/build-inventory` after adding or removing a skill. `python -m unittest discover tests` runs all checks (the installer test needs Windows PowerShell).
 
-Install its personal Codex entry point once per PC, after connecting the shared skills folder:
+The personal Codex rule block ([`rules/personal-engineering.md`](rules/personal-engineering.md)) is installed separately, once per PC:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\install-personal-engineering.ps1
 ```
 
-The installer preserves existing global guidance, updates one marked block in the active global `AGENTS.md` or `AGENTS.override.md`, and saves the original under `.local/personal-engineering-backups/`. It honors `CODEX_HOME` by default and supports `-CodexHomePath`, `-WhatIf`, and `-Remove`. An explicit `-UserProfilePath` isolates installation to that profile unless `-CodexHomePath` is also supplied. Run it again after changing the personal rule or on another PC. It does not alter the existing skill installer or project files.
-
-For Cursor, paste [the same personal rule](rules/personal-engineering.md) once into **Customize → Rules → User Rules**, its documented global settings surface. Do not copy it into project rules or assume `~/.cursor/rules` is a global loader. Cursor settings installation is separate from shared skill-file discovery.
-
-The personal rule directs rediscovery on task start/resume, compaction, and phase changes, and carries relevant reference pointers into delegated work. This is durable guidance, not a demonstrated runtime guarantee. Local installer tests run with `python tests/test_personal_engineering.py` against disposable profiles.
-
-Attribution and the upstream MIT license are included in the skill directory.
+It updates one marked block in the active global `AGENTS.md` or `AGENTS.override.md` and saves the original under `.local/personal-engineering-backups/`. It honors `CODEX_HOME` and supports `-CodexHomePath`, `-WhatIf`, and `-Remove`.
 
 ## Install on another Windows PC
 
@@ -65,7 +62,7 @@ git -C D:\Projects\agent-skills commit -m "Update personal skills"
 git -C D:\Projects\agent-skills push
 ```
 
-Run the sync command on the other PC. The local shared folder points directly into this checkout, so no copying or reinstalling is needed for skill updates. Sync stops when there are local uncommitted edits or when a fast-forward pull is impossible. It does not automatically commit, push, merge, or resolve conflicts.
+Run the sync command on the other PC. The local shared folder points directly into this checkout, and sync re-runs `install-integrations.ps1` so new or archived skills are linked or unlinked. Sync stops when there are local uncommitted edits or when a fast-forward pull is impossible. It does not automatically commit, push, merge, or resolve conflicts.
 
 New skills do not need an `inventory.json` entry for agent discovery, but add one before migrating an existing matching skill folder on another PC. `inventory.json` records the original import hashes and locations. Installation compares existing local files against the current repository files to detect conflicts. Git preserves imported file bytes across PCs.
 
@@ -85,7 +82,8 @@ The restore script removes only the shared junction and moves the backed-up orig
 - MCP connections, credentials, application settings, and runtime dependencies are not synchronized.
 - Some imported skills reference machine-specific paths. Review those paths before using them on another PC.
 - The original broken `find-skills` shortcut remains untouched and is recorded in the inventory.
-- The superpowers, pstack, and cursor-team-kit plugins are replaced by repository copies. Uninstall those plugins so their skills do not load twice.
+- The superpowers, pstack, and cursor-team-kit plugins are replaced by repository copies (pstack vendored unmodified). Uninstall those plugins so their skills do not load twice.
+- Cursor reads `~/.agents/skills`, `~/.cursor/skills`, `~/.codex/skills`, and `~/.claude/skills`, so it may list a skill from more than one folder.
 - Cursor Cloud Agents have a separate sync feature for `~/.cursor/skills`. This shared local setup covers local Codex and Cursor sessions on the PCs.
 - This repository contains third-party and personal material. Preserve included license files and check upstream licenses before redistributing.
 

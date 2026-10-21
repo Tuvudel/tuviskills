@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-# SessionStart hook: inject the personal using-skills bootstrap.
+# SessionStart hook: re-inject the always-on pstack rule (rules/pstack-default.md) at start, clear, and compaction.
 # Usage: session-start [cursor|claude|codex|auto]
 # Paths resolve relative to this script; no plugin environment variables needed.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SKILL_FILE="${SCRIPT_DIR}/../skills/using-skills/SKILL.md"
+REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+if command -v cygpath >/dev/null 2>&1; then REPO_DIR="$(cygpath -m "$REPO_DIR")"; fi
+RULE_FILE="${REPO_DIR}/rules/pstack-default.md"
 format="${1:-auto}"
 
 if [ "$format" = auto ]; then
@@ -16,11 +18,10 @@ if [ "$format" = auto ]; then
   fi
 fi
 
-if [ -r "$SKILL_FILE" ]; then
-  # Drop the YAML frontmatter; the body is the bootstrap.
-  body="$(awk 'NR==1 && /^---$/ {fm=1; next} fm && /^---$/ {fm=0; next} !fm' "$SKILL_FILE")"
+if [ -r "$RULE_FILE" ]; then
+  body="$(sed "s#{{POTETO_MODE}}#${REPO_DIR}/vendor/pstack/skills/poteto-mode/SKILL.md#g" "$RULE_FILE")"
 else
-  body="Personal skills: before a non-trivial task, check the entry skills coding-workflow, design-ui, illustrate, docs-writing."
+  body="For non-trivial engineering work, read vendor/pstack/skills/poteto-mode/SKILL.md in the agent-skills repository and follow it."
 fi
 
 escape_for_json() {
@@ -33,7 +34,7 @@ escape_for_json() {
   printf '%s' "$s"
 }
 
-context="$(escape_for_json "Personal skills bootstrap (from ~/.agents/skills/using-skills/SKILL.md):
+context="$(escape_for_json "Always-on pstack rule (from ${RULE_FILE}):
 
 ${body}")"
 

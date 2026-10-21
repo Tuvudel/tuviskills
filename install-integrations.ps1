@@ -1,7 +1,11 @@
 # Installs the plugin-free integrations for Codex, Cursor, and Claude Code:
-#   - SessionStart hook that injects skills/using-skills (hooks/run-hook.cmd -> hooks/session-start)
-#   - subagent definitions from agents/
-#   - Claude Code skill discovery (~/.claude/skills junction) and the personal rule block in ~/.claude/CLAUDE.md
+#   - SessionStart hook that injects rules/pstack-default.md (hooks/run-hook.cmd -> hooks/session-start)
+#   - subagent definitions from agents/ and vendor/pstack/agents/
+#   - vendored pstack skills (vendor/pstack/skills) as per-skill junctions in ~/.codex/skills (Codex; Cursor also reads it)
+#     and ~/.claude/skills (Claude Code), next to the personal skills
+#   - the always-on pstack rule: ~/.cursor/rules/pstack-default.mdc, a managed block in ~/.codex/AGENTS.md
+#     (with the Codex adapter harness/codex.md) and in ~/.claude/CLAUDE.md
+#   - the personal rule block in ~/.claude/CLAUDE.md
 # Idempotent: re-running replaces only entries this script owns. Existing hooks, agents and files are never
 # overwritten; every modified JSON/MD file is backed up next to itself as <name>.agent-skills-<timestamp>.bak.
 [CmdletBinding(SupportsShouldProcess)]
@@ -97,18 +101,20 @@ function Install-AgentFile([string]$Target, [string]$Text) {
 }
 
 if (-not $SkipAgents) {
-    foreach ($agent in Get-ChildItem -LiteralPath (Join-Path $repo 'agents') -Filter *.md -File) {
+    $agentFiles = @(Get-ChildItem -LiteralPath (Join-Path $repo 'agents') -Filter *.md -File) +
+        @(Get-ChildItem -LiteralPath (Join-Path $repo 'vendor/pstack/agents') -Filter *.md -File)
+    foreach ($agent in $agentFiles) {
         $raw = [IO.File]::ReadAllText($agent.FullName) -replace "`r`n", "`n"
         if ($raw -notmatch '(?s)^---\n(.*?)\n---\n(.*)$') { Write-Warning "No frontmatter: $($agent.Name)"; continue }
         $front = $Matches[1]; $body = $Matches[2]
-        $managed = $raw.TrimEnd() + "`n`n<!-- agent-skills:managed (installed from $repo\agents; edit there) -->`n"
+        $managed = $raw.TrimEnd() + "`n`n<!-- agent-skills:managed (installed from $($agent.DirectoryName); edit there) -->`n"
         # Cursor and Claude Code read Markdown subagents with YAML frontmatter.
         Install-AgentFile (Join-Path $profileRoot ".cursor/agents/$($agent.Name)") $managed
         Install-AgentFile (Join-Path $profileRoot ".claude/agents/$($agent.Name)") $managed
         # Codex custom agents are TOML files.
         $name = if ($front -match '(?m)^name:\s*(.+)$') { $Matches[1].Trim().Trim('"') } else { $agent.BaseName }
         $desc = if ($front -match '(?m)^description:\s*(.+)$') { $Matches[1].Trim().Trim('"') } else { $name }
-        $toml = "# agent-skills:managed (installed from $repo\agents\$($agent.Name); edit there)`n" +
+        $toml = "# agent-skills:managed (installed from $($agent.FullName); edit there)`n" +
             "name = `"$($name -replace '"', '\"')`"`n" +
             "description = `"$($desc -replace '\\', '\\\\' -replace '"', '\"')`"`n" +
             "developer_instructions = '''`n$($body.Trim())`n'''`n"
@@ -120,22 +126,74 @@ if (-not $SkipAgents) {
 $pstackRule = ([IO.File]::ReadAllText((Join-Path $repo 'rules/pstack-models.mdc')) -replace "`r`n", "`n").TrimEnd() + "`n<!-- agent-skills:managed (installed from $repo\rules; edit there) -->`n"
 Install-AgentFile (Join-Path $profileRoot '.cursor/rules/pstack-models.mdc') $pstackRule
 
+# Always-on pstack rule. {{POTETO_MODE}} and {{CODEX_ADAPTER}} resolve to absolute paths in this repository.
+$potetoMode = ($repo -replace '\\', '/') + '/vendor/pstack/skills/poteto-mode/SKILL.md'
+$codexAdapter = ($repo -replace '\\', '/') + '/harness/codex.md'
+function Expand-Rule([string]$Name) {
+    $text = [IO.File]::ReadAllText((Join-Path $repo "rules/$Name")) -replace "`r`n", "`n"
+    return $text.Replace('{{POTETO_MODE}}', $potetoMode).Replace('{{CODEX_ADAPTER}}', $codexAdapter).Trim()
+}
+function Set-ManagedBlock([string]$Path, [string]$Id, [string]$Body) {
+    $start = "<!-- agent-skills:$($Id):start -->"; $end = "<!-- agent-skills:$($Id):end -->"
+    $block = "$start`n$Body`n$end"
+    $text = if (Test-Path -LiteralPath $Path) { [IO.File]::ReadAllText($Path) -replace "`r`n", "`n" } else { '' }
+    $pattern = '(?s)' + [regex]::Escape($start) + '.*?' + [regex]::Escape($end)
+    if ($text -match $pattern) { $text = [regex]::Replace($text, $pattern, { param($m) $block }) }
+    else { $text = ($text.TrimEnd() + "`n`n" + $block).TrimStart() }
+    Save-Text $Path ($text.TrimEnd() + "`n")
+}
+Install-AgentFile (Join-Path $profileRoot '.cursor/rules/pstack-default.mdc') ((Expand-Rule 'pstack-default.mdc') + "`n<!-- agent-skills:managed (installed from $repo\rules; edit there) -->`n")
+$codexAgents = Join-Path $CodexHomePath 'AGENTS.md'
+if (Test-Path -LiteralPath (Join-Path $CodexHomePath 'AGENTS.override.md') -PathType Leaf) { $codexAgents = Join-Path $CodexHomePath 'AGENTS.override.md' }
+Set-ManagedBlock $codexAgents 'pstack-default' (Expand-Rule 'pstack-default.codex.md')
+
+# Vendored pstack skills: one junction per skill, so each host discovers them next to the personal skills.
+function Sync-SkillLinks([string]$Root, [hashtable]$Links) {
+    if (-not (Test-Path -LiteralPath $Root)) {
+        if (-not $PSCmdlet.ShouldProcess($Root, 'Create skills folder')) { return }
+        New-Item -ItemType Directory -Path $Root -Force | Out-Null
+    }
+    foreach ($name in ($Links.Keys | Sort-Object)) {
+        $link = Join-Path $Root $name; $target = $Links[$name]
+        if (Test-Path -LiteralPath $link) {
+            $item = Get-Item -LiteralPath $link -Force
+            if ($item.LinkType -and ([string]$item.Target).TrimEnd('\') -eq $target.TrimEnd('\')) { continue }
+            if (-not ($item.LinkType -and ([string]$item.Target).StartsWith($repo, [StringComparison]::OrdinalIgnoreCase))) {
+                Write-Warning "Skipped, a different skill folder exists: $link"; continue
+            }
+            if (-not $PSCmdlet.ShouldProcess($link, "Repoint junction to $target")) { continue }
+            cmd /c rmdir "$link" | Out-Null
+        } elseif (-not $PSCmdlet.ShouldProcess($link, "Create junction to $target")) { continue }
+        New-Item -ItemType Junction -Path $link -Target $target | Out-Null
+        Write-Output "Linked: $link"
+    }
+    # Drop junctions this script made whose skill no longer exists (archived or removed upstream).
+    foreach ($item in @(Get-ChildItem -LiteralPath $Root -Force | Where-Object { $_.LinkType })) {
+        if ($item.LinkType -and ([string]$item.Target).StartsWith($repo, [StringComparison]::OrdinalIgnoreCase) -and -not $Links.ContainsKey($item.Name)) {
+            if ($PSCmdlet.ShouldProcess($item.FullName, 'Remove stale junction')) { cmd /c rmdir "$($item.FullName)" | Out-Null; Write-Output "Removed stale link: $($item.FullName)" }
+        }
+    }
+}
+$pstackLinks = @{}
+foreach ($dir in Get-ChildItem -LiteralPath (Join-Path $repo 'vendor/pstack/skills') -Directory) { $pstackLinks[$dir.Name] = $dir.FullName }
+# Codex (legacy user skills folder) and Cursor (reads ~/.codex/skills for compatibility). Personal skills stay in ~/.agents/skills.
+Sync-SkillLinks (Join-Path $CodexHomePath 'skills') $pstackLinks
+
 if (-not $SkipClaude) {
-    # Claude Code discovers personal skills in ~/.claude/skills.
+    # Claude Code discovers skills one level deep in ~/.claude/skills: one junction per personal and pstack skill.
     $claudeSkills = Join-Path $profileRoot '.claude/skills'
     $repoSkills = Join-Path $repo 'skills'
     if (Test-Path -LiteralPath $claudeSkills) {
         $item = Get-Item -LiteralPath $claudeSkills -Force
-        if ($item.LinkType -and ([string]$item.Target).TrimEnd('\') -eq $repoSkills) { Write-Output "Unchanged: $claudeSkills" }
-        elseif (@(Get-ChildItem -LiteralPath $claudeSkills -Force).Count -eq 0) {
-            if ($PSCmdlet.ShouldProcess($claudeSkills, 'Replace empty folder with a junction to the repository skills')) {
-                Remove-Item -LiteralPath $claudeSkills; New-Item -ItemType Junction -Path $claudeSkills -Target $repoSkills | Out-Null
-            }
-        } else { Write-Warning "Skipped: $claudeSkills already has content. Move it aside to share the repository skills with Claude Code." }
-    } elseif ($PSCmdlet.ShouldProcess($claudeSkills, 'Create junction to the repository skills')) {
-        New-Item -ItemType Directory -Path (Split-Path $claudeSkills -Parent) -Force | Out-Null
-        New-Item -ItemType Junction -Path $claudeSkills -Target $repoSkills | Out-Null
+        if ($item.LinkType -and ([string]$item.Target).TrimEnd('\') -eq $repoSkills) {
+            # Older installs linked the whole folder to skills/; replace that single junction (rmdir removes only the link).
+            if ($PSCmdlet.ShouldProcess($claudeSkills, 'Replace folder junction with per-skill junctions')) { cmd /c rmdir "$claudeSkills" | Out-Null }
+        }
     }
+    $claudeLinks = $pstackLinks.Clone()
+    foreach ($dir in Get-ChildItem -LiteralPath $repoSkills -Directory) { $claudeLinks[$dir.Name] = $dir.FullName }
+    Sync-SkillLinks $claudeSkills $claudeLinks
+    Set-ManagedBlock (Join-Path $profileRoot '.claude/CLAUDE.md') 'pstack-default' (Expand-Rule 'pstack-default.md')
     # Personal rule block in ~/.claude/CLAUDE.md (same rule Codex gets through install-personal-engineering.ps1).
     $claudeMd = Join-Path $profileRoot '.claude/CLAUDE.md'
     $start = '<!-- agent-skills:personal-engineering:start -->'; $end = '<!-- agent-skills:personal-engineering:end -->'
