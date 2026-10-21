@@ -1,0 +1,5 @@
+/* slop-ok: floats over the map, needs both */
+.result-panel { border: 1px solid #ddd; box-shadow: 0 4px 12px rgba(0,0,0,.2); }
+.bare { border: 1px solid #ddd; box-shadow: 0 4px 12px rgba(0,0,0,.2); } /* slop-ok */
+.marker { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+.big { width: 120px; height: 80px; border: 1px solid #ddd; box-shadow: 0 4px 12px rgba(0,0,0,.2); }

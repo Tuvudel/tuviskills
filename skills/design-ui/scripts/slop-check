@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Report mechanically detectable UI slop candidates from design-ui/slop.md.
 
-Usage: slop-check [PATH ...] [--strict] [--rule NAME ...]
+Usage: slop-check [PATH ...] [--strict] [--rule NAME ...] [--show-exempt]
 Scans HTML, JSX/TSX, JS/TS template markup, Vue, Svelte, CSS and SCSS. Prints
 `file:line: [rule] reason (slop.md: row)`. Hits are candidates for the
 subtraction pass, not verdicts. Exits 0 unless --strict and there are hits.
+A `slop-ok: <reason>` comment on the flagged line or the line above silences
+that hit; a bare `slop-ok` is reported. --show-exempt lists exemptions.
 Python stdlib only.
 """
 import os, re, sys
@@ -22,7 +24,44 @@ ROWS = {
     'sparkle': 'Decorative badge / pill / sparkle / emoji',
     'border-shadow': 'Excess borders, dividers, shadows',
     'stat-strip': 'Made-up stats',
+    'slop-ok': 'Subtraction pass, step 0',
 }
+SLOP_OK = re.compile(r'slop-ok\b[ \t]*(?::[ \t]*(.*?))?[ \t]*(?:\*/|-->|\*?/?\}|$)')
+
+
+def exemption(line):
+    m = SLOP_OK.search(line)
+    if not m:
+        return None
+    return (m.group(1) or '').strip(' *-/}')
+
+
+def drop_shadow(value):
+    """True if any shadow layer is a real drop shadow, not none, inset, or a 0 0 0 ring."""
+    layers, depth, cur = [], 0, ''
+    for ch in value:
+        depth += ch == '('; depth -= ch == ')'
+        if ch == ',' and depth == 0:
+            layers.append(cur); cur = ''
+        else:
+            cur += ch
+    layers.append(cur)
+    for layer in (l.replace('!important', '').strip() for l in layers):
+        if not layer or re.match(r'(none|inset)\b', layer) or re.match(r'0(px)?\s+0(px)?\s+0(px)?\s', layer):
+            continue
+        return True
+    return False
+
+
+def small_box(body):
+    def px(prop):
+        m = re.search(r'(?<![\w-])' + prop + r'\s*:\s*([\d.]+)(px|rem|em)\b', body)
+        if not m:
+            return None
+        v = float(m.group(1))
+        return v * 16 if m.group(2) != 'px' else v
+    w, h = px('width'), px('height')
+    return w is not None and h is not None and w <= 48 and h <= 48
 EMOJI = re.compile('[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B50\u2728]')
 TAG = re.compile(r'<(/?)([A-Za-z][\w.:-]*)((?:\s(?:"[^"]*"|\'[^\']*\'|\{[^{}]*\}|[^<>"\'{}])*)?)(/?)>')
 CLASS = re.compile(r'\b(?:class|className)\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|\{\s*[`"\']([^`"\']*)[`"\']\s*\})')
@@ -71,10 +110,18 @@ def uppercase_rule(body):
 class Checker:
     def __init__(self, rules=None):
         self.hits, self.rules, self.upper_classes = [], rules, set()
+        self.exempt, self.lines = [], {}
 
     def hit(self, path, line, rule, reason):
         if self.rules and rule not in self.rules:
             return
+        lines = self.lines.get(str(path), [])
+        for n in (line, line - 1):
+            if 0 < n <= len(lines):
+                reason_ok = exemption(lines[n - 1])
+                if reason_ok:
+                    self.exempt.append((str(path), line, rule, reason_ok))
+                    return
         self.hits.append((str(path), line, rule, reason))
 
     def scan_css(self, path, text):
@@ -87,8 +134,8 @@ class Checker:
                 if EYEBROW_NAME.search(sel):
                     self.hit(path, line, 'eyebrow', f'`{sel[:60]}` styles an uppercase tracked label')
             has_border = re.search(r'(?<![\w-])border\s*:(?!\s*(?:none|0)\b)', body)
-            has_shadow = re.search(r'box-shadow\s*:(?!\s*(?:none\b|inset\b|0\s+0\s+0\s))', body)
-            if has_border and has_shadow and not ELEVATED.search(sel):
+            has_shadow = any(drop_shadow(v) for v in re.findall(r'(?<![\w-])box-shadow\s*:([^;]*)', body))
+            if has_border and has_shadow and not ELEVATED.search(sel) and not small_box(body):
                 self.hit(path, line, 'border-shadow', f'`{sel[:60]}` sets both border and box-shadow')
 
     def scan_markup(self, path, text):
@@ -188,6 +235,11 @@ def main(argv):
         if len(texts[p]) > 2_000_000:
             del texts[p]
     for p, t in texts.items():
+        c.lines[str(p)] = t.splitlines()
+        for i, l in enumerate(c.lines[str(p)], 1):
+            if exemption(l) == '' and (not rules or 'slop-ok' in rules):
+                c.hits.append((str(p), i, 'slop-ok', '`slop-ok` needs a reason: `slop-ok: <why this is legitimate>`'))
+    for p, t in texts.items():
         if p.suffix in STYLE:
             c.scan_css(p, t)
         elif p.suffix in ('.vue', '.svelte', '.html', '.htm', '.astro'):
@@ -199,11 +251,14 @@ def main(argv):
             c.scan_markup(p, t)
     for path, line, rule, reason in sorted(set(c.hits)):
         print(f'{path}:{line}: [{rule}] {reason} (slop.md: {ROWS[rule]})')
+    if '--show-exempt' in argv:
+        for path, line, rule, why in sorted(set(c.exempt)):
+            print(f'{path}:{line}: [exempt {rule}] {why}')
     counts = {}
     for h in set(c.hits):
         counts[h[2]] = counts.get(h[2], 0) + 1
     summary = ', '.join(f'{k} {v}' for k, v in sorted(counts.items())) or 'none'
-    print(f'slop-check: {len(set(c.hits))} candidate(s) in {len(texts)} file(s): {summary}. Candidates, not verdicts.')
+    print(f'slop-check: {len(set(c.hits))} candidate(s) in {len(texts)} file(s): {summary}; {len(set(c.exempt))} exempt. Candidates, not verdicts.')
     return 1 if strict and c.hits else 0
 
 
