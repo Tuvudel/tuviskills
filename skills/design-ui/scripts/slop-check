@@ -1,0 +1,211 @@
+#!/usr/bin/env python3
+"""Report mechanically detectable UI slop candidates from design-ui/slop.md.
+
+Usage: slop-check [PATH ...] [--strict] [--rule NAME ...]
+Scans HTML, JSX/TSX, JS/TS template markup, Vue, Svelte, CSS and SCSS. Prints
+`file:line: [rule] reason (slop.md: row)`. Hits are candidates for the
+subtraction pass, not verdicts. Exits 0 unless --strict and there are hits.
+Python stdlib only.
+"""
+import os, re, sys
+from pathlib import Path
+
+MARKUP = {'.html', '.htm', '.jsx', '.tsx', '.js', '.ts', '.mjs', '.vue', '.svelte', '.astro'}
+STYLE = {'.css', '.scss'}
+SKIP_DIRS = {'node_modules', '.git', 'dist', 'build', 'out', '.next', '.nuxt', '.svelte-kit',
+             'coverage', 'vendor', '.venv', '__pycache__', 'public/build'}
+ROWS = {
+    'eyebrow': 'Eyebrow / overline',
+    'gradient-text': 'Gradient text, glows, halos',
+    'card-in-card': 'Card in card',
+    'emoji': 'Decorative badge / pill / sparkle / emoji',
+    'sparkle': 'Decorative badge / pill / sparkle / emoji',
+    'border-shadow': 'Excess borders, dividers, shadows',
+    'stat-strip': 'Made-up stats',
+}
+EMOJI = re.compile('[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B50\u2728]')
+TAG = re.compile(r'<(/?)([A-Za-z][\w.:-]*)((?:\s(?:"[^"]*"|\'[^\']*\'|\{[^{}]*\}|[^<>"\'{}])*)?)(/?)>')
+CLASS = re.compile(r'\b(?:class|className)\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|\{\s*[`"\']([^`"\']*)[`"\']\s*\})')
+VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr', 'path', 'circle', 'rect', 'line'}
+HEADING = re.compile(r'^h[1-3]$', re.I)
+LEGIT_OVERLINE = re.compile(r'\b(step\s+\d|breadcrumb|\d+\s+of\s+\d+)', re.I)
+ELEVATED = re.compile(r'menu|popover|popup|dialog|modal|dropdown|tooltip|toast|sheet|drawer|suggestion|thumb|input|:focus|:hover|:active|slider|ring|legend|marker|maplibre|leaflet|ctrl|overlay|floating', re.I)
+STAT = re.compile(r'(?<![\w.$#-])\d[\d,.]*\s?(?:x|%|\+|k\+|K\+|M\+|ms)(?![\w])')
+SPARKLE = re.compile(r'\bSparkles?\w*|\bsparkles?\b|lucide-sparkle|\u2728|auto_awesome', re.I)
+EYEBROW_NAME = re.compile(r'(eyebrow|overline|kicker|pretitle|pre-title|supertitle)', re.I)
+
+
+def tokens(cls):
+    return cls.split()
+
+
+def is_card(name, cls):
+    t = tokens(cls)
+    if name.endswith('Card') and name[0].isupper():
+        return True
+    if any(re.fullmatch(r'(\w+-)?card', x) for x in t):
+        return True
+    edge = any(re.fullmatch(r'border(-\w+)?', x) and x not in ('border-0', 'border-none') for x in t) or \
+        any(re.fullmatch(r'shadow(-\w+)?', x) and x != 'shadow-none' for x in t)
+    return edge and any(x.startswith('rounded') for x in t) and any(re.fullmatch(r'p-\S+', x) for x in t)
+
+
+def tw_border_shadow(cls):
+    t = tokens(cls)
+    b = any(x == 'border' or re.fullmatch(r'border-(\d+|\[\d+px\])', x) for x in t)
+    s = any(re.fullmatch(r'shadow(-(sm|md|lg|xl|2xl|inner|\[.+\]))?', x) for x in t)
+    return b and s
+
+
+def css_rules(text):
+    """Yield (selector, body, line) for flat and nested rule blocks."""
+    text = re.sub(r'/\*.*?\*/', lambda m: re.sub(r'[^\n]', ' ', m.group()), text, flags=re.S)
+    for m in re.finditer(r'([^{};]+)\{([^{}]*)\}', text):
+        yield ' '.join(m.group(1).split()), m.group(2), text.count('\n', 0, m.start(1) + len(m.group(1)) - len(m.group(1).lstrip())) + 1
+
+
+def uppercase_rule(body):
+    return re.search(r'text-transform\s*:\s*uppercase', body) and re.search(r'letter-spacing\s*:\s*(?!0\b|normal)', body)
+
+
+class Checker:
+    def __init__(self, rules=None):
+        self.hits, self.rules, self.upper_classes = [], rules, set()
+
+    def hit(self, path, line, rule, reason):
+        if self.rules and rule not in self.rules:
+            return
+        self.hits.append((str(path), line, rule, reason))
+
+    def scan_css(self, path, text):
+        for sel, body, line in css_rules(text):
+            if re.search(r'(-webkit-)?background-clip\s*:\s*text', body):
+                self.hit(path, line, 'gradient-text', f'`{sel[:60]}` clips a background to text')
+            if uppercase_rule(body):
+                for c in re.findall(r'\.([\w-]+)', sel):
+                    self.upper_classes.add(c)
+                if EYEBROW_NAME.search(sel):
+                    self.hit(path, line, 'eyebrow', f'`{sel[:60]}` styles an uppercase tracked label')
+            has_border = re.search(r'(?<![\w-])border\s*:\s*(?!none|0\b)', body)
+            has_shadow = re.search(r'box-shadow\s*:\s*(?!none|inset|0\s+0\s+0\s)', body)
+            if has_border and has_shadow and not ELEVATED.search(sel):
+                self.hit(path, line, 'border-shadow', f'`{sel[:60]}` sets both border and box-shadow')
+
+    def scan_markup(self, path, text):
+        lineno = lambda pos: text.count('\n', 0, pos) + 1
+        stack, last_end, pending_upper = [], 0, None
+        for m in TAG.finditer(text):
+            closing, name, attrs, selfclose = m.group(1), m.group(2), m.group(3) or '', m.group(4)
+            between = text[last_end:m.start()]
+            last_end = m.end()
+            if any(s[0].lower() in ('script', 'style') for s in stack) and name.lower() not in ('script', 'style'):
+                continue
+            if stack and between.strip():
+                inside = [s[0].lower() for s in stack]
+                if (any(HEADING.match(n) or n in ('h4', 'button') for n in inside)) and EMOJI.search(between):
+                    self.hit(path, lineno(m.start()), 'emoji', 'emoji inside a heading or button')
+            cm = CLASS.search(attrs)
+            cls = next((g for g in cm.groups() if g), '') if cm else ''
+            pos = lineno(m.start())
+            if closing:
+                for i in range(len(stack) - 1, -1, -1):
+                    if stack[i][0] == name:
+                        del stack[i:]
+                        break
+                continue
+            if 'bg-clip-text' in tokens(cls):
+                self.hit(path, pos, 'gradient-text', '`bg-clip-text` clips a gradient to text')
+            if re.search(r'background-clip\s*:\s*text', attrs):
+                self.hit(path, pos, 'gradient-text', 'inline background-clip: text')
+            if SPARKLE.search(name) or SPARKLE.search(cls):
+                self.hit(path, pos, 'sparkle', f'sparkle icon `{name}`')
+            if tw_border_shadow(cls) and not ELEVATED.search(cls + name):
+                self.hit(path, pos, 'border-shadow', 'element has both a border and a shadow class')
+            card = is_card(name, cls)
+            if card and any(s[2] for s in stack):
+                outer = next(s for s in reversed(stack) if s[2])
+                self.hit(path, pos, 'card-in-card', f'card nested in card opened at line {outer[1]}')
+            # eyebrow: uppercase tracked element followed directly by an h1-h3
+            if HEADING.match(name) and pending_upper and pos - pending_upper[0] <= 4 and not LEGIT_OVERLINE.search(pending_upper[2]):
+                self.hit(path, pending_upper[0], 'eyebrow', f'uppercase label directly above <{name}>')
+                pending_upper = None
+            t = tokens(cls)
+            upper = ('uppercase' in t and (any(x.startswith('tracking-') for x in t) or any(x in ('text-xs', 'text-sm') for x in t))) \
+                or any(x in self.upper_classes for x in t) or any(EYEBROW_NAME.search(x) for x in t)
+            if upper and not HEADING.match(name):
+                end = text.find('<', m.end())
+                pending_upper = (pos, name, text[m.end():end if end > 0 else m.end() + 80] + attrs)
+            elif not HEADING.match(name) and pending_upper and name not in ('span', 'br', 'svg', 'path', 'i', 'b', 'strong', 'em'):
+                if pos - pending_upper[0] > 1:
+                    pending_upper = None
+            if not selfclose and name.lower() not in VOID:
+                stack.append((name, pos, card))
+        # stat strip: 3+ literal metric figures in text nodes within 12 lines
+        if path.suffix in ('.js', '.ts', '.mjs'):
+            return
+        blank = lambda m: re.sub(r'[^\n]', ' ', m.group())
+        body = re.sub(r'<(style|script)\b.*?</\1>', blank, text, flags=re.S | re.I)
+        nodes = [' '.join(re.findall(r'>([^<>{}]*)<', l)) for l in body.splitlines()]
+        seen_until = 0
+        for i, node in enumerate(nodes):
+            if i < seen_until or not STAT.search(node):
+                continue
+            if len(STAT.findall(' '.join(nodes[i:i + 12]))) >= 3:
+                self.hit(path, i + 1, 'stat-strip', 'three or more literal metric figures together; check each is real and sourced')
+                seen_until = i + 12
+
+def files(paths):
+    for root in paths:
+        root = Path(root)
+        if root.is_file():
+            yield root
+            continue
+        for dp, dns, fns in os.walk(root):
+            dns[:] = [d for d in dns if d not in SKIP_DIRS and not d.startswith('.')]
+            for f in fns:
+                p = Path(dp, f)
+                if p.suffix in MARKUP | STYLE and not f.endswith(('.min.css', '.min.js', '.d.ts', '.test.ts', '.test.js', '.spec.ts', '.spec.js')):
+                    yield p
+
+
+def main(argv):
+    strict = '--strict' in argv
+    rules = None
+    if '--rule' in argv:
+        rules = {argv[i + 1] for i, a in enumerate(argv) if a == '--rule'}
+    args = [a for i, a in enumerate(argv) if not a.startswith('--') and (i == 0 or argv[i - 1] != '--rule')]
+    if any(a in ('-h', '--help') for a in argv):
+        print(__doc__.strip()); return 0
+    paths = args or ['.']
+    c = Checker(rules)
+    found = sorted(set(files(paths)))
+    texts = {}
+    for p in found:
+        try:
+            texts[p] = p.read_text(encoding='utf-8', errors='replace')
+        except OSError:
+            continue
+        if len(texts[p]) > 2_000_000:
+            del texts[p]
+    for p, t in texts.items():
+        if p.suffix in STYLE:
+            c.scan_css(p, t)
+        elif p.suffix in ('.vue', '.svelte', '.html', '.htm', '.astro'):
+            for m in re.finditer(r'<style[^>]*>(.*?)</style>', t, re.S):
+                pad = '\n' * t.count('\n', 0, m.start(1))
+                c.scan_css(p, pad + m.group(1))
+    for p, t in texts.items():
+        if p.suffix in MARKUP:
+            c.scan_markup(p, t)
+    for path, line, rule, reason in sorted(set(c.hits)):
+        print(f'{path}:{line}: [{rule}] {reason} (slop.md: {ROWS[rule]})')
+    counts = {}
+    for h in set(c.hits):
+        counts[h[2]] = counts.get(h[2], 0) + 1
+    summary = ', '.join(f'{k} {v}' for k, v in sorted(counts.items())) or 'none'
+    print(f'slop-check: {len(set(c.hits))} candidate(s) in {len(texts)} file(s): {summary}. Candidates, not verdicts.')
+    return 1 if strict and c.hits else 0
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))

@@ -31,6 +31,7 @@ Each pattern's rule lives in its owning skill; this file is the index the pass c
 
 Mandatory before you finish building, and in every review. Checkable steps:
 
+0. **Scan.** If `python3` is available, run `scripts/slop-check <path>` from this skill. It flags eyebrows, gradient text, card in card, emoji in headings and buttons, border plus shadow, sparkle icons and literal stat strips. Hits are candidates for step 2, not verdicts; it cannot see copy that repeats or decorates.
 1. **Inventory.** List every visible element and string in scope: headings, labels above or below them, badges, icons, dividers, containers, toasts, animations, buttons.
 2. **Justify or delete.** For each, write the one thing the user loses without it. Delete anything with no answer, or whose answer is "it looks nicer" or "fills space". Check each against the table above.
 3. **Merge duplicates.** Where two strings or elements say one thing, keep one.
