@@ -39,4 +39,4 @@ Mandatory before you finish building, and in every review. Checkable steps:
 
 In a review, each item the pass would delete is a finding owned by the skill in the **Owner** column, with `Delete` as the fix.
 
-Sources: Jakub Krehel, [Less is more, more or less](https://jakub.kr/writing/less-is-more); Lauri Lännenmäki, [Is your website AI slop?](https://dev.to/laurilllll/is-your-website-ai-slop-how-to-tell-and-how-to-fix-it-1fn5).
+Sources: Jakub Krehel, [Less is more, more or less](https://jakub.kr/writing/less-is-more); Lauri Lännenmäki, [Is your website AI slop?](https://dev.to/laurilllll/is-your-website-ai-slop-how-to-tell-and-how-to-fix-it-1fn5); Impeccable, [AI slop patterns](https://impeccable.style/slop).

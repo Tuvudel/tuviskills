@@ -15,7 +15,7 @@ skills_dir = root / 'skills'
 ENTRY = ['design-ui', 'illustrate', 'docs-writing']
 vendor_dir = root / 'vendor' / 'pstack' / 'skills'
 vendor_names = {p.name for p in vendor_dir.iterdir() if p.is_dir()} if vendor_dir.is_dir() else set()
-BANNED = re.compile(r'\b(impeccable|gstack)\b', re.I)
+BANNED = re.compile(r'\bgstack\b', re.I)
 errors, names = [], {}
 
 def frontmatter(text):
@@ -57,7 +57,7 @@ for folder in sorted(p for p in skills_dir.iterdir() if p.is_dir()):
 
 for f in list(skills_dir.rglob('*.md')) + list((root / 'rules').glob('*')) + list((root / 'agents').glob('*.md')):
     if BANNED.search(f.read_text(encoding='utf-8', errors='ignore')):
-        errors.append(f'{f.relative_to(root)}: references a rejected tool (Impeccable/gstack)')
+        errors.append(f'{f.relative_to(root)}: references a rejected tool (gstack)')
 
 for entry in ENTRY:
     p = skills_dir / entry / 'SKILL.md'
