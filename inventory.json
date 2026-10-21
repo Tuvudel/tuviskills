@@ -290,7 +290,7 @@
         "C:\\Users\\tuval\\.cursor\\skills\\break"
       ],
       "files": {
-        "SKILL.md": "9cf63c528e1c549bf006726a0419232a8f8c6286795336b55a9da76c236914e9",
+        "SKILL.md": "68d8d9bd965f82cb0de0f0fb6f9ddfd5cd7f8ce23dc2ecb08c8ca698c47270c6",
         "agents/openai.yaml": "e3e6b1a83f90763fa8cb166b4ec483ebc78fc84311fb0594d29f03d8ef76eddc",
         "scenarios.md": "5aacf085d5eca87b7b5e4f1b0a7412bfd532c8eaa574f455a5b1ffb00cdf86e9"
       }
@@ -355,7 +355,8 @@
       "description": "Use when building, polishing, or reviewing any UI (component, page, layout, color, type, UI copy, accessibility) to pick the taste, checking, or browser-review skill. Not for figures or diagrams (illustrate) or docs prose (docs-writing).",
       "original_locations": [],
       "files": {
-        "SKILL.md": "30adffac74e1bbcf1ce1f04fb40bda61ce439a269745a3cf20d6c0d1f52231a6"
+        "SKILL.md": "7ad09d5ee2326f4720f5fa085df03b6f6bc32b4208140962bc417277bb500663",
+        "flows.md": "56950b8eb9bb27323e5738d47b8a843f56686efd0f05d66d49d61504605bc5f6"
       }
     },
     {
@@ -373,7 +374,7 @@
       "description": "Use when writing or editing prose (docs, READMEs, specs, PRDs, PR descriptions, release notes, long chat replies) to pick the style guide or pass. Not for in-app UI copy (better-writing via design-ui).",
       "original_locations": [],
       "files": {
-        "SKILL.md": "9fb5b07cd5ac0d9d42d28f2b9bfab2b38549c8bf8d5cc606fcc04fef7d5032be"
+        "SKILL.md": "4078cf4c6ede17721a26e553ba81675c240f5d97b294f7f1e32352bab363525c"
       }
     },
     {
@@ -385,7 +386,7 @@
         "C:\\Users\\tuval\\.cursor\\skills\\explain-interface"
       ],
       "files": {
-        "SKILL.md": "c1bd764d33057afb7a89b067c7358076f4d0cc5d1c0274bb86c152c2c7eace2d",
+        "SKILL.md": "2f0eb6198b1c287315208074b43170b40a0ba7b5701135fdbc304a4e21084d28",
         "agents/openai.yaml": "3858853344ece1dd145523bd9d61c8905c4b2cb6c7307f023cc8666b8f4dc0bc",
         "find-the-effect.md": "7e26085eb0c8c68c33d322fbecb16586cc799b0e032d53c912eb16a0c253ceaf",
         "from-an-image.md": "b6073080f9fedf9ac34ff035c36aa235c42e6549bcd619d460484fd262add18b",
@@ -547,17 +548,6 @@
       }
     },
     {
-      "name": "loop-on-ci",
-      "path": "skills/loop-on-ci",
-      "description": "Use when the user wants a PR babysat until green: watch gh pr checks and fix failures repeatedly until every check passes.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\loop-on-ci"
-      ],
-      "files": {
-        "SKILL.md": "4ed93c36a95716b72e48c77e60eff761f8913d108d09f26b3b11020af92c7039"
-      }
-    },
-    {
       "name": "make-pr-easy-to-review",
       "path": "skills/make-pr-easy-to-review",
       "description": "Prepare PRs for review by cleaning noisy history, improving PR descriptions, and adding reviewer guidance without changing code behavior. Use for \"make this easy to review\", \"tidy this PR\", \"clean up commits\", or \"annotate the diff\".",
@@ -566,17 +556,6 @@
       ],
       "files": {
         "SKILL.md": "779f3e3d6ce0bec423cf09d0712342ea1ed265c7bc24087c1b16c76fbc245552"
-      }
-    },
-    {
-      "name": "new-branch-and-pr",
-      "path": "skills/new-branch-and-pr",
-      "description": "Use when starting a change that should land as its own PR: create a fresh branch, do the work, and open the pull request.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\new-branch-and-pr"
-      ],
-      "files": {
-        "SKILL.md": "68c99829977343de56b69bf17c6d26f8f87ea810a3cd4c8cd9161e0d214105b5"
       }
     },
     {
@@ -618,7 +597,7 @@
       "files": {
         "LICENSE.txt": "9a7110fc2d2f964038e5dc49128f908f29f47a574c961cba16085914e879cbda",
         "NOTICE.txt": "a43ad22fc7381a9901c88798479a0617b8397581c67847401d1971f8738d3e03",
-        "SKILL.md": "c52cc95125b720cdc3c9829b0294c2752d4ae9b85a5282aa153da8bba929af87",
+        "SKILL.md": "aa0c4f18b68ea244bfb8ac684ef846b141cb1ff0bc54283f8a76c52670899efc",
         "agents/openai.yaml": "dfc22e6c764f025e5e520fe2e1781e119f6262f406feddafe84ff8aaf9a4ff21",
         "assets/playwright-small.svg": "5ecfaf38d817a6abbc453114191cc9afb3f0799a557dae1c2c1a1445c8a7b386",
         "assets/playwright.png": "521669f088c838196c6c852ccc9abdd7234d8f37fc9a8a7a9af7db2d50193381",
@@ -664,37 +643,15 @@
       }
     },
     {
-      "name": "review-and-ship",
-      "path": "skills/review-and-ship",
-      "description": "Use when a branch is ready to ship: review it for bugs, intent fit, and test coverage, run or add tests, commit focused work, and open or update the PR.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\review-and-ship"
-      ],
-      "files": {
-        "SKILL.md": "efa85300c1e71dd48d638f7677d653d313198ea3409672fedaf5ac1ac55f9d53"
-      }
-    },
-    {
-      "name": "run-smoke-tests",
-      "path": "skills/run-smoke-tests",
-      "description": "Use when asked to run Playwright smoke tests, or after UI changes that need an end-to-end check: run them, debug failures, verify fixes.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\run-smoke-tests"
-      ],
-      "files": {
-        "SKILL.md": "76c7c9d43bd6c2a65bd5f1916530dfc646e5ebd21614e7293e0cfa4c84620c83"
-      }
-    },
-    {
       "name": "session-handoff",
       "path": "skills/session-handoff",
-      "description": "Use when the user asks to save context or hand off, the context window is nearly full, or a milestone is done: writes a handoff document another session can resume from.",
+      "description": "Use when the user asks to save context or hand off, or a milestone is done: writes a handoff document another session can resume from.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\session-handoff"
       ],
       "files": {
         ".claude/handoffs/2026-03-10-215859-utciviewer-multi-project-ness-tziona.md": "0d9c70b254c4d0ce0e00d922f4558dd343ac2a48367361a8c98c2183b6b58890",
-        "SKILL.md": "1707544368e389c83794df1f36025575758a15de292639306c05c52f6a37c8de",
+        "SKILL.md": "acfb28d45ff872fab98eb5a6929fc9f38f2aa57967ac1a2e0bff8e4262fc532d",
         "evals/model-expectations.md": "dd4f4e21790377b1cf1082598aadbe9fc94f28bb91b1d557fd04b2ba391f5c93",
         "evals/results-opus-baseline.md": "56dfda9649814c1ef88d3d63eb0cb2fece66c19755bd057f44b11d09ace1a1db",
         "evals/setup_test_env.py": "ce139b9bf3ab857610173c1fd86536c66161311937c391a8800bafd2072163af",
@@ -734,31 +691,6 @@
       }
     },
     {
-      "name": "user-flows-and-guided-paths",
-      "path": "skills/user-flows-and-guided-paths",
-      "description": "Related features and tasks — such as purchase flows, onboarding, or multi-step configuration — should be designed as natural, guided paths that feel coherent and fit the product hierarchy. Use wizards for complex sequential tasks. Use when designing flows, onboarding, checkout, setup sequences, or any multi-step user journey.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\user-flows-and-guided-paths"
-      ],
-      "files": {
-        "SKILL.md": "31daef17010805e56f0bfcaa1a656269ed3d4e977bfbd16216463e52c65560cc"
-      }
-    },
-    {
-      "name": "variant",
-      "path": "skills/variant",
-      "description": "Builds multiple variants of a component you're working on and helps you iterate and pick one.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\variant",
-        "C:\\Users\\tuval\\.cursor\\skills\\variant"
-      ],
-      "files": {
-        "SKILL.md": "0cb89389c0423ff46e8a5a07bda894b43619366210fa3bc98beb39908cbc1635",
-        "agents/openai.yaml": "24e006ea99aed264541692cfd778aa758ff111fa242ec81126fd51fdf1b29ff0",
-        "picker.md": "62f357b4e3123fcb95862c7bd7d1294e023dc7d2094482a43c25c412b58cf537"
-      }
-    },
-    {
       "name": "verify-this",
       "path": "skills/verify-this",
       "description": "Verify a claim with fresh local evidence: restate it falsifiably, capture baseline and treatment, compare artifacts, and return VERIFIED, NOT VERIFIED, or INCONCLUSIVE.",
@@ -778,17 +710,6 @@
       ],
       "files": {
         "SKILL.md": "eb76574a1047eb6c17a6f4ea3caedfcab0f6a19941b199f861b6011eadf3c5ca"
-      }
-    },
-    {
-      "name": "workflow-from-chats",
-      "path": "skills/workflow-from-chats",
-      "description": "Use when the user wants a repeated workflow from past chats turned into a skill; hands the result to pstack's poteto-mode authoring-a-skill playbook (or Cursor's built-in create-skill).",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\workflow-from-chats"
-      ],
-      "files": {
-        "SKILL.md": "8b80d139875b9b093838de2366e9b58d6ed0a7ad0d5f6da7b1d4d4fa5b2e0a02"
       }
     }
   ],

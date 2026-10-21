@@ -1,6 +1,6 @@
 ---
 name: session-handoff
-description: "Use when the user asks to save context or hand off, the context window is nearly full, or a milestone is done: writes a handoff document another session can resume from."
+description: "Use when the user asks to save context or hand off, or a milestone is done: writes a handoff document another session can resume from."
 ---
 
 # Handoff

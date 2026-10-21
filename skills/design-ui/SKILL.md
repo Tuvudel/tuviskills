@@ -19,9 +19,9 @@ Taste comes from the better-* skills. Numbers come from deterministic checkers. 
 | Contrast numbers (APCA Lc, light/dark tokens) | apca-contrast (deterministic script) |
 | Screenshots and the visual review loop | playwright: screenshot → review against better-* → fix → re-screenshot until clean; control-ui for a custom harness |
 | Stress-test a component's states | break |
-| Explore alternative designs | variant |
+| Explore alternative designs | poteto-mode (prototype playbook) |
 | "How was this built?" for a live site | explain-interface |
-| Multi-step flows, onboarding | user-flows-and-guided-paths |
+| Multi-step flows, wizards, onboarding, checkout | [flows.md](flows.md) (guided paths, wizard anatomy, review checklist) |
 | Interactive configurator page | playground |
 | Grok Bot UI | make-bot-ui, design-a-grok-bot |
 

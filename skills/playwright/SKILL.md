@@ -145,3 +145,14 @@ Open only what you need:
 - Use `--headed` when a visual check will help.
 - When capturing artifacts in this repo, use `output/playwright/` and avoid introducing new top-level artifact folders.
 - Default to CLI commands and workflows, not Playwright test specs.
+
+## Smoke tests
+
+When asked to run the project's Playwright smoke suite, or after UI changes that need an end-to-end check:
+
+1. Build the target app's prerequisites.
+2. Run the relevant smoke suite or one focused test file (for example `npm run smoketest`, `npm run smoketest -- path/to/test.spec.ts`, or `npm run smoketest-no-compile -- <file>` when build artifacts are ready; use the project's actual scripts).
+3. On failure, inspect traces and logs and isolate the root cause; apply a minimal fix and rerun until stable.
+4. Prefer deterministic waits and assertions over timeouts, re-run passing fixes to catch flakes, and quarantine a test only when explicitly asked (and document it).
+
+Report the results, the root cause and fix, and any remaining flake risk.
