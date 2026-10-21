@@ -296,17 +296,6 @@
       }
     },
     {
-      "name": "check-compiler-errors",
-      "path": "skills/check-compiler-errors",
-      "description": "Use after code changes, or when a build or editor shows errors, to run the project's compile and type-check commands and report failures.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\check-compiler-errors"
-      ],
-      "files": {
-        "SKILL.md": "0091981ff5548524403e8e8b540bd8255e027ae874e80b41af75d64be6f47f61"
-      }
-    },
-    {
       "name": "clean-product-research-illustrations",
       "path": "skills/clean-product-research-illustrations",
       "description": "Use when creating, reviewing, or revising image prompts for polished product-research article illustrations, UX research visuals, report graphics, or research-facing conceptual scenes",
@@ -337,7 +326,7 @@
         "C:\\Users\\tuval\\.codex\\skills\\control-ui"
       ],
       "files": {
-        "SKILL.md": "410cae25bdb1e5d2323b126abc5047b0213be7fdb0195710213fa8de8a751871"
+        "SKILL.md": "ff03148d60bb84cb6fc6cd728cb2c8be3bd5b76ce21b798064196198c7494c9c"
       }
     },
     {
@@ -688,17 +677,6 @@
         "demo__giss-temperature.html": "47790088f338c5893607a51ff1117bc5d3f78328b0652fa37d933cae8e6b0404",
         "references__analytical-design.md": "539f9fcce2f8a5c2fa8ada1ee058665461c0d5f74f03ad65df6ef7f528c224db",
         "references__tufte-principles.md": "e45dbf7a01e6c4422717fdb161c01c4bad6aa56d698e60c53e9d29c7af0ba7b8"
-      }
-    },
-    {
-      "name": "verify-this",
-      "path": "skills/verify-this",
-      "description": "Verify a claim with fresh local evidence: restate it falsifiably, capture baseline and treatment, compare artifacts, and return VERIFIED, NOT VERIFIED, or INCONCLUSIVE.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\verify-this"
-      ],
-      "files": {
-        "SKILL.md": "ef27f2704b27017a3944d24675d114e3045f5fe346e2bc40bff72f67376d5ab0"
       }
     },
     {
