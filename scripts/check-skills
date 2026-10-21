@@ -12,7 +12,9 @@ from pathlib import Path
 args = sys.argv[1:]
 root = Path(args[args.index('--root') + 1]) if '--root' in args else Path(__file__).resolve().parents[1]
 skills_dir = root / 'skills'
-ENTRY = ['using-skills', 'coding-workflow', 'design-ui', 'illustrate', 'docs-writing']
+ENTRY = ['design-ui', 'illustrate', 'docs-writing']
+vendor_dir = root / 'vendor' / 'pstack' / 'skills'
+vendor_names = {p.name for p in vendor_dir.iterdir() if p.is_dir()} if vendor_dir.is_dir() else set()
 BANNED = re.compile(r'\b(impeccable|gstack)\b', re.I)
 errors, names = [], {}
 
@@ -44,6 +46,8 @@ for folder in sorted(p for p in skills_dir.iterdir() if p.is_dir()):
         errors.append(f'{folder.name}: name "{name}" does not match folder')
     if len(fm.get('description', '')) < 20:
         errors.append(f'{folder.name}: description missing or too short')
+    if name in vendor_names:
+        errors.append(f'{folder.name}: shadows the vendored pstack skill of the same name')
     if name in names:
         errors.append(f'duplicate name "{name}": {names[name]} and {folder.name}')
     names[name or folder.name] = folder.name
@@ -61,9 +65,9 @@ for entry in ENTRY:
         errors.append(f'entry skill missing: {entry}'); continue
     for row in re.findall(r'^\|(?:[^|]*)\|([^|]*)\|\s*$', p.read_text(encoding='utf-8'), re.M):
         for token in re.findall(r'\b[a-z][a-z0-9]*(?:-[a-z0-9]+)+\b|\b[a-z]{3,}\b', row):
-            if token in names or token in ('open', 'then', 'for', 'only', 'when', 'asked', 'the', 'and', 'bug', 'has', 'cheap', 'local', 'repro', 'includes', 'inline', 'execution', 'after', 'write', 'read', 'formal', 'plain', 'explanation', 'body', 'work', 'custom', 'harness', 'review', 'against', 'better', 'fix', 'until', 'clean', 'screenshot', 'connected', 'plugin', 'own', 'skills', 'whole', 'set', 'runs', 'deterministic', 'script', 'check', 'contrast', 'numbers', 'entry', 'skill', 'configures', 'its', 'models', 'explains', 'builds', 'on', 'to'):
+            if token in names or token in vendor_names or token in ('open', 'then', 'for', 'only', 'when', 'asked', 'the', 'and', 'bug', 'has', 'cheap', 'local', 'repro', 'includes', 'inline', 'execution', 'after', 'write', 'read', 'formal', 'plain', 'explanation', 'body', 'work', 'custom', 'harness', 'review', 'against', 'better', 'fix', 'until', 'clean', 'screenshot', 'connected', 'plugin', 'own', 'skills', 'whole', 'set', 'runs', 'deterministic', 'script', 'check', 'contrast', 'numbers', 'entry', 'skill', 'configures', 'its', 'models', 'explains', 'builds', 'on', 'to'):
                 continue
-            if '-' in token and not (skills_dir / token).is_dir() and not token.startswith('re-'):
+            if '-' in token and not (skills_dir / token).is_dir() and token not in vendor_names and not token.startswith('re-'):
                 errors.append(f'{entry}: routes to unknown skill "{token}"')
 
 if '--no-inventory' not in args and (root / 'inventory.json').is_file():

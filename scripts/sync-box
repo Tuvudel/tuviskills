@@ -1,30 +1,32 @@
 #!/usr/bin/env python3
-"""One-way mirror of skills/ into the Grok Bot box library. Dry run unless --apply.
+"""One-way mirror of skills/ and vendor/pstack/skills/ into the Grok Bot box library. Dry run unless --apply.
 Usage: scripts/sync-box [--apply] [--target /home/box/agent-data/workflows]"""
 import filecmp, shutil, sys
 from pathlib import Path
 args = sys.argv[1:]
-src = Path(__file__).resolve().parents[1] / 'skills'
+root = Path(__file__).resolve().parents[1]
+roots = [root / 'skills', root / 'vendor' / 'pstack' / 'skills']
+srcs = {p.name: p for r in roots for p in r.iterdir() if p.is_dir()}
 dst = Path(args[args.index('--target') + 1]) if '--target' in args else Path('/home/box/agent-data/workflows')
 apply = '--apply' in args
 plan = {'add skill': [], 'remove skill': [], 'update file': [], 'add file': [], 'delete file': []}
-for s in sorted(p.name for p in src.iterdir() if p.is_dir()):
+for s in sorted(srcs):
     if not (dst / s).exists(): plan['add skill'].append(s); continue
-    for f in (src / s).rglob('*'):
+    for f in srcs[s].rglob('*'):
         if f.is_file():
-            t = dst / s / f.relative_to(src / s)
+            t = dst / s / f.relative_to(srcs[s])
             if not t.exists(): plan['add file'].append(str(t.relative_to(dst)))
             elif not filecmp.cmp(f, t, shallow=False): plan['update file'].append(str(t.relative_to(dst)))
     for t in (dst / s).rglob('*'):
-        if t.is_file() and not (src / s / t.relative_to(dst / s)).exists(): plan['delete file'].append(str(t.relative_to(dst)))
+        if t.is_file() and not (srcs[s] / t.relative_to(dst / s)).exists(): plan['delete file'].append(str(t.relative_to(dst)))
 for d in sorted(p.name for p in dst.iterdir() if p.is_dir()):
-    if not (src / d).exists(): plan['remove skill'].append(d)
+    if d not in srcs: plan['remove skill'].append(d)
 for k, v in plan.items():
     print(f'{k}: {len(v)}' + (f"  {', '.join(v)}" if k.endswith('skill') or len(v) <= 15 else f"  e.g. {', '.join(v[:15])}"))
 if not apply:
     print('Dry run. Re-run with --apply.'); sys.exit(0)
 for s in plan['remove skill']: shutil.rmtree(dst / s)
-for s in sorted(p.name for p in src.iterdir() if p.is_dir()):
+for s in sorted(srcs):
     if (dst / s).exists(): shutil.rmtree(dst / s)
-    shutil.copytree(src / s, dst / s)
+    shutil.copytree(srcs[s], dst / s)
 print(f'Applied. {sum(1 for p in dst.iterdir() if p.is_dir())} skills in {dst}')

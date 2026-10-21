@@ -1,0 +1,5 @@
+source=https://github.com/cursor/plugins.git
+path=pstack
+commit=190d28736eff128ec94f502a22c7fe0c4b56cd37
+tree=34a0b817e5ea92375bb10f20b15cf750d4e8095a
+version=0.15.29
