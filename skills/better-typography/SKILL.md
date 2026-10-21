@@ -53,7 +53,7 @@ Tight line-height is for short text. Anything that wraps to three or more lines 
 
 ## Letter-spacing by size
 
-Large headings often look better with slightly negative letter-spacing. Small uppercase labels need a little positive letter-spacing, or the letters feel crowded. Body copy at reading sizes needs neither.
+Large headings often look better with slightly negative letter-spacing. Small uppercase labels need a little positive letter-spacing, or the letters feel crowded. This styles a label; it does not justify adding one. An eyebrow above a heading is usually decoration (`better-writing`). Body copy at reading sizes needs neither.
 
 ## Cap the measure
 
@@ -144,6 +144,7 @@ Keep text selectable by default. `::selection` can carry brand into the reading 
 | Selection disabled across application chrome | Restore it; suppress only where it conflicts with a drag or gesture |
 | Extra-info hint with no visual cue | Dotted underline via `text-decoration-style: dotted` |
 | Thin/Light weight on `14px` UI text | Weight `400`+ below `18px`; thin weights are display-only |
+| Gradient-clipped heading or number | One solid color; emphasis through size and weight |
 | `leading-none` on a three-line card description | At least `1.4` on any text that wraps to 3+ lines |
 
 ## Reporting

@@ -7,6 +7,10 @@ description: Use when building, polishing, or reviewing any UI (component, page,
 
 Taste comes from the better-* skills. Numbers come from deterministic checkers. Claims about how it looks come from screenshots, not from reading code.
 
+Every element earns its place. Before adding a label, subtitle, badge, icon, divider, container, toast or animation, name what the user loses without it. If you can't, leave it out.
+
+Build and review both end with the [subtraction pass](slop.md#subtraction-pass). Report what it removed.
+
 | Need | Open |
 |---|---|
 | Overall review or "make it better" | better-interface (runs the whole better-* set) |
@@ -16,6 +20,7 @@ Taste comes from the better-* skills. Numbers come from deterministic checkers. 
 | Polish: radius, depth, icons, hit areas, motion | better-ui |
 | UI copy: labels, buttons, errors, empty states | better-writing |
 | Accessibility | better-accessibility, then apca-contrast for contrast numbers |
+| Common AI slop patterns and the subtraction pass | [slop.md](slop.md) |
 | Contrast numbers (APCA Lc, light/dark tokens) | apca-contrast (deterministic script) |
 | Screenshots and the visual review loop | playwright: screenshot → review against better-* → fix → re-screenshot until clean; control-ui for a custom harness |
 | Stress-test a component's states | break |

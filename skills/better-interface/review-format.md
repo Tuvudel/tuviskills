@@ -28,6 +28,10 @@ One table, ordered by severity, then by reach:
 
 Each row is one root cause. Consolidate a repeated systemic issue into one row and list every affected location. Respect the finding cap. With no findings, omit the table and state "No actionable interface findings."
 
+## Removed
+
+The subtraction pass's result: each element or string to delete with a one-line reason, or "Subtraction pass: nothing removed" with what was inventoried.
+
 ## Verification
 
 List each check or interaction, the exact command or steps and the observed result. Separate checks that passed from checks marked **Not verified**.

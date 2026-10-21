@@ -56,6 +56,8 @@ Review in this order so foundational failures are not hidden by polish:
 5. `better-colors`
 6. `better-ui`
 
+After the six domains, run the `design-ui` [subtraction pass](../design-ui/slop.md#subtraction-pass) over the whole scope. Each deletion it finds is a finding for the owning domain.
+
 From a domain skill loaded here, take its principles, its references and its verification checks. Its severity ladder and its format are for standalone use; the consolidated format, shared severity and finding cap in this file replace them.
 
 If an owning skill is unavailable, mark that domain `Not reviewed`, name it and continue with the rest. Do not recreate its rules from memory, substitute a neighbour, or claim holistic coverage.
@@ -100,7 +102,7 @@ These set severity, not new rules. The owning skill decides whether the symptom 
 
 Severity says how bad a finding is; this says which fix to propose. When more than one would work, take the earliest that does:
 
-1. **Delete.** A separator that space would carry, an animation on a high-frequency interaction, an ARIA attribute a native element makes redundant, a ramp nothing imports.
+1. **Delete.** A separator that space would carry, an eyebrow or subtitle that repeats the heading, a decorative badge, filler helper text, an animation on a high-frequency interaction, an ARIA attribute a native element makes redundant, a ramp nothing imports.
 2. **Use the platform.** The native element, the native control, the browser's own focus ring, in place of a custom rebuild.
 3. **Reuse what the project has.** An existing token, spacing step, or motion curve, before any new value.
 4. **Correct the value.** The wrong easing, radius, gap, or contrast pair, using the exact value the owning skill gives.
@@ -124,6 +126,7 @@ Treat a review request as read-only. Do not edit source unless the user also ask
 
 | Mistake | Fix |
 | --- | --- |
+| Subtraction pass skipped or unreported | Run it; list what it would remove |
 | Six disconnected domain reports | One ranked findings table |
 | Visual claim inferred only from source | Inspect the rendered state, or mark it not verified |
 | Silent gaps in coverage | Show which domains and states were actually inspected |

@@ -53,7 +53,7 @@ Purchase flows have an additional constraint: every unnecessary step reduces con
 
 - Collect only what is required at each stage — defer optional information
 - Show a persistent order summary so the user always sees what they are buying
-- Surface trust signals near payment steps (security badges, return policy)
+- Surface trust signals near payment steps (security badges, return policy): one, at the point of payment, not a badge strip
 - Confirmation step before payment: show total, delivery, items — one last review
 - Post-purchase: immediate confirmation with clear next steps ("Your order is confirmed. We'll email you when it ships.")
 

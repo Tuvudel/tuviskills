@@ -79,6 +79,10 @@ An icon next to text carries the text's optical weight: `1.5px` stroke beside re
 
 Icons use `currentColor` and take hover, selected and disabled states from CSS color and opacity, never from separate assets. Outline is the default variant; fill marks the active state.
 
+## No decorative badges or icons
+
+A badge marks a real state or count the user acts on: unread, Beta, Draft, Failed. An icon beside text must speed recognition. A pill, sparkle, emoji, glow, or icon tile that only adds interest is removed. One edge per surface: a border or a shadow, not both.
+
 ## Motion restraint
 
 Give high-frequency interactions instant feedback, or a transition of `150ms` or less on opacity and color. A custom animation there charges its attention cost on every trigger.
@@ -89,6 +93,8 @@ Every animated state change also needs a static cue: color, an icon, or a label.
 
 | Mistake | Fix |
 | --- | --- |
+| Decorative badge, sparkle, or icon tile | Delete it |
+| Animation on a routine view or list | Remove it, or ≤`150ms` opacity/color |
 | Icons look off-center | Nudge optically with padding, or fix the SVG |
 | Jarring staged entrance or exit | Stagger infrequent entrances; keep exits subtle |
 | Theme toggle crossfades the whole page | Disable transitions for the swap, force a reflow, restore on the next frame |

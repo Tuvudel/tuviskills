@@ -40,6 +40,10 @@ Skip unnecessary gender: "Subscribers can post recipes", not "each subscriber ca
 
 Never assemble a sentence from fragments around a variable (`"You have " + n + " new messages"`), because word order changes per language. Use a full templated string with proper pluralization.
 
+## Cut copy that repeats or decorates
+
+If deleting a string loses no information, delete it: eyebrows, subtitles that restate the title, intro lines, duplicate helper text, toasts for visible changes, unsourced claims. Patterns and exceptions: `design-ui` [slop.md](../design-ui/slop.md).
+
 ## Verb-first buttons
 
 A button label starts with a verb naming the action: "Send", "Save draft", "Delete project". Never "OK!", "Let's go!", or a bare "Yes" and "No" on a consequential action.
@@ -80,7 +84,7 @@ No blame, no "oops", no exclamation marks. Phrase hints positively ("Use only le
 
 ## Empty states point forward
 
-An empty state says what this place is, how to fill it and offers one clear next action:
+An empty state says what this place is, how to fill it and offers one clear next action. No cheerleading:
 
 ```html
 <!-- Bad: a shrug -->
@@ -102,7 +106,7 @@ A placeholder shows the expected format: `name@example.com`, `DD/MM/YYYY`. It va
 
 **Severity.** `HIGH` misleads the user or hides how to recover from an error. `MEDIUM` breaks voice, terminology, or capitalization consistency. `LOW` is isolated wording polish.
 
-**Verification.** Source alone is enough here. Check every label against the action it invokes, every error for a stated fix and terminology against the copy around it. No browser check is required.
+**Verification.** Source alone is enough here. Check every string against **Cut copy that repeats or decorates**, every label against the action it invokes, every error for a stated fix and terminology against the copy around it. No browser check is required.
 
 **Format.** Group findings under the principle each violates, ordered by severity, one row per root cause listing every location it appears in:
 

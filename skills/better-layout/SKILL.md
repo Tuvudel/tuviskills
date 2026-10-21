@@ -25,6 +25,10 @@ Pick alignment edges and stick to them; every stray edge reads as noise. Use one
 
 Use logical properties for direction-dependent layout: `padding-inline-start`, `margin-inline-end`. Reserve physical left and right for genuinely physical geometry.
 
+## Flatten before you contain
+
+A container must group something space can't. No card inside a card, no divider between rows space already separates, no grid of identical cards for items that aren't equal; order them by importance instead.
+
 ## Order by importance
 
 The most important content sits near the top and the leading edge. Reading order flows top-to-bottom, leading-to-trailing. Think in leading and trailing, not left and right.
@@ -59,6 +63,7 @@ Never park a critical action where resizing or scrolling clips it. Keep it in th
 
 | Mistake | Fix |
 | --- | --- |
+| Card nested in a card | Flatten to one surface; group with space |
 | `margin-left` / `padding-right` in a localizable layout | `margin-inline-start` / `padding-inline-end` |
 | Content-layout button touches the viewport edge | Inset within the project margins; keep intentional platform chrome |
 | Breakpoints at 768/1024 because they're the defaults | Break where the content actually stops fitting |

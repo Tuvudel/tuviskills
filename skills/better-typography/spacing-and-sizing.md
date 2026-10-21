@@ -53,7 +53,7 @@ h3 { font-size: var(--text-lg); }
 
 In Tailwind the same mapping is utility classes per level (`text-2xl`, `text-xl`, `text-lg`), centralized in a component or `@layer base` rather than repeated inline.
 
-When reviewing, compare the computed size of headings within each semantic section. A child rendering more prominently than its parent breaks the hierarchy. Deep levels may share a size where the scale runs out of comfortable steps, as long as weight or letter-spacing keeps them distinct. A heading is never smaller than body text unless it is deliberately a label-style overline.
+When reviewing, compare the computed size of headings within each semantic section. A child rendering more prominently than its parent breaks the hierarchy. Deep levels may share a size where the scale runs out of comfortable steps, as long as weight or letter-spacing keeps them distinct. A heading is never smaller than body text unless it is deliberately a label-style overline, and an overline needs its own reason to exist (`better-writing`).
 
 Heading semantics and outline quality belong to `better-accessibility`. Pick the element from the document structure, then use this skill to make that structure visually legible. Never pick a heading element for its browser-default size.
 
