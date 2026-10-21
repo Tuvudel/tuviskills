@@ -550,13 +550,13 @@
     {
       "name": "perspective-ensemble",
       "path": "skills/perspective-ensemble",
-      "description": "Use when a decision or plan needs real tradeoffs or stress-testing: runs a multi-lens council and then an adversarial red cell instead of one averaged answer.",
+      "description": "Use for non-code strategy, product, adoption, org, or ethics decisions that prototyping or measurement can't settle: runs a pre-mortem with 2-3 independent critics on different models and returns tradeoffs, early warnings, and what would change the call. Not for code or design questions (interrogate, arena, or poteto-mode's prototype playbook).",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\perspective-ensemble",
         "C:\\Users\\tuval\\.cursor\\skills\\perspective-ensemble"
       ],
       "files": {
-        "SKILL.md": "5b59a1c3fa55ed7a9bd841dd7b22cd0684fae51d35c84069fae0eefef434dc6f"
+        "SKILL.md": "c6dca1dabaf99a10241f92262474043b7d7f0430c91b52585c1f0a5dbbc00d56"
       }
     },
     {
