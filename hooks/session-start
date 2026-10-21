@@ -18,8 +18,18 @@ if [ "$format" = auto ]; then
   fi
 fi
 
+# Skills auto-update (scripts/check-update.*): silent when up to date or disabled, else one line for the agent.
+if [ "${OS:-}" = Windows_NT ]; then
+  update_cmd="powershell -NoProfile -ExecutionPolicy Bypass -File ${REPO_DIR}/scripts/check-update.ps1"
+  update="$(powershell.exe -NoProfile -ExecutionPolicy Bypass -File "${REPO_DIR}/scripts/check-update.ps1" 2>/dev/null </dev/null || true)"
+else
+  update_cmd="sh ${REPO_DIR}/scripts/check-update.sh"
+  update="$(sh "${REPO_DIR}/scripts/check-update.sh" 2>/dev/null </dev/null || true)"
+fi
+update="${update%$'\r'}"
+
 if [ -r "$RULE_FILE" ]; then
-  body="$(sed "s#{{POTETO_MODE}}#${REPO_DIR}/vendor/pstack/skills/poteto-mode/SKILL.md#g" "$RULE_FILE")"
+  body="$(sed -e "s#{{POTETO_MODE}}#${REPO_DIR}/vendor/pstack/skills/poteto-mode/SKILL.md#g" -e "s#{{UPDATE_CHECK}}#${update_cmd}#g" "$RULE_FILE")"
 else
   body="For non-trivial engineering work, read vendor/pstack/skills/poteto-mode/SKILL.md in the agent-skills repository and follow it."
 fi
@@ -34,9 +44,13 @@ escape_for_json() {
   printf '%s' "$s"
 }
 
-context="$(escape_for_json "Always-on pstack rule (from ${RULE_FILE}):
+context="Always-on pstack rule (from ${RULE_FILE}, injected by the agent-skills session-start hook; the skills update check already ran):
 
-${body}")"
+${body}"
+[ -n "$update" ] && context="${update}
+
+${context}"
+context="$(escape_for_json "$context")"
 
 # printf instead of a heredoc: bash 5.3+ heredocs can hang in hooks (obra/superpowers#571).
 case "$format" in

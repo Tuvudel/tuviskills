@@ -29,6 +29,24 @@ powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\ins
 
 It updates one marked block in the active global `AGENTS.md` or `AGENTS.override.md` and saves the original under `.local/personal-engineering-backups/`. It honors `CODEX_HOME` and supports `-CodexHomePath`, `-WhatIf`, and `-Remove`.
 
+## Auto-update at session start
+
+Each Codex, Claude Code, and Cursor session runs `hooks/session-start`, which calls `scripts/check-update.sh` (macOS/Linux) or `scripts/check-update.ps1` (Windows). The check asks the remote at most every 4 hours (`git ls-remote`, 5 s cap; offline or slow exits silently). When `main` moved and the checkout is on `main`, has no edits to tracked files, and can fast-forward, it pulls and re-runs the sync (`install-integrations.ps1` on Windows, `scripts/sync-box --apply` on the Grok Bot box). Otherwise it adds one line to the agent's context naming the local and latest commits and the sync command. It never resets, stashes, deletes, or forces; untracked folders (including those in `.git/info/exclude`) are left alone. Up to date means no output. There is no background service or scheduled task.
+
+The always-on rule carries a fallback line for sessions where the hook did not run (for example [openai/codex#19780](https://github.com/openai/codex/issues/19780)), and Grok Bot, which has no hooks, runs the check from its rule.
+
+Enable once per machine. `--check` / `-Check` reports status; `--uninstall` / `-Uninstall` turns it off:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\scripts\install-autoupdate.ps1
+```
+
+```sh
+sh ~/agent-skills/scripts/install-autoupdate.sh
+```
+
+On Windows the installer runs `install-integrations.ps1`; the hook definition is unchanged, so an already-trusted Codex hook stays trusted. On macOS and Linux it merges the hook and rule into `~/.codex`, `~/.claude`, and `~/.cursor` for each tool it finds (needs `python3` for the JSON merge). When it reports that Codex trust is needed, start `codex`, run `/hooks`, and trust the agent-skills SessionStart hook once.
+
 ## Install on another Windows PC
 
 Install Git and GitHub CLI, then authenticate with the GitHub account that can access this private repository:

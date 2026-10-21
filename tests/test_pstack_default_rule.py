@@ -13,6 +13,9 @@ class PstackDefaultRuleTests(unittest.TestCase):
     def test_body_names_poteto_mode_placeholder(self):
         self.assertIn("{{POTETO_MODE}}", self.body)
 
+    def test_body_carries_update_check_fallback(self):
+        self.assertIn("{{UPDATE_CHECK}}", self.body)
+
     def test_cursor_rule_is_always_applied_and_identical(self):
         text = (rules / "pstack-default.mdc").read_text(encoding="utf-8")
         front, rest = re.match(r"---\n(.*?)\n---\n(.*)", text, re.S).groups()
@@ -26,7 +29,7 @@ class PstackDefaultRuleTests(unittest.TestCase):
 
     def test_grokbot_text_is_body_with_box_path(self):
         text = (rules / "pstack-default.grokbot.txt").read_text(encoding="utf-8").strip()
-        self.assertEqual(text, self.body.replace("{{POTETO_MODE}}", "/home/box/agent-data/workflows/poteto-mode/SKILL.md"))
+        self.assertEqual(text, self.body.replace("{{POTETO_MODE}}", "/home/box/agent-data/workflows/poteto-mode/SKILL.md").replace("{{UPDATE_CHECK}}", "sh /workspace/as/scripts/check-update.sh"))
 
 
 if __name__ == "__main__":

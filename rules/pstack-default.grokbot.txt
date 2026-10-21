@@ -3,3 +3,5 @@
 For any non-trivial engineering task (feature, bug fix, refactor, performance, review, CI, shipping, investigation), first read `/home/box/agent-data/workflows/poteto-mode/SKILL.md` and follow it, including its playbooks and the skills it routes to. Open a routed skill by reading its `SKILL.md` in the folder next to poteto-mode (`../<name>/SKILL.md`); a slash command is not needed. Skip this for trivial questions, small talk, and one-line edits. User and project instructions win over pstack.
 
 For non-code strategy or product decisions that can't be settled by prototyping or measurement, use the perspective-ensemble skill instead.
+
+Skills auto-update: if this rule did not reach you through the agent-skills session-start hook, run `sh /workspace/as/scripts/check-update.sh` once at session start, before relying on skills, and follow any line it prints.

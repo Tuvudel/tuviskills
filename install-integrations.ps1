@@ -129,9 +129,10 @@ Install-AgentFile (Join-Path $profileRoot '.cursor/rules/pstack-models.mdc') $ps
 # Always-on pstack rule. {{POTETO_MODE}} and {{CODEX_ADAPTER}} resolve to absolute paths in this repository.
 $potetoMode = ($repo -replace '\\', '/') + '/vendor/pstack/skills/poteto-mode/SKILL.md'
 $codexAdapter = ($repo -replace '\\', '/') + '/harness/codex.md'
+$updateCheck = "powershell -NoProfile -ExecutionPolicy Bypass -File $(($repo -replace '\\', '/') + '/scripts/check-update.ps1')"
 function Expand-Rule([string]$Name) {
     $text = [IO.File]::ReadAllText((Join-Path $repo "rules/$Name")) -replace "`r`n", "`n"
-    return $text.Replace('{{POTETO_MODE}}', $potetoMode).Replace('{{CODEX_ADAPTER}}', $codexAdapter).Trim()
+    return $text.Replace('{{POTETO_MODE}}', $potetoMode).Replace('{{CODEX_ADAPTER}}', $codexAdapter).Replace('{{UPDATE_CHECK}}', $updateCheck).Trim()
 }
 function Set-ManagedBlock([string]$Path, [string]$Id, [string]$Body) {
     $start = "<!-- agent-skills:$($Id):start -->"; $end = "<!-- agent-skills:$($Id):end -->"

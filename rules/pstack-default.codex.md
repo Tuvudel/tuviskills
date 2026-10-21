@@ -4,4 +4,6 @@ For any non-trivial engineering task (feature, bug fix, refactor, performance, r
 
 For non-code strategy or product decisions that can't be settled by prototyping or measurement, use the perspective-ensemble skill instead.
 
+Skills auto-update: if this rule did not reach you through the agent-skills session-start hook, run `{{UPDATE_CHECK}}` once at session start, before relying on skills, and follow any line it prints.
+
 In Codex, also read `{{CODEX_ADAPTER}}` once per session and use it to map pstack's Cursor names (Task, subagent fields, model slugs, `.mdc` rules) to Codex.
