@@ -34,18 +34,18 @@ This adapter is personal, not part of pstack. It follows `<pstack>/docs/harness/
 
 Codex subagents can use different models and reasoning efforts, but only OpenAI models. Resolution order: explicit spawn value, then `[agents] default_subagent_model` / `default_subagent_reasoning_effort`, then the parent. A custom agent file's `model` / `model_reasoning_effort` win over all of these. Efforts, low to high: `low`, `medium`, `high`, `xhigh`, `max` (`ultra` is a subagent mode, not a per-agent effort; Luna has no `ultra`).
 
-Models as of 2026-10-21: `gpt-6-astra` (most capable), `gpt-6.1-sol` (near-Astra at lower cost; the recommended default for demanding agents), `gpt-6-luna` (fast, for clear high-volume work). Use only models the account lists in `/model`; if one is missing, take the next row down and say so.
+Models as of 2026-10-21: `gpt-6.1-sol` (the default for demanding agents) and `gpt-6-luna` (fast, for clear high-volume work). **Never use `gpt-6-astra` unless Tuval names it in his prompt for that task**; no role, panel, or judge defaults to it. Use only models the account lists in `/model`; if one is missing, say so.
 
 | pstack slug or role | Codex model and effort |
 | --- | --- |
 | `inherit-parent`, `auto` | Omit `model` and effort; the subagent inherits the parent. |
-| `claude-opus-*` / "judgment and prose", "hardest tasks", `architect runners`, `interrogate reviewers`, `why synthesizer`, `reflect judgment, divergent, synthesizer` | `gpt-6-astra` `xhigh`. Without Astra: `gpt-6.1-sol` `xhigh`. |
+| `claude-opus-*` / "judgment and prose", "hardest tasks", `architect runners`, `interrogate reviewers`, `why synthesizer`, `reflect judgment, divergent, synthesizer` | `gpt-6.1-sol` `xhigh`. |
 | `grok-*` code roles: "feature, refactoring", "bug-fix", "perf-issue", "hillclimb", `arena runners` | `gpt-6.1-sol` `high`. |
 | Explorers and fan-out: `how explorer`, `why investigators`, `swarm workers`, `reflect tooling`, trivial mechanical edits | `gpt-6-luna` `medium` (`high` when the slice needs judgment, `low` for pure extraction). |
 | `how explainer` | `gpt-6.1-sol` `medium`. |
 | Effort tokens in a slug (`-max`, `-xhigh`, `-high`, `-medium`, `-low`) | Keep the token; drop `-fast`. If the chosen model lacks that effort, use its highest effort below it. |
 
-**Cross-model judging.** pstack asks for a judge or verifier "on a different model family" (arena cross-judge, architect cross-judge, interrogate's multi-model panel, orchestrate's verifier). Codex has one family, so "different" means a different model from the worker's, preferring a stronger one: workers on `gpt-6.1-sol` are judged by `gpt-6-astra`, workers on `gpt-6-luna` by `gpt-6.1-sol`. A multi-model panel spreads its seats over Astra, Sol and Luna before it repeats a model. When only one model is available, vary the effort (judge at `xhigh` or `max`, workers at `high` or lower), give the judge a fresh context with no worker reasoning, and add one line to the reply: `Judge independence reduced: same model, different effort.`
+**Cross-model judging.** pstack asks for a judge or verifier "on a different model family" (arena cross-judge, architect cross-judge, interrogate's multi-model panel, orchestrate's verifier). Codex has one family, and Astra is off unless Tuval names it, so: workers on `gpt-6-luna` are judged by `gpt-6.1-sol` (`xhigh`); workers on `gpt-6.1-sol` are judged by `gpt-6.1-sol` at a higher effort than the workers (`xhigh` over `high`, `max` over `xhigh`) in a fresh subagent whose brief carries the candidates and the rubric but none of the workers' reasoning. A multi-model panel mixes Sol and Luna seats and varies Sol's effort before it repeats a configuration. When the judge shares the workers' model, add one line to the reply: `Judge independence reduced: same model, higher effort, fresh context.`
 
 **pstack-models rule.** Codex never reads `.mdc` files. Tuval's `rules/pstack-models.mdc` sets every role to `inherit-parent`; in Codex that means: omit the model unless a skill step needs a different judge, in which case use the cross-model rule above. If a Codex-specific budget is wanted, set it with `[agents]` defaults in `~/.codex/config.toml` or in a custom agent file, not in `AGENTS.md`.
 
