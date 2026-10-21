@@ -46,7 +46,7 @@ class PersonalEngineeringInstallerTests(unittest.TestCase):
         self.assertTrue(self.target.read_bytes().startswith(self.original))
         text = self.target.read_text(encoding="utf-8")
         self.assertEqual(text.count(start), 1)
-        self.assertIn("engineering-companion", text)
+        self.assertIn("poteto-mode", text)
         self.assertIn("resume", text)
         self.assertEqual(len(list(self.backups.glob("*.md"))), 1)
         self.assertEqual(next(self.backups.glob("*.md")).read_bytes(), self.original)
@@ -78,7 +78,7 @@ class PersonalEngineeringInstallerTests(unittest.TestCase):
         override = self.codex / "AGENTS.override.md"
         override.write_text("## Override\nKeep this active.\n", encoding="utf-8")
         self.run_installer()
-        self.assertIn("engineering-companion", override.read_text(encoding="utf-8"))
+        self.assertIn("poteto-mode", override.read_text(encoding="utf-8"))
         self.assertEqual(self.target.read_bytes(), self.original)
 
     def test_remove_only_managed_block(self):
@@ -102,13 +102,13 @@ class PersonalEngineeringInstallerTests(unittest.TestCase):
     def test_missing_guidance_file_is_created(self):
         self.target.unlink()
         self.run_installer()
-        self.assertIn("engineering-companion", self.target.read_text(encoding="utf-8"))
+        self.assertIn("poteto-mode", self.target.read_text(encoding="utf-8"))
         self.assertFalse(self.backups.exists())
 
     def test_empty_guidance_file_is_supported(self):
         self.target.write_bytes(b"")
         self.run_installer()
-        self.assertIn("engineering-companion", self.target.read_text(encoding="utf-8"))
+        self.assertIn("poteto-mode", self.target.read_text(encoding="utf-8"))
         self.assertEqual(next(self.backups.glob("*.md")).read_bytes(), b"")
 
     def test_active_codex_home_is_respected(self):
@@ -119,7 +119,7 @@ class PersonalEngineeringInstallerTests(unittest.TestCase):
         environment = os.environ.copy()
         environment.update(USERPROFILE=str(self.profile), CODEX_HOME=str(custom_home))
         self.run_installer(use_profile=False, environment=environment)
-        self.assertIn("engineering-companion", custom_target.read_text(encoding="utf-8"))
+        self.assertIn("poteto-mode", custom_target.read_text(encoding="utf-8"))
         self.assertEqual(self.target.read_bytes(), self.original)
 
     def test_explicit_profile_isolated_from_active_codex_home(self):
@@ -130,7 +130,7 @@ class PersonalEngineeringInstallerTests(unittest.TestCase):
         environment = os.environ.copy()
         environment.update(USERPROFILE=str(self.profile), CODEX_HOME=str(custom_home))
         self.run_installer(environment=environment)
-        self.assertIn("engineering-companion", self.target.read_text(encoding="utf-8"))
+        self.assertIn("poteto-mode", self.target.read_text(encoding="utf-8"))
         self.assertEqual(custom_target.read_bytes(), b"## Active custom guidance\n")
 
 

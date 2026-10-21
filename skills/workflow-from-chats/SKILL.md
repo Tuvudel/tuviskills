@@ -1,6 +1,6 @@
 ---
 name: workflow-from-chats
-description: "Use when the user wants a repeated workflow from past chats turned into a skill; hands the result to writing-skills."
+description: "Use when the user wants a repeated workflow from past chats turned into a skill; hands the result to pstack's poteto-mode authoring-a-skill playbook (or Cursor's built-in create-skill)."
 ---
 
 # Workflow From Chats

@@ -24,6 +24,5 @@ Taste comes from the better-* skills. Numbers come from deterministic checkers. 
 | Multi-step flows, onboarding | user-flows-and-guided-paths |
 | Interactive configurator page | playground |
 | Grok Bot UI | make-bot-ui, design-a-grok-bot |
-| Hebrew UI copy (Circles) | circles-hebrew-content |
 
 Report contrast in WCAG 2 ratios by default; give APCA Lc alongside when the user opts into APCA.

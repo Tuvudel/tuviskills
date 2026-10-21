@@ -282,24 +282,6 @@
       }
     },
     {
-      "name": "brainstorming",
-      "path": "skills/brainstorming",
-      "description": "Use when shaping a new feature or design that still has open questions, before writing a spec. Run sharpen first; skip for small, clear changes.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\brainstorming"
-      ],
-      "files": {
-        "SKILL.md": "a709f92ad6b54bb32c21869033ec466153611ca5c16670013113b5cdf6d6d7be",
-        "scripts/frame-template.html": "7b9418e9939dded0cf8e6a5549a18162b7c7e5495deeefa83a12f3394b81395d",
-        "scripts/helper.js": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3",
-        "scripts/server.cjs": "ee89af11506ac4933324c89a2cfb36b391fe611f82efb9eeb3b814e40825145f",
-        "scripts/start-server.sh": "a4e5ae84275bcaacd2f84345afeabe59cf7b00ba080e123da7cc1fb226f12847",
-        "scripts/stop-server.sh": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf",
-        "spec-document-reviewer-prompt.md": "95a0a195de9d984be2fffa95bab16fc8c563bc296a9cfc5e9c29cb3ece0d7457",
-        "visual-companion.md": "3321a044c777d03d7177df41c77bb83155ff2a6d0c16b8a3d752426d29f14ea8"
-      }
-    },
-    {
       "name": "break",
       "path": "skills/break",
       "description": "Use when the user wants a component rendered in every state and edge case (long text, empty, error, loading, RTL) on a temporary page to stress-test it.",
@@ -325,28 +307,6 @@
       }
     },
     {
-      "name": "circles-agent-bridge",
-      "path": "skills/circles-agent-bridge",
-      "description": "Use when Tuval's Codex reads, writes, verifies, or discusses agent-to-agent handoffs with Guy's Codex through the Circles Slack agent bridge.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\circles-agent-bridge"
-      ],
-      "files": {
-        "SKILL.md": "616ee94b459fa18b533d516e0b693d1c14a9c455a4c98057b29c7bdd8ab9bff1"
-      }
-    },
-    {
-      "name": "circles-hebrew-content",
-      "path": "skills/circles-hebrew-content",
-      "description": "Use when writing Hebrew-facing Circles text (docs, mockups, dashboards, reports, in-app copy) or presenting dense structured information such as inventories, gap analyses, or status overviews.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.codex\\skills\\circles-hebrew-content"
-      ],
-      "files": {
-        "SKILL.md": "16da13d6bdf06ca533e39843e702e667d1b3c5ac561d602796a5f94c2138ca7d"
-      }
-    },
-    {
       "name": "clean-product-research-illustrations",
       "path": "skills/clean-product-research-illustrations",
       "description": "Use when creating, reviewing, or revising image prompts for polished product-research article illustrations, UX research visuals, report graphics, or research-facing conceptual scenes",
@@ -356,15 +316,6 @@
       "files": {
         "SKILL.md": "3033f4545665c898e963c38c2c7860c7454de023fb877c7aeded5c7d34a0c333",
         "agents/openai.yaml": "ecc3d867a7729b4b99de8d828f2481608905f3e399711f31477f3cc088050384"
-      }
-    },
-    {
-      "name": "coding-workflow",
-      "path": "skills/coding-workflow",
-      "description": "Use at the start of, or when switching phase in, any non-trivial engineering task (feature, bug, refactor, review, CI, ship) to pick the specialist skill for that phase. Skip for one-line edits.",
-      "original_locations": [],
-      "files": {
-        "SKILL.md": "c64e28e6c6b2bd3869123ea7654a3f25a26cc482151fc9b8ce44a3438f30bcf4"
       }
     },
     {
@@ -404,7 +355,7 @@
       "description": "Use when building, polishing, or reviewing any UI (component, page, layout, color, type, UI copy, accessibility) to pick the taste, checking, or browser-review skill. Not for figures or diagrams (illustrate) or docs prose (docs-writing).",
       "original_locations": [],
       "files": {
-        "SKILL.md": "77793d0fd5acb26f5ef1e3df26dfea100bcc90f2ddacbe176547c412a53a093e"
+        "SKILL.md": "30adffac74e1bbcf1ce1f04fb40bda61ce439a269745a3cf20d6c0d1f52231a6"
       }
     },
     {
@@ -419,31 +370,10 @@
     {
       "name": "docs-writing",
       "path": "skills/docs-writing",
-      "description": "Use when writing or editing prose (docs, READMEs, specs, PRDs, PR descriptions, release notes, long chat replies, Hebrew content) to pick the style guide or pass. Not for in-app UI copy (better-writing via design-ui).",
+      "description": "Use when writing or editing prose (docs, READMEs, specs, PRDs, PR descriptions, release notes, long chat replies) to pick the style guide or pass. Not for in-app UI copy (better-writing via design-ui).",
       "original_locations": [],
       "files": {
-        "SKILL.md": "c3f2210c5f1decd1bb9004df571f7d64b49e969178706c9c9666c8b83f6ab288"
-      }
-    },
-    {
-      "name": "engineering-companion",
-      "path": "skills/engineering-companion",
-      "description": "Use alongside coding-workflow when substantive engineering work needs a deeper pstack method (how/why, architect, blast radius, interrogate, project verification, runtime evidence), or for Negev/OTEF project pointers. Skip trivial edits.",
-      "original_locations": [],
-      "files": {
-        "LICENSE": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
-        "NOTICE.md": "7039ee660caf666b00652689bbd8076635fcdf9133277df4f0971e8fccd36d2c",
-        "SKILL.md": "b9bacedb0746f040d555679e7689036c0e1620b3b23b1de9f7cd66a42e0ffe27",
-        "agents/openai.yaml": "e8113f07336d87a674d3a6ba8cf065b0591cab8f21bab3be4a173443e62be161",
-        "references/architect.md": "b3e982381e7773a83a91a2e60efc510a019c9959c5d27954193be26a93b2c03e",
-        "references/blast-radius.md": "316ed2483cd681c38d7b295356a3380b9a589eee99768e4722a18252c03272d5",
-        "references/compatibility-checks.md": "3203521f3ba14645fb95a7ce9213ea191751ea78c98403859690dccc7cd700ed",
-        "references/how-and-why.md": "6ef66ee23f9728ccc9d5e4c2778517ec20ee2c9de386329ba5bc4d9ca771723c",
-        "references/integration.md": "ce476bff65aef1306a8db98b7ebb67d18a91fc3655e70be54d7ca646d8ecad98",
-        "references/interrogate.md": "151bea64214599019a9cd3c9f284250319a673b7965ed5c18410823d219f3caf",
-        "references/project-integration.md": "9d628e974fb843fa61f187ee0c731717abff00102f6cc725da649926faad5cd5",
-        "references/project-verification.md": "dc84263c34f353373aa937b5aff94e599262fd5d741a4b2dfd1d0d1e563f9b62",
-        "references/runtime-evidence.md": "43d22e31c18932326ef6c7c3582675fac996aac1f348388af49ba49d2b110cdc"
+        "SKILL.md": "9fb5b07cd5ac0d9d42d28f2b9bfab2b38549c8bf8d5cc606fcc04fef7d5032be"
       }
     },
     {
@@ -461,17 +391,6 @@
         "from-an-image.md": "b6073080f9fedf9ac34ff035c36aa235c42e6549bcd619d460484fd262add18b",
         "no-browser.md": "c46533a02e16a3ed09cb3d74df7898547200a21b27053ee029da8b7c4a4f5c8c",
         "read-the-system.md": "d10d72357af0733ad1db251bc9fd2ec6e8218cdac4bc095a87cf714a269d1688"
-      }
-    },
-    {
-      "name": "finishing-a-development-branch",
-      "path": "skills/finishing-a-development-branch",
-      "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\finishing-a-development-branch"
-      ],
-      "files": {
-        "SKILL.md": "e6d4a812de900d33c6eacfb40747f99427f25c304a7b7099120f9373b115a47f"
       }
     },
     {
@@ -650,17 +569,6 @@
       }
     },
     {
-      "name": "matching-flow-lab",
-      "path": "skills/matching-flow-lab",
-      "description": "Use when designing or changing matching logic, selection policies, or participant/admin/host user flows that require fairness, explainability, and operational edge-case checks before implementation.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\matching-flow-lab"
-      ],
-      "files": {
-        "SKILL.md": "358ca097b29ef05daec3983451f68ff55ab011f78f1f874156402c39629f8ba3"
-      }
-    },
-    {
       "name": "new-branch-and-pr",
       "path": "skills/new-branch-and-pr",
       "description": "Use when starting a change that should land as its own PR: create a fresh branch, do the work, and open the pull request.",
@@ -734,17 +642,6 @@
       }
     },
     {
-      "name": "product-alignment-gate",
-      "path": "skills/product-alignment-gate",
-      "description": "Use when proposing or changing app features, user flows, or copy and alignment must be checked against questionnaire intent, product docs, route guards, and role constraints before implementation.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\product-alignment-gate"
-      ],
-      "files": {
-        "SKILL.md": "2c0e5f10649ad784b00fefa96ba416f830cae6e5b5e5c63682f55f861d9b2565"
-      }
-    },
-    {
       "name": "product-requirements",
       "path": "skills/product-requirements",
       "description": "Use when the user asks for a PRD, feature specification, or requirements gathering: interviews like a product owner and writes the PRD.",
@@ -758,24 +655,12 @@
     {
       "name": "receiving-code-review",
       "path": "skills/receiving-code-review",
-      "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation",
+      "description": "Use when code review feedback arrives (PR review comments, review threads, reviewer findings), before changing code in response: verify each point technically instead of agreeing by reflex.",
       "original_locations": [
         "C:\\Users\\tuval\\.agents\\skills\\superpowers\\receiving-code-review"
       ],
       "files": {
-        "SKILL.md": "647036bbdab7bf2317e14e079595e984c9030f64295e2b4c0fb57dbeb48f25dd"
-      }
-    },
-    {
-      "name": "requesting-code-review",
-      "path": "skills/requesting-code-review",
-      "description": "Use after finishing a task or major feature, or before merging, to get an independent code review against the requirements.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\requesting-code-review"
-      ],
-      "files": {
-        "SKILL.md": "65c0e89322bc62677928344ebb5079a7d2779abf0304401dfc5123bd7b405e11",
-        "code-reviewer.md": "b2f2ec7596925fe52dac158fdfbca19b3a7d779d619c481e6706a6c0001662d3"
+        "SKILL.md": "453e1079d1ee7a75619886d589495757c22fa721eac4e4b69b08192454e0c143"
       }
     },
     {
@@ -823,43 +708,6 @@
       }
     },
     {
-      "name": "subagent-driven-development",
-      "path": "skills/subagent-driven-development",
-      "description": "Use when executing a written implementation plan (from writing-plans), with a fresh subagent per task and reviews between tasks; also covers inline execution when subagents are unavailable. For unrelated parallel work use swarm; for competing attempts use arena.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\subagent-driven-development"
-      ],
-      "files": {
-        "SKILL.md": "882f1ae8f740fc46b00ec9fc30813ce60225c9b66580d146104124ea22d4dd6f",
-        "implementer-prompt.md": "49018b28dc11bc9f3d13a28959bb10ae1a96eabc5d8f19f4079d901f9ff2bf64",
-        "scripts/review-package": "40b64f89b7c82884fb65af4e40a2faa49a7b033c65c41a5a1b52b5426771b37f",
-        "scripts/sdd-workspace": "6b26b27688e5af2c6025b3d47c393c63555dd92104799a94e8115c06dba272f3",
-        "scripts/task-brief": "471fef87f426551ea0380e6b5c728a7d85dd2c8d3b5d6d936c97210f17e68418",
-        "task-reviewer-prompt.md": "2eb9d54373420de25bc0bd00635d3a3123a6c0eb30c881168e6f3348e2387331"
-      }
-    },
-    {
-      "name": "systematic-debugging",
-      "path": "skills/systematic-debugging",
-      "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\systematic-debugging"
-      ],
-      "files": {
-        "CREATION-LOG.md": "8b689d2b3631837e2c911e87d5ed639f878c598bf0e64699377b10ee3564de8f",
-        "SKILL.md": "e34199e15358b9ce4fadab55e68c80c103ce2151843abfa2f20e2dd7e46c88ce",
-        "condition-based-waiting-example.ts": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
-        "condition-based-waiting.md": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26",
-        "defense-in-depth.md": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7",
-        "find-polluter.sh": "6462747eae9b175ac145b78bcfaeab755654a75e32637f08eb633f065a9e1d7c",
-        "root-cause-tracing.md": "6b0622269e098ca1399e123e553fd385f0b6412d88ef0e9c4f5a8ea9cf1cec7b",
-        "test-academic.md": "fe2ba480d78ac0d686dc025f41c2a32a43d642bf533f91b0c6053a04d35d6486",
-        "test-pressure-1.md": "0b6a915db0054577819834c79be9eb614e97bddba10d73768e1fbe91cfed048a",
-        "test-pressure-2.md": "b2030aeffba07050e8ad573ddf87486457c4a016a786bb326235bebd856f2016",
-        "test-pressure-3.md": "96b50a52e2c7989c9cf20fb752c47c1e9a3a70dc362f8f7989f8f5b64dac7708"
-      }
-    },
-    {
       "name": "thermo-nuclear-code-quality-review",
       "path": "skills/thermo-nuclear-code-quality-review",
       "description": "Run an extremely strict maintainability review for abstraction quality, giant files, and spaghetti-condition growth. Use for a thermo-nuclear code quality review, thermonuclear review, deep code quality audit, or especially harsh maintainability review.",
@@ -897,26 +745,6 @@
       }
     },
     {
-      "name": "using-git-worktrees",
-      "path": "skills/using-git-worktrees",
-      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\using-git-worktrees"
-      ],
-      "files": {
-        "SKILL.md": "e2c3ec142e52868a51af246c620cd76ab648dcf27d6900d47e6ffd07159a9794"
-      }
-    },
-    {
-      "name": "using-skills",
-      "path": "skills/using-skills",
-      "description": "Use at session start, or when unsure which personal skill applies, to pick the right entry skill before acting on a non-trivial task. Not needed for trivial questions or one-line edits.",
-      "original_locations": [],
-      "files": {
-        "SKILL.md": "6d3738e6bf6a32990beb20a9b11494dff56ad91325f8b98fc7e42c36d5c8e340"
-      }
-    },
-    {
       "name": "variant",
       "path": "skills/variant",
       "description": "Builds multiple variants of a component you're working on and helps you iterate and pick one.",
@@ -928,17 +756,6 @@
         "SKILL.md": "0cb89389c0423ff46e8a5a07bda894b43619366210fa3bc98beb39908cbc1635",
         "agents/openai.yaml": "24e006ea99aed264541692cfd778aa758ff111fa242ec81126fd51fdf1b29ff0",
         "picker.md": "62f357b4e3123fcb95862c7bd7d1294e023dc7d2094482a43c25c412b58cf537"
-      }
-    },
-    {
-      "name": "verification-before-completion",
-      "path": "skills/verification-before-completion",
-      "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\verification-before-completion"
-      ],
-      "files": {
-        "SKILL.md": "ea52d15aabaf72bc6b558efe2c126f161b53961090ddcd712000273bfe8c7b6c"
       }
     },
     {
@@ -966,41 +783,12 @@
     {
       "name": "workflow-from-chats",
       "path": "skills/workflow-from-chats",
-      "description": "Use when the user wants a repeated workflow from past chats turned into a skill; hands the result to writing-skills.",
+      "description": "Use when the user wants a repeated workflow from past chats turned into a skill; hands the result to pstack's poteto-mode authoring-a-skill playbook (or Cursor's built-in create-skill).",
       "original_locations": [
         "C:\\Users\\tuval\\.codex\\skills\\workflow-from-chats"
       ],
       "files": {
-        "SKILL.md": "2e99b13bded28e7a1c20d5241f220d6a2aaed092fe468ae6175b39371f9fe6f4"
-      }
-    },
-    {
-      "name": "writing-plans",
-      "path": "skills/writing-plans",
-      "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\writing-plans"
-      ],
-      "files": {
-        "SKILL.md": "faa5b983ee4d48a7335c8fe4e4072898d83a05c35448e1eff8572df0c89d1262",
-        "plan-document-reviewer-prompt.md": "aa728b96aad603c8be28875a4305637f6c984aa81ffcadcb13e743202fa2a0c7"
-      }
-    },
-    {
-      "name": "writing-skills",
-      "path": "skills/writing-skills",
-      "description": "Use when creating, editing, or testing any skill. The canonical skill-authoring guide; reflect, correct, automate-me, and workflow-from-chats hand their skill edits to it.",
-      "original_locations": [
-        "C:\\Users\\tuval\\.agents\\skills\\superpowers\\writing-skills"
-      ],
-      "files": {
-        "SKILL.md": "f2418e5d31859d527ec093490c44831cbe083d3d2c3431a4a6a682b464e2eb54",
-        "anthropic-best-practices.md": "217629b356c09c9bd11017c9788e8fc654ca1b32c92d4a51cd490e16dd65e59a",
-        "examples/CLAUDE_MD_TESTING.md": "0b379a3415e185d3c434b3ad283d8aa132f3022c2a4f210f168865b5986bcef0",
-        "graphviz-conventions.dot": "b18a02773875f6c7b92f2a260e88550c92a62549b0009df9d680f7e9541d0ecc",
-        "persuasion-principles.md": "a51bc9bf75189ea73a27b3fb504a2fdfdb966fb1f7f1cdf03203230a216ccc03",
-        "render-graphs.js": "ccda971a87bb185f8febf81c56b556a20d026fa980c17b35fa3e8824fbb37852",
-        "testing-skills-with-subagents.md": "f0dd4a9d1a4ab0baa77eea987c077b370321bf317f02eed4fe4d9b374422efaf"
+        "SKILL.md": "8b80d139875b9b093838de2366e9b58d6ed0a7ad0d5f6da7b1d4d4fa5b2e0a02"
       }
     }
   ],
