@@ -86,8 +86,8 @@ class Checker:
                     self.upper_classes.add(c)
                 if EYEBROW_NAME.search(sel):
                     self.hit(path, line, 'eyebrow', f'`{sel[:60]}` styles an uppercase tracked label')
-            has_border = re.search(r'(?<![\w-])border\s*:\s*(?!none|0\b)', body)
-            has_shadow = re.search(r'box-shadow\s*:\s*(?!none|inset|0\s+0\s+0\s)', body)
+            has_border = re.search(r'(?<![\w-])border\s*:(?!\s*(?:none|0)\b)', body)
+            has_shadow = re.search(r'box-shadow\s*:(?!\s*(?:none\b|inset\b|0\s+0\s+0\s))', body)
             if has_border and has_shadow and not ELEVATED.search(sel):
                 self.hit(path, line, 'border-shadow', f'`{sel[:60]}` sets both border and box-shadow')
 
