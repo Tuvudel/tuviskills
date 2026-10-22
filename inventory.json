@@ -15,7 +15,7 @@
         "README.md": "83db9621afb53ae94bf08040de04e7f59030b6d132c35e76d96b8122205d9159",
         "SECURITY.md": "c9bd6a03b51053be6321f88110f9589e73c1cb00aa81d9d1c2881e94073e9629",
         "SKILL.md": "907965c1727a588901383ca6819b88bd665a9e5a9ea9ca61707408d3a419577b",
-        "UPSTREAM.md": "f96bf912ff054b2554f557798796bc551b7d2c735aecf6f5a937cfa6a5280a76",
+        "UPSTREAM.md": "461d945a3063e7cb99e96c13e7ef3925d6f7c3f25bf0ecbc8e5a4a07d1de1e8d",
         "agents/openai.yaml": "254b17510460bc5151295b1e1e40b6a1aceeff60a0dda4e9594adcfa36819526",
         "evals/evals.json": "b79afa9daa10084c71bb18c3baafef403a929c1d707b2be4c636952ae1896dd4",
         "examples/arcade-cabinet/arcade-cabinet-light.html": "03f832383879a031119de40dfaaff7b800baa975065992079ff6377267d8cb5e",
@@ -210,9 +210,9 @@
         "%USERPROFILE%\\.cursor\\skills\\better-interface"
       ],
       "files": {
-        "SKILL.md": "219e99585cab3e523bfc232280a4e932f85a8b1d1ba6cd31d76e019bf5c191bd",
+        "SKILL.md": "83971b847199c9913f92054e8d0a085ff445ba67fda574082e9e820329fe63ca",
         "agents/openai.yaml": "541c5d823f474543d4f3a314a9292215f8c90c152249e72411ff3e3632cf55bc",
-        "review-format.md": "99bf274b4a382d89fc281482c688127d1d82e3a5a5c84d2662ebfc9946dc8108"
+        "review-format.md": "33cbcb35d94806d5088fc3e35b3e01c44b7f668f78040b0c179fed2669d59f77"
       }
     },
     {
@@ -224,7 +224,7 @@
         "%USERPROFILE%\\.cursor\\skills\\better-layout"
       ],
       "files": {
-        "SKILL.md": "206f44c5df17ed9756314e17659c6c5c2ff0bdc505e3a5a6b3517d051dc8cc6a",
+        "SKILL.md": "afd449653974750188d86d4b2383eac6e11d0d451e1b8c64d383c1b0bab4001e",
         "agents/openai.yaml": "d51a2ca663c9331f8f23b7a550e5f848f83e81361e21f2280cc384e99cc0ae15",
         "grouping-and-alignment.md": "027edd034ab641e8affc2ec02ca97ee0824d86756b14e11de908d62f5d086fb1",
         "spacing-and-adaptivity.md": "bf46b0857efa5022e6918eda026827e9de2747f3f349b5a6787a2322179abe77"
@@ -239,12 +239,12 @@
         "%USERPROFILE%\\.cursor\\skills\\better-typography"
       ],
       "files": {
-        "SKILL.md": "e3ebd38b425b265d27779d1525af97e6b6c17451ed44a8dc33c94dd02356ac23",
+        "SKILL.md": "f3676f3470d56a4ce65e8ff2aed5f89a3586054964b733e77620e2079d7e9cc6",
         "agents/openai.yaml": "01d8b8f835112e97ba0e4d97a07775e919407ebb5aab0cce9b4fa280e66b19b8",
         "choosing-fonts.md": "d139ec5d68cd123bc305d920295f7bc95a1e1123674de96d19103c1ebffc85c9",
         "css-cheat-sheet.md": "45c77f0d1954e12e76c3903361f52703cb4f4287d54c651710f60926247165fb",
         "details-and-accessibility.md": "d74e2719ee793fbf7408883e0e5eb396b67514ce07e02412f33d5408ecb4a02e",
-        "spacing-and-sizing.md": "e28e7899a73a8b17f38418dfd8c1afda116db81a3b68d53dd51eab019b20ab82",
+        "spacing-and-sizing.md": "153bb8d126e24c0f7bd810423e123820bb1a4bf1e3a995140565566a5e0ff540",
         "variable-fonts-and-opentype.md": "2bf1317ea5c0af6e36c57d15aacea512e450acbe4b00a8664c4619a959dea0b0",
         "wrapping-and-punctuation.md": "7cfa3463b68cf21f08ab01a184b12c8bf2fe9340c2c7691a8cc99e4569389efe"
       }
@@ -258,7 +258,7 @@
         "%USERPROFILE%\\.cursor\\skills\\better-ui"
       ],
       "files": {
-        "SKILL.md": "509b5bd36be4dfdf3919a0d9059b084f00a08d55177d2380625d99b499a987c6",
+        "SKILL.md": "fcf4839e7088dc3e0940f39cfac295367184c1b6d1f1147e7ebb8aa66b328224",
         "agents/openai.yaml": "799e0b58bded32edf5c217f97e08c364660ec24234978b2e3f7dee1868bea871",
         "animations.md": "5d2d9e4cefab494b6dd0683e7d2d9bc90788df9c536449c0828c241de965e846",
         "enter-exit.md": "8db1b33d6c80a097218a530cb9749dff4b0a2b992236047a2e88661af5e930ea",
@@ -277,7 +277,7 @@
         "%USERPROFILE%\\.cursor\\skills\\better-writing"
       ],
       "files": {
-        "SKILL.md": "762e3433d2653fd739717920d1a55acf0153c2c9113bce583051674f3e56e7d3",
+        "SKILL.md": "3a0364f3da472d956033ef60dda91d272414f2b2e1f2f7d9a4c265cafb30a154",
         "agents/openai.yaml": "a5aec7e0cbc87930962f139eff4341dcf87e83fd19b9447e3f614db2bc71de67"
       }
     },
@@ -335,7 +335,7 @@
       "description": "Use when designing or creating a new Grok Bot: ask preference questions, write a tight persona, create the agent, then verify against the live profile.",
       "original_locations": [],
       "files": {
-        "SKILL.md": "aca7ef4b4147e2e8b67d121f13401e9f73105de4e2ed02f69041d95bb4b2cc8e"
+        "SKILL.md": "ae39f7ecf92d1908d2d7275b6b70529f4ffc2511407a39cc2ceb950fd7186284"
       }
     },
     {
@@ -344,8 +344,10 @@
       "description": "Use when building, polishing, or reviewing any UI (component, page, layout, color, type, UI copy, accessibility) to pick the taste, checking, or browser-review skill. Not for figures or diagrams (illustrate) or docs prose (docs-writing).",
       "original_locations": [],
       "files": {
-        "SKILL.md": "7ad09d5ee2326f4720f5fa085df03b6f6bc32b4208140962bc417277bb500663",
-        "flows.md": "56950b8eb9bb27323e5738d47b8a843f56686efd0f05d66d49d61504605bc5f6"
+        "SKILL.md": "389971745996ced9ecf188ab49472f096fb05bbff863ab4bf417483bda3bbda0",
+        "flows.md": "9559aeb37cde588cffdae0a8ddc1750230cf9827553b0f76c69f92fbf6aa0370",
+        "scripts/slop-check": "9203430b795a57751568a7b26ccff88369c9ecc0c14b58f8450ad83b0ddf6edb",
+        "slop.md": "c89b9cfa62d5c652f172d5ebe6422e8ae1b3cc7d014029df1305776165066de0"
       }
     },
     {
@@ -354,7 +356,7 @@
       "description": "Use when a propose-first docs bot drafts a docs patch from a merge wake or standing sweep: verify UX against the live UI, never ban what the code ships, keep superpowers gitignored, honor WIP quiet.",
       "original_locations": [],
       "files": {
-        "SKILL.md": "ccf4c589967c43e3254a76d289d301134506c18005f3e564b0bb1130e87e2f84"
+        "SKILL.md": "70c9cfb5b2712009dfd5537b0ad72a2f21ac67398c83cff20d37c50f3aaa9a1f"
       }
     },
     {
@@ -525,14 +527,15 @@
     {
       "name": "israel-gov-api",
       "path": "skills/israel-gov-api",
-      "description": "Use when the user asks for Israeli government open data (data.gov.il, CBS statistics, transport, and other government datasets): discover, query, and analyze it through the CKAN API.",
+      "description": "Use when the user asks for any Israeli government or open data (data.gov.il, govmap layers like municipal boundaries, CBS statistics, transport, budgets, and other government datasets): pick the right source among data.gov.il, over.org.il (גרסאות לעם), odata.org.il and Hasadna, then discover, query, and download it.",
       "original_locations": [
         "%USERPROFILE%\\.agents\\skills\\israel-gov-api"
       ],
       "files": {
-        "SKILL.md": "41c2d0d9a690c5186bd503555ba275c32b9f534ab73bd44185c4aa87cc30bfe7",
+        "SKILL.md": "4b4970567c8ffe44228b2c5c8a59c143d7a12b6387c841ffeec55fde2ad2512a",
         "SKILL_HE.md": "ab90a156aeec68ab56003a336fdcf314a16bca13feb8f2ee56b29ba581910853",
         "references/ckan-api-reference.md": "0cd96475779ee4d41a630fecc62242025a9e7d6c0e229e0872eaddc60bb31780",
+        "references/gov-mirrors.md": "0b74c7ef01c95a6b172b65b3ef6fb2fae662dc5551c769f420857ef15a98eef6",
         "scripts/query_datagov.py": "0c63c6c739398f79097c00eaff7e228daf9cf3846c8985775167da2a0057f1be"
       }
     },
@@ -556,7 +559,7 @@
         "%USERPROFILE%\\.cursor\\skills\\perspective-ensemble"
       ],
       "files": {
-        "SKILL.md": "c6dca1dabaf99a10241f92262474043b7d7f0430c91b52585c1f0a5dbbc00d56"
+        "SKILL.md": "08cd09704f8b3d2e1b2dd4be3d36dd6caea6b7a1bc3b499097f5bf8c936af520"
       }
     },
     {
@@ -592,7 +595,7 @@
         "assets/playwright.png": "521669f088c838196c6c852ccc9abdd7234d8f37fc9a8a7a9af7db2d50193381",
         "references/cli.md": "da94ffe5a7c368e233eac1cdfa2d5207cb85a2a0571607af0e43402c6e12cd45",
         "references/workflows.md": "621d2b8542a91d1d5cd65a5a7774ea250683e4c217e00e9c90d301eb6367d86e",
-        "scripts/playwright_cli.sh": "3fce0ea2b9875179f701d9f4c03425545c441b2769cd6c6df964cc7d1d1dbfa8"
+        "scripts/playwright_cli.sh": "aa3fdff5d0e4556177f4dfd5f04117e772aa54f94b6a2e34b6c0edf629c6b9b5"
       }
     },
     {

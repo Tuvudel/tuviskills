@@ -9,4 +9,4 @@ For any non-trivial engineering task (feature, bug fix, refactor, performance, r
 
 For non-code strategy or product decisions that can't be settled by prototyping or measurement, use the perspective-ensemble skill instead.
 
-Skills auto-update: if this rule did not reach you through the agent-skills session-start hook, run `{{UPDATE_CHECK}}` once at session start, before relying on skills, and follow any line it prints.
+Skills auto-update: if this rule did not reach you through the tuviskills session-start hook, run `{{UPDATE_CHECK}}` once at session start, before relying on skills, and follow any line it prints.

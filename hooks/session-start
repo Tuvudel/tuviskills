@@ -31,7 +31,7 @@ update="${update%$'\r'}"
 if [ -r "$RULE_FILE" ]; then
   body="$(sed -e "s#{{POTETO_MODE}}#${REPO_DIR}/vendor/pstack/skills/poteto-mode/SKILL.md#g" -e "s#{{UPDATE_CHECK}}#${update_cmd}#g" "$RULE_FILE")"
 else
-  body="For non-trivial engineering work, read vendor/pstack/skills/poteto-mode/SKILL.md in the agent-skills repository and follow it."
+  body="For non-trivial engineering work, read vendor/pstack/skills/poteto-mode/SKILL.md in the tuviskills repository and follow it."
 fi
 
 escape_for_json() {
@@ -44,7 +44,7 @@ escape_for_json() {
   printf '%s' "$s"
 }
 
-context="Always-on pstack rule (from ${RULE_FILE}, injected by the agent-skills session-start hook; the skills update check already ran):
+context="Always-on pstack rule (from ${RULE_FILE}, injected by the tuviskills session-start hook; the skills update check already ran):
 
 ${body}"
 [ -n "$update" ] && context="${update}

@@ -28,7 +28,7 @@ class PstackDefaultRuleTests(unittest.TestCase):
         self.assertIn("{{CODEX_ADAPTER}}", text)
 
     def test_grokbot_text_is_body_with_box_path(self):
-        text = (rules / "pstack-default.grokbot.txt").read_text(encoding="utf-8").strip()
+        text = "\n".join(l for l in (rules / "pstack-default.grokbot.txt").read_text(encoding="utf-8").splitlines() if not l.startswith("# Grok Bot-specific")).strip()
         self.assertEqual(text, self.body.replace("{{POTETO_MODE}}", "/home/box/agent-data/workflows/poteto-mode/SKILL.md").replace("{{UPDATE_CHECK}}", "sh /workspace/as/scripts/check-update.sh"))
 
 

@@ -52,4 +52,4 @@ foreach ($t in $hookFiles.Keys) {
     Write-Output "  ${t}: $s"
 }
 $codexChanged = (Read-Raw $hookFiles.codex[0]) -ne $before.codex
-Write-Output ('  Codex /hooks trust: ' + $(if ($codexChanged) { 'NEEDED. Start codex, run /hooks, trust the agent-skills SessionStart hook once.' } else { 'hook definition unchanged; needed only if you never trusted it (Codex warns at startup).' }))
+Write-Output ('  Codex /hooks trust: ' + $(if ($codexChanged) { 'NEEDED. Start codex, run /hooks, trust the tuviskills SessionStart hook once.' } else { 'hook definition unchanged; needed only if you never trusted it (Codex warns at startup).' }))

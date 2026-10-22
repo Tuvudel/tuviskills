@@ -112,6 +112,6 @@ print(f"Auto-update {'disabled' if remove else 'enabled'} for {repo}.")
 for t in HOOKS:
     print(f"  {t}: {(verb if changed[t] else 'unchanged') if t in tools else 'not detected, skipped'}")
 if 'codex' in tools and not remove:
-    print('  Codex /hooks trust: ' + ('NEEDED. Start codex, run /hooks, trust the agent-skills SessionStart hook once.' if changed['codex']
+    print('  Codex /hooks trust: ' + ('NEEDED. Start codex, run /hooks, trust the tuviskills SessionStart hook once.' if changed['codex']
           else 'hook definition unchanged; needed only if you never trusted it (Codex warns at startup).'))
 PY

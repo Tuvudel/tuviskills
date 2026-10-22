@@ -1,134 +1,125 @@
-# agent-skills
+# tuviskills
 
-A personal collection of agent skills, rules, hooks and subagents for Codex, Cursor, Claude Code and Grok Build. It bundles [pstack](https://github.com/cursor/plugins/tree/main/pstack) as the engineering workflow, plus design, writing, illustration and review skills. See [INVENTORY.md](INVENTORY.md) for every skill and [UPSTREAM.md](UPSTREAM.md) for vendored versions.
+Hi! This is my personal collection of agent skills: some I wrote, most I picked up from people who make great ones. They work in Codex, Cursor, Claude Code and Grok Build. I'm sharing them as-is, so take what's useful, and check the licenses for anything you reuse (see [Credits](#credits)).
+
+A skill is a folder with a `SKILL.md` that tells your agent when and how to do something. Once installed, your agent picks the right one by itself.
+
+## What's inside
+
+There are 38 skills in [`skills/`](skills) plus 56 from pstack in [`vendor/pstack/`](vendor/pstack). [INVENTORY.md](INVENTORY.md) has the full list with descriptions.
+
+| Group | Skills | What they're for |
+| --- | --- | --- |
+| **pstack** | 56 skills, including `poteto-mode` | The engineering workflow: planning, building, debugging, reviewing and shipping. `poteto-mode` is the entry point and routes to the rest. |
+| **better-\*** | `better-interface`, `better-accessibility`, `better-colors`, `better-layout`, `better-typography`, `better-ui`, `better-writing`, plus `break` and `explain-interface` | UI review and polish. `better-interface` runs them all in one pass. |
+| **PRs and CI** (cursor-team-kit) | `fix-ci`, `fix-merge-conflicts`, `get-pr-comments`, `make-pr-easy-to-review`, `pr-review-canvas`, `what-did-i-get-done`, `thermo-nuclear-code-quality-review`, `control-cli`, `control-ui` | Fix failing checks, resolve conflicts, prep and review PRs, and drive CLIs or UIs from the agent. |
+| **Visuals** | `illustrate`, `anatomy`, `tufte-viz`, `ian-xiaohei-illustrations`, `playground`, `hatch-pet`, `clean-product-research-illustrations` | Diagrams, isometric figures, honest charts, illustrations, and interactive HTML playgrounds. `illustrate` picks one for you. |
+| **Writing and product** | `docs-writing`, `google-developer-style`, `product-requirements`, `docs-propose-first` | Docs and prose, PRDs, and a careful "propose before you patch" docs flow. |
+| **Decisions and handoffs** | `perspective-ensemble`, `session-handoff`, `receiving-code-review`, `git-diff-hygiene` | Get several independent opinions on a hard call, hand off context between sessions, handle review feedback, and keep diffs clean. |
+| **Misc** | `design-ui`, `apca-contrast`, `israel-gov-api`, `playwright` | The UI entry point, APCA contrast math, Israeli government open data, and browser automation. |
+| **Grok Bot-specific, optional** | `design-a-grok-bot`, plus `scripts/sync-box` and `rules/pstack-default.grokbot.txt` | Only useful on a Grok Bot box. Everyone else can ignore them. |
+
+Old skills I don't use anymore live in [`archive/`](archive). They aren't installed.
 
 ## Install
 
-Clone the repo anywhere (`gh repo clone Tuvudel/tuviskills`), then from the repo folder:
+Clone the repo anywhere you like:
 
-- **Codex / Cursor / Grok Build, macOS or Linux:** `./install.sh` (links each skill into `~/.agents/skills`)
-- **Claude Code, macOS or Linux:** `./install.sh --claude` (also links into `~/.claude/skills`)
-- **Codex / Cursor / Claude Code, Windows:** `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1` (junctions `%USERPROFILE%\.agents\skills`; also wires hooks, subagents and `~/.claude/skills` via `install-integrations.ps1`; add `-WhatIf` to preview, `-SkipIntegrations` for skills only)
-- **Optional session-start hook and always-on pstack rule:** `sh scripts/install-autoupdate.sh` or `scripts\install-autoupdate.ps1`
+```sh
+git clone https://github.com/Tuvudel/tuviskills.git
+cd tuviskills
+```
 
-`install.sh` never overwrites a folder it did not create and is safe to re-run; `--dry-run` previews. Cursor may also read `~/.claude/skills`; if you see duplicates there, skip `--claude`.
+### macOS and Linux
+
+```sh
+./install.sh             # Codex, Cursor and Grok Build: links every skill into ~/.agents/skills
+./install.sh --claude    # same, plus ~/.claude/skills for Claude Code
+./install.sh --dry-run   # show what it would do
+```
+
+It creates one symlink per skill. It never touches a folder it didn't create (it skips it and tells you), and it's safe to run again.
+
+### Windows (PowerShell)
+
+```powershell
+.\install.ps1 -WhatIf   # preview
+.\install.ps1
+```
+
+This links `%USERPROFILE%\.agents\skills` to the repo's `skills` folder, which covers Codex and Cursor. It also runs `install-integrations.ps1`, which adds the pstack skills, the subagents in `agents/`, and a session-start hook, and sets up Claude Code (`~/.claude/skills`). If you already have skills in `%USERPROFILE%\.agents\skills`, it moves matching copies into a dated folder under `%USERPROFILE%\.agents\skill-backups` first. If something there differs from this repo, it stops so nothing gets lost.
+
+To skip Claude Code: `.\install.ps1 -SkipIntegrations`, then `.\install-integrations.ps1 -SkipClaude`.
+
+If PowerShell blocks scripts, run them as `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1`.
+
+### Per harness
+
+| Harness | macOS / Linux | Windows |
+| --- | --- | --- |
+| Codex | `./install.sh` | `.\install.ps1` |
+| Cursor | `./install.sh` | `.\install.ps1` |
+| Grok Build | `./install.sh` | `.\install.ps1` |
+| Claude Code | `./install.sh --claude` | `.\install.ps1` (included) |
+
+Then start a new chat or reload the app so it sees the skills. Cursor can read `~/.claude/skills` too, so if you see doubles in Cursor, leave out `--claude`.
+
+### Optional: always-on pstack rule and auto-update
+
+```sh
+sh scripts/install-autoupdate.sh          # macOS / Linux
+```
+
+```powershell
+.\scripts\install-autoupdate.ps1          # Windows
+```
+
+This adds a small session-start hook to Codex, Claude Code and Cursor. The hook tells your agent to use `poteto-mode` for real engineering work, and it fast-forwards this repo when `main` has moved (at most every 4 hours, and only when you have no local edits). Check its status with `--check` / `-Check`. Codex asks you to trust the hook once: run `/hooks` in `codex`.
+
+## Update
+
+```sh
+git pull && ./install.sh          # macOS / Linux (re-run to link new skills)
+```
+
+```powershell
+.\sync.ps1                        # Windows: pull and refresh the integrations
+```
+
+## Uninstall
+
+```sh
+./install.sh --uninstall          # macOS / Linux: removes only the links that point into this repo
+sh scripts/install-autoupdate.sh --uninstall
+```
+
+```powershell
+.\restore.ps1 -BackupPath <folder printed by install.ps1>   # Windows: removes the link and puts back what was there
+.\scripts\install-autoupdate.ps1 -Uninstall
+```
+
+## For tinkerers
+
+- `scripts/check-skills` checks frontmatter, names and the inventory. Run `scripts/build-inventory` after adding or removing a skill.
+- `python -m unittest discover tests` runs the tests. The PowerShell ones need Windows.
+- pstack is vendored unmodified. Update it with `scripts/sync-pstack.sh`, as described in [UPSTREAM.md](UPSTREAM.md).
+- `harness/codex.md` maps pstack's Cursor-flavored names onto Codex.
 
 ## Credits
 
-- [pstack](https://github.com/cursor/plugins/tree/main/pstack) by poteto, and [cursor-team-kit](https://github.com/cursor/plugins/tree/main/cursor-team-kit), from cursor/plugins
-- [jakubkrehel/skills](https://github.com/jakubkrehel/skills) (better-* design skills)
-- [openai/skills](https://github.com/openai/skills)
-- [obra/superpowers](https://github.com/obra/superpowers)
-- [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground) (playground)
-- [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit) (session-handoff)
-- [skills-il/government-services](https://github.com/skills-il/government-services) (israel-gov-api)
-- [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy)
-- [helloianneo/ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) (ian-xiaohei-illustrations)
-- [nbbaier/agent-skills](https://github.com/nbbaier/agent-skills) (tufte-viz)
-- [stellarlinkco/myclaude](https://github.com/stellarlinkco/myclaude) (product-requirements)
-- [rhino-ty/apca-contrast-skill](https://github.com/rhino-ty/apca-contrast-skill)
+Most of the good stuff here comes from these folks. Thank you!
 
-Licenses for vendored code are in `licenses/` and `vendor/pstack/LICENSE`.
+- [pstack](https://github.com/cursor/plugins/tree/main/pstack) by poteto, and [cursor-team-kit](https://github.com/cursor/plugins/tree/main/cursor-team-kit), both from cursor/plugins
+- [jakubkrehel/skills](https://github.com/jakubkrehel/skills) for the better-\* skills, `break` and `explain-interface`
+- [openai/skills](https://github.com/openai/skills) for `playwright` and `hatch-pet`
+- [obra/superpowers](https://github.com/obra/superpowers) for `receiving-code-review` and the hook runner
+- [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground) for `playground`
+- [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit) for `session-handoff`
+- [skills-il/government-services](https://github.com/skills-il/government-services) for `israel-gov-api`
+- [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) for `anatomy`
+- [helloianneo/ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) for `ian-xiaohei-illustrations`
+- [nbbaier/agent-skills](https://github.com/nbbaier/agent-skills) for `tufte-viz`
+- [stellarlinkco/myclaude](https://github.com/stellarlinkco/myclaude) for `product-requirements`
+- [rhino-ty/apca-contrast-skill](https://github.com/rhino-ty/apca-contrast-skill) for `apca-contrast`
 
-## pstack is the engineering backbone
-
-[pstack](https://github.com/cursor/plugins/tree/main/pstack) is vendored unmodified in [`vendor/pstack/`](vendor/pstack) (version and commit in [`vendor/pstack.lock`](vendor/pstack.lock)). Update it with `scripts/sync-pstack.sh` (see [UPSTREAM.md](UPSTREAM.md)); `scripts/sync-pstack.sh --check` and `tests/test_vendor_pstack.py` fail if anyone edits it. Personal skills in `skills/` must not reuse a pstack name.
-
-One always-on rule makes pstack automatic without slash commands: for non-trivial engineering work, read `poteto-mode`'s `SKILL.md` by absolute path and follow it. The same text ships as:
-
-- [`rules/pstack-default.mdc`](rules/pstack-default.mdc) (`alwaysApply: true`), installed to `~/.cursor/rules/pstack-default.mdc`. If your Cursor build does not load `~/.cursor/rules` globally, paste [`rules/pstack-default.md`](rules/pstack-default.md) into **Customize → Rules → User Rules**; the SessionStart hook injects the same text anyway.
-- [`rules/pstack-default.codex.md`](rules/pstack-default.codex.md), installed as a managed block in `~/.codex/AGENTS.md` (or `AGENTS.override.md`). It also points Codex at the adapter [`harness/codex.md`](harness/codex.md), which maps pstack's Cursor names, subagent fields, and model roles to Codex.
-- [`rules/pstack-default.grokbot.txt`](rules/pstack-default.grokbot.txt), for Grok Bot's instructions (box path).
-- The same block in `~/.claude/CLAUDE.md`. `rules/pstack-models.mdc` keeps every pstack role on `inherit-parent`.
-
-Other entry skills: `design-ui`, `illustrate`, `docs-writing`. Superpowers lifecycle skills, the old `using-skills` / `coding-workflow` routers, the engineering companion, and the Circles skills are in `archive/`.
-
-- `hooks/session-start` re-injects `rules/pstack-default.md` at session start, clear, and compaction. `hooks/run-hook.cmd` is a cmd/bash polyglot that finds Git Bash on Windows. Pass `cursor`, `claude`, or `codex` to pick the output shape.
-- `install-integrations.ps1` (called by `install.ps1` and `sync.ps1`) merges the hook into `~/.cursor/hooks.json`, `~/.claude/settings.json`, and `~/.codex/hooks.json`; installs `agents/*.md` and `vendor/pstack/agents/*.md` as Cursor and Claude Code subagents and Codex custom agents (`~/.codex/agents/*.toml`); links each pstack skill into `~/.codex/skills/` (Codex, and Cursor through its compatibility folder) and each personal and pstack skill into `~/.claude/skills/` (replacing an older single junction to `skills/`); and writes the rules above. It keeps existing entries, backs up each changed file, and skips any file it did not create.
-- `scripts/check-skills` fails on missing frontmatter, folder/name mismatches, duplicate names, names that shadow pstack, routers that name unknown skills, and inventory drift. Run `scripts/build-inventory` after adding or removing a skill. `python -m unittest discover tests` runs all checks (the installer test needs Windows PowerShell).
-
-The personal Codex rule block ([`rules/personal-engineering.md`](rules/personal-engineering.md)) is installed separately, once per PC:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\install-personal-engineering.ps1
-```
-
-It updates one marked block in the active global `AGENTS.md` or `AGENTS.override.md` and saves the original under `.local/personal-engineering-backups/`. It honors `CODEX_HOME` and supports `-CodexHomePath`, `-WhatIf`, and `-Remove`.
-
-## Auto-update at session start
-
-Each Codex, Claude Code, and Cursor session runs `hooks/session-start`, which calls `scripts/check-update.sh` (macOS/Linux) or `scripts/check-update.ps1` (Windows). The check asks the remote at most every 4 hours (`git ls-remote`, 5 s cap; offline or slow exits silently). When `main` moved and the checkout is on `main`, has no edits to tracked files, and can fast-forward, it pulls and re-runs the sync (`install-integrations.ps1` on Windows, `scripts/sync-box --apply` on the Grok Bot box). Otherwise it adds one line to the agent's context naming the local and latest commits and the sync command. It never resets, stashes, deletes, or forces; untracked folders (including those in `.git/info/exclude`) are left alone. Up to date means no output. There is no background service or scheduled task.
-
-The always-on rule carries a fallback line for sessions where the hook did not run (for example [openai/codex#19780](https://github.com/openai/codex/issues/19780)), and Grok Bot, which has no hooks, runs the check from its rule.
-
-Enable once per machine. `--check` / `-Check` reports status; `--uninstall` / `-Uninstall` turns it off:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\scripts\install-autoupdate.ps1
-```
-
-```sh
-sh ~/agent-skills/scripts/install-autoupdate.sh
-```
-
-On Windows the installer runs `install-integrations.ps1`; the hook definition is unchanged, so an already-trusted Codex hook stays trusted. On macOS and Linux it merges the hook and rule into `~/.codex`, `~/.claude`, and `~/.cursor` for each tool it finds (needs `python3` for the JSON merge). When it reports that Codex trust is needed, start `codex`, run `/hooks`, and trust the agent-skills SessionStart hook once.
-
-## Windows install details
-
-Install Git and GitHub CLI, then authenticate with the GitHub account:
-
-```powershell
-gh auth login
-gh repo clone Tuvudel/tuviskills <repo>
-powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\install.ps1 -WhatIf
-powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\install.ps1
-```
-
-The script connects `%USERPROFILE%\.agents\skills` to the repository's `skills` directory using a Windows directory junction. Codex and Cursor both discover skills in that shared location. Existing matching skill folders are moved into a dated backup under `%USERPROFILE%\.agents\skill-backups` before the junction is created. Backups remain on the same drive as the original folders and outside skill discovery paths. Conflicting skills stop installation so you can merge them first. System skills and plugin caches remain managed by their applications.
-
-Start a new Codex chat and reload Cursor after installation. Installation can be run again safely. Use `-UserProfilePath` and `-BackupRoot` to choose alternate locations when testing.
-
-The installer also links `~/.codex/skills/playwright/scripts` to the shared Playwright scripts because the imported instructions reference that location. This compatibility folder has no `SKILL.md` and does not add a duplicate skill.
-
-## Sync changes
-
-Before working on either PC:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\sync.ps1
-```
-
-After changing or adding a skill, commit and push it from the repository:
-
-```powershell
-git -C <repo> add skills
-git -C <repo> commit -m "Update personal skills"
-git -C <repo> push
-```
-
-Run the sync command on the other PC. The local shared folder points directly into this checkout, and sync re-runs `install-integrations.ps1` so new or archived skills are linked or unlinked. Sync stops when there are local uncommitted edits or when a fast-forward pull is impossible. It does not automatically commit, push, merge, or resolve conflicts.
-
-New skills do not need an `inventory.json` entry for agent discovery, but add one before migrating an existing matching skill folder on another PC. `inventory.json` records the original import hashes and locations. Installation compares existing local files against the current repository files to detect conflicts. Git preserves imported file bytes across PCs.
-
-## Restore original folders
-
-The installer prints the dated backup path and saves `restore-state.json` there. To undo installation:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\restore.ps1 -BackupPath "$env:USERPROFILE\.agents\skill-backups\YOUR-BACKUP"
-```
-
-The restore script removes only the shared junction and moves the backed-up original folders to their original locations. Repository files remain intact. It stops rather than overwriting newly created folders. Repository edits made after installation stay in the repository; restoring originals returns the old skill versions.
-
-## Scope and compatibility
-
-- Plugin-managed and Codex system skills are not copied. Install their plugins separately on each PC.
-- MCP connections, credentials, application settings, and runtime dependencies are not synchronized.
-- Some imported skills reference machine-specific paths. Review those paths before using them on another PC.
-- The original broken `find-skills` shortcut remains untouched and is recorded in the inventory.
-- The superpowers, pstack, and cursor-team-kit plugins are replaced by repository copies (pstack vendored unmodified). Uninstall those plugins so their skills do not load twice.
-- Cursor reads `~/.agents/skills`, `~/.cursor/skills`, `~/.codex/skills`, and `~/.claude/skills`, so it may list a skill from more than one folder.
-- Cursor Cloud Agents have a separate sync feature for `~/.cursor/skills`. This shared local setup covers local Codex and Cursor sessions on the PCs.
-- This repository contains third-party and personal material. Preserve included license files and check upstream licenses before redistributing.
-
-Verified discovery locations: [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills) and [Cursor skill documentation](https://cursor.com/help/customization/skills).
+License files for vendored code are in [`licenses/`](licenses) and `vendor/pstack/LICENSE`. Versions are pinned in [UPSTREAM.md](UPSTREAM.md).

@@ -4,6 +4,8 @@ description: "Use when designing or creating a new Grok Bot: ask preference ques
 ---
 # Design a Grok Bot
 
+> Grok Bot-specific, optional. Paths like `/home/box/agent-data/...` are Grok Bot box paths.
+
 Create the bot. Do not ship a shareable template unless the user asked for a template.
 
 ## Data shape

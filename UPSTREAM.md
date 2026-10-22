@@ -6,7 +6,7 @@
 | [obra/superpowers](https://github.com/obra/superpowers) | `receiving-code-review` (trigger narrowed to arriving review comments; from plugin 6.1.1); `hooks/run-hook.cmd` unmodified from v7.0.0 (tag commit 7f043e5). The other superpowers skills are in `archive/`. | 6.1.1 / v7.0.0 | MIT, `licenses/superpowers-LICENSE` |
 | [cursor/plugins cursor-team-kit](https://github.com/cursor/plugins/tree/main/cursor-team-kit) | CI, PR, review, control-* skills; agents `ci-watcher`, `thermo-nuclear-code-quality-review`; rules folded into `rules/personal-engineering.md` | 1.2.0 | MIT, `licenses/cursor-team-kit-LICENSE` |
 | [rhino-ty/apca-contrast-skill](https://github.com/rhino-ty/apca-contrast-skill) | `apca-contrast` | 32e2a95 | MIT |
-| Anatomy skill (local zip) | `anatomy` | 2026-10-12 | MIT |
+| [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) | `anatomy` | 2026-10-12 | MIT |
 
 ## pstack
 

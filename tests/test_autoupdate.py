@@ -154,7 +154,7 @@ class SessionStartHookTests(unittest.TestCase):
 
     def test_context_names_the_hook_and_expands_the_fallback(self):
         ctx = self.run_hook(dict(os.environ, AGENT_SKILLS_CHECK_INTERVAL_MIN="100000"))
-        self.assertIn("injected by the agent-skills session-start hook", ctx)
+        self.assertIn("injected by the tuviskills session-start hook", ctx)
         self.assertIn(f"sh {ROOT}/scripts/check-update.sh", ctx)
         self.assertNotIn("{{", ctx)
 

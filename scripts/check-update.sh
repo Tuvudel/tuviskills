@@ -24,6 +24,7 @@ bounded() {
   wait "$pid"
 }
 
+# Grok Bot box only: also mirror skills into the box library after a pull. Elsewhere this branch is skipped.
 if [ -d /home/box/agent-data/workflows ]; then post="$repo/scripts/sync-box --apply"; sync="git -C $repo pull --ff-only && $post"
 else post=; sync="git -C $repo pull --ff-only"; fi
 post=${AGENT_SKILLS_POST_SYNC-$post}

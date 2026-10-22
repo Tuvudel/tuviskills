@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""One-way mirror of skills/ and vendor/pstack/skills/ into the Grok Bot box library. Dry run unless --apply.
+"""Grok Bot-specific, optional: only for a Grok Bot box; other setups use install.sh / install.ps1.
+One-way mirror of skills/ and vendor/pstack/skills/ into the Grok Bot box library. Dry run unless --apply.
 Usage: scripts/sync-box [--apply] [--target /home/box/agent-data/workflows]"""
 import filecmp, shutil, sys
 from pathlib import Path
