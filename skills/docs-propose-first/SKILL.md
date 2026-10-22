@@ -10,7 +10,7 @@ Use this when Docs (or any propose-first docs bot) is about to propose a docs/pl
 
 - Do not invent or enforce product bans that contradict shipped UI.
 - Before proposing to remove or forbid a control (joystick, tab, layer, etc.), verify against the live code and the running UI — not against an old seed in a routine prompt or a remembered CoS note.
-- If a CoS / standing rule conflicts with what the code does, treat the rule as an open question to Tuval, not as a patch default. Ask once; do not keep re-proposing the ban.
+- If a CoS / standing rule conflicts with what the code does, treat the rule as an open question to the user, not as a patch default. Ask once; do not keep re-proposing the ban.
 
 ## Superpowers / agent plans
 
@@ -20,7 +20,7 @@ Use this when Docs (or any propose-first docs bot) is about to propose a docs/pl
 
 ## WIP quiet
 
-- When Tuval says he will not reply until he asks for a sweep (or similar WIP quiet), stop sending “say yes” propose digests for residual/soft drift.
+- When the user says they will not reply until he asks for a sweep (or similar WIP quiet), stop sending “say yes” propose digests for residual/soft drift.
 - Batch residual items for the next requested sweep. Stay quiet unless a hard documented contract actually breaks.
 - A hard contract break still gets one short propose note. Soft drift and style nits wait.
 

@@ -10,7 +10,7 @@ Use this when the decision is about strategy, product direction, adoption, organ
 ## Run it
 
 1. State the decision in one sentence, the option currently favored, and what is already known. Mark guesses as guesses.
-2. Spawn 2-3 critics as fresh subagents. Give each the same brief (decision, options, known facts) and none of your own reasoning. Put them on different available models: in Cursor, per the pstack-models rule; in Codex, `gpt-6.1-sol` and `gpt-6-luna` (never `gpt-6-astra` unless Tuval names it); in Claude Code, Opus and Sonnet. With only one model, use different reasoning efforts and say that independence is reduced. Run inline only for a small, low-stakes question, and say so.
+2. Spawn 2-3 critics as fresh subagents. Give each the same brief (decision, options, known facts) and none of your own reasoning. Put them on different available models: in Cursor, per the pstack-models rule; in Codex, `gpt-6.1-sol` and `gpt-6-luna` (never `gpt-6-astra` unless the user names it); in Claude Code, Opus and Sonnet. With only one model, use different reasoning efforts and say that independence is reduced. Run inline only for a small, low-stakes question, and say so.
 3. Give each critic a different job, not a persona:
    - **Tradeoffs:** which legitimate goals pull against each other, and what choosing the favored option gives up.
    - **Pre-mortem:** it is a year later and this failed. Write the most likely story of how.
@@ -27,4 +27,4 @@ Use this when the decision is about strategy, product direction, adoption, organ
 - **Early warnings:** observable signals that the pre-mortem is coming true.
 - **Recommendation:** the choice, because..., and **would revise if...**.
 
-Skip the ensemble for factual questions, mechanical tasks, or when the user asks for a single quick take. Tuval's instructions override the format.
+Skip the ensemble for factual questions, mechanical tasks, or when the user asks for a single quick take. The user's instructions override the format.

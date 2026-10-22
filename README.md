@@ -1,8 +1,34 @@
-# Personal agent skills
+# agent-skills
 
-Shared personal skills for Codex and Cursor on Windows. The original consolidation contains 79 unique local skills: 65 personal skills and 14 skills from the existing local Superpowers installation. Additional skills are listed in the inventory as they are adopted.
+A personal collection of agent skills, rules, hooks and subagents for Codex, Cursor, Claude Code and Grok Build. It bundles [pstack](https://github.com/cursor/plugins/tree/main/pstack) as the engineering workflow, plus design, writing, illustration and review skills. See [INVENTORY.md](INVENTORY.md) for every skill and [UPSTREAM.md](UPSTREAM.md) for vendored versions.
 
-See [the full inventory](INVENTORY.md) for names and purposes. Skill contents and supporting files are preserved from the existing installations. Fourteen identical Cursor copies are consolidated into the same repository copies.
+## Install
+
+Clone the repo anywhere (`gh repo clone Tuvudel/agent-skills`), then from the repo folder:
+
+- **Codex / Cursor / Grok Build, macOS or Linux:** `./install.sh` (links each skill into `~/.agents/skills`)
+- **Claude Code, macOS or Linux:** `./install.sh --claude` (also links into `~/.claude/skills`)
+- **Codex / Cursor / Claude Code, Windows:** `powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1` (junctions `%USERPROFILE%\.agents\skills`; also wires hooks, subagents and `~/.claude/skills` via `install-integrations.ps1`; add `-WhatIf` to preview, `-SkipIntegrations` for skills only)
+- **Optional session-start hook and always-on pstack rule:** `sh scripts/install-autoupdate.sh` or `scripts\install-autoupdate.ps1`
+
+`install.sh` never overwrites a folder it did not create and is safe to re-run; `--dry-run` previews. Cursor may also read `~/.claude/skills`; if you see duplicates there, skip `--claude`.
+
+## Credits
+
+- [pstack](https://github.com/cursor/plugins/tree/main/pstack) by poteto, and [cursor-team-kit](https://github.com/cursor/plugins/tree/main/cursor-team-kit), from cursor/plugins
+- [jakubkrehel/skills](https://github.com/jakubkrehel/skills) (better-* design skills)
+- [openai/skills](https://github.com/openai/skills)
+- [obra/superpowers](https://github.com/obra/superpowers)
+- [anthropics/skills](https://github.com/anthropics/skills) (playground)
+- [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit) (session-handoff)
+- [skills-il](https://github.com/skills-il) (israel-gov-api)
+- [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy)
+- [helloianneo](https://github.com/helloianneo) (ian-xiaohei-illustrations)
+- [nbbaier](https://github.com/nbbaier) (tufte-viz)
+- [stellarlinkco](https://github.com/stellarlinkco) (product-requirements)
+- [rhino-ty/apca-contrast-skill](https://github.com/rhino-ty/apca-contrast-skill)
+
+Licenses for vendored code are in `licenses/` and `vendor/pstack/LICENSE`.
 
 ## pstack is the engineering backbone
 
@@ -24,7 +50,7 @@ Other entry skills: `design-ui`, `illustrate`, `docs-writing`. Superpowers lifec
 The personal Codex rule block ([`rules/personal-engineering.md`](rules/personal-engineering.md)) is installed separately, once per PC:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\install-personal-engineering.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\install-personal-engineering.ps1
 ```
 
 It updates one marked block in the active global `AGENTS.md` or `AGENTS.override.md` and saves the original under `.local/personal-engineering-backups/`. It honors `CODEX_HOME` and supports `-CodexHomePath`, `-WhatIf`, and `-Remove`.
@@ -38,7 +64,7 @@ The always-on rule carries a fallback line for sessions where the hook did not r
 Enable once per machine. `--check` / `-Check` reports status; `--uninstall` / `-Uninstall` turns it off:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\scripts\install-autoupdate.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\scripts\install-autoupdate.ps1
 ```
 
 ```sh
@@ -47,15 +73,15 @@ sh ~/agent-skills/scripts/install-autoupdate.sh
 
 On Windows the installer runs `install-integrations.ps1`; the hook definition is unchanged, so an already-trusted Codex hook stays trusted. On macOS and Linux it merges the hook and rule into `~/.codex`, `~/.claude`, and `~/.cursor` for each tool it finds (needs `python3` for the JSON merge). When it reports that Codex trust is needed, start `codex`, run `/hooks`, and trust the agent-skills SessionStart hook once.
 
-## Install on another Windows PC
+## Windows install details
 
-Install Git and GitHub CLI, then authenticate with the GitHub account that can access this private repository:
+Install Git and GitHub CLI, then authenticate with the GitHub account:
 
 ```powershell
 gh auth login
-gh repo clone Tuvudel/agent-skills D:\Projects\agent-skills
-powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\install.ps1 -WhatIf
-powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\install.ps1
+gh repo clone Tuvudel/agent-skills <repo>
+powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\install.ps1 -WhatIf
+powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\install.ps1
 ```
 
 The script connects `%USERPROFILE%\.agents\skills` to the repository's `skills` directory using a Windows directory junction. Codex and Cursor both discover skills in that shared location. Existing matching skill folders are moved into a dated backup under `%USERPROFILE%\.agents\skill-backups` before the junction is created. Backups remain on the same drive as the original folders and outside skill discovery paths. Conflicting skills stop installation so you can merge them first. System skills and plugin caches remain managed by their applications.
@@ -69,15 +95,15 @@ The installer also links `~/.codex/skills/playwright/scripts` to the shared Play
 Before working on either PC:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\sync.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\sync.ps1
 ```
 
 After changing or adding a skill, commit and push it from the repository:
 
 ```powershell
-git -C D:\Projects\agent-skills add skills
-git -C D:\Projects\agent-skills commit -m "Update personal skills"
-git -C D:\Projects\agent-skills push
+git -C <repo> add skills
+git -C <repo> commit -m "Update personal skills"
+git -C <repo> push
 ```
 
 Run the sync command on the other PC. The local shared folder points directly into this checkout, and sync re-runs `install-integrations.ps1` so new or archived skills are linked or unlinked. Sync stops when there are local uncommitted edits or when a fast-forward pull is impossible. It does not automatically commit, push, merge, or resolve conflicts.
@@ -89,7 +115,7 @@ New skills do not need an `inventory.json` entry for agent discovery, but add on
 The installer prints the dated backup path and saves `restore-state.json` there. To undo installation:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File D:\Projects\agent-skills\restore.ps1 -BackupPath "$env:USERPROFILE\.agents\skill-backups\YOUR-BACKUP"
+powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\restore.ps1 -BackupPath "$env:USERPROFILE\.agents\skill-backups\YOUR-BACKUP"
 ```
 
 The restore script removes only the shared junction and moves the backed-up original folders to their original locations. Repository files remain intact. It stops rather than overwriting newly created folders. Repository edits made after installation stay in the repository; restoring originals returns the old skill versions.
