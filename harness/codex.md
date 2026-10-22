@@ -1,6 +1,6 @@
 # pstack in Codex
 
-pstack skills use Cursor names. In Codex, read this file once per session, then map each Cursor name in a pstack skill with the tables below. `<pstack>` is the vendored folder `vendor/pstack/` in Tuvudel/agent-skills (it holds `skills/`, `docs/`, `agents/`). If a Cursor field has no row, drop it and say so in one line. Never pass a field or value Codex rejects.
+pstack skills use Cursor names. In Codex, read this file once per session, then map each Cursor name in a pstack skill with the tables below. `<pstack>` is the vendored folder `vendor/pstack/` in Tuvudel/tuviskills (it holds `skills/`, `docs/`, `agents/`). If a Cursor field has no row, drop it and say so in one line. Never pass a field or value Codex rejects.
 
 This adapter is personal, not part of pstack. It follows `<pstack>/docs/harness/claude-code.md`, adjusted for Codex as documented at <https://developers.openai.com/codex/subagents>, <https://developers.openai.com/codex/skills>, and <https://developers.openai.com/codex/models> (checked 2026-10-21).
 

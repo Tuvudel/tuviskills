@@ -4,7 +4,7 @@ A personal collection of agent skills, rules, hooks and subagents for Codex, Cur
 
 ## Install
 
-Clone the repo anywhere (`gh repo clone Tuvudel/agent-skills`), then from the repo folder:
+Clone the repo anywhere (`gh repo clone Tuvudel/tuviskills`), then from the repo folder:
 
 - **Codex / Cursor / Grok Build, macOS or Linux:** `./install.sh` (links each skill into `~/.agents/skills`)
 - **Claude Code, macOS or Linux:** `./install.sh --claude` (also links into `~/.claude/skills`)
@@ -19,13 +19,13 @@ Clone the repo anywhere (`gh repo clone Tuvudel/agent-skills`), then from the re
 - [jakubkrehel/skills](https://github.com/jakubkrehel/skills) (better-* design skills)
 - [openai/skills](https://github.com/openai/skills)
 - [obra/superpowers](https://github.com/obra/superpowers)
-- [anthropics/skills](https://github.com/anthropics/skills) (playground)
+- [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground) (playground)
 - [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit) (session-handoff)
-- [skills-il](https://github.com/skills-il) (israel-gov-api)
+- [skills-il/government-services](https://github.com/skills-il/government-services) (israel-gov-api)
 - [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy)
-- [helloianneo](https://github.com/helloianneo) (ian-xiaohei-illustrations)
-- [nbbaier](https://github.com/nbbaier) (tufte-viz)
-- [stellarlinkco](https://github.com/stellarlinkco) (product-requirements)
+- [helloianneo/ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) (ian-xiaohei-illustrations)
+- [nbbaier/agent-skills](https://github.com/nbbaier/agent-skills) (tufte-viz)
+- [stellarlinkco/myclaude](https://github.com/stellarlinkco/myclaude) (product-requirements)
 - [rhino-ty/apca-contrast-skill](https://github.com/rhino-ty/apca-contrast-skill)
 
 Licenses for vendored code are in `licenses/` and `vendor/pstack/LICENSE`.
@@ -79,7 +79,7 @@ Install Git and GitHub CLI, then authenticate with the GitHub account:
 
 ```powershell
 gh auth login
-gh repo clone Tuvudel/agent-skills <repo>
+gh repo clone Tuvudel/tuviskills <repo>
 powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\install.ps1 -WhatIf
 powershell -NoProfile -ExecutionPolicy Bypass -File <repo>\install.ps1
 ```
