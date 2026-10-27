@@ -14,8 +14,6 @@ Assume every contributor is an agent that sees only the files it opened, copies 
 
 First, read recent commits, reverts, review comments, agent instruction files, and comments that explain workarounds. Group the mistakes into classes. A class counts once it has happened twice.
 
-Before enforcing a rule, trace it to an explicit requirement or verified behavior and inspect existing checks for unsupported assumptions.
-
 ## Fix each class at the highest level that works
 
 1. **Eliminate it with architecture.** Give each piece of state one owner and each task one supported way. Hide internals so the wrong import fails. Replace hand-synced lists with one source of truth. Delete old ways and dead code an agent would copy.
