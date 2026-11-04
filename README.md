@@ -6,13 +6,13 @@ A skill is a folder with a `SKILL.md` that tells your agent when and how to do s
 
 ## What's inside
 
-There are 38 skills in [`skills/`](skills) plus 56 from pstack in [`vendor/pstack/`](vendor/pstack). [INVENTORY.md](INVENTORY.md) has the full list with descriptions.
+There are 39 skills in [`skills/`](skills) plus 58 from pstack in [`vendor/pstack/`](vendor/pstack). [INVENTORY.md](INVENTORY.md) has the full list with descriptions.
 
 | Group | Skills | What they're for |
 | --- | --- | --- |
-| **pstack** | 56 skills, including `poteto-mode` | The engineering workflow: planning, building, debugging, reviewing and shipping. `poteto-mode` is the entry point and routes to the rest. |
+| **pstack** | 58 skills, including `poteto-mode` | The engineering workflow: planning, building, debugging, reviewing and shipping. `poteto-mode` is the entry point and routes to the rest. |
 | **better-\*** | `better-interface`, `better-accessibility`, `better-colors`, `better-layout`, `better-typography`, `better-ui`, `better-writing`, plus `break` and `explain-interface` | UI review and polish. `better-interface` runs them all in one pass. |
-| **PRs and CI** (cursor-team-kit) | `fix-ci`, `fix-merge-conflicts`, `get-pr-comments`, `make-pr-easy-to-review`, `pr-review-canvas`, `what-did-i-get-done`, `thermo-nuclear-code-quality-review`, `control-cli`, `control-ui` | Fix failing checks, resolve conflicts, prep and review PRs, and drive CLIs or UIs from the agent. |
+| **PRs and CI** (cursor-team-kit) | `deslop`, `fix-ci`, `fix-merge-conflicts`, `get-pr-comments`, `make-pr-easy-to-review`, `pr-review-canvas`, `what-did-i-get-done`, `thermo-nuclear-code-quality-review`, `control-cli`, `control-ui` | Fix failing checks, resolve conflicts, prep and review PRs, and drive CLIs or UIs from the agent. |
 | **Visuals** | `illustrate`, `anatomy`, `tufte-viz`, `ian-xiaohei-illustrations`, `playground`, `hatch-pet`, `clean-product-research-illustrations` | Diagrams, isometric figures, honest charts, illustrations, and interactive HTML playgrounds. `illustrate` picks one for you. |
 | **Writing and product** | `docs-writing`, `google-developer-style`, `product-requirements`, `docs-propose-first` | Docs and prose, PRDs, and a careful "propose before you patch" docs flow. |
 | **Decisions and handoffs** | `perspective-ensemble`, `session-handoff`, `receiving-code-review`, `git-diff-hygiene` | Get several independent opinions on a hard call, hand off context between sessions, handle review feedback, and keep diffs clean. |

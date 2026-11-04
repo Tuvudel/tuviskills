@@ -351,6 +351,15 @@
       }
     },
     {
+      "name": "deslop",
+      "path": "skills/deslop",
+      "description": "Remove AI-generated code slop and clean up code style",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "2f7b7def74af7ed11f5b44b4d32f0f91fca8c5d1f92bf2171e8d12fd33a0f810"
+      }
+    },
+    {
       "name": "docs-propose-first",
       "path": "skills/docs-propose-first",
       "description": "Use when a propose-first docs bot drafts a docs patch from a merge wake or standing sweep: verify UX against the live UI, never ban what the code ships, keep superpowers gitignored, honor WIP quiet.",
