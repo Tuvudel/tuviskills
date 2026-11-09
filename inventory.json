@@ -374,7 +374,7 @@
       "description": "Use when writing or editing prose (docs, READMEs, specs, PRDs, PR descriptions, release notes, long chat replies) to pick the style guide or pass. Not for in-app UI copy (better-writing via design-ui).",
       "original_locations": [],
       "files": {
-        "SKILL.md": "4078cf4c6ede17721a26e553ba81675c240f5d97b294f7f1e32352bab363525c"
+        "SKILL.md": "da6ca9746574e57b8f5a98897a260e9e8b4f89199c9b407ce14246746966cae1"
       }
     },
     {
@@ -556,7 +556,7 @@
         "%USERPROFILE%\\.codex\\skills\\make-pr-easy-to-review"
       ],
       "files": {
-        "SKILL.md": "779f3e3d6ce0bec423cf09d0712342ea1ed265c7bc24087c1b16c76fbc245552"
+        "SKILL.md": "6780d18f8d67624567860ebf8d7032d1356eef3a03b76f473c3d7acb45dc6a6f"
       }
     },
     {
@@ -604,7 +604,16 @@
         "assets/playwright.png": "521669f088c838196c6c852ccc9abdd7234d8f37fc9a8a7a9af7db2d50193381",
         "references/cli.md": "da94ffe5a7c368e233eac1cdfa2d5207cb85a2a0571607af0e43402c6e12cd45",
         "references/workflows.md": "621d2b8542a91d1d5cd65a5a7774ea250683e4c217e00e9c90d301eb6367d86e",
-        "scripts/playwright_cli.sh": "aa3fdff5d0e4556177f4dfd5f04117e772aa54f94b6a2e34b6c0edf629c6b9b5"
+        "scripts/playwright_cli.sh": "3fce0ea2b9875179f701d9f4c03425545c441b2769cd6c6df964cc7d1d1dbfa8"
+      }
+    },
+    {
+      "name": "pr-description",
+      "path": "skills/pr-description",
+      "description": "Use whenever you write or update a pull request description. Puts a glanceable What/Why/Verify/Heads up top, and collapses the full agent write-up in a details/summary block so humans can skim. Also for \"PR body format\", \"details summary PR\", or rewriting a PR description to be readable at a glance.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "ae549bb7345588ff085b3b65257a602e07c2409eecc76bcfacda0fa3a84f4a15"
       }
     },
     {
