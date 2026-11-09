@@ -13,7 +13,8 @@ description: Use when writing or editing prose (docs, READMEs, specs, PRDs, PR d
 | Plain restatement or explanation | bro; teach for a body of work |
 | Propose doc changes before editing (docs bots) | docs-propose-first |
 | PRD or requirements | product-requirements |
-| PR description and reviewer guidance | make-pr-easy-to-review |
+| PR description shape | pr-description |
+| Tidying a PR for review (history, notes) | make-pr-easy-to-review |
 | Session handoff document | session-handoff |
 | Figures inside a doc | illustrate |
 | Notion, Drive, Slack documents | the connected plugin's own skills |

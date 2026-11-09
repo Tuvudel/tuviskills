@@ -45,12 +45,11 @@ Do not push if the tree changed unintentionally.
 
 ## Reviewer Guidance
 
-When code behavior should stay untouched, prefer PR description and review notes:
+Write the PR body with `pr-description` (glanceable What/Why/Verify/Heads up, full write-up in details/summary). Then add review notes:
 
-- Explain why the change was needed, what changed, and the resulting behavior. Use a before-and-after example when useful, and follow `google-developer-style` when available.
 - Separate core files from generated or mechanical files.
 - Call out meaningful behavior changes, migration order, and rollout requirements when they affect review.
-- For owner-maintained repositories, omit routine testing, validation, and verification sections. Include testing details only when requested or explicitly required by contribution rules; disclose known failures or unverified behavior that materially limit the change as a relevant limitation.
+- For owner-maintained repositories, keep Verify short at the top. Put longer test notes inside the details block. Disclose known failures or unverified behavior under Heads up.
 - Describe the final diff for a reader who has not seen the chat. Omit session history and abandoned approaches unless they explain a meaningful tradeoff.
 - Link issue trackers, dashboards, or design docs when they explain intent.
 
