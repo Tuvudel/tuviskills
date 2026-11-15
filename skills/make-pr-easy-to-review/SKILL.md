@@ -45,7 +45,7 @@ Do not push if the tree changed unintentionally.
 
 ## Reviewer Guidance
 
-Write the PR body with `pr-description` (glanceable What/Why/Verify/Heads up, full write-up in details/summary). Then add review notes:
+Write the PR body with `pr-description` (glanceable What changed, Why, Verify, and Heads up sections, full write-up in details/summary). Then add review notes:
 
 - Separate core files from generated or mechanical files.
 - Call out meaningful behavior changes, migration order, and rollout requirements when they affect review.
