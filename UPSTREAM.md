@@ -8,6 +8,7 @@
 | [cursor/plugins deslop](https://github.com/cursor/plugins/tree/bb68f2365eceafa0cb2d253112f675acf5f144cc/cursor-team-kit/skills/deslop) | `deslop`, copied unmodified to `skills/deslop/` | bb68f2365eceafa0cb2d253112f675acf5f144cc | MIT, `licenses/cursor-team-kit-LICENSE` |
 | [rhino-ty/apca-contrast-skill](https://github.com/rhino-ty/apca-contrast-skill) | `apca-contrast` | 32e2a95 | MIT |
 | [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) | `anatomy` | 2026-10-12 | MIT |
+| [GoogleChrome/modern-web-guidance](https://github.com/GoogleChrome/modern-web-guidance) | Workflow for `modern-web`. This is a local wrapper around the published CLI, not an unmodified copy of their skill. Guides stay on the CLI and are not vendored. | 4dd968349e54ca45a05dd5c818fb035c9054b022 | Apache-2.0, `licenses/modern-web-guidance-LICENSE`. Guide content under `guides/` is CC-BY-4.0. |
 
 ## pstack
 

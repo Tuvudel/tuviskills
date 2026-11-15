@@ -6,7 +6,7 @@ A skill is a folder with a `SKILL.md` that tells your agent when and how to do s
 
 ## What's inside
 
-There are 40 skills in [`skills/`](skills) plus 58 from pstack in [`vendor/pstack/`](vendor/pstack). [INVENTORY.md](INVENTORY.md) has the full list with descriptions.
+There are 41 skills in [`skills/`](skills) plus 58 from pstack in [`vendor/pstack/`](vendor/pstack). [INVENTORY.md](INVENTORY.md) has the full list with descriptions.
 
 | Group | Skills | What they're for |
 | --- | --- | --- |
@@ -16,7 +16,7 @@ There are 40 skills in [`skills/`](skills) plus 58 from pstack in [`vendor/pstac
 | **Visuals** | `illustrate`, `anatomy`, `tufte-viz`, `ian-xiaohei-illustrations`, `playground`, `hatch-pet`, `clean-product-research-illustrations` | Diagrams, isometric figures, honest charts, illustrations, and interactive HTML playgrounds. `illustrate` picks one for you. |
 | **Writing and product** | `docs-writing`, `google-developer-style`, `product-requirements`, `docs-propose-first` | Docs and prose, PRDs, and a careful "propose before you patch" docs flow. |
 | **Decisions and handoffs** | `perspective-ensemble`, `session-handoff`, `receiving-code-review`, `git-diff-hygiene` | Get several independent opinions on a hard call, hand off context between sessions, handle review feedback, and keep diffs clean. |
-| **Misc** | `design-ui`, `apca-contrast`, `israel-gov-api`, `playwright` | The UI entry point, APCA contrast math, Israeli government open data, and browser automation. |
+| **Misc** | `design-ui`, `modern-web`, `apca-contrast`, `israel-gov-api`, `playwright` | The UI entry point, current browser platform features, APCA contrast math, Israeli government open data, and browser automation. |
 | **Grok Bot-specific, optional** | `design-a-grok-bot`, plus `scripts/sync-box` and `rules/pstack-default.grokbot.txt` | Only useful on a Grok Bot box. Everyone else can ignore them. |
 
 Old skills I don't use anymore live in [`archive/`](archive). They aren't installed.
@@ -120,6 +120,7 @@ Most of the good stuff here comes from these folks. Thank you!
 - [helloianneo/ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) for `ian-xiaohei-illustrations`
 - [nbbaier/agent-skills](https://github.com/nbbaier/agent-skills) for `tufte-viz`
 - [stellarlinkco/myclaude](https://github.com/stellarlinkco/myclaude) for `product-requirements`
+- [GoogleChrome/modern-web-guidance](https://github.com/GoogleChrome/modern-web-guidance) for the CLI that `modern-web` wraps
 - [rhino-ty/apca-contrast-skill](https://github.com/rhino-ty/apca-contrast-skill) for `apca-contrast`
 
 License files for vendored code are in [`licenses/`](licenses) and `vendor/pstack/LICENSE`. Versions are pinned in [UPSTREAM.md](UPSTREAM.md).
