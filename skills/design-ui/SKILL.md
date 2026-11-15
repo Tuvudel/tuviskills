@@ -20,6 +20,7 @@ Build and review both end with the [subtraction pass](slop.md#subtraction-pass).
 | Polish: radius, depth, icons, hit areas, motion | better-ui |
 | UI copy: labels, buttons, errors, empty states | better-writing |
 | Accessibility | better-accessibility, then apca-contrast for contrast numbers |
+| Which browser feature or API to build with | modern-web |
 | Common AI slop patterns and the subtraction pass | [slop.md](slop.md) |
 | Contrast numbers (APCA Lc, light/dark tokens) | apca-contrast (deterministic script) |
 | Screenshots and the visual review loop | playwright: screenshot → review against better-* → fix → re-screenshot until clean; control-ui for a custom harness |

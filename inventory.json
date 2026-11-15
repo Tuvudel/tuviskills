@@ -344,7 +344,7 @@
       "description": "Use when building, polishing, or reviewing any UI (component, page, layout, color, type, UI copy, accessibility) to pick the taste, checking, or browser-review skill. Not for figures or diagrams (illustrate) or docs prose (docs-writing).",
       "original_locations": [],
       "files": {
-        "SKILL.md": "389971745996ced9ecf188ab49472f096fb05bbff863ab4bf417483bda3bbda0",
+        "SKILL.md": "29a60629d1d5bfd93e7d1ec43ac0088f8cece3ff751214826f45a2a99aea0b58",
         "flows.md": "9559aeb37cde588cffdae0a8ddc1750230cf9827553b0f76c69f92fbf6aa0370",
         "scripts/slop-check": "9203430b795a57751568a7b26ccff88369c9ecc0c14b58f8450ad83b0ddf6edb",
         "slop.md": "c89b9cfa62d5c652f172d5ebe6422e8ae1b3cc7d014029df1305776165066de0"
@@ -557,6 +557,15 @@
       ],
       "files": {
         "SKILL.md": "6780d18f8d67624567860ebf8d7032d1356eef3a03b76f473c3d7acb45dc6a6f"
+      }
+    },
+    {
+      "name": "modern-web",
+      "path": "skills/modern-web",
+      "description": "Use when writing or changing web UI, HTML, CSS, or client-side browser JavaScript, to look up today's built-in platform features before adding a library or an older pattern. Not for backend, Python, data or GIS scripts, CI, tooling, tests, copy edits, or 3D/WebGL internals unless DOM or CSS is involved.",
+      "original_locations": [],
+      "files": {
+        "SKILL.md": "26c44232d6a9e54c95fc3bcbbe3e899aa4138060102302774a769bc0addf4a50"
       }
     },
     {
