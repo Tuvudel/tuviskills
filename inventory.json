@@ -556,7 +556,7 @@
         "%USERPROFILE%\\.codex\\skills\\make-pr-easy-to-review"
       ],
       "files": {
-        "SKILL.md": "6780d18f8d67624567860ebf8d7032d1356eef3a03b76f473c3d7acb45dc6a6f"
+        "SKILL.md": "2e3710f7a095ecdf012526d2f8e721294543793184dafe7ef15e101263d5c5d6"
       }
     },
     {
@@ -619,10 +619,10 @@
     {
       "name": "pr-description",
       "path": "skills/pr-description",
-      "description": "Use whenever you write or update a pull request description. Puts a glanceable What/Why/Verify/Heads up top, and collapses the full agent write-up in a details/summary block so humans can skim. Also for \"PR body format\", \"details summary PR\", or rewriting a PR description to be readable at a glance.",
+      "description": "Use whenever you write or update a pull request description. Puts glanceable What changed / Why / Verify / Heads up sections on top, and collapses the full agent write-up in a details/summary block so humans can skim. Also for \"PR body format\", \"details summary PR\", or rewriting a PR description to be readable at a glance.",
       "original_locations": [],
       "files": {
-        "SKILL.md": "ae549bb7345588ff085b3b65257a602e07c2409eecc76bcfacda0fa3a84f4a15"
+        "SKILL.md": "aab6d6e2c0a0d1fdb221d8fbe690e381643af73776578cfca23f33419a80167c"
       }
     },
     {
