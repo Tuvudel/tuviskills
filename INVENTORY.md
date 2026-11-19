@@ -50,7 +50,7 @@ Engineering work starts from [poteto-mode](vendor/pstack/skills/poteto-mode/SKIL
 | [tufte-viz](skills/tufte-viz/SKILL.md) | Use when designing or critiquing a data chart, graph, or dashboard for graphical integrity, data-ink, and honest scales (Tufte). Not for illustrations (illustrate) or app UI (design-ui). |
 | [what-did-i-get-done](skills/what-did-i-get-done/SKILL.md) | Use when the user asks what they shipped over a period (day, week, sprint): synthesizes commits and PRs into a summary. |
 
-## pstack 0.15.36 (vendored, unmodified)
+## pstack 0.15.44 (vendored, unmodified)
 
 | Skill | Purpose |
 | --- | --- |
@@ -100,7 +100,7 @@ Engineering work starts from [poteto-mode](vendor/pstack/skills/poteto-mode/SKIL
 | [principle-test-behavior-not-implementation](vendor/pstack/skills/principle-test-behavior-not-implementation/SKILL.md) | Apply when you write, change, or keep a test. Assert what the code's users can observe, so that the test fails when that behavior breaks and keeps passing when only the internals change. |
 | [principle-type-system-discipline](vendor/pstack/skills/principle-type-system-discipline/SKILL.md) | Apply when designing types, reviewing a function signature, or writing code in any statically-typed language. Make illegal states unrepresentable, brand semantic primitives, parse external data at boundaries, exhaust variants, derive from authoritative schemas. |
 | [recall](vendor/pstack/skills/recall/SKILL.md) | Reconstruct your recent working context from your own chat history, live state, and the shared record (user reports, prior fixes, incidents), then hand back a tight current-state brief. Use for 'recall my work on X', 'catch me up', 'what have I been working on', 'where did I leave off', before starting or resuming work. |
-| [reflect](vendor/pstack/skills/reflect/SKILL.md) | Spawn three parallel review subagents over the active transcript, surface learnings, and route each to a concrete edit on an existing skill. Use when the user says reflect. |
+| [reflect](vendor/pstack/skills/reflect/SKILL.md) | Mine the active transcript for durable learnings and route each to a concrete edit on an existing skill. Use when the user says reflect. |
 | [setup-pstack](vendor/pstack/skills/setup-pstack/SKILL.md) | Configure which models pstack uses per role and at what reasoning budget. Detects your available models and writes an always-applied rule that overrides the skill defaults. Use for /setup-pstack, "configure pstack models", "pstack budget", or changing pstack's model choices. |
 | [sharpen](vendor/pstack/skills/sharpen/SKILL.md) | Make a task deeper, not bigger, then rewrite the prompt. Use for /sharpen. |
 | [show-me-your-work](vendor/pstack/skills/show-me-your-work/SKILL.md) | Keep a reviewable decision trail for long-running or unattended work: a TSV log with one row per decision (what, why, evidence, result). Local by default; commit it when a reviewer needs the trail to trust the result. Use for /show-me-your-work, autonomous or multi-phase runs, or work a human reviews after stepping away. |
@@ -111,4 +111,4 @@ Engineering work starts from [poteto-mode](vendor/pstack/skills/poteto-mode/SKIL
 | [technical-writing](vendor/pstack/skills/technical-writing/SKILL.md) | Layered technical-writing standard: Diátaxis structure, Google developer style sentences, STE instruction rules, Global English syntax. Use for /technical-writing or when writing or reviewing docs, RFCs, readmes, PR descriptions, or commit messages. |
 | [typescript-best-practices](vendor/pstack/skills/typescript-best-practices/SKILL.md) | TypeScript best practices. Use when reading or editing any .ts or .tsx file. |
 | [unslop](vendor/pstack/skills/unslop/SKILL.md) | Cut AI tells from any writing. |
-| [why](vendor/pstack/skills/why/SKILL.md) | Use for 'why does X work this way', 'why we picked Y', design rationale, regressions, postmortems, or data-backed thresholds. Discovers available MCPs and queries each evidence category (source control, issue tracker, long-form docs, real-time chat, infrastructure observability, error tracking, product analytics warehouse) in parallel, then returns a cited read on decisions and tradeoffs. Use how for runtime behavior. |
+| [why](vendor/pstack/skills/why/SKILL.md) | Use for 'why does X work this way', 'why we picked Y', design rationale, regressions, postmortems, or data-backed thresholds. Returns a cited read on decisions and tradeoffs. Use how for runtime behavior. |
