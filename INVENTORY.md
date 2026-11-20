@@ -50,7 +50,7 @@ Engineering work starts from [poteto-mode](vendor/pstack/skills/poteto-mode/SKIL
 | [tufte-viz](skills/tufte-viz/SKILL.md) | Use when designing or critiquing a data chart, graph, or dashboard for graphical integrity, data-ink, and honest scales (Tufte). Not for illustrations (illustrate) or app UI (design-ui). |
 | [what-did-i-get-done](skills/what-did-i-get-done/SKILL.md) | Use when the user asks what they shipped over a period (day, week, sprint): synthesizes commits and PRs into a summary. |
 
-## pstack 0.15.44 (vendored, unmodified)
+## pstack 0.15.46 (vendored, unmodified)
 
 | Skill | Purpose |
 | --- | --- |
